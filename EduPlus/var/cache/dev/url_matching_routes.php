@@ -14,6 +14,11 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/g/clubs' => [[['_route' => 'app_g_clubs', '_controller' => 'App\\Controller\\GClubsController::index'], null, null, null, false, false, null]],
+        '/g/events' => [[['_route' => 'app_g_events', '_controller' => 'App\\Controller\\GEventsController::index'], null, null, null, false, false, null]],
+        '/g/recrutements' => [[['_route' => 'app_g_recrutements', '_controller' => 'App\\Controller\\GRecrutementsController::index'], null, null, null, false, false, null]],
+        '/g/ressources' => [[['_route' => 'app_g_ressources', '_controller' => 'App\\Controller\\GRessourcesController::index'], null, null, null, false, false, null]],
+        '/g/users' => [[['_route' => 'app_g_users', '_controller' => 'App\\Controller\\GUsersController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
