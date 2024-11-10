@@ -396,3 +396,5 @@ d20ce2,127.0.0.1,GET,http://127.0.0.1:8001/g/ressources,1730945493,,200,request
 4c44cd,127.0.0.1,GET,http://127.0.0.1:8001/g/about.html,1730945605,,404,request
 e90962,127.0.0.1,GET,http://127.0.0.1:8001/g/ressources,1730945944,,200,request
 e8bb24,127.0.0.1,GET,http://127.0.0.1:8001/g/ressources,1730945955,,200,request
+501907,127.0.0.1,GET,http://127.0.0.1:8000/img/favicon.ico,1731246093,6b76c4,404,request
+6b76c4,127.0.0.1,GET,http://127.0.0.1:8000/img/favicon.ico,1731246093,,404,request
