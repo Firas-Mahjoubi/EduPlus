@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ClubRepository;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 #[ORM\Entity(repositoryClass: ClubRepository::class)]
 class Club
@@ -23,6 +25,22 @@ class Club
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $responsable = null;
+
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Member::class)]
+    private Collection $members;
+
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Event::class)]
+    private Collection $events;
+
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressources::class)]
+    private Collection $resources;
+
+    public function __construct()
+    {
+        $this->members = new ArrayCollection();
+        $this->events = new ArrayCollection();
+        $this->resources = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -68,6 +86,72 @@ class Club
     public function setResponsable(User $responsable): static
     {
         $this->responsable = $responsable;
+
+        return $this;
+    }
+
+    public function getMembers(): Collection
+    {
+        return $this->members;
+    }
+
+    public function addMember(Member $member): static
+    {
+        if (!$this->members->contains($member)) {
+            $this->members[] = $member;
+            $member->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMember(Member $member): static
+    {
+        $this->members->removeElement($member);
+
+        return $this;
+    }
+
+    public function getEvents(): Collection
+    {
+        return $this->events;
+    }
+
+    public function addEvent(Event $event): static
+    {
+        if (!$this->events->contains($event)) {
+            $this->events[] = $event;
+            $event->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEvent(Event $event): static
+    {
+        $this->events->removeElement($event);
+
+        return $this;
+    }
+
+    public function getResources(): Collection
+    {
+        return $this->resources;
+    }
+
+    public function addResource(Ressources $resource): static
+    {
+        if (!$this->resources->contains($resource)) {
+            $this->resources[] = $resource;
+            $resource->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResource(Ressources $resource): static
+    {
+        $this->resources->removeElement($resource);
 
         return $this;
     }

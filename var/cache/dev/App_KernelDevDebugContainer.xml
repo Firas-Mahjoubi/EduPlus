@@ -386,7 +386,35 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GUsersController"/>
       </call>
     </service>
+    <service id="App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\BlocRepository" class="App\Repository\BlocRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ClubRepository" class="App\Repository\ClubRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\EventRepository" class="App\Repository\EventRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\MemberRepository" class="App\Repository\MemberRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RecruitmentRepository" class="App\Repository\RecruitmentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RessourcesRepository" class="App\Repository\RessourcesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -5025,7 +5053,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.G5mZTJq"/>
+      <argument type="service" id=".service_locator.I9XUK0C"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7011,8 +7039,22 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GUsersController" class="App\Controller\GUsersController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GUsersController" class="App\Controller\GUsersController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GUsersController" class="App\Controller\GUsersController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BlocRepository" class="App\Repository\BlocRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\BlocRepository" class="App\Repository\BlocRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClubRepository" class="App\Repository\ClubRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ClubRepository" class="App\Repository\ClubRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EventRepository" class="App\Repository\EventRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EventRepository" class="App\Repository\EventRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MemberRepository" class="App\Repository\MemberRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MemberRepository" class="App\Repository\MemberRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RecruitmentRepository" class="App\Repository\RecruitmentRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RecruitmentRepository" class="App\Repository\RecruitmentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RessourcesRepository" class="App\Repository\RessourcesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RessourcesRepository" class="App\Repository\RessourcesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.w7.f4fT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7732,10 +7774,17 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.G5mZTJq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.I9XUK0C" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ApplicationRepository" type="service_closure" id="App\Repository\ApplicationRepository"/>
+        <argument key="App\Repository\BlocRepository" type="service_closure" id="App\Repository\BlocRepository"/>
         <argument key="App\Repository\ClubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
+        <argument key="App\Repository\EventRepository" type="service_closure" id="App\Repository\EventRepository"/>
+        <argument key="App\Repository\MemberRepository" type="service_closure" id="App\Repository\MemberRepository"/>
+        <argument key="App\Repository\RecruitmentRepository" type="service_closure" id="App\Repository\RecruitmentRepository"/>
+        <argument key="App\Repository\RessourcesRepository" type="service_closure" id="App\Repository\RessourcesRepository"/>
+        <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
