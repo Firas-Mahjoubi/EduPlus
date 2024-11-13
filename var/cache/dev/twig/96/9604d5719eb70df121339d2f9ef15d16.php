@@ -277,6 +277,6 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
         </div>
     </div>
     <!-- Footer End -->
-    {% block body %}{% endblock %}", "footer.html.twig", "C:\\Users\\ghass\\Desktop\\Nouveau dossier (2)\\EduPlus\\EduPlus\\templates\\footer.html.twig");
+    {% block body %}{% endblock %}", "footer.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\footer.html.twig");
     }
 }

@@ -149,17 +149,8 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
     </div>
     <!-- Full Screen Search End -->
 
-
-    
-
-
-   
-
-
-
-
 ";
-        // line 107
+        // line 98
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -212,7 +203,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  163 => 107,  107 => 54,  93 => 43,  49 => 1,);
+        return array (  154 => 98,  107 => 54,  93 => 43,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -314,15 +305,6 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
     </div>
     <!-- Full Screen Search End -->
 
-
-    
-
-
-   
-
-
-
-
-{% block body %}{% endblock %}", "header.html.twig", "C:\\Users\\ghass\\Desktop\\Nouveau dossier (2)\\EduPlus\\EduPlus\\templates\\header.html.twig");
+{% block body %}{% endblock %}", "header.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\header.html.twig");
     }
 }
