@@ -147,12 +147,11 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
                 // line 29
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_update", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 29)]), "html", null, true);
                 yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
-                                <form action=\"";
+                                <a href=\"";
                 // line 30
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 30)]), "html", null, true);
-                yield "\" method=\"post\" style=\"display:inline;\" onsubmit=\"return confirm('Are you sure you want to delete this event?');\">
-                                    <button type=\"submit\" class=\"btn btn-danger btn-sm\">Delete</button>
-                                </form>
+                yield "\" class=\"btn btn-danger btn-sm\">Delete</a>
+                                
                             </td>
                         </tr>
                     ";
@@ -160,16 +159,16 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['event'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 36
+            // line 35
             yield "                </tbody>
             </table>
         ";
         } else {
-            // line 39
+            // line 38
             yield "            <p>No events available.</p>
         ";
         }
-        // line 41
+        // line 40
         yield "    </div>
 ";
         
@@ -202,7 +201,7 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 41,  169 => 39,  164 => 36,  152 => 30,  148 => 29,  144 => 28,  139 => 26,  135 => 25,  131 => 24,  128 => 23,  124 => 22,  112 => 12,  110 => 11,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  172 => 40,  168 => 38,  163 => 35,  152 => 30,  148 => 29,  144 => 28,  139 => 26,  135 => 25,  131 => 24,  128 => 23,  124 => 22,  112 => 12,  110 => 11,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -236,9 +235,8 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
                             <td>
                                 <a href=\"{{ path('app_g_events_show', {'id': event.id}) }}\" class=\"btn btn-info btn-sm\">View</a>
                                 <a href=\"{{ path('app_g_events_update', {'id': event.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
-                                <form action=\"{{ path('app_g_events_delete', {'id': event.id}) }}\" method=\"post\" style=\"display:inline;\" onsubmit=\"return confirm('Are you sure you want to delete this event?');\">
-                                    <button type=\"submit\" class=\"btn btn-danger btn-sm\">Delete</button>
-                                </form>
+                                <a href=\"{{ path('app_g_events_delete', {'id': event.id}) }}\" class=\"btn btn-danger btn-sm\">Delete</a>
+                                
                             </td>
                         </tr>
                     {% endfor %}

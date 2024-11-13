@@ -91,30 +91,16 @@ public function update(int $id, Request $request, EntityManagerInterface $entity
         'form' => $form->createView(),
     ]);
 }
-#[Route('/delete/{id}', name: 'app_g_events_delete', methods: ['POST'])]
-public function delete(int $id, Request $request, EntityManagerInterface $entityManager, EventRepository $eventRepository): Response
+#[Route('/delete/{id}', name: 'app_g_events_delete', methods: ['GET'])]
+public function delete(Event $event, EntityManagerInterface $entityManager): Response
 {
-    // Find the event by ID
-    $event = $eventRepository->find($id);
+    $entityManager->remove($event);
+    $entityManager->flush();
 
-    if (!$event) {
-        throw $this->createNotFoundException('Event not found.');
-    }
+    $this->addFlash('success', 'Event deleted successfully.');
 
-    // Check CSRF token for protection
-    if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->get('_token'))) {
-        // Remove the event from the database
-        $entityManager->remove($event);
-        $entityManager->flush();
-
-        // Add a success message
-        $this->addFlash('success', 'Event deleted successfully.');
-    } else {
-        $this->addFlash('error', 'Invalid CSRF token.');
-    }
-
-    // Redirect to the event list page after deletion
     return $this->redirectToRoute('app_g_events');
 }
+
 
 }
