@@ -589,10 +589,6 @@ class __TwigTemplate_8bcc49781231fa8c73ffdadda93704f8 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-<<<<<<< HEAD
 ", "@WebProfiler/Collector/validator.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\validator.html.twig");
-=======
-", "@WebProfiler/Collector/validator.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\validator.html.twig");
->>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
     }
 }

@@ -6,8 +6,8 @@
 # config/services.yaml
 
 parameters:
-  club_logos_directory: "C:/Users/ASUS/Desktop/eduplus1/EduPlus/public/uploads/logos"
-  profile_pictures_directory: "C:/Users/ASUS/Desktop/eduplus1/EduPlus/public/uploads/profilePictures"
+  club_logos_directory: "../public/uploads/logos"
+  profile_pictures_directory: "../public/uploads/profilePictures"
 
 services:
   # default configuration for services in *this* file

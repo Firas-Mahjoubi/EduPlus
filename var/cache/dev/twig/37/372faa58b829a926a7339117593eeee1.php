@@ -928,10 +928,6 @@ class __TwigTemplate_0229d4986cbfdc524703331c6edcd438 extends Template
         </tbody>
     </table>
 {% endmacro %}
-<<<<<<< HEAD
 ", "@WebProfiler/Collector/translation.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\translation.html.twig");
-=======
-", "@WebProfiler/Collector/translation.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\translation.html.twig");
->>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
     }
 }
