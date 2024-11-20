@@ -897,6 +897,10 @@ class __TwigTemplate_ece3893fd759f2b92a05b2a259fdab76 extends Template
     </table>
     {% endfor %}
 {% endmacro %}
+<<<<<<< HEAD
 ", "@WebProfiler/Collector/messenger.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\messenger.html.twig");
+=======
+", "@WebProfiler/Collector/messenger.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\messenger.html.twig");
+>>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
     }
 }

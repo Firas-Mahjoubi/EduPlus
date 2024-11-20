@@ -269,6 +269,10 @@ class __TwigTemplate_8ad3b516d946573cb08b29926adfbd73 extends Template
         </div>
     {% endif %}
 {% endblock %}
+<<<<<<< HEAD
 ", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
+=======
+", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
+>>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
     }
 }

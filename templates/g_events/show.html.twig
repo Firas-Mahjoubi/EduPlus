@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event Details{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>{{ event.titre }}</h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <p><strong>Start Date:</strong> {{ event.datedebut|date('d-m-Y H:i') }}</p>
+                <p><strong>End Date:</strong> {{ event.datefin|date('d-m-Y H:i') }}</p>
+                <p><strong>Description:</strong> {{ event.description ? event.description : 'No description provided' }}</p>
+
+                <h3>Participants</h3>
+                {% if event.participants is not empty %}
+                    <ul>
+                        {% for participant in event.participants %}
+                            <li>{{ participant.nom }} {{ participant.prenom }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No participants yet.</p>
+                {% endif %}
+
+                <p><strong>Club:</strong> {{ event.club.nom }}</p>
+                <p><strong>Bloc:</strong> {{ event.bloc.name }}</p>
+            </div>
+        </div>
+
+        <a href="{{ path('app_g_events') }}" class="btn btn-secondary mt-3">Back to Events</a>
+    </div>
+{% endblock %}

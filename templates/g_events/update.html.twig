@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <div class="container mt-5">
+            <h1>Update Event</h1>
+    
+            {{ form_start(form) }}
+            
+            <!-- Title Field -->
+            <div class="mb-3">
+                {{ form_label(form.titre) }}
+                {{ form_widget(form.titre, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.titre) }}
+                </div>
+            </div>
+    
+            <!-- Description Field -->
+            <div class="mb-3">
+                {{ form_label(form.description) }}
+                {{ form_widget(form.description, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.description) }}
+                </div>
+            </div>
+    
+            <!-- Date Debut Field -->
+            <div class="mb-3">
+                {{ form_label(form.datedebut) }}
+                {{ form_widget(form.datedebut, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.datedebut) }}
+                </div>
+            </div>
+    
+            <!-- Date Fin Field -->
+            <div class="mb-3">
+                {{ form_label(form.datefin) }}
+                {{ form_widget(form.datefin, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.datefin) }}
+                </div>
+            </div>
+    
+            <!-- Club Field -->
+            <div class="mb-3">
+                {{ form_label(form.club) }}
+                {{ form_widget(form.club, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.club) }}
+                </div>
+            </div>
+    
+            <!-- Bloc Field -->
+            <div class="mb-3">
+                {{ form_label(form.bloc) }}
+                {{ form_widget(form.bloc, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.bloc) }}
+                </div>
+            </div>
+    
+            <!-- Participants Field -->
+            <div class="mb-3">
+                {{ form_label(form.participants) }}
+                {{ form_widget(form.participants, { 'attr': { 'class': 'form-control' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.participants) }}
+                </div>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Update Event</button>
+    
+            {{ form_end(form) }}
+        </div>
+    {% endblock %}
+    

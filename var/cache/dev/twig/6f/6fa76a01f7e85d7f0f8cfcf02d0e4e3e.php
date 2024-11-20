@@ -1004,6 +1004,10 @@ class __TwigTemplate_76474a343f400182e6de8951bfa1ce33 extends Template
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
+<<<<<<< HEAD
 ", "@WebProfiler/Collector/time.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\time.html.twig");
+=======
+", "@WebProfiler/Collector/time.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\time.html.twig");
+>>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
     }
 }
