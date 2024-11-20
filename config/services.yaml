@@ -3,7 +3,7 @@
 parameters:
   club_logos_directory: "../public/uploads/logos"
   profile_pictures_directory: "../public/uploads/profilePictures"
-  event_pictures_directory: '../public/uploads/events'  # Fix the indentation here
+  event_pictures_directory: "../public/uploads/events"  # Fixed the indentation
 
 services:
   _defaults:
