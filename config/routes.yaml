@@ -1,5 +1,9 @@
+# config/routes.yaml
+
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource: ../src/Controller/
+  type: attribute  # This enables route attributes in your controllers
+index:
+    path: /
+    controller: App\Controller\GusersController::index
+

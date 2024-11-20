@@ -234,6 +234,6 @@ class __TwigTemplate_ed3aab8c44284dee3aeebbe40d068ade extends Template
         </dl>
     </div>
 </div>
-", "@WebProfiler/Profiler/_command_summary.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\_command_summary.html.twig");
+", "@WebProfiler/Profiler/_command_summary.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\_command_summary.html.twig");
     }
 }

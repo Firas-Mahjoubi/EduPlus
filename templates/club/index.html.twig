@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clubs{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <h1>Clubs</h1>
+
+        <!-- Owl Carousel -->
+        <div class="owl-carousel testimonial-carousel wow fadeInUp mt-4" data-wow-delay="0.6s">
+            {% for club in clubs %}
+                <div class="testimonial-item bg-light my-4">
+                    <!-- Club Information -->
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                       <img 
+    class="img-fluid rounded" 
+    src="{{ asset('uploads/logos/' ~ club.logo) }}" 
+    alt="{{ club.nom }}" 
+    style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">{{ club.nom }}</h4>
+                            <small class="text-uppercase">{{ club.description }}</small>  <!-- Assuming 'description' should be displayed here -->
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}
+                    </div>
+                </div>
+            {% else %}
+                <div class="testimonial-item bg-light my-4">
+                    <div class="pt-4 pb-5 px-5 text-center">
+                        <p class="text-muted">No clubs found.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

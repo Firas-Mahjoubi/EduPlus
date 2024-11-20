@@ -585,6 +585,6 @@ col-sm-10
         </div>{#--#}
     </div>
 {%- endblock checkbox_row %}
-", "bootstrap_4_horizontal_layout.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\Nouveau dossier\\EduPlus\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\bootstrap_4_horizontal_layout.html.twig");
+", "bootstrap_4_horizontal_layout.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\bootstrap_4_horizontal_layout.html.twig");
     }
 }

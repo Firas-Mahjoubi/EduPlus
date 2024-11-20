@@ -31,6 +31,9 @@ class Event
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 255, nullable: true)]  // Column to store the image filename
+    private ?string $image = null;
+
     #[ORM\ManyToMany(targetEntity: User::class)]
     #[ORM\JoinTable(name: 'event_user')]
     private Collection $participants;
@@ -117,6 +120,13 @@ class Event
         return $this;
     }
 
+    // Method to clear all participants from the event
+    public function clearParticipants(): static
+    {
+        $this->participants->clear();
+        return $this;
+    }
+
     // Getter and Setter for Club
     public function getClub(): ?Club
     {
@@ -126,6 +136,18 @@ class Event
     public function setClub(Club $club): static
     {
         $this->club = $club;
+        return $this;
+    }
+
+    // Getter and Setter for image
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
         return $this;
     }
 
