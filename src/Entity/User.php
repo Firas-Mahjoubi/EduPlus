@@ -30,6 +30,10 @@ class User
     #[ORM\Column(enumType: UserRole::class)]
     private UserRole $role;
 
+    // Profile picture, default to 'default.png'
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $profilePicture = 'default.png';
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,4 +99,17 @@ class User
         $this->role = $role;
         return $this;
     }
+
+    // Getter and setter for profilePicture
+    public function getProfilePicture(): ?string
+    {
+        return $this->profilePicture;
+    }
+
+    public function setProfilePicture(?string $profilePicture): static
+    {
+        $this->profilePicture = $profilePicture;
+        return $this;
+    }
+    
 }

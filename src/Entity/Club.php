@@ -35,6 +35,10 @@ class Club
     #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressources::class)]
     private Collection $resources;
 
+    // New logo property
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $logo = null;
+
     public function __construct()
     {
         $this->members = new ArrayCollection();
@@ -152,6 +156,19 @@ class Club
     public function removeResource(Ressources $resource): static
     {
         $this->resources->removeElement($resource);
+
+        return $this;
+    }
+
+    // Getters and setters for the logo property
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(?string $logo): static
+    {
+        $this->logo = $logo;
 
         return $this;
     }
