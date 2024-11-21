@@ -37,7 +37,8 @@
                             </div>
                             <div class="text-center py-4">
                                 <h4 class="text-primary">{{ member.utilisateur.nom }} {{ member.utilisateur.prenom }}</h4>
-                                <p class="text-uppercase m-0">{{ member.utilisateur.role.value }}</p>
+                                <!-- Display the role of the member, not the user -->
+                                <p class="text-uppercase m-0">{{ member.role.value }}</p>
                                 <small>Joined: {{ member.dateAdhesion|date('Y-m-d') }}</small>
                             </div>
                         </div>

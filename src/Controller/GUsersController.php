@@ -1,11 +1,16 @@
 <?php
-// src/Controller/GUsersController.php
+
 namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
 use App\Enum\UserRole;
-
+use App\Entity\Member;
+use App\Entity\Club;
+use App\Form\ApplyToClubType;
+use App\Repository\UserRepository;
+use App\Repository\ClubRepository;
+use App\Enum\MemberRole;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -70,4 +75,6 @@ class GUsersController extends AbstractController
             'users' => $users,
         ]);
     }
+
+   
 }

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Submit Application{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3>Submit Your Application</h3>
+                    </div>
+                    <div class="card-body">
+                        {# Display success message if any #}
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+
+                        {# Render the application form #}
+                        {{ form_start(form) }}
+                            <div class="form-group mb-3">
+                                {{ form_label(form.club, 'Choose your Club', {'label_attr': {'class': 'form-label'}}) }}
+                                {{ form_widget(form.club, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_errors(form.club) }}
+                            </div>
+
+                            <div class="form-group mb-3">
+                                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success btn-block'}}) }}
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
