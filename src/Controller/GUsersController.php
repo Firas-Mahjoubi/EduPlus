@@ -1,16 +1,11 @@
 <?php
-
+// src/Controller/GUsersController.php
 namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
 use App\Enum\UserRole;
-use App\Entity\Member;
-use App\Entity\Club;
-use App\Form\ApplyToClubType;
-use App\Repository\UserRepository;
-use App\Repository\ClubRepository;
-use App\Enum\MemberRole;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,7 +34,7 @@ class GUsersController extends AbstractController
 
                 // Move the uploaded file to the directory
                 $profilePicture->move(
-                    $this->getParameter('profile_pictures_directory'), // Directory where the file will be saved
+                    $parameterBag->get('profile_pictures_directory'), // Directory where the file will be saved
                     $filename
                 );
 
@@ -49,7 +44,7 @@ class GUsersController extends AbstractController
 
             // If no role was set during form submission, use a default value
             if (!$user->getRole()) {
-                $user->setRole(UserRole::USER); // Default to 'USER' role
+                $user->setRole(UserRole::ROLE_USER); // Default to 'ROLE_USER' role
             }
 
             // Persist the user entity to the database

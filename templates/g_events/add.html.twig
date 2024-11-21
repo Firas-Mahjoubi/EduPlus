@@ -11,45 +11,52 @@
                 {{ form_start(form) }}
                 
                 <div class="mb-3">
-                    {{ form_label(form.titre, 'Event Title', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_label(form.titre, 'Event Title') }}
                     {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Enter event title'}}) }}
                     {{ form_errors(form.titre) }}
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.datedebut, 'Start Date', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_label(form.datedebut, 'Start Date') }}
                     {{ form_widget(form.datedebut, {'attr': {'class': 'form-control'}}) }}
                     {{ form_errors(form.datedebut) }}
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.datefin, 'End Date', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_label(form.datefin, 'End Date') }}
                     {{ form_widget(form.datefin, {'attr': {'class': 'form-control'}}) }}
                     {{ form_errors(form.datefin) }}
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.description, 'Description', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_label(form.description, 'Description') }}
                     {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Optional description'}}) }}
                     {{ form_errors(form.description) }}
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.club, 'Club', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_label(form.club, 'Club') }}
                     {{ form_widget(form.club, {'attr': {'class': 'form-select'}}) }}
                     {{ form_errors(form.club) }}
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.bloc, 'Bloc', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_label(form.bloc, 'Bloc') }}
                     {{ form_widget(form.bloc, {'attr': {'class': 'form-select'}}) }}
                     {{ form_errors(form.bloc) }}
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.participants, 'Participants', {'label_attr': {'class': 'form-label'}}) }}
-                    {{ form_widget(form.participants, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_label(form.participants, 'Participants') }}
+                    {{ form_widget(form.participants, {'attr': {'class': 'select2-searchable form-control', 'multiple': true}}) }}
                     {{ form_errors(form.participants) }}
+                </div>
+
+                <!-- Image upload field -->
+                <div class="mb-3">
+                    {{ form_label(form.image, 'Event Image') }}
+                    {{ form_widget(form.image, {'attr': {'class': 'form-control-file'}}) }}
+                    {{ form_errors(form.image) }}
                 </div>
 
                 <button type="submit" class="btn btn-primary">Save Event</button>
@@ -58,4 +65,29 @@
             </div>
         </div>
     </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize Select2 with search functionality and multiple select enabled
+            $('.select2-searchable').select2({
+                placeholder: "Search participants...",
+                allowClear: true,
+                multiple: true, // Enable multiple selection
+                width: '100%'   // Make it full width for better UI
+            });
+
+            // Handle the removal of participants by clicking on the delete button
+            $('.remove-participant').on('click', function() {
+                var participantId = $(this).data('id');
+                var selectElement = $('select[name="event[participants]"]');
+                var optionToRemove = selectElement.find('option[value="' + participantId + '"]');
+                optionToRemove.remove();
+                $(this).parent().remove(); // Remove the participant from the UI
+            });
+        });
+    </script>
 {% endblock %}

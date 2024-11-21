@@ -9,6 +9,7 @@ use App\Entity\User;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;  // Add this import for file uploads
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -50,10 +51,20 @@ class EventType extends AbstractType
             ])
             ->add('participants', EntityType::class, [
                 'class' => User::class,
-                'choice_label' => 'nom', // Assuming 'username' is a property of User
-                'multiple' => true, // Enables selection of multiple participants
-                'expanded' => true, // Display checkboxes for multiple selection
+                'choice_label' => 'nom', // This should match the property name for the participant name
+                'multiple' => true, // Multiple participants
+                'expanded' => true, // Render as checkboxes
                 'label' => 'Participants',
+                'attr' => [
+                    'class' => 'select2-searchable form-control', // Add the class for Select2 initialization
+                ],
+            ])
+             // Add the image field for file upload
+             ->add('image', FileType::class, [
+                'label' => 'Event Image (Optional)',
+                'mapped' => false,  // The file is not mapped to the entity directly
+                'required' => false,
+                'attr' => ['class' => 'form-control-file'],
             ]);
     }
 

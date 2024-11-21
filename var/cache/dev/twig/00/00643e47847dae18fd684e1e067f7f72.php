@@ -109,66 +109,73 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
         // line 11
         if ( !Twig\Extension\CoreExtension::testEmpty((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 11, $this->source); })()))) {
             // line 12
-            yield "            <table class=\"table table-striped\">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ";
-            // line 22
+            yield "            <div class=\"row\">
+                ";
+            // line 13
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 22, $this->source); })()));
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 13, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-                // line 23
-                yield "                        <tr>
-                            <td>";
+                // line 14
+                yield "                    <div class=\"col-md-4 mb-4\">
+                        <div class=\"card\">
+                            ";
+                // line 16
+                if (CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 16)) {
+                    // line 17
+                    yield "                                <img src=\"";
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 17))), "html", null, true);
+                    yield "\" class=\"card-img-top\" alt=\"Event Image\">
+                            ";
+                } else {
+                    // line 19
+                    yield "                                <img src=\"https://via.placeholder.com/150\" class=\"card-img-top\" alt=\"No Image Available\">
+                            ";
+                }
+                // line 21
+                yield "                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">";
+                // line 22
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 22), "html", null, true);
+                yield "</h5>
+                                <p class=\"card-text\">
+                                    <strong>Start Date:</strong> ";
                 // line 24
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 24), "html", null, true);
-                yield "</td>
-                            <td>";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datedebut", [], "any", false, false, false, 24), "d-m-Y H:i"), "html", null, true);
+                yield "<br>
+                                    <strong>End Date:</strong> ";
                 // line 25
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datedebut", [], "any", false, false, false, 25), "d-m-Y H:i"), "html", null, true);
-                yield "</td>
-                            <td>";
-                // line 26
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datefin", [], "any", false, false, false, 26), "d-m-Y H:i"), "html", null, true);
-                yield "</td>
-                            <td>
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datefin", [], "any", false, false, false, 25), "d-m-Y H:i"), "html", null, true);
+                yield "
+                                </p>
                                 <a href=\"";
-                // line 28
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+                // line 27
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 27)]), "html", null, true);
                 yield "\" class=\"btn btn-info btn-sm\">View</a>
                                 <a href=\"";
-                // line 29
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_update", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+                // line 28
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_update", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 28)]), "html", null, true);
                 yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
                                 <a href=\"";
-                // line 30
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+                // line 29
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 29)]), "html", null, true);
                 yield "\" class=\"btn btn-danger btn-sm\">Delete</a>
-                                
-                            </td>
-                        </tr>
-                    ";
+                            </div>
+                        </div>
+                    </div>
+                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['event'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 35
-            yield "                </tbody>
-            </table>
+            // line 34
+            yield "            </div>
         ";
         } else {
-            // line 38
+            // line 36
             yield "            <p>No events available.</p>
         ";
         }
-        // line 40
+        // line 38
         yield "    </div>
 ";
         
@@ -201,7 +208,7 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  172 => 40,  168 => 38,  163 => 35,  152 => 30,  148 => 29,  144 => 28,  139 => 26,  135 => 25,  131 => 24,  128 => 23,  124 => 22,  112 => 12,  110 => 11,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  179 => 38,  175 => 36,  171 => 34,  160 => 29,  156 => 28,  152 => 27,  147 => 25,  143 => 24,  138 => 22,  135 => 21,  131 => 19,  125 => 17,  123 => 16,  119 => 14,  115 => 13,  112 => 12,  110 => 11,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -217,31 +224,29 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
         <a href=\"{{ path('app_g_events_add') }}\" class=\"btn btn-primary mb-3\">Add New Event</a>
 
         {% if events is not empty %}
-            <table class=\"table table-striped\">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for event in events %}
-                        <tr>
-                            <td>{{ event.titre }}</td>
-                            <td>{{ event.datedebut|date('d-m-Y H:i') }}</td>
-                            <td>{{ event.datefin|date('d-m-Y H:i') }}</td>
-                            <td>
+            <div class=\"row\">
+                {% for event in events %}
+                    <div class=\"col-md-4 mb-4\">
+                        <div class=\"card\">
+                            {% if event.image %}
+                                <img src=\"{{ asset('uploads/events/' ~ event.image) }}\" class=\"card-img-top\" alt=\"Event Image\">
+                            {% else %}
+                                <img src=\"https://via.placeholder.com/150\" class=\"card-img-top\" alt=\"No Image Available\">
+                            {% endif %}
+                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">{{ event.titre }}</h5>
+                                <p class=\"card-text\">
+                                    <strong>Start Date:</strong> {{ event.datedebut|date('d-m-Y H:i') }}<br>
+                                    <strong>End Date:</strong> {{ event.datefin|date('d-m-Y H:i') }}
+                                </p>
                                 <a href=\"{{ path('app_g_events_show', {'id': event.id}) }}\" class=\"btn btn-info btn-sm\">View</a>
                                 <a href=\"{{ path('app_g_events_update', {'id': event.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
                                 <a href=\"{{ path('app_g_events_delete', {'id': event.id}) }}\" class=\"btn btn-danger btn-sm\">Delete</a>
-                                
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         {% else %}
             <p>No events available.</p>
         {% endif %}
