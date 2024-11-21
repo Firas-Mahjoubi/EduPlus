@@ -35,6 +35,7 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\GusersController::index'], [], [['text', '/']], [], [], []],
+    'uploads' => [['path'], ['_public' => true], ['path' => '.+'], [['variable', '/', '.+', 'path', true], ['text', '/uploads']], [], [], []],
     'App\Controller\GClubsController::index' => [[], ['_controller' => 'App\\Controller\\GClubsController::index'], [], [['text', '/club/']], [], [], []],
     'App\Controller\GClubsController::new' => [[], ['_controller' => 'App\\Controller\\GClubsController::new'], [], [['text', '/club/new']], [], [], []],
     'App\Controller\GClubsController::show' => [['id'], ['_controller' => 'App\\Controller\\GClubsController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/club']], [], [], []],

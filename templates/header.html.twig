@@ -38,10 +38,14 @@
     {% if app.user %}
         <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <!-- Display user profile picture or default fallback -->
-                <img src="{{ app.user.profilePicture ? asset('uploads/profile_pictures/' ~ app.user.profilePicture) : asset('img/default-profile.png') }}" 
-                     alt="Profile Picture" class="rounded-circle" width="50" height="50">
-                <span class="ms-2">{{ app.user.nom }} {{ app.user.prenom }}</span>
+                <img src="{{ app.user.profilePicture ? asset('uploads/profilePictures/' ~ app.user.profilePicture) : asset('uploads/profilePictures/default.png') }}" 
+                alt="Profile Picture" 
+                class="rounded-circle" 
+                width="50" 
+                height="50">
+           <span class="ms-2">{{ app.user.nom }} {{ app.user.prenom }}</span>
+           
+
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 <li><a class="dropdown-item" href="{{ path('app_g_events') }}">My Profile</a></li>

@@ -59,6 +59,7 @@ return [
                     .'|delete/([^/]++)(*:317)'
                     .'|show/([^/]++)(*:338)'
                 .')'
+                .'|/uploads/(.+)(*:360)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -75,8 +76,9 @@ return [
         259 => [[['_route' => 'club_delete', '_controller' => 'App\\Controller\\GClubsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         294 => [[['_route' => 'app_g_events_update', '_controller' => 'App\\Controller\\GEventsController::update'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         317 => [[['_route' => 'app_g_events_delete', '_controller' => 'App\\Controller\\GEventsController::delete'], ['id'], ['GET' => 0], null, false, true, null]],
-        338 => [
-            [['_route' => 'app_g_events_show', '_controller' => 'App\\Controller\\GEventsController::show'], ['id'], null, null, false, true, null],
+        338 => [[['_route' => 'app_g_events_show', '_controller' => 'App\\Controller\\GEventsController::show'], ['id'], null, null, false, true, null]],
+        360 => [
+            [['_route' => 'uploads', '_public' => true], ['path'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

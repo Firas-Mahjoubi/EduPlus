@@ -18,11 +18,11 @@ security:
                 username_parameter: email   # Match the 'email' field in the login form
                 password_parameter: password # Match the 'password' field in the login form
                 enable_csrf: true  # Enable CSRF protection (instead of csrf_token_generator)
-
+                default_target_path: app_g_events
             # Logout functionality
             logout:
                 path: app_logout  # Route to logout
-                                target: app_login  # Redirect to login page after logout
+                target: app_login  # Redirect to login page after logout
 
 
             # Remember me functionality

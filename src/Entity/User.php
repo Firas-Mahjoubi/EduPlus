@@ -37,7 +37,7 @@ class User implements UserInterface , PasswordAuthenticatedUserInterface
 
     // Profile picture, default to 'default.png'
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $profilePicture = 'default.png';
+    private ?string $profilePicture = null;
 
     public function __construct()
     {
