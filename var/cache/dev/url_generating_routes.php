@@ -25,6 +25,7 @@ return [
     'Recruitment_delete' => [['id'], ['_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/g/recrutements/delete']], [], [], []],
     'recruitment_add' => [[], ['_controller' => 'App\\Controller\\GRecrutementsController::recruitmentAdd'], [], [['text', '/g/recrutements/add']], [], [], []],
     'recruitment_edit' => [['id'], ['_controller' => 'App\\Controller\\GRecrutementsController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/g/recrutements/edit']], [], [], []],
+    'recruitment_apply' => [['id'], ['_controller' => 'App\\Controller\\GRecrutementsController::apply'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/g/recrutements/apply']], [], [], []],
     'app_g_ressources' => [[], ['_controller' => 'App\\Controller\\GRessourcesController::index'], [], [['text', '/g/ressources']], [], [], []],
     'app_g_users' => [[], ['_controller' => 'App\\Controller\\GUsersController::index'], [], [['text', '/g/users']], [], [], []],
     'App\Controller\GClubsController::index' => [[], ['_controller' => 'App\\Controller\\GClubsController::index'], [], [['text', '/g/clubs']], [], [], []],
@@ -35,6 +36,7 @@ return [
     'App\Controller\GRecrutementsController::authorDelete1' => [['id'], ['_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/g/recrutements/delete']], [], [], []],
     'App\Controller\GRecrutementsController::recruitmentAdd' => [[], ['_controller' => 'App\\Controller\\GRecrutementsController::recruitmentAdd'], [], [['text', '/g/recrutements/add']], [], [], []],
     'App\Controller\GRecrutementsController::edit' => [['id'], ['_controller' => 'App\\Controller\\GRecrutementsController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/g/recrutements/edit']], [], [], []],
+    'App\Controller\GRecrutementsController::apply' => [['id'], ['_controller' => 'App\\Controller\\GRecrutementsController::apply'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/g/recrutements/apply']], [], [], []],
     'App\Controller\GRessourcesController::index' => [[], ['_controller' => 'App\\Controller\\GRessourcesController::index'], [], [['text', '/g/ressources']], [], [], []],
     'App\Controller\GUsersController::index' => [[], ['_controller' => 'App\\Controller\\GUsersController::index'], [], [['text', '/g/users']], [], [], []],
 ];

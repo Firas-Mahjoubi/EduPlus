@@ -110,5 +110,4 @@ public function edit(Request $request, Recruitment $recruitment, ManagerRegistry
 } 
    
 
-
 }

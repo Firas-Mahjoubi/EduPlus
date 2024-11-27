@@ -138,79 +138,66 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 21
-        yield "
+        yield "<a href=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_apply", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 21, $this->source); })()), "id", [], "any", false, false, false, 21)]), "html", null, true);
+        yield "\" class=\"btn btn-success btn-sm\">Postuler</a>
+
+
     <!-- Liste des annonces -->
     <div class=\"row\">
         ";
-        // line 24
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["liste_recruitement"]) || array_key_exists("liste_recruitement", $context) ? $context["liste_recruitement"] : (function () { throw new RuntimeError('Variable "liste_recruitement" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["liste_recruitement"]) || array_key_exists("liste_recruitement", $context) ? $context["liste_recruitement"] : (function () { throw new RuntimeError('Variable "liste_recruitement" does not exist.', 26, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["recruitment"]) {
-            // line 25
+            // line 27
             yield "            <div class=\"col-md-4\">
                 <div class=\"card mb-4 shadow-sm\">
+                
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "title", [], "any", false, false, false, 28), "html", null, true);
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "title", [], "any", false, false, false, 31), "html", null, true);
             yield "</h5>
                         <p class=\"card-text\">
                             <strong>Description :</strong> ";
-            // line 30
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "description", [], "any", false, false, false, 30), 0, 100), "html", null, true);
+            // line 33
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "description", [], "any", false, false, false, 33), 0, 100), "html", null, true);
             yield "...
                         </p>
                         <p class=\"card-text\">
                             <strong>Statut :</strong> 
                             <span class=\"badge ";
-            // line 34
-            yield (((CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "status", [], "any", false, false, false, 34) == "open")) ? ("bg-success") : ("bg-danger"));
+            // line 37
+            yield (((CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "status", [], "any", false, false, false, 37) == "open")) ? ("bg-success") : ("bg-danger"));
             yield "\">
                                 ";
-            // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::capitalize($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "status", [], "any", false, false, false, 35)), "html", null, true);
+            // line 38
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::capitalize($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "status", [], "any", false, false, false, 38)), "html", null, true);
             yield "
                             </span>
                         </p>
                         <p class=\"card-text\"><strong>Date Limite :</strong> ";
-            // line 38
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "deadline", [], "any", false, false, false, 38), "d/m/Y"), "html", null, true);
+            // line 41
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "deadline", [], "any", false, false, false, 41), "d/m/Y"), "html", null, true);
             yield "</p>
                         <p class=\"card-text\"><strong>Lieu :</strong> ";
-            // line 39
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "location", [], "any", false, false, false, 39), "html", null, true);
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "location", [], "any", false, false, false, 42), "html", null, true);
             yield "</p>
                         <a href=\"";
-            // line 40
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitement_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 40)]), "html", null, true);
-            yield "\" class=\"btn btn-info btn-sm\">Voir les Détails</a>
-                        
-                        <!-- Bouton Postuler -->
-                        ";
             // line 43
-            if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
-                // line 44
-                yield "                            <a href=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_apply", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 44)]), "html", null, true);
-                yield "\" class=\"btn btn-success btn-sm mt-2\">Postuler</a>
-                        ";
-            } else {
-                // line 46
-                yield "                            <a href=\"";
-                yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-                yield "\" class=\"btn btn-secondary btn-sm mt-2\">Se connecter pour postuler</a>
-                        ";
-            }
-            // line 48
-            yield "                    </div>
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitement_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 43)]), "html", null, true);
+            yield "\" class=\"btn btn-info btn-sm\">Voir les Détails</a>
+                    </div>
                 </div>
             </div>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 52
+            // line 48
             yield "            <div class=\"col-12\">
                 <div class=\"alert alert-warning text-center\">
                     Aucune annonce de recrutement disponible pour le moment.
@@ -221,7 +208,7 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['recruitment'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 58
+        // line 54
         yield "    </div>
 </div>
 ";
@@ -255,7 +242,7 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  225 => 58,  214 => 52,  206 => 48,  200 => 46,  194 => 44,  192 => 43,  186 => 40,  182 => 39,  178 => 38,  172 => 35,  168 => 34,  161 => 30,  156 => 28,  151 => 25,  146 => 24,  141 => 21,  132 => 18,  129 => 17,  125 => 16,  122 => 15,  113 => 12,  110 => 11,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  212 => 54,  201 => 48,  191 => 43,  187 => 42,  183 => 41,  177 => 38,  173 => 37,  166 => 33,  161 => 31,  155 => 27,  150 => 26,  141 => 21,  132 => 18,  129 => 17,  125 => 16,  122 => 15,  113 => 12,  110 => 11,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -280,12 +267,15 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
             {{ message }}
         </div>
     {% endfor %}
+<a href=\"{{ path('recruitment_apply', { id: recruitment.id }) }}\" class=\"btn btn-success btn-sm\">Postuler</a>
+
 
     <!-- Liste des annonces -->
     <div class=\"row\">
         {% for recruitment in liste_recruitement %}
             <div class=\"col-md-4\">
                 <div class=\"card mb-4 shadow-sm\">
+                
                     <div class=\"card-body\">
                         <h5 class=\"card-title\">{{ recruitment.title }}</h5>
                         <p class=\"card-text\">
@@ -300,13 +290,6 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
                         <p class=\"card-text\"><strong>Date Limite :</strong> {{ recruitment.deadline|date('d/m/Y') }}</p>
                         <p class=\"card-text\"><strong>Lieu :</strong> {{ recruitment.location }}</p>
                         <a href=\"{{ path('recruitement_details', { id: recruitment.id }) }}\" class=\"btn btn-info btn-sm\">Voir les Détails</a>
-                        
-                        <!-- Bouton Postuler -->
-                        {% if app.user %}
-                            <a href=\"{{ path('recruitment_apply', { id: recruitment.id }) }}\" class=\"btn btn-success btn-sm mt-2\">Postuler</a>
-                        {% else %}
-                            <a href=\"{{ path('app_login') }}\" class=\"btn btn-secondary btn-sm mt-2\">Se connecter pour postuler</a>
-                        {% endif %}
                     </div>
                 </div>
             </div>

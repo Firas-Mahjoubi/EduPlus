@@ -48,6 +48,7 @@ return [
                         .'|lete/([^/]++)(*:261)'
                     .')'
                     .'|edit/([^/]++)(*:283)'
+                    .'|apply/([^/]++)(*:305)'
                 .')'
             .')/?$}sDu',
     ],
@@ -62,8 +63,9 @@ return [
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         240 => [[['_route' => 'recruitement_details', '_controller' => 'App\\Controller\\GRecrutementsController::authorDetails'], ['id'], null, null, false, true, null]],
         261 => [[['_route' => 'Recruitment_delete', '_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], ['id'], null, null, false, true, null]],
-        283 => [
-            [['_route' => 'recruitment_edit', '_controller' => 'App\\Controller\\GRecrutementsController::edit'], ['id'], null, null, false, true, null],
+        283 => [[['_route' => 'recruitment_edit', '_controller' => 'App\\Controller\\GRecrutementsController::edit'], ['id'], null, null, false, true, null]],
+        305 => [
+            [['_route' => 'recruitment_apply', '_controller' => 'App\\Controller\\GRecrutementsController::apply'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

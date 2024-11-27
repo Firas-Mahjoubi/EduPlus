@@ -448,7 +448,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.UrNVYBB"/>
+      <argument type="service" id=".service_locator.9XNsBwG"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3317,7 +3317,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.UrNVYBB"/>
+      <argument type="service" id=".service_locator.9XNsBwG"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7517,9 +7517,10 @@
         <argument key="recruitment" type="service_closure" id=".errored..service_locator.C98KNaG.App\Entity\Recruitment"/>
       </argument>
     </service>
-    <service id=".service_locator.UrNVYBB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.9XNsBwG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\GRecrutementsController::apply" type="service_closure" id=".service_locator.C98KNaG"/>
         <argument key="App\Controller\GRecrutementsController::authorDelete1" type="service_closure" id=".service_locator.yxANsRR"/>
         <argument key="App\Controller\GRecrutementsController::authorDetails" type="service_closure" id=".service_locator.q2iM02Z"/>
         <argument key="App\Controller\GRecrutementsController::edit" type="service_closure" id=".service_locator.C98KNaG"/>
@@ -7530,6 +7531,7 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
+        <argument key="App\Controller\GRecrutementsController:apply" type="service_closure" id=".service_locator.C98KNaG"/>
         <argument key="App\Controller\GRecrutementsController:authorDelete1" type="service_closure" id=".service_locator.yxANsRR"/>
         <argument key="App\Controller\GRecrutementsController:authorDetails" type="service_closure" id=".service_locator.q2iM02Z"/>
         <argument key="App\Controller\GRecrutementsController:edit" type="service_closure" id=".service_locator.C98KNaG"/>
@@ -9748,7 +9750,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.UrNVYBB"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.9XNsBwG"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9774,7 +9776,7 @@
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.h77nnpz" alias=".service_locator.yxANsRR"/>
     <service id=".service_locator.uDZJQkm" alias=".service_locator.C98KNaG"/>
-    <service id=".service_locator.6NL0R0H" alias=".service_locator.UrNVYBB"/>
+    <service id=".service_locator.St6uQlQ" alias=".service_locator.9XNsBwG"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.uA53ZNY" alias=".service_locator.2U5jyuq"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>

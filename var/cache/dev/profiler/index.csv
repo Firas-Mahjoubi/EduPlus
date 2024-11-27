@@ -880,3 +880,6 @@ a98035,127.0.0.1,GET,http://127.0.0.1:8000/g/recrutements/dash,1732730632,8e210a
 2c97a0,127.0.0.1,GET,http://127.0.0.1:8000/g/recrutements/dash,1732730638,,200,request
 82de81,127.0.0.1,GET,http://127.0.0.1:8000/img/favicon.ico,1732730639,04ffa8,404,request
 04ffa8,127.0.0.1,GET,http://127.0.0.1:8000/img/favicon.ico,1732730639,,404,request
+541177,127.0.0.1,GET,http://127.0.0.1:8000/g/recrutements/dash,1732735063,,200,request
+d23757,127.0.0.1,GET,http://127.0.0.1:8000/g/recrutements/,1732735065,a48647,500,request
+a48647,127.0.0.1,GET,http://127.0.0.1:8000/g/recrutements/,1732735065,,500,request
