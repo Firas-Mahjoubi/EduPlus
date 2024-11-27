@@ -116,41 +116,40 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 43
         yield "    
-    ";
+ ";
         // line 44
         yield from         $this->loadTemplate("footer.html.twig", "base.html.twig", 44)->unwrap()->yield($context);
         // line 45
-        yield "
-    <!-- Back to Top -->
+        yield "    <!-- Back to Top -->
     <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
     <script src=\"";
-        // line 52
+        // line 51
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 53
+        // line 52
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 54
+        // line 53
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 55
+        // line 54
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 56
+        // line 55
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         yield "\"></script>
 
     <!-- Template Javascript -->
     <script src=\"";
-        // line 59
+        // line 58
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         yield "\"></script>
 </body>
@@ -258,7 +257,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  230 => 42,  217 => 41,  206 => 12,  193 => 11,  170 => 6,  154 => 59,  148 => 56,  144 => 55,  140 => 54,  136 => 53,  132 => 52,  123 => 45,  121 => 44,  118 => 43,  116 => 41,  113 => 40,  111 => 39,  103 => 34,  97 => 31,  91 => 28,  87 => 27,  72 => 15,  68 => 13,  66 => 11,  58 => 6,  51 => 1,);
+        return array (  229 => 42,  216 => 41,  205 => 12,  192 => 11,  169 => 6,  153 => 58,  147 => 55,  143 => 54,  139 => 53,  135 => 52,  131 => 51,  123 => 45,  121 => 44,  118 => 43,  116 => 41,  113 => 40,  111 => 39,  103 => 34,  97 => 31,  91 => 28,  87 => 27,  72 => 15,  68 => 13,  66 => 11,  58 => 6,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -306,8 +305,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     {% block body %}
     {% endblock %}
     
-    {% include 'footer.html.twig' %}
-
+ {% include 'footer.html.twig' %}
     <!-- Back to Top -->
     <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 
@@ -325,6 +323,6 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
 </body>
 
 </html>
-", "base.html.twig", "C:\\Users\\ghass\\Desktop\\Nouveau dossier (2)\\EduPlus\\EduPlus\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\base.html.twig");
     }
 }

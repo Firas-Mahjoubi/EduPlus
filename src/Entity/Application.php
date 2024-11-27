@@ -6,6 +6,7 @@ use App\Repository\ApplicationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
+use App\Entity\Recruitment;
 
 #[ORM\Entity(repositoryClass: ApplicationRepository::class)]
 class Application
@@ -18,6 +19,10 @@ class Application
     #[ORM\ManyToOne(targetEntity: User::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $candidat = null;
+
+    #[ORM\ManyToOne(targetEntity: Recruitment::class, inversedBy: "candidatures")]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Recruitment $recruitment = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $dateSoumission = null;
@@ -45,6 +50,18 @@ class Application
     public function setCandidat(?User $candidat): static
     {
         $this->candidat = $candidat;
+
+        return $this;
+    }
+
+    public function getRecruitment(): ?Recruitment
+    {
+        return $this->recruitment;
+    }
+
+    public function setRecruitment(?Recruitment $recruitment): static
+    {
+        $this->recruitment = $recruitment;
 
         return $this;
     }

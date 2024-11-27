@@ -16,7 +16,9 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/g/clubs' => [[['_route' => 'app_g_clubs', '_controller' => 'App\\Controller\\GClubsController::index'], null, null, null, false, false, null]],
         '/g/events' => [[['_route' => 'app_g_events', '_controller' => 'App\\Controller\\GEventsController::index'], null, null, null, false, false, null]],
-        '/g/recrutements' => [[['_route' => 'app_g_recrutements', '_controller' => 'App\\Controller\\GRecrutementsController::index'], null, null, null, false, false, null]],
+        '/g/recrutements/dash' => [[['_route' => 'app_show_all', '_controller' => 'App\\Controller\\GRecrutementsController::show_all'], null, null, null, false, false, null]],
+        '/g/recrutements' => [[['_route' => 'app_show_all_user', '_controller' => 'App\\Controller\\GRecrutementsController::show_alluser'], null, null, null, true, false, null]],
+        '/g/recrutements/add' => [[['_route' => 'recruitment_add', '_controller' => 'App\\Controller\\GRecrutementsController::recruitmentAdd'], null, null, null, false, false, null]],
         '/g/ressources' => [[['_route' => 'app_g_ressources', '_controller' => 'App\\Controller\\GRessourcesController::index'], null, null, null, false, false, null]],
         '/g/users' => [[['_route' => 'app_g_users', '_controller' => 'App\\Controller\\GUsersController::index'], null, null, null, false, false, null]],
     ],
@@ -40,6 +42,13 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/g/recrutements/(?'
+                    .'|de(?'
+                        .'|tails/([^/]++)(*:240)'
+                        .'|lete/([^/]++)(*:261)'
+                    .')'
+                    .'|edit/([^/]++)(*:283)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -50,8 +59,11 @@ return [
         148 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        191 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        240 => [[['_route' => 'recruitement_details', '_controller' => 'App\\Controller\\GRecrutementsController::authorDetails'], ['id'], null, null, false, true, null]],
+        261 => [[['_route' => 'Recruitment_delete', '_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], ['id'], null, null, false, true, null]],
+        283 => [
+            [['_route' => 'recruitment_edit', '_controller' => 'App\\Controller\\GRecrutementsController::edit'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

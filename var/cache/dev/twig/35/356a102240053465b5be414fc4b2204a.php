@@ -46,120 +46,56 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "header.html.twig"));
 
         // line 1
-        yield "
-    <!-- Navbar & Carousel Start -->
-    <div class=\"container-fluid position-relative p-0\">
-        <nav class=\"navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0\">
-            <a href=\"index.html\" class=\"navbar-brand p-0\">
-                <h1 class=\"m-0\"><i class=\"fa fa-user-tie me-2\"></i>EduPlus</h1>
-            </a>
-            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarCollapse\">
-                <span class=\"fa fa-bars\"></span>
-            </button>
-            <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
-                <div class=\"navbar-nav ms-auto py-0\">
-                    <a href=\"index.html\" class=\"nav-item nav-link active\">Home</a>
-                    <a href=\"about.html\" class=\"nav-item nav-link\">About</a>
-                    <a href=\"service.html\" class=\"nav-item nav-link\">Services</a>
-                    <div class=\"nav-item dropdown\">
-                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
-                        <div class=\"dropdown-menu m-0\">
-                            <a href=\"blog.html\" class=\"dropdown-item\">Blog Grid</a>
-                            <a href=\"detail.html\" class=\"dropdown-item\">Blog Detail</a>
-                        </div>
-                    </div>
-                    <div class=\"nav-item dropdown\">
-                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>
-                        <div class=\"dropdown-menu m-0\">
-                            <a href=\"price.html\" class=\"dropdown-item\">Pricing Plan</a>
-                            <a href=\"feature.html\" class=\"dropdown-item\">Our features</a>
-                            <a href=\"team.html\" class=\"dropdown-item\">Team Members</a>
-                            <a href=\"testimonial.html\" class=\"dropdown-item\">Testimonial</a>
-                            <a href=\"quote.html\" class=\"dropdown-item\">Free Quote</a>
-                        </div>
-                    </div>
-                    <a href=\"contact.html\" class=\"nav-item nav-link\">Contact</a>
-                </div>
-                <butaton type=\"button\" class=\"btn text-primary ms-3\" data-bs-toggle=\"modal\" data-bs-target=\"#searchModal\"><i class=\"fa fa-search\"></i></butaton>
-                <a href=\"https://htmlcodex.com/startup-company-website-template\" class=\"btn btn-primary py-2 px-4 ms-3\">button</a>
-            </div>
-        </nav>
-
-        <div id=\"header-carousel\" class=\"carousel slide carousel-fade\" data-bs-ride=\"carousel\">
-            <div class=\"carousel-inner\">
-                <div class=\"carousel-item active\">
-                    <img class=\"w-100\" src=\"";
-        // line 43
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/carousel-1.jpg"), "html", null, true);
-        yield "\" alt=\"Image\">
-                    <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
-                        <div class=\"p-3\" style=\"max-width: 900px;\">
-                            <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                            <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                            <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                            <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"carousel-item\">
-                    <img class=\"w-100\" src=\"";
-        // line 54
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/carousel-2.jpg"), "html", null, true);
-        yield "\" alt=\"Image\">
-                    <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
-                        <div class=\"p-3\" style=\"max-width: 900px;\">
-                            <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                            <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                            <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                            <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#header-carousel\"
-                data-bs-slide=\"prev\">
-                <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-                <span class=\"visually-hidden\">Previous</span>
-            </button>
-            <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#header-carousel\"
-                data-bs-slide=\"next\">
-                <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-                <span class=\"visually-hidden\">Next</span>
-            </button>
+        yield "<!-- Navbar Start -->
+<div class=\"container-fluid p-0\">
+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light px-5\">
+        <a href=\"#\" class=\"navbar-brand\">
+            <h1 class=\"m-0 text-primary\"><i class=\"fa fa-graduation-cap me-2\"></i>EduPlus</h1>
+        </a>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ms-auto\">
+                <li class=\"nav-item\">
+                    <a href=\"#\" class=\"nav-link active\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#about\" class=\"nav-link\">À Propos</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#services\" class=\"nav-link\">Services</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#recruitements\" class=\"nav-link\">Recrutements</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#contact\" class=\"nav-link\">Contact</a>
+                </li>
+            </ul>
+            <a href=\"#\" class=\"btn btn-primary ms-3\">Se Connecter</a>
         </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<!-- Header Start -->
+<div class=\"container-fluid bg-primary text-white text-center py-5\">
+    <div class=\"container py-5\">
+        <h1 class=\"display-4\">Bienvenue sur EduPlus</h1>
+        <p class=\"lead mt-3\">La plateforme idéale pour découvrir et postuler à des opportunités de recrutement universitaire.</p>
+        <a href=\"#recruitements\" class=\"btn btn-light btn-lg mt-4\">Explorer les Recrutements</a>
     </div>
-    <!-- Navbar & Carousel End -->
+</div>
+<!-- Header End -->
 
 
-    <!-- Full Screen Search Start -->
-    <div class=\"modal fade\" id=\"searchModal\" tabindex=\"-1\">
-        <div class=\"modal-dialog modal-fullscreen\">
-            <div class=\"modal-content\" style=\"background: rgba(9, 30, 62, .7);\">
-                <div class=\"modal-header border-0\">
-                    <button type=\"button\" class=\"btn bg-white btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
-                </div>
-                <div class=\"modal-body d-flex align-items-center justify-content-center\">
-                    <div class=\"input-group\" style=\"max-width: 600px;\">
-                        <input type=\"text\" class=\"form-control bg-transparent border-primary p-3\" placeholder=\"Type search keyword\">
-                        <button class=\"btn btn-primary px-4\"><i class=\"bi bi-search\"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
-
-
-    
-
-
-   
-
+<!-- Recruitements Section End -->
 
 
 
 ";
-        // line 107
+        // line 49
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -202,127 +138,62 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
     /**
      * @codeCoverageIgnore
      */
-    public function isTraitable(): bool
-    {
-        return false;
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
     public function getDebugInfo(): array
     {
-        return array (  163 => 107,  107 => 54,  93 => 43,  49 => 1,);
+        return array (  99 => 49,  49 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("
-    <!-- Navbar & Carousel Start -->
-    <div class=\"container-fluid position-relative p-0\">
-        <nav class=\"navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0\">
-            <a href=\"index.html\" class=\"navbar-brand p-0\">
-                <h1 class=\"m-0\"><i class=\"fa fa-user-tie me-2\"></i>EduPlus</h1>
-            </a>
-            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarCollapse\">
-                <span class=\"fa fa-bars\"></span>
-            </button>
-            <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
-                <div class=\"navbar-nav ms-auto py-0\">
-                    <a href=\"index.html\" class=\"nav-item nav-link active\">Home</a>
-                    <a href=\"about.html\" class=\"nav-item nav-link\">About</a>
-                    <a href=\"service.html\" class=\"nav-item nav-link\">Services</a>
-                    <div class=\"nav-item dropdown\">
-                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
-                        <div class=\"dropdown-menu m-0\">
-                            <a href=\"blog.html\" class=\"dropdown-item\">Blog Grid</a>
-                            <a href=\"detail.html\" class=\"dropdown-item\">Blog Detail</a>
-                        </div>
-                    </div>
-                    <div class=\"nav-item dropdown\">
-                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>
-                        <div class=\"dropdown-menu m-0\">
-                            <a href=\"price.html\" class=\"dropdown-item\">Pricing Plan</a>
-                            <a href=\"feature.html\" class=\"dropdown-item\">Our features</a>
-                            <a href=\"team.html\" class=\"dropdown-item\">Team Members</a>
-                            <a href=\"testimonial.html\" class=\"dropdown-item\">Testimonial</a>
-                            <a href=\"quote.html\" class=\"dropdown-item\">Free Quote</a>
-                        </div>
-                    </div>
-                    <a href=\"contact.html\" class=\"nav-item nav-link\">Contact</a>
-                </div>
-                <butaton type=\"button\" class=\"btn text-primary ms-3\" data-bs-toggle=\"modal\" data-bs-target=\"#searchModal\"><i class=\"fa fa-search\"></i></butaton>
-                <a href=\"https://htmlcodex.com/startup-company-website-template\" class=\"btn btn-primary py-2 px-4 ms-3\">button</a>
-            </div>
-        </nav>
-
-        <div id=\"header-carousel\" class=\"carousel slide carousel-fade\" data-bs-ride=\"carousel\">
-            <div class=\"carousel-inner\">
-                <div class=\"carousel-item active\">
-                    <img class=\"w-100\" src=\"{{asset('img/carousel-1.jpg')}}\" alt=\"Image\">
-                    <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
-                        <div class=\"p-3\" style=\"max-width: 900px;\">
-                            <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                            <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                            <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                            <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"carousel-item\">
-                    <img class=\"w-100\" src=\"{{asset('img/carousel-2.jpg')}}\" alt=\"Image\">
-                    <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
-                        <div class=\"p-3\" style=\"max-width: 900px;\">
-                            <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                            <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                            <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                            <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#header-carousel\"
-                data-bs-slide=\"prev\">
-                <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-                <span class=\"visually-hidden\">Previous</span>
-            </button>
-            <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#header-carousel\"
-                data-bs-slide=\"next\">
-                <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-                <span class=\"visually-hidden\">Next</span>
-            </button>
+        return new Source("<!-- Navbar Start -->
+<div class=\"container-fluid p-0\">
+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light px-5\">
+        <a href=\"#\" class=\"navbar-brand\">
+            <h1 class=\"m-0 text-primary\"><i class=\"fa fa-graduation-cap me-2\"></i>EduPlus</h1>
+        </a>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ms-auto\">
+                <li class=\"nav-item\">
+                    <a href=\"#\" class=\"nav-link active\">Accueil</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#about\" class=\"nav-link\">À Propos</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#services\" class=\"nav-link\">Services</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#recruitements\" class=\"nav-link\">Recrutements</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#contact\" class=\"nav-link\">Contact</a>
+                </li>
+            </ul>
+            <a href=\"#\" class=\"btn btn-primary ms-3\">Se Connecter</a>
         </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<!-- Header Start -->
+<div class=\"container-fluid bg-primary text-white text-center py-5\">
+    <div class=\"container py-5\">
+        <h1 class=\"display-4\">Bienvenue sur EduPlus</h1>
+        <p class=\"lead mt-3\">La plateforme idéale pour découvrir et postuler à des opportunités de recrutement universitaire.</p>
+        <a href=\"#recruitements\" class=\"btn btn-light btn-lg mt-4\">Explorer les Recrutements</a>
     </div>
-    <!-- Navbar & Carousel End -->
+</div>
+<!-- Header End -->
 
 
-    <!-- Full Screen Search Start -->
-    <div class=\"modal fade\" id=\"searchModal\" tabindex=\"-1\">
-        <div class=\"modal-dialog modal-fullscreen\">
-            <div class=\"modal-content\" style=\"background: rgba(9, 30, 62, .7);\">
-                <div class=\"modal-header border-0\">
-                    <button type=\"button\" class=\"btn bg-white btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
-                </div>
-                <div class=\"modal-body d-flex align-items-center justify-content-center\">
-                    <div class=\"input-group\" style=\"max-width: 600px;\">
-                        <input type=\"text\" class=\"form-control bg-transparent border-primary p-3\" placeholder=\"Type search keyword\">
-                        <button class=\"btn btn-primary px-4\"><i class=\"bi bi-search\"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
-
-
-    
-
-
-   
+<!-- Recruitements Section End -->
 
 
 
-
-{% block body %}{% endblock %}", "header.html.twig", "C:\\Users\\ghass\\Desktop\\Nouveau dossier (2)\\EduPlus\\EduPlus\\templates\\header.html.twig");
+{% block body %}{% endblock %}
+", "header.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\header.html.twig");
     }
 }
