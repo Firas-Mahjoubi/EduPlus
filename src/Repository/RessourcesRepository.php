@@ -9,39 +9,20 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @extends ServiceEntityRepository<Ressource>
  */
-class RessourceRepository extends ServiceEntityRepository
+class RessourcesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Ressource::class);
     }
 
-    //    /**
-    //     * @return Ressource[] Returns an array of Ressource objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('r')
-    //            ->andWhere('r.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('r.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Ressource
-    //    {
-    //        return $this->createQueryBuilder('r')
-    //            ->andWhere('r.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
-
-    public function findBySearch(string $search)
+    /**
+     * Find resources by a search term in their name.
+     *
+     * @param string $search The search term.
+     * @return Ressource[] Returns an array of Ressource objects.
+     */
+    public function findBySearch(string $search): array
     {
         return $this->createQueryBuilder('r')
             ->andWhere('r.nomRessource LIKE :search')
@@ -49,5 +30,4 @@ class RessourceRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    
 }

@@ -297,6 +297,6 @@ class __TwigTemplate_6914047afbe84649c88141a65519d7c3 extends Template
     </div>
 </div>
 {% endblock %}
-", "registration/register.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\registration\\register.html.twig");
+", "registration/register.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\registration\\register.html.twig");
     }
 }

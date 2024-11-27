@@ -201,6 +201,6 @@ class __TwigTemplate_eb403659300303efc9b8c9d82e752ac6 extends Template
         <p>No pending members at the moment.</p>
     {% endif %}
 {% endblock %}
-", "club/pending_members.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\club\\pending_members.html.twig");
+", "club/pending_members.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\pending_members.html.twig");
     }
 }

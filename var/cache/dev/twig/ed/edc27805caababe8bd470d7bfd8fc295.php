@@ -295,6 +295,6 @@ class __TwigTemplate_22cde5fd43be502d0765af65474eda4a extends Template
         </div>
     </div>
 {% endblock %}
-", "club/edit.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\club\\edit.html.twig");
+", "club/edit.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\edit.html.twig");
     }
 }

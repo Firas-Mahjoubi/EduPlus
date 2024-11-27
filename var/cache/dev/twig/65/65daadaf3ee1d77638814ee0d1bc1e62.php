@@ -246,6 +246,6 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
         </div>
     </div>
 {% endblock %}
-", "club/index.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\club\\index.html.twig");
+", "club/index.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\index.html.twig");
     }
 }
