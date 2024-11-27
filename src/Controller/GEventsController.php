@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Repository\EventRepository;
-use App\Repository\UserRepository;
+use App\Repository\ClubRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,17 +16,18 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/events')]
 class GEventsController extends AbstractController
 {
+    // Display all events
     #[Route('/', name: 'app_g_events')]
     public function index(EventRepository $eventRepository): Response
     {
-        // Fetch all events
         $events = $eventRepository->findAll();
 
         return $this->render('g_events/index.html.twig', [
-            'events' => $events,  // Pass events to the template
+            'events' => $events,
         ]);
     }
 
+    // Add a new event
     #[Route('/add', name: 'app_g_events_add', methods: ['GET', 'POST'])]
     public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -35,35 +36,23 @@ class GEventsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Handle file upload for the event image
+            // Handle image upload
             $image = $form->get('image')->getData();
             if ($image) {
                 $newFilename = uniqid() . '.' . $image->guessExtension();
-
-                // Move the file to the directory where images are stored
                 try {
                     $image->move(
-                        $this->getParameter('event_pictures_directory'), // Directory path
+                        $this->getParameter('event_pictures_directory'),
                         $newFilename
                     );
+                    $event->setImage($newFilename);
                 } catch (FileException $e) {
-                    // Handle exception if the file couldn't be moved
-                    $this->addFlash('error', 'An error occurred while uploading the image.');
+                    $this->addFlash('error', 'Error uploading the image.');
                 }
-
-                // Save the filename in the database
-                $event->setImage($newFilename);
             }
 
-            // Persist the event to the database
+            // Persist the event and save participants
             $entityManager->persist($event);
-            $entityManager->flush();
-
-            // Associate the selected participants with the event
-            $participants = $form->get('participants')->getData();
-            foreach ($participants as $participant) {
-                $event->addParticipant($participant);
-            }
             $entityManager->flush();
 
             $this->addFlash('success', 'Event added successfully.');
@@ -76,11 +65,11 @@ class GEventsController extends AbstractController
         ]);
     }
 
+    // Update an existing event
     #[Route('/update/{id}', name: 'app_g_events_update', methods: ['GET', 'POST'])]
     public function update(int $id, Request $request, EntityManagerInterface $entityManager, EventRepository $eventRepository): Response
     {
         $event = $eventRepository->find($id);
-
         if (!$event) {
             throw $this->createNotFoundException('Event not found.');
         }
@@ -89,39 +78,32 @@ class GEventsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Handle file upload if a new picture is uploaded
+            // Handle new image upload
             $pictureFile = $form->get('image')->getData();
-
             if ($pictureFile) {
-                $uploadDirectory = $this->getParameter('event_pictures_directory'); // Get the upload directory
-
-                // Generate a unique filename for the image
                 $newFilename = uniqid() . '.' . $pictureFile->guessExtension();
-
-                // Move the uploaded file to the upload directory
                 try {
-                    $pictureFile->move($uploadDirectory, $newFilename);
-                    // Set the picture filename in the event entity
+                    $pictureFile->move(
+                        $this->getParameter('event_pictures_directory'),
+                        $newFilename
+                    );
                     $event->setImage($newFilename);
                 } catch (FileException $e) {
-                    // Handle the error, e.g., log it, or show a user-friendly message
                     $this->addFlash('error', 'Failed to upload the image.');
-                    return $this->redirectToRoute('app_g_events_update', ['id' => $id]);
                 }
             }
 
-            // Handle participants update (remove any participants that are unchecked)
+            // Update participants
             $participants = $form->get('participants')->getData();
-            $event->clearParticipants(); // Remove existing participants
+            $event->clearParticipants(); // Clear existing participants
             foreach ($participants as $participant) {
                 $event->addParticipant($participant);
             }
 
-            // Persist the updated event to the database
             $entityManager->flush();
-
             $this->addFlash('success', 'Event updated successfully.');
-            return $this->redirectToRoute('app_g_events_show', ['id' => $event->getId()]);
+
+            return $this->redirectToRoute('app_g_events');
         }
 
         return $this->render('g_events/update.html.twig', [
@@ -129,6 +111,21 @@ class GEventsController extends AbstractController
         ]);
     }
 
+    // Show a single event
+    #[Route('/show/{id}', name: 'app_g_events_show', methods: ['GET'])]
+    public function show(int $id, EventRepository $eventRepository): Response
+    {
+        $event = $eventRepository->find($id);
+        if (!$event) {
+            throw $this->createNotFoundException('Event not found.');
+        }
+
+        return $this->render('g_events/show.html.twig', [
+            'event' => $event,
+        ]);
+    }
+
+    // Delete an event
     #[Route('/delete/{id}', name: 'app_g_events_delete', methods: ['GET'])]
     public function delete(Event $event, EntityManagerInterface $entityManager): Response
     {
@@ -139,8 +136,8 @@ class GEventsController extends AbstractController
 
         return $this->redirectToRoute('app_g_events');
     }
-    #[Route('/show/{id}', name: 'app_g_events_show')]
-public function show(int $id, EventRepository $eventRepository): Response
+    #[Route('/participate/{id}', name: 'app_event_participate', methods: ['POST', 'GET'])]
+public function participate(int $id, EventRepository $eventRepository, EntityManagerInterface $entityManager): Response
 {
     $event = $eventRepository->find($id);
 
@@ -148,9 +145,22 @@ public function show(int $id, EventRepository $eventRepository): Response
         throw $this->createNotFoundException('Event not found.');
     }
 
-    return $this->render('g_events/show.html.twig', [
-        'event' => $event,
-    ]);
+    $user = $this->getUser(); // Ensure the user is logged in
+    if (!$user) {
+        $this->addFlash('error', 'You must be logged in to participate in events.');
+        return $this->redirectToRoute('app_g_events');
+    }
+
+    // Add the current user as a participant if not already added
+    if (!$event->getParticipants()->contains($user)) {
+        $event->addParticipant($user);
+        $entityManager->flush();
+        $this->addFlash('success', 'You have successfully participated in the event.');
+    } else {
+        $this->addFlash('info', 'You are already participating in this event.');
+    }
+
+    return $this->redirectToRoute('app_g_events');
 }
 
 }

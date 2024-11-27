@@ -64,11 +64,11 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
                 <a href=\"";
         // line 13
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">About</a>
+        yield "\" class=\"nav-item nav-link\">Clubs</a>
                 <a href=\"";
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">Services</a>
+        yield "\" class=\"nav-item nav-link\">Events</a>
                 <div class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
                     <div class=\"dropdown-menu m-0\">
@@ -170,28 +170,27 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
             <div class=\"carousel-item active\">
                 <img class=\"w-100\" src=\"";
         // line 67
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/carousel-1.jpg"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/esprit1.jpg"), "html", null, true);
         yield "\" alt=\"Image\">
                 <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
                     <div class=\"p-3\" style=\"max-width: 900px;\">
-                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                        <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                        <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
-                    </div>
+                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Welcome to ESPRIT</h5>
+                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Get ready to join our club</h1>
+                        ";
+        // line 74
+        yield "                    </div>
                 </div>
             </div>
             <div class=\"carousel-item\">
                 <img class=\"w-100\" src=\"";
         // line 78
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/carousel-2.jpg"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/esprit2.jpg"), "html", null, true);
         yield "\" alt=\"Image\">
                 <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
                     <div class=\"p-3\" style=\"max-width: 900px;\">
-                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                        <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                        <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
+                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Welcome to ESPRIT</h5>
+                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Get ready to join our club</h1>
+                       
                     </div>
                 </div>
             </div>
@@ -227,7 +226,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
 <!-- Full Screen Search End -->
 
 ";
-        // line 119
+        // line 118
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -280,7 +279,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  231 => 119,  187 => 78,  173 => 67,  162 => 58,  156 => 56,  149 => 52,  145 => 51,  135 => 46,  127 => 41,  123 => 39,  121 => 38,  112 => 32,  106 => 29,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  81 => 19,  77 => 18,  70 => 14,  66 => 13,  62 => 12,  49 => 1,);
+        return array (  230 => 118,  187 => 78,  181 => 74,  173 => 67,  162 => 58,  156 => 56,  149 => 52,  145 => 51,  135 => 46,  127 => 41,  123 => 39,  121 => 38,  112 => 32,  106 => 29,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  81 => 19,  77 => 18,  70 => 14,  66 => 13,  62 => 12,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -297,8 +296,8 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <div class=\"navbar-nav ms-auto py-0\">
                 <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link active\">Home</a>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">About</a>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Services</a>
+                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Clubs</a>
+                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Events</a>
                 <div class=\"nav-item dropdown\">
                     <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
                     <div class=\"dropdown-menu m-0\">
@@ -351,24 +350,23 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
     <div id=\"header-carousel\" class=\"carousel slide carousel-fade\" data-bs-ride=\"carousel\">
         <div class=\"carousel-inner\">
             <div class=\"carousel-item active\">
-                <img class=\"w-100\" src=\"{{ asset('img/carousel-1.jpg') }}\" alt=\"Image\">
+                <img class=\"w-100\" src=\"{{ asset('img/esprit1.jpg') }}\" alt=\"Image\">
                 <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
                     <div class=\"p-3\" style=\"max-width: 900px;\">
-                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                        <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                        <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
+                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Welcome to ESPRIT</h5>
+                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Get ready to join our club</h1>
+                        {# <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
+                        <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a> #}
                     </div>
                 </div>
             </div>
             <div class=\"carousel-item\">
-                <img class=\"w-100\" src=\"{{ asset('img/carousel-2.jpg') }}\" alt=\"Image\">
+                <img class=\"w-100\" src=\"{{ asset('img/esprit2.jpg') }}\" alt=\"Image\">
                 <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
                     <div class=\"p-3\" style=\"max-width: 900px;\">
-                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Creative & Innovative</h5>
-                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Creative & Innovative Digital Solution</h1>
-                        <a href=\"quote.html\" class=\"btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft\">Free Quote</a>
-                        <a href=\"\" class=\"btn btn-outline-light py-md-3 px-md-5 animated slideInRight\">Contact Us</a>
+                        <h5 class=\"text-white text-uppercase mb-3 animated slideInDown\">Welcome to ESPRIT</h5>
+                        <h1 class=\"display-1 text-white mb-md-4 animated zoomIn\">Get ready to join our club</h1>
+                       
                     </div>
                 </div>
             </div>

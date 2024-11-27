@@ -1,11 +1,11 @@
 <?php
 // src/Controller/GUsersController.php
-
 namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
 use App\Enum\UserRole;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -70,4 +70,6 @@ class GUsersController extends AbstractController
             'users' => $users,
         ]);
     }
+
+   
 }

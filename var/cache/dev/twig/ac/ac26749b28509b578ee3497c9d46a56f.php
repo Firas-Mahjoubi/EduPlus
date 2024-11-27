@@ -328,6 +328,6 @@ class __TwigTemplate_3831aa45021a24de712836837acfc0d1 extends Template
             {{ form_end(form) }}
         </div>
     {% endblock %}
-    ", "g_events/update.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_events\\update.html.twig");
+    ", "g_events/update.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\update.html.twig");
     }
 }

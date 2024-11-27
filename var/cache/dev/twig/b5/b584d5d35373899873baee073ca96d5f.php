@@ -235,6 +235,6 @@ class __TwigTemplate_2611842b559bef8e1a1dd99ebbe7d93b extends Template
         <a href=\"{{ path('app_g_events') }}\" class=\"btn btn-secondary mt-3\">Back to Events</a>
     </div>
 {% endblock %}
-", "g_events/show.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_events\\show.html.twig");
+", "g_events/show.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\show.html.twig");
     }
 }

@@ -183,13 +183,14 @@ class __TwigTemplate_366b8a143490fa63f919744bf86e4254 extends Template
                 yield " ";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 39), "prenom", [], "any", false, false, false, 39), "html", null, true);
                 yield "</h4>
+                                <!-- Display the role of the member, not the user -->
                                 <p class=\"text-uppercase m-0\">";
-                // line 40
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 40), "role", [], "any", false, false, false, 40), "value", [], "any", false, false, false, 40), "html", null, true);
+                // line 41
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "role", [], "any", false, false, false, 41), "value", [], "any", false, false, false, 41), "html", null, true);
                 yield "</p>
                                 <small>Joined: ";
-                // line 41
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["member"], "dateAdhesion", [], "any", false, false, false, 41), "Y-m-d"), "html", null, true);
+                // line 42
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["member"], "dateAdhesion", [], "any", false, false, false, 42), "Y-m-d"), "html", null, true);
                 yield "</small>
                             </div>
                         </div>
@@ -207,10 +208,10 @@ class __TwigTemplate_366b8a143490fa63f919744bf86e4254 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['member'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 46
+            // line 47
             yield "            ";
         }
-        // line 47
+        // line 48
         yield "        </div>
     </div>
 </div>
@@ -245,7 +246,7 @@ class __TwigTemplate_366b8a143490fa63f919744bf86e4254 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  214 => 47,  211 => 46,  192 => 41,  188 => 40,  182 => 39,  172 => 31,  164 => 27,  156 => 24,  151 => 23,  149 => 22,  140 => 19,  122 => 18,  118 => 16,  116 => 15,  110 => 12,  104 => 8,  91 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  215 => 48,  212 => 47,  193 => 42,  189 => 41,  182 => 39,  172 => 31,  164 => 27,  156 => 24,  151 => 23,  149 => 22,  140 => 19,  122 => 18,  118 => 16,  116 => 15,  110 => 12,  104 => 8,  91 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -289,7 +290,8 @@ class __TwigTemplate_366b8a143490fa63f919744bf86e4254 extends Template
                             </div>
                             <div class=\"text-center py-4\">
                                 <h4 class=\"text-primary\">{{ member.utilisateur.nom }} {{ member.utilisateur.prenom }}</h4>
-                                <p class=\"text-uppercase m-0\">{{ member.utilisateur.role.value }}</p>
+                                <!-- Display the role of the member, not the user -->
+                                <p class=\"text-uppercase m-0\">{{ member.role.value }}</p>
                                 <small>Joined: {{ member.dateAdhesion|date('Y-m-d') }}</small>
                             </div>
                         </div>
@@ -300,6 +302,6 @@ class __TwigTemplate_366b8a143490fa63f919744bf86e4254 extends Template
     </div>
 </div>
 {% endblock %}
-", "club/showclubmembers.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\showclubmembers.html.twig");
+", "club/showclubmembers.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\showclubmembers.html.twig");
     }
 }

@@ -3,37 +3,60 @@
 {% block title %}Events List{% endblock %}
 
 {% block body %}
+
     <div class="container mt-5">
         <h1>Events</h1>
 
-        <a href="{{ path('app_g_events_add') }}" class="btn btn-primary mb-3">Add New Event</a>
+        {# <a href="{{ path('app_g_events_add') }}" class="btn btn-primary mb-3">Add New Event</a> #}
 
-        {% if events is not empty %}
-            <div class="row">
-                {% for event in events %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            {% if event.image %}
-                                <img src="{{ asset('uploads/events/' ~ event.image) }}" class="card-img-top" alt="Event Image">
-                            {% else %}
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="No Image Available">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ event.titre }}</h5>
-                                <p class="card-text">
-                                    <strong>Start Date:</strong> {{ event.datedebut|date('d-m-Y H:i') }}<br>
-                                    <strong>End Date:</strong> {{ event.datefin|date('d-m-Y H:i') }}
-                                </p>
-                                <a href="{{ path('app_g_events_show', {'id': event.id}) }}" class="btn btn-info btn-sm">View</a>
-                                <a href="{{ path('app_g_events_update', {'id': event.id}) }}" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="{{ path('app_g_events_delete', {'id': event.id}) }}" class="btn btn-danger btn-sm">Delete</a>
+       
+
+
+     <!-- Events Section Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Upcoming Events</h5>
+            <h1 class="mb-0">Participate in Our Latest Events</h1>
+        </div>
+        <div class="row g-5">
+            {% for event in events %}
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="{{ loop.index0 * 0.3 }}s">
+                    <div class="event-item bg-light rounded overflow-hidden">
+                        <div class="event-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="{{ event.image ? asset('uploads/events/' ~ event.image) : asset('img/default-event.jpg') }}" alt="Event Image">
+                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="#">
+                                {{ event.club.nom }}
+                            </a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3">
+                                    <i class="far fa-calendar-alt text-primary me-2"></i>
+                                    Start: {{ event.datedebut|date('d M Y H:i') }}
+                                </small>
+                                <small>
+                                    <i class="far fa-calendar-alt text-primary me-2"></i>
+                                    End: {{ event.datefin|date('d M Y H:i') }}
+                                </small>
                             </div>
+                            <h4 class="mb-3">{{ event.titre }}</h4>
+                            <p>{{ event.description|slice(0, 100) }}...</p>
+                            {% if app.user in event.participants %}
+                                <span class="badge bg-success">Participating</span>
+                            {% else %}
+                                <a class="btn btn-primary btn-sm" href="{{ path('app_event_participate', { id: event.id }) }}">Participate</a>
+                            {% endif %}
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        {% else %}
-            <p>No events available.</p>
-        {% endif %}
+                </div>
+            {% else %}
+                <p class="text-center text-muted">No events available at the moment.</p>
+            {% endfor %}
+        </div>
     </div>
+</div>
+<!-- Events Section End -->
+
+
 {% endblock %}

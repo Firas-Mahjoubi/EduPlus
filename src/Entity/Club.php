@@ -26,7 +26,8 @@ class Club
     #[ORM\JoinColumn(nullable: false)]
     private ?User $responsable = null;
 
-    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Member::class)]
+    // Updated to add cascade={"remove"}
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Member::class, cascade: ['remove'])]
     private Collection $members;
 
     #[ORM\OneToMany(mappedBy: 'club', targetEntity: Event::class)]
