@@ -1732,6 +1732,6 @@ $context["event"], "message", [], "any", false, false, false, 293), "headers", [
         {%- endif -%}
     {% endmacro %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
     }
 }

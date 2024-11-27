@@ -23,7 +23,11 @@ return [
         ],
         '/events/add' => [[['_route' => 'app_g_events_add', '_controller' => 'App\\Controller\\GEventsController::add'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/g/recrutements' => [[['_route' => 'app_g_recrutements', '_controller' => 'App\\Controller\\GRecrutementsController::index'], null, null, null, false, false, null]],
+        '/g/ressourcess' => [[['_route' => 'app_g_ressourcess', '_controller' => 'App\\Controller\\GRessourcesController::indexxx'], null, null, null, false, false, null]],
+        '/g/ressources/new' => [[['_route' => 'ressource_new', '_controller' => 'App\\Controller\\GRessourcesController::new'], null, null, null, false, false, null]],
         '/g/ressources' => [[['_route' => 'app_g_ressources', '_controller' => 'App\\Controller\\GRessourcesController::index'], null, null, null, false, false, null]],
+        '/g/ressources/demande' => [[['_route' => 'demande_ressource', '_controller' => 'App\\Controller\\GRessourcesController::demandeRessource'], null, null, null, false, false, null]],
+        '/admin' => [[['_route' => 'admin_dashboard', '_controller' => 'App\\Controller\\GRessourcesController::dashboard'], null, null, null, false, false, null]],
         '/user/new' => [[['_route' => 'user_new', '_controller' => 'App\\Controller\\GUsersController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/users' => [[['_route' => 'user_index', '_controller' => 'App\\Controller\\GUsersController::index'], null, ['GET' => 0], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -72,7 +76,18 @@ return [
                     .'|delete/([^/]++)(*:454)'
                     .'|participate/([^/]++)(*:482)'
                 .')'
+<<<<<<< HEAD
                 .'|/uploads/(.+)(*:504)'
+=======
+                .'|/g/ressources/(?'
+                    .'|delete/(?'
+                        .'|([^/]++)(*:498)'
+                        .'|confirm/([^/]++)(*:522)'
+                    .')'
+                    .'|edit/([^/]++)(*:544)'
+                .')'
+                .'|/uploads/(.+)(*:566)'
+>>>>>>> aebebaeb0a495688a12233f88f8765dcfbd65d2b
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -92,10 +107,19 @@ return [
         352 => [[['_route' => 'club_details', '_controller' => 'App\\Controller\\GClubsController::clubDetails'], ['id'], null, null, false, true, null]],
         375 => [[['_route' => 'club_delete', '_controller' => 'App\\Controller\\GClubsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         410 => [[['_route' => 'app_g_events_update', '_controller' => 'App\\Controller\\GEventsController::update'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+<<<<<<< HEAD
         431 => [[['_route' => 'app_g_events_show', '_controller' => 'App\\Controller\\GEventsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         454 => [[['_route' => 'app_g_events_delete', '_controller' => 'App\\Controller\\GEventsController::delete'], ['id'], ['GET' => 0], null, false, true, null]],
         482 => [[['_route' => 'app_event_participate', '_controller' => 'App\\Controller\\GEventsController::participate'], ['id'], ['POST' => 0, 'GET' => 1], null, false, true, null]],
         504 => [
+=======
+        433 => [[['_route' => 'app_g_events_delete', '_controller' => 'App\\Controller\\GEventsController::delete'], ['id'], ['GET' => 0], null, false, true, null]],
+        454 => [[['_route' => 'app_g_events_show', '_controller' => 'App\\Controller\\GEventsController::show'], ['id'], null, null, false, true, null]],
+        498 => [[['_route' => 'ressource_delete', '_controller' => 'App\\Controller\\GRessourcesController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, true, null]],
+        522 => [[['_route' => 'ressource_delete_confirm', '_controller' => 'App\\Controller\\GRessourcesController::confirmDelete'], ['id'], null, null, false, true, null]],
+        544 => [[['_route' => 'ressource_edit', '_controller' => 'App\\Controller\\GRessourcesController::edit'], ['id'], null, null, false, true, null]],
+        566 => [
+>>>>>>> aebebaeb0a495688a12233f88f8765dcfbd65d2b
             [['_route' => 'uploads', '_public' => true], ['path'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

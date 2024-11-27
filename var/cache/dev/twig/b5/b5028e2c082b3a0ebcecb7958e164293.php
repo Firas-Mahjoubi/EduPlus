@@ -990,6 +990,6 @@ class __TwigTemplate_0ef49fe294a685ef23c9553eb728626b extends Template
         </td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\doctrine\\doctrine-migrations-bundle\\Resources\\views\\Collector\\migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\vendor\\doctrine\\doctrine-migrations-bundle\\Resources\\views\\Collector\\migrations.html.twig");
     }
 }

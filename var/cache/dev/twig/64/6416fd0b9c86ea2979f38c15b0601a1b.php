@@ -234,6 +234,6 @@ class __TwigTemplate_7fc50338ab2a55417036ba032e19d202 extends Template
         </div>
     </div>
 {% endblock %}
-", "application/submit.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\application\\submit.html.twig");
+", "application/submit.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\application\\submit.html.twig");
     }
 }

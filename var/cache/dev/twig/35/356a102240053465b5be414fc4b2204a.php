@@ -402,6 +402,10 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
 <!-- Full Screen Search End -->
 
 {% block body %}{% endblock %}
+<<<<<<< HEAD
 ", "header.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\header.html.twig");
+=======
+", "header.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\header.html.twig");
+>>>>>>> aebebaeb0a495688a12233f88f8765dcfbd65d2b
     }
 }

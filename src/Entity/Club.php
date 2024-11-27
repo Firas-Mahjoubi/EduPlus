@@ -33,7 +33,7 @@ class Club
     #[ORM\OneToMany(mappedBy: 'club', targetEntity: Event::class)]
     private Collection $events;
 
-    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressources::class)]
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressource::class)]
     private Collection $resources;
 
     // New logo property
@@ -139,27 +139,6 @@ class Club
         return $this;
     }
 
-    public function getResources(): Collection
-    {
-        return $this->resources;
-    }
-
-    public function addResource(Ressources $resource): static
-    {
-        if (!$this->resources->contains($resource)) {
-            $this->resources[] = $resource;
-            $resource->setClub($this);
-        }
-
-        return $this;
-    }
-
-    public function removeResource(Ressources $resource): static
-    {
-        $this->resources->removeElement($resource);
-
-        return $this;
-    }
 
     // Getters and setters for the logo property
     public function getLogo(): ?string

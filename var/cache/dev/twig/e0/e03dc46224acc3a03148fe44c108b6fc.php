@@ -187,6 +187,6 @@ class __TwigTemplate_d93cd15041ced576973a2d74c3e5d898 extends Template
         </div>
     </div>
 {% endblock %}
-", "club/details.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\details.html.twig");
+", "club/details.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\club\\details.html.twig");
     }
 }
