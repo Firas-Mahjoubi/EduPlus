@@ -1,0 +1,25 @@
+{# templates/club/pending_members.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Pending Members{% endblock %}
+
+{% block body %}
+    <h1>Pending Members for Club: {{ club.name }}</h1>
+
+    {% if pendingMembers is not empty %}
+        <ul>
+            {% for member in pendingMembers %}
+                <li>
+                    <strong>{{ member.name }}</strong>
+                    - Status: {{ member.status }}
+                    <form method="post" action="{{ path('club_approve_member', { clubId: club.id, memberId: member.id }) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No pending members at the moment.</p>
+    {% endif %}
+{% endblock %}

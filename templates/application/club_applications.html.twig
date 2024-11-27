@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Applications for {{ club.nom }}{% endblock %}
+
+{% block body %}
+    <h1>Applications for {{ club.nom }}</h1>
+
+    {% if applications is not empty %}
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Applicant Name</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Status</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Role</th>
+
+
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in applications %}
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ application.candidat.nom }} {{ application.candidat.prenom }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">{{ application.status }}</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">
+                            {% if application.status == 'PENDING' %}
+                                <form action="{{ path('club_accept_application', {'id': club.id, 'applicationId': application.id}) }}" method="POST" style="display: inline;">
+                                    <select name="role" style="padding: 5px;">
+                                        {% for role in roles %}
+                                            <option value="{{ role }}">{{ role|capitalize }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    </td>
+                                      <td style="border: 1px solid #ddd; padding: 8px;">
+                                    <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+                                        Accept
+                                    </button>
+                                </form>
+                                <form action="{{ path('club_reject_application', {'id': club.id, 'applicationId': application.id}) }}" method="POST" style="display: inline;">
+                                    <button type="submit" style="background-color: #f44336; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+                                        Reject
+                                    </button>
+                                </form>
+                            {% else %}
+                                <span style="color: #555;">{{ application.status }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p style="margin-top: 20px; font-size: 16px; color: #555;">No applications yet.</p>
+    {% endif %}
+{% endblock %}

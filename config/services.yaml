@@ -1,25 +1,18 @@
+# config/services.yaml
+
 parameters:
-  club_logos_directory: "C:/Users/ASUS/Desktop/eduplus1/EduPlus/public/uploads/logos"
-  profile_pictures_directory: "C:/Users/ASUS/Desktop/eduplus1/EduPlus/public/uploads/profilePictures"
-  uploads_directory: "C:/Users/ghass/Desktop/EduPlus/public/uploads/ressources"
+  club_logos_directory: "../public/uploads/logos"
+  profile_pictures_directory: "../public/uploads/profilePictures"
+  event_pictures_directory: "../public/uploads/events"  # Fixed the indentation
 
 services:
-  # Default configuration for services in *this* file
   _defaults:
     autowire: true  # Automatically injects dependencies in your services
     autoconfigure: true  # Automatically registers your services as commands, event subscribers, etc.
 
-  # Makes classes in src/ available to be used as services
-  # This creates a service per class whose id is the fully-qualified class name
   App\:
     resource: "../src/"
     exclude:
       - "../src/DependencyInjection/"
       - "../src/Entity/"
       - "../src/Kernel.php"
-
-  # Explicit service definitions can go here
-  App\Repository\RessourceRepository:
-    autowire: true
-    autoconfigure: true
-    public: false

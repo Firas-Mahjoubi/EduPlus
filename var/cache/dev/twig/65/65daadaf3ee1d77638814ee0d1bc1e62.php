@@ -113,16 +113,16 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
                     <!-- Club Information -->
                     <div class=\"d-flex align-items-center border-bottom pt-5 pb-4 px-5\">
                        <img 
-    class=\"img-fluid rounded\" 
-    src=\"";
+                            class=\"img-fluid rounded\" 
+                            src=\"";
             // line 17
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/logos/" . CoreExtension::getAttribute($this->env, $this->source, $context["club"], "logo", [], "any", false, false, false, 17))), "html", null, true);
             yield "\" 
-    alt=\"";
+                            alt=\"";
             // line 18
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "nom", [], "any", false, false, false, 18), "html", null, true);
             yield "\" 
-    style=\"width: 60px; height: 60px;\">
+                            style=\"width: 60px; height: 60px;\">
                         <div class=\"ps-4\">
                             <h4 class=\"text-primary mb-1\">";
             // line 21
@@ -131,7 +131,7 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
                             <small class=\"text-uppercase\">";
             // line 22
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 22), "html", null, true);
-            yield "</small>  <!-- Assuming 'description' should be displayed here -->
+            yield "</small>  
                         </div>
                     </div>
                     <div class=\"pt-4 pb-5 px-5\">
@@ -140,13 +140,22 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 26)) > 100)) ? ((Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 26), 0, 100) . "...")) : (CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 26))), "html", null, true);
             yield "
                     </div>
+                    <div class=\"text-center\">
+                        <!-- Selection Button -->
+                        <a href=\"";
+            // line 30
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["club"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            yield "\" class=\"btn btn-primary\">Join ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "nom", [], "any", false, false, false, 30), "html", null, true);
+            yield "</a>
+                    </div>
                 </div>
             ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
-            yield "                <div class=\"testimonial-item bg-light my-4\">
+            // line 34
+            yield "                <div class=\"testimonial-item bg-light msy-4\">
                     <div class=\"pt-4 pb-5 px-5 text-center\">
                         <p class=\"text-muted\">No clubs found.</p>
                     </div>
@@ -156,7 +165,7 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['club'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 40
         yield "        </div>
     </div>
 ";
@@ -190,7 +199,7 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  160 => 36,  149 => 30,  140 => 26,  133 => 22,  129 => 21,  123 => 18,  119 => 17,  112 => 12,  107 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  169 => 40,  158 => 34,  147 => 30,  140 => 26,  133 => 22,  129 => 21,  123 => 18,  119 => 17,  112 => 12,  107 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -210,21 +219,25 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
                     <!-- Club Information -->
                     <div class=\"d-flex align-items-center border-bottom pt-5 pb-4 px-5\">
                        <img 
-    class=\"img-fluid rounded\" 
-    src=\"{{ asset('uploads/logos/' ~ club.logo) }}\" 
-    alt=\"{{ club.nom }}\" 
-    style=\"width: 60px; height: 60px;\">
+                            class=\"img-fluid rounded\" 
+                            src=\"{{ asset('uploads/logos/' ~ club.logo) }}\" 
+                            alt=\"{{ club.nom }}\" 
+                            style=\"width: 60px; height: 60px;\">
                         <div class=\"ps-4\">
                             <h4 class=\"text-primary mb-1\">{{ club.nom }}</h4>
-                            <small class=\"text-uppercase\">{{ club.description }}</small>  <!-- Assuming 'description' should be displayed here -->
+                            <small class=\"text-uppercase\">{{ club.description }}</small>  
                         </div>
                     </div>
                     <div class=\"pt-4 pb-5 px-5\">
                         {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}
                     </div>
+                    <div class=\"text-center\">
+                        <!-- Selection Button -->
+                        <a href=\"{{ path('club_details', {'id': club.id}) }}\" class=\"btn btn-primary\">Join {{ club.nom }}</a>
+                    </div>
                 </div>
             {% else %}
-                <div class=\"testimonial-item bg-light my-4\">
+                <div class=\"testimonial-item bg-light msy-4\">
                     <div class=\"pt-4 pb-5 px-5 text-center\">
                         <p class=\"text-muted\">No clubs found.</p>
                     </div>

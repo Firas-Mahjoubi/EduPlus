@@ -34,7 +34,7 @@ class GUsersController extends AbstractController
 
                 // Move the uploaded file to the directory
                 $profilePicture->move(
-                    $this->getParameter('profile_pictures_directory'), // Directory where the file will be saved
+                    $parameterBag->get('profile_pictures_directory'), // Directory where the file will be saved
                     $filename
                 );
 
@@ -44,7 +44,7 @@ class GUsersController extends AbstractController
 
             // If no role was set during form submission, use a default value
             if (!$user->getRole()) {
-                $user->setRole(UserRole::USER); // Default to 'USER' role
+                $user->setRole(UserRole::ROLE_USER); // Default to 'ROLE_USER' role
             }
 
             // Persist the user entity to the database
@@ -70,4 +70,6 @@ class GUsersController extends AbstractController
             'users' => $users,
         ]);
     }
+
+   
 }

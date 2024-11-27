@@ -97,6 +97,8 @@ class GRessourcesController extends AbstractController
         return $this->render('g_ressources/new.html.twig', [
             'form' => $form->createView(),
         ]);
+
+        
     
     }
     #[Route('/g/ressources', name: 'app_g_ressources')]
@@ -202,5 +204,14 @@ public function edit(Request $request, Ressource $ressource): Response
             'form' => $form->createView(),
         ]);
 
+
 }
+
+
+
+#[Route('/admin', name: 'admin_dashboard')]
+    public function dashboard(): Response
+    {
+        return $this->render('g_ressources/dashboard.html.twig');
+    }
 }

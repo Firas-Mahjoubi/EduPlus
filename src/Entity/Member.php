@@ -1,7 +1,9 @@
 <?php
+// src/Entity/Member.php
 
 namespace App\Entity;
 
+use App\Enum\MemberRole;
 use App\Repository\MemberRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -25,6 +27,14 @@ class Member
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $dateAdhesion = null;
 
+  
+
+
+    #[ORM\Column(enumType: MemberRole::class)]
+    private MemberRole $role = MemberRole::MEMBER; // Default role
+
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -33,7 +43,6 @@ class Member
     public function setId(int $id): static
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -45,7 +54,6 @@ class Member
     public function setUtilisateur(?User $utilisateur): static
     {
         $this->utilisateur = $utilisateur;
-
         return $this;
     }
 
@@ -57,7 +65,6 @@ class Member
     public function setClub(?Club $club): static
     {
         $this->club = $club;
-
         return $this;
     }
 
@@ -69,7 +76,24 @@ class Member
     public function setDateAdhesion(\DateTimeInterface $dateAdhesion): static
     {
         $this->dateAdhesion = $dateAdhesion;
+        return $this;
+    }
+
+    
+   
+
+    // Getter for the 'role' property
+    public function getRole(): MemberRole
+    {
+        return $this->role;
+    }
+
+    // Setter for the 'role' property
+    public function setRole(MemberRole $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }
+
 }

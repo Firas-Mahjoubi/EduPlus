@@ -13,21 +13,25 @@
                     <!-- Club Information -->
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
                        <img 
-    class="img-fluid rounded" 
-    src="{{ asset('uploads/logos/' ~ club.logo) }}" 
-    alt="{{ club.nom }}" 
-    style="width: 60px; height: 60px;">
+                            class="img-fluid rounded" 
+                            src="{{ asset('uploads/logos/' ~ club.logo) }}" 
+                            alt="{{ club.nom }}" 
+                            style="width: 60px; height: 60px;">
                         <div class="ps-4">
                             <h4 class="text-primary mb-1">{{ club.nom }}</h4>
-                            <small class="text-uppercase">{{ club.description }}</small>  <!-- Assuming 'description' should be displayed here -->
+                            <small class="text-uppercase">{{ club.description }}</small>  
                         </div>
                     </div>
                     <div class="pt-4 pb-5 px-5">
                         {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}
                     </div>
+                    <div class="text-center">
+                        <!-- Selection Button -->
+                        <a href="{{ path('club_details', {'id': club.id}) }}" class="btn btn-primary">Join {{ club.nom }}</a>
+                    </div>
                 </div>
             {% else %}
-                <div class="testimonial-item bg-light my-4">
+                <div class="testimonial-item bg-light msy-4">
                     <div class="pt-4 pb-5 px-5 text-center">
                         <p class="text-muted">No clubs found.</p>
                     </div>

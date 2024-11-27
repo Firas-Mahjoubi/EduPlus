@@ -1,5 +1,16 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource: ../src/Controller/
+  type: attribute  # Enables route attributes in your controllers
+
+index:
+  path: /
+  controller: App\Controller\GusersController::index
+
+# Explicitly allow access to static files in the uploads directory
+uploads:
+  path: /uploads/{path}
+  controller: null
+  defaults:
+    _public: true
+  requirements:
+    path: .+

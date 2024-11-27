@@ -1,5 +1,6 @@
 <?php
 // src/Form/UserType.php
+
 namespace App\Form;
 
 use App\Entity\User;
@@ -28,13 +29,13 @@ class UserType extends AbstractType
             ])
             ->add('role', ChoiceType::class, [
                 'choices' => [
-                    'Admin' => UserRole::ADMIN,
-                    'User' => UserRole::USER,
+                    'Admin' => UserRole::ROLE_ADMIN,  // Corrected
+                    'User' => UserRole::ROLE_USER,    // Corrected
                 ],
-                'expanded' => false, // Change to true if you want radio buttons
+                'expanded' => false,
                 'multiple' => false,
                 'choice_value' => function (?UserRole $role) {
-                    return $role?->value; // Use the backing value of the enum
+                    return $role?->value; // Use enum value (string)
                 },
             ]);
     }
