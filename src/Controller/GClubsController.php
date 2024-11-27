@@ -36,6 +36,18 @@ class GClubsController extends AbstractController
         ]);
     }
 
+    #[Route('/allClubs', name: 'club_manage')]
+    public function showClubs(ClubRepository $clubRepository): Response
+    {
+        $clubs = $clubRepository->findAll();
+
+        return $this->render('club/allClubs.html.twig', [
+            'clubs' => $clubs,
+        ]);
+    }
+
+
+
     #[Route('/new', name: 'club_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -65,7 +77,7 @@ class GClubsController extends AbstractController
     }
 
     #[Route('/{id}', name: 'club_show', methods: ['GET'])]
-    public function show(Club $club, MemberRepository $memberRepository): Response
+    public function showMembers(Club $club, MemberRepository $memberRepository): Response
     {
         $members = $memberRepository->findBy(['club' => $club]);
 
@@ -74,6 +86,7 @@ class GClubsController extends AbstractController
             'members' => $members,
         ]);
     }
+
 
     #[Route('/{id}/acceptApplication/{applicationId}', name: 'club_accept_application', methods: ['POST'])]
     public function acceptApplication(
@@ -94,7 +107,7 @@ class GClubsController extends AbstractController
         $role = $request->get('role');
 
         try {
-            $roleEnum = MemberRole::from($role); 
+            $roleEnum = MemberRole::from($role);
         } catch (\ValueError $e) {
             $this->addFlash('error', 'Invalid role selected.');
             return $this->redirectToRoute('club_applications', ['clubId' => $club->getId()]);
@@ -187,9 +200,28 @@ class GClubsController extends AbstractController
         return $this->render('application/club_applications.html.twig', [
             'club' => $club,
             'applications' => $applications,
-            'roles' => $roles, 
+            'roles' => $roles,
         ]);
     }
+    #[Route('/search', name: 'club_search', methods: ['GET'])]
+    public function search(Request $request, ClubRepository $clubRepository): Response
+    {
+        $searchQuery = $request->query->get('query', ''); // Get the query parameter from the URL
+        $clubs = [];
+
+        if (!empty($searchQuery)) {
+            // Search for clubs that match the query
+            $clubs = $clubRepository->findBySearchQuery($searchQuery);
+        }
+
+        return $this->render('club/search.html.twig', [
+            'clubs' => $clubs,
+            'searchQuery' => $searchQuery,
+        ]);
+    }
+
+
+
 
     #[Route('/club/{id}', name: 'club_details')]
     public function clubDetails(int $id, ClubRepository $clubRepository): Response

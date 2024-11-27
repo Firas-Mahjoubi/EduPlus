@@ -56,109 +56,147 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
             <span class=\"fa fa-bars\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
-            <div class=\"navbar-nav ms-auto py-0\">
-                <a href=\"";
+           <div class=\"navbar-nav ms-auto py-0\">
+    <a href=\"";
         // line 12
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link active\">Home</a>
-                <a href=\"";
+        yield "\" class=\"nav-item nav-link ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "request", [], "any", false, false, false, 12), "attributes", [], "any", false, false, false, 12), "get", ["_route"], "method", false, false, false, 12) == "app_g_events")) ? ("active") : (""));
+        yield "\">Home</a>
+    <a href=\"";
         // line 13
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">About</a>
-                <a href=\"";
+        yield "\" class=\"nav-item nav-link ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "request", [], "any", false, false, false, 13), "attributes", [], "any", false, false, false, 13), "get", ["_route"], "method", false, false, false, 13) == "app_g_events")) ? ("active") : (""));
+        yield "\">About</a>
+    <a href=\"";
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">Services</a>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"";
+        yield "\" class=\"nav-item nav-link ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "request", [], "any", false, false, false, 14), "attributes", [], "any", false, false, false, 14), "get", ["_route"], "method", false, false, false, 14) == "app_g_events")) ? ("active") : (""));
+        yield "\">Services</a>
+    <a href=\"";
+        // line 15
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_index");
+        yield "\" class=\"nav-item nav-link ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "request", [], "any", false, false, false, 15), "attributes", [], "any", false, false, false, 15), "get", ["_route"], "method", false, false, false, 15) == "club_index")) ? ("active") : (""));
+        yield "\">Clubs</a>
+
+    <div class=\"nav-item dropdown\">
+        <a href=\"#\" class=\"nav-link dropdown-toggle ";
         // line 18
+        yield (((is_string($__internal_compile_0 = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "request", [], "any", false, false, false, 18), "attributes", [], "any", false, false, false, 18), "get", ["_route"], "method", false, false, false, 18)) && is_string($__internal_compile_1 = "app_g_events") && str_starts_with($__internal_compile_0, $__internal_compile_1))) ? ("active") : (""));
+        yield "\" data-bs-toggle=\"dropdown\">Blog</a>
+        <div class=\"dropdown-menu m-0\">
+            <a href=\"";
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Blog Grid</a>
-                        <a href=\"";
-        // line 19
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "request", [], "any", false, false, false, 20), "attributes", [], "any", false, false, false, 20), "get", ["_route"], "method", false, false, false, 20) == "app_g_events")) ? ("active") : (""));
+        yield "\">Blog Grid</a>
+            <a href=\"";
+        // line 21
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Blog Detail</a>
-                    </div>
-                </div>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"";
-        // line 25
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Pricing Plan</a>
-                        <a href=\"";
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "request", [], "any", false, false, false, 21), "attributes", [], "any", false, false, false, 21), "get", ["_route"], "method", false, false, false, 21) == "app_g_events")) ? ("active") : (""));
+        yield "\">Blog Detail</a>
+        </div>
+    </div>
+
+    <div class=\"nav-item dropdown\">
+        <a href=\"#\" class=\"nav-link dropdown-toggle ";
         // line 26
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Our Features</a>
-                        <a href=\"";
-        // line 27
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Team Members</a>
-                        <a href=\"";
+        yield (((is_string($__internal_compile_2 = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "request", [], "any", false, false, false, 26), "attributes", [], "any", false, false, false, 26), "get", ["_route"], "method", false, false, false, 26)) && is_string($__internal_compile_3 = "app_g_events") && str_starts_with($__internal_compile_2, $__internal_compile_3))) ? ("active") : (""));
+        yield "\" data-bs-toggle=\"dropdown\">Pages</a>
+        <div class=\"dropdown-menu m-0\">
+            <a href=\"";
         // line 28
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Testimonial</a>
-                        <a href=\"";
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "request", [], "any", false, false, false, 28), "attributes", [], "any", false, false, false, 28), "get", ["_route"], "method", false, false, false, 28) == "app_g_events")) ? ("active") : (""));
+        yield "\">Pricing Plan</a>
+            <a href=\"";
         // line 29
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Free Quote</a>
-                    </div>
-                </div>
-                <a href=\"";
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "request", [], "any", false, false, false, 29), "attributes", [], "any", false, false, false, 29), "get", ["_route"], "method", false, false, false, 29) == "app_g_events")) ? ("active") : (""));
+        yield "\">Our Features</a>
+            <a href=\"";
+        // line 30
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "request", [], "any", false, false, false, 30), "attributes", [], "any", false, false, false, 30), "get", ["_route"], "method", false, false, false, 30) == "app_g_events")) ? ("active") : (""));
+        yield "\">Team Members</a>
+            <a href=\"";
+        // line 31
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "request", [], "any", false, false, false, 31), "attributes", [], "any", false, false, false, 31), "get", ["_route"], "method", false, false, false, 31) == "app_g_events")) ? ("active") : (""));
+        yield "\">Testimonial</a>
+            <a href=\"";
         // line 32
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">Contact</a>
-            </div>
+        yield "\" class=\"dropdown-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "request", [], "any", false, false, false, 32), "attributes", [], "any", false, false, false, 32), "get", ["_route"], "method", false, false, false, 32) == "app_g_events")) ? ("active") : (""));
+        yield "\">Free Quote</a>
+        </div>
+    </div>
+
+    <a href=\"";
+        // line 36
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
+        yield "\" class=\"nav-item nav-link ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "request", [], "any", false, false, false, 36), "attributes", [], "any", false, false, false, 36), "get", ["_route"], "method", false, false, false, 36) == "app_g_events")) ? ("active") : (""));
+        yield "\">Contact</a>
+</div>
+
 
             <!-- User Profile Dropdown -->
             <!-- User Profile Dropdown -->
 <div class=\"navbar-nav ms-auto\">
     ";
-        // line 38
-        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38)) {
-            // line 39
+        // line 43
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 43, $this->source); })()), "user", [], "any", false, false, false, 43)) {
+            // line 44
             yield "        <div class=\"nav-item dropdown\">
             <a class=\"nav-link dropdown-toggle d-flex align-items-center\" href=\"#\" id=\"userDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                 <img src=\"";
-            // line 41
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "profilePicture", [], "any", false, false, false, 41)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/profilePictures/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "profilePicture", [], "any", false, false, false, 41)))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/profilePictures/default.png"))), "html", null, true);
+            // line 46
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "profilePicture", [], "any", false, false, false, 46)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/profilePictures/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "profilePicture", [], "any", false, false, false, 46)))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/profilePictures/default.png"))), "html", null, true);
             yield "\" 
                 alt=\"Profile Picture\" 
                 class=\"rounded-circle\" 
                 width=\"50\" 
                 height=\"50\">
            <span class=\"ms-2\">";
-            // line 46
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "nom", [], "any", false, false, false, 46), "html", null, true);
+            // line 51
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "nom", [], "any", false, false, false, 51), "html", null, true);
             yield " ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46), "prenom", [], "any", false, false, false, 46), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "prenom", [], "any", false, false, false, 51), "html", null, true);
             yield "</span>
            
 
             </a>
             <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"userDropdown\">
                 <li><a class=\"dropdown-item\" href=\"";
-            // line 51
+            // line 56
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
             yield "\">My Profile</a></li>
                 <li><a class=\"dropdown-item\" href=\"";
-            // line 52
+            // line 57
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\">Logout</a></li>
             </ul>
         </div>
     ";
         } else {
-            // line 56
+            // line 61
             yield "        <a href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             yield "\" class=\"btn btn-primary py-2 px-4 ms-3\">Login</a>
     ";
         }
-        // line 58
+        // line 63
         yield "</div>
 
         </div>
@@ -169,7 +207,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         <div class=\"carousel-inner\">
             <div class=\"carousel-item active\">
                 <img class=\"w-100\" src=\"";
-        // line 67
+        // line 72
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/carousel-1.jpg"), "html", null, true);
         yield "\" alt=\"Image\">
                 <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
@@ -183,7 +221,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
             </div>
             <div class=\"carousel-item\">
                 <img class=\"w-100\" src=\"";
-        // line 78
+        // line 83
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/carousel-2.jpg"), "html", null, true);
         yield "\" alt=\"Image\">
                 <div class=\"carousel-caption d-flex flex-column align-items-center justify-content-center\">
@@ -227,7 +265,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
 <!-- Full Screen Search End -->
 
 ";
-        // line 119
+        // line 124
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -280,7 +318,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  231 => 119,  187 => 78,  173 => 67,  162 => 58,  156 => 56,  149 => 52,  145 => 51,  135 => 46,  127 => 41,  123 => 39,  121 => 38,  112 => 32,  106 => 29,  102 => 28,  98 => 27,  94 => 26,  90 => 25,  81 => 19,  77 => 18,  70 => 14,  66 => 13,  62 => 12,  49 => 1,);
+        return array (  269 => 124,  225 => 83,  211 => 72,  200 => 63,  194 => 61,  187 => 57,  183 => 56,  173 => 51,  165 => 46,  161 => 44,  159 => 43,  147 => 36,  138 => 32,  132 => 31,  126 => 30,  120 => 29,  114 => 28,  109 => 26,  99 => 21,  93 => 20,  88 => 18,  80 => 15,  74 => 14,  68 => 13,  62 => 12,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -295,29 +333,34 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
             <span class=\"fa fa-bars\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
-            <div class=\"navbar-nav ms-auto py-0\">
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link active\">Home</a>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">About</a>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Services</a>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Blog Grid</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Blog Detail</a>
-                    </div>
-                </div>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Pricing Plan</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Our Features</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Team Members</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Testimonial</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Free Quote</a>
-                    </div>
-                </div>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Contact</a>
-            </div>
+           <div class=\"navbar-nav ms-auto py-0\">
+    <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Home</a>
+    <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">About</a>
+    <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Services</a>
+    <a href=\"{{ path('club_index') }}\" class=\"nav-item nav-link {{ app.request.attributes.get('_route') == 'club_index' ? 'active' : '' }}\">Clubs</a>
+
+    <div class=\"nav-item dropdown\">
+        <a href=\"#\" class=\"nav-link dropdown-toggle {{ app.request.attributes.get('_route') starts with 'app_g_events' ? 'active' : '' }}\" data-bs-toggle=\"dropdown\">Blog</a>
+        <div class=\"dropdown-menu m-0\">
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Blog Grid</a>
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Blog Detail</a>
+        </div>
+    </div>
+
+    <div class=\"nav-item dropdown\">
+        <a href=\"#\" class=\"nav-link dropdown-toggle {{ app.request.attributes.get('_route') starts with 'app_g_events' ? 'active' : '' }}\" data-bs-toggle=\"dropdown\">Pages</a>
+        <div class=\"dropdown-menu m-0\">
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Pricing Plan</a>
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Our Features</a>
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Team Members</a>
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Testimonial</a>
+            <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Free Quote</a>
+        </div>
+    </div>
+
+    <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link {{ app.request.attributes.get('_route') == 'app_g_events' ? 'active' : '' }}\">Contact</a>
+</div>
+
 
             <!-- User Profile Dropdown -->
             <!-- User Profile Dropdown -->
