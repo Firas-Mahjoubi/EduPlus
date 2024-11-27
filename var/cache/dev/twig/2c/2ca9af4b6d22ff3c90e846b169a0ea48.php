@@ -1866,10 +1866,6 @@ class __TwigTemplate_a4761466716efb89f3b0c8f37e5961f3 extends Template
         </tbody>
     </table>
 {% endmacro %}
-<<<<<<< HEAD
-", "@Doctrine/Collector/db.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
-=======
-", "@Doctrine/Collector/db.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
->>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
+", "@Doctrine/Collector/db.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
     }
 }

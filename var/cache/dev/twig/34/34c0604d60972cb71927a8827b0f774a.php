@@ -181,10 +181,6 @@ class __TwigTemplate_38143b770b4984a439e0fb7c614280e3 extends Template
 {% block panel %}
     {{ render(controller('web_profiler.controller.router::panelAction', { token: token })) }}
 {% endblock %}
-<<<<<<< HEAD
-", "@WebProfiler/Collector/router.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\router.html.twig");
-=======
-", "@WebProfiler/Collector/router.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\router.html.twig");
->>>>>>> fe50365a75a62392ad470cff67b9a23f73defa9c
+", "@WebProfiler/Collector/router.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\router.html.twig");
     }
 }

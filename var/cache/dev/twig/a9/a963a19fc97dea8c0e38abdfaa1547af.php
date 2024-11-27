@@ -170,6 +170,6 @@ class __TwigTemplate_83e27c8c7bed5ebc4b45d9167e608b1a extends Template
     </ul>
 </div>
 {% endblock %}
-", "g_recrutements/index.html.twig", "C:\\Users\\ghass\\Desktop\\Nouveau dossier (2)\\EduPlus\\EduPlus\\templates\\g_recrutements\\index.html.twig");
+", "g_recrutements/index.html.twig", "C:\\Users\\ghass\\Desktop\\EduPlus\\templates\\g_recrutements\\index.html.twig");
     }
 }
