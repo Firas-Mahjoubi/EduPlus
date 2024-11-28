@@ -162,4 +162,16 @@ class Event
         $this->bloc = $bloc;
         return $this;
     }
+    // In your Event entity
+
+public function getFormattedDatedebut(): string
+{
+    return $this->datedebut ? $this->datedebut->format('d M Y') : '';
+}
+
+public function getFormattedDatefin(): string
+{
+    return $this->datefin ? $this->datefin->format('d M Y') : '';
+}
+
 }

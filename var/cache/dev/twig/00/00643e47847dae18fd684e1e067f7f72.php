@@ -97,28 +97,18 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "
-    <div class=\"container mt-5\">
-        <h1>Events</h1>
-
-        ";
-        // line 11
-        yield "
-       
-
-
-     <!-- Events Section Start -->
+        yield "<!-- Upcoming Events Section Start -->
 <div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
     <div class=\"container py-5\">
         <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
             <h5 class=\"fw-bold text-primary text-uppercase\">Upcoming Events</h5>
-            <h1 class=\"mb-0\">Participate in Our Latest Events</h1>
+            <h1 class=\"mb-0\">Don’t Miss Our Upcoming Events</h1>
         </div>
         <div class=\"row g-5\">
             ";
-        // line 23
+        // line 14
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["upcomingEvents"]) || array_key_exists("upcomingEvents", $context) ? $context["upcomingEvents"] : (function () { throw new RuntimeError('Variable "upcomingEvents" does not exist.', 14, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -134,20 +124,20 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-            // line 24
+            // line 15
             yield "                <div class=\"col-lg-4 wow slideInUp\" data-wow-delay=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 24) * 0.3), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 15) * 0.3), "html", null, true);
             yield "s\">
                     <div class=\"event-item bg-light rounded overflow-hidden\">
                         <div class=\"event-img position-relative overflow-hidden\">
                             <img class=\"img-fluid\" src=\"";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 27)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 27)))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/default-event.jpg"))), "html", null, true);
+            // line 18
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 18)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 18)))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/default-event.jpg"))), "html", null, true);
             yield "\" alt=\"Event Image\">
                             <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">
                                 ";
-            // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["event"], "club", [], "any", false, false, false, 29), "nom", [], "any", false, false, false, 29), "html", null, true);
+            // line 20
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["event"], "club", [], "any", false, false, false, 20), "nom", [], "any", false, false, false, 20), "html", null, true);
             yield "
                             </a>
                         </div>
@@ -156,40 +146,40 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
                                 <small class=\"me-3\">
                                     <i class=\"far fa-calendar-alt text-primary me-2\"></i>
                                     Start: ";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datedebut", [], "any", false, false, false, 36), "d M Y H:i"), "html", null, true);
+            // line 27
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "formattedDatedebut", [], "any", false, false, false, 27), "html", null, true);
             yield "
                                 </small>
                                 <small>
                                     <i class=\"far fa-calendar-alt text-primary me-2\"></i>
                                     End: ";
-            // line 40
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datefin", [], "any", false, false, false, 40), "d M Y H:i"), "html", null, true);
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "formattedDatefin", [], "any", false, false, false, 31), "html", null, true);
             yield "
                                 </small>
                             </div>
-                            <h4 class=\"mb-3\">";
-            // line 43
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 43), "html", null, true);
+                            <h4 class=\"mb-3\">Title: ";
+            // line 34
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 34), "html", null, true);
             yield "</h4>
-                            <p>";
-            // line 44
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "description", [], "any", false, false, false, 44), 0, 100), "html", null, true);
+                            <p>Description: ";
+            // line 35
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "description", [], "any", false, false, false, 35), 0, 100), "html", null, true);
             yield "...</p>
                             ";
-            // line 45
-            if (CoreExtension::inFilter(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "participants", [], "any", false, false, false, 45))) {
-                // line 46
+            // line 36
+            if (CoreExtension::inFilter(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "participants", [], "any", false, false, false, 36))) {
+                // line 37
                 yield "                                <span class=\"badge bg-success\">Participating</span>
                             ";
             } else {
-                // line 48
+                // line 39
                 yield "                                <a class=\"btn btn-primary btn-sm\" href=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_event_participate", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 48)]), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_event_participate", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 39)]), "html", null, true);
                 yield "\">Participate</a>
                             ";
             }
-            // line 50
+            // line 41
             yield "                        </div>
                     </div>
                 </div>
@@ -205,18 +195,116 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 54
-            yield "                <p class=\"text-center text-muted\">No events available at the moment.</p>
+            // line 45
+            yield "                <p class=\"text-center text-muted\">No upcoming events available at the moment.</p>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['event'], $context['_parent'], $context['_iterated'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 47
         yield "        </div>
     </div>
 </div>
-<!-- Events Section End -->
+<!-- Upcoming Events Section End -->
+
+<!-- Latest Events Section Start -->
+<div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
+    <div class=\"container py-5\">
+        <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
+            <h5 class=\"fw-bold text-primary text-uppercase\">Latest Events</h5>
+            <h1 class=\"mb-0\">Catch Up with Our Latest Events</h1>
+        </div>
+        <div class=\"row g-5\">
+            ";
+        // line 60
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["latestEvents"]) || array_key_exists("latestEvents", $context) ? $context["latestEvents"] : (function () { throw new RuntimeError('Variable "latestEvents" does not exist.', 60, $this->source); })()));
+        $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
+            // line 61
+            yield "                <div class=\"col-lg-4 wow slideInUp\" data-wow-delay=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 61) * 0.3), "html", null, true);
+            yield "s\">
+                    <div class=\"event-item bg-light rounded overflow-hidden\">
+                        <div class=\"event-img position-relative overflow-hidden\">
+                            <img class=\"img-fluid\" src=\"";
+            // line 64
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 64)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 64)))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/default-event.jpg"))), "html", null, true);
+            yield "\" alt=\"Event Image\">
+                            <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">
+                                ";
+            // line 66
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["event"], "club", [], "any", false, false, false, 66), "nom", [], "any", false, false, false, 66), "html", null, true);
+            yield "
+                            </a>
+                        </div>
+                        <div class=\"p-4\">
+                            <div class=\"d-flex mb-3\">
+                                <small class=\"me-3\">
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    Start: ";
+            // line 73
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "formattedDatedebut", [], "any", false, false, false, 73), "html", null, true);
+            yield "
+                                </small>
+                                <small>
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    End: ";
+            // line 77
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "formattedDatefin", [], "any", false, false, false, 77), "html", null, true);
+            yield "
+                                </small>
+                            </div>
+                            <h4 class=\"mb-3\">Title: ";
+            // line 80
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 80), "html", null, true);
+            yield "</h4>
+                            <p>Description: ";
+            // line 81
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "description", [], "any", false, false, false, 81), 0, 100), "html", null, true);
+            yield "...</p>
+                            <span class=\"badge rounded-pill text-bg-danger\">Ended</span>
+                            </div>
+                    </div>
+                </div>
+            ";
+            $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['revindex0'], $context['loop']['revindex'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        if (!$context['_iterated']) {
+            // line 87
+            yield "                <p class=\"text-center text-muted\">No latest events available at the moment.</p>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['event'], $context['_parent'], $context['_iterated'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 89
+        yield "        </div>
+    </div>
+</div>
+<!-- Latest Events Section End -->
 
 
 ";
@@ -250,7 +338,7 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  216 => 56,  209 => 54,  193 => 50,  187 => 48,  183 => 46,  181 => 45,  177 => 44,  173 => 43,  167 => 40,  160 => 36,  150 => 29,  145 => 27,  138 => 24,  120 => 23,  106 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  304 => 89,  297 => 87,  278 => 81,  274 => 80,  268 => 77,  261 => 73,  251 => 66,  246 => 64,  239 => 61,  221 => 60,  206 => 47,  199 => 45,  183 => 41,  177 => 39,  173 => 37,  171 => 36,  167 => 35,  163 => 34,  157 => 31,  150 => 27,  140 => 20,  135 => 18,  128 => 15,  110 => 14,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -260,24 +348,15 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
 {% block title %}Events List{% endblock %}
 
 {% block body %}
-
-    <div class=\"container mt-5\">
-        <h1>Events</h1>
-
-        {# <a href=\"{{ path('app_g_events_add') }}\" class=\"btn btn-primary mb-3\">Add New Event</a> #}
-
-       
-
-
-     <!-- Events Section Start -->
+<!-- Upcoming Events Section Start -->
 <div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
     <div class=\"container py-5\">
         <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
             <h5 class=\"fw-bold text-primary text-uppercase\">Upcoming Events</h5>
-            <h1 class=\"mb-0\">Participate in Our Latest Events</h1>
+            <h1 class=\"mb-0\">Don’t Miss Our Upcoming Events</h1>
         </div>
         <div class=\"row g-5\">
-            {% for event in events %}
+            {% for event in upcomingEvents %}
                 <div class=\"col-lg-4 wow slideInUp\" data-wow-delay=\"{{ loop.index0 * 0.3 }}s\">
                     <div class=\"event-item bg-light rounded overflow-hidden\">
                         <div class=\"event-img position-relative overflow-hidden\">
@@ -290,15 +369,15 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
                             <div class=\"d-flex mb-3\">
                                 <small class=\"me-3\">
                                     <i class=\"far fa-calendar-alt text-primary me-2\"></i>
-                                    Start: {{ event.datedebut|date('d M Y H:i') }}
+                                    Start: {{ event.formattedDatedebut }}
                                 </small>
                                 <small>
                                     <i class=\"far fa-calendar-alt text-primary me-2\"></i>
-                                    End: {{ event.datefin|date('d M Y H:i') }}
+                                    End: {{ event.formattedDatefin }}
                                 </small>
                             </div>
-                            <h4 class=\"mb-3\">{{ event.titre }}</h4>
-                            <p>{{ event.description|slice(0, 100) }}...</p>
+                            <h4 class=\"mb-3\">Title: {{ event.titre }}</h4>
+                            <p>Description: {{ event.description|slice(0, 100) }}...</p>
                             {% if app.user in event.participants %}
                                 <span class=\"badge bg-success\">Participating</span>
                             {% else %}
@@ -308,12 +387,54 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
                     </div>
                 </div>
             {% else %}
-                <p class=\"text-center text-muted\">No events available at the moment.</p>
+                <p class=\"text-center text-muted\">No upcoming events available at the moment.</p>
             {% endfor %}
         </div>
     </div>
 </div>
-<!-- Events Section End -->
+<!-- Upcoming Events Section End -->
+
+<!-- Latest Events Section Start -->
+<div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
+    <div class=\"container py-5\">
+        <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
+            <h5 class=\"fw-bold text-primary text-uppercase\">Latest Events</h5>
+            <h1 class=\"mb-0\">Catch Up with Our Latest Events</h1>
+        </div>
+        <div class=\"row g-5\">
+            {% for event in latestEvents %}
+                <div class=\"col-lg-4 wow slideInUp\" data-wow-delay=\"{{ loop.index0 * 0.3 }}s\">
+                    <div class=\"event-item bg-light rounded overflow-hidden\">
+                        <div class=\"event-img position-relative overflow-hidden\">
+                            <img class=\"img-fluid\" src=\"{{ event.image ? asset('uploads/events/' ~ event.image) : asset('img/default-event.jpg') }}\" alt=\"Event Image\">
+                            <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">
+                                {{ event.club.nom }}
+                            </a>
+                        </div>
+                        <div class=\"p-4\">
+                            <div class=\"d-flex mb-3\">
+                                <small class=\"me-3\">
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    Start: {{ event.formattedDatedebut }}
+                                </small>
+                                <small>
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    End: {{ event.formattedDatefin }}
+                                </small>
+                            </div>
+                            <h4 class=\"mb-3\">Title: {{ event.titre }}</h4>
+                            <p>Description: {{ event.description|slice(0, 100) }}...</p>
+                            <span class=\"badge rounded-pill text-bg-danger\">Ended</span>
+                            </div>
+                    </div>
+                </div>
+            {% else %}
+                <p class=\"text-center text-muted\">No latest events available at the moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Latest Events Section End -->
 
 
 {% endblock %}

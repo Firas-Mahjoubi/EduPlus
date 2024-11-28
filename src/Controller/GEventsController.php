@@ -17,16 +17,35 @@ use Symfony\Component\Routing\Annotation\Route;
 class GEventsController extends AbstractController
 {
     // Display all events
-    #[Route('/', name: 'app_g_events')]
-    public function index(EventRepository $eventRepository): Response
-    {
-        $events = $eventRepository->findAll();
+   // In your EventController
+  // GEventsController.php
 
-        return $this->render('g_events/index.html.twig', [
-            'events' => $events,
-        ]);
-    }
+  #[Route('/', name: 'app_g_events')]
+public function index(EventRepository $eventRepository): Response
+{
+    $currentDate = new \DateTime(); // Current date and time
+    
+    // Use QueryBuilder for filtering events by date
+    $upcomingEvents = $eventRepository->createQueryBuilder('e')
+        ->where('e.datedebut >= :currentDate')
+        ->setParameter('currentDate', $currentDate)
+        ->getQuery()
+        ->getResult();
+    
+    // Fetch latest events (events that have already occurred)
+    $latestEvents = $eventRepository->createQueryBuilder('e')
+        ->where('e.datedebut < :currentDate')
+        ->setParameter('currentDate', $currentDate)
+        ->orderBy('e.datedebut', 'DESC')
+        ->setMaxResults(3) // Get the 3 most recent past events
+        ->getQuery()
+        ->getResult();
 
+    return $this->render('g_events/index.html.twig', [
+        'upcomingEvents' => $upcomingEvents,
+        'latestEvents' => $latestEvents,
+    ]);
+}
     // Add a new event
     #[Route('/add', name: 'app_g_events_add', methods: ['GET', 'POST'])]
     public function add(Request $request, EntityManagerInterface $entityManager): Response
