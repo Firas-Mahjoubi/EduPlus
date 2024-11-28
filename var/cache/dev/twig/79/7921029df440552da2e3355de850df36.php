@@ -38,7 +38,7 @@ class __TwigTemplate_129b74e0aae4a1ff085d8eb14292fbf2 extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "base_backoffice.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_129b74e0aae4a1ff085d8eb14292fbf2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "g_ressources/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "g_ressources/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base_backoffice.html.twig", "g_ressources/edit.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -224,7 +224,7 @@ class __TwigTemplate_129b74e0aae4a1ff085d8eb14292fbf2 extends Template
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Edit une ressource{% endblock %}
 
@@ -269,6 +269,6 @@ class __TwigTemplate_129b74e0aae4a1ff085d8eb14292fbf2 extends Template
 
         {{ form_end(form) }}
     </div>
-{% endblock %}", "g_ressources/edit.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_ressources\\edit.html.twig");
+{% endblock %}", "g_ressources/edit.html.twig", "C:\\Users\\ghass\\Desktop\\Eduplus1\\EduPlus\\templates\\g_ressources\\edit.html.twig");
     }
 }
