@@ -1,12 +1,15 @@
 <?php
+// src/Entity/Application.php
 
 namespace App\Entity;
 
 use App\Repository\ApplicationRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Club;
 use App\Entity\User;
 use App\Entity\Recruitment;
+use Doctrine\DBAL\Types\Types;
+
 
 #[ORM\Entity(repositoryClass: ApplicationRepository::class)]
 class Application
@@ -16,30 +19,37 @@ class Application
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne(targetEntity: User::class)]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $candidat = null;
-
     #[ORM\ManyToOne(targetEntity: Recruitment::class, inversedBy: "candidatures")]
     #[ORM\JoinColumn(nullable: false)]
     private ?Recruitment $recruitment = null;
 
+    private ?User $candidat = null;
+
+    #[ORM\ManyToOne(targetEntity: Club::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Club $club = null;
+
+    #[ORM\Column(type: Types::STRING, length: 50)]
+    private string $status = 'PENDING';
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $dateSoumission = null;
+    private \DateTimeInterface $dateSoumission;
 
-    #[ORM\Column(length: 255)]
-    private ?string $statut = null;
+    #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
+    private ?string $cv = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $motivationLetter = null;
+
+    public function __construct()
+    {
+        $this->dateSoumission = new \DateTime(); // Initialize with current date
+    }
+
+    // Getters et setters pour chaque propriété
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function setId(int $id): static
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     public function getCandidat(): ?User
@@ -47,10 +57,31 @@ class Application
         return $this->candidat;
     }
 
-    public function setCandidat(?User $candidat): static
+    public function setCandidat(User $candidat): static
     {
         $this->candidat = $candidat;
+        return $this;
+    }
 
+    public function getClub(): ?Club
+    {
+        return $this->club;
+    }
+
+    public function setClub(Club $club): static
+    {
+        $this->club = $club;
+        return $this;
+    }
+
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
         return $this;
     }
 
@@ -62,11 +93,10 @@ class Application
     public function setRecruitment(?Recruitment $recruitment): static
     {
         $this->recruitment = $recruitment;
-
         return $this;
     }
 
-    public function getDateSoumission(): ?\DateTimeInterface
+    public function getDateSoumission(): \DateTimeInterface
     {
         return $this->dateSoumission;
     }
@@ -74,19 +104,28 @@ class Application
     public function setDateSoumission(\DateTimeInterface $dateSoumission): static
     {
         $this->dateSoumission = $dateSoumission;
-
         return $this;
     }
 
-    public function getStatut(): ?string
+    public function getCv(): ?string
     {
-        return $this->statut;
+        return $this->cv;
     }
 
-    public function setStatut(string $statut): static
+    public function setCv(?string $cv): static
     {
-        $this->statut = $statut;
+        $this->cv = $cv;
+        return $this;
+    }
 
+    public function getMotivationLetter(): ?string
+    {
+        return $this->motivationLetter;
+    }
+
+    public function setMotivationLetter(?string $motivationLetter): static
+    {
+        $this->motivationLetter = $motivationLetter;
         return $this;
     }
 }

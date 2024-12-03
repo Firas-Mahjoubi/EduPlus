@@ -31,8 +31,10 @@ class RecruitmentType extends AbstractType
             ])
             ->add('club', EntityType::class, [
                 'class' => Club::class,
-'choice_label' => 'id',
+                'choice_label' => 'name',
+                'placeholder' => 'Select a Club',
             ])
+            
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',
                 'attr' => [

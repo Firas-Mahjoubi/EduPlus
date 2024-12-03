@@ -65,12 +65,17 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         // line 11
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
         // line 13
-        yield "
+        yield "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEJ5m0Wf0R3tdw9JfL7cS5pP/2gX/xFnFbdM7eTSFwqV9Jt9FNB23VrT3PFAk\" crossorigin=\"anonymous\">
+
     <!-- Favicon -->
     <link href=\"";
-        // line 15
+        // line 16
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/favicon.ico"), "html", null, true);
         yield "\" rel=\"icon\">
+<!-- Add Select2 CSS -->
+<link href=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css\" rel=\"stylesheet\" />
+<!-- Add Select2 JS -->
+<script src=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js\"></script>
 
     <!-- Google Web Fonts -->
     <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
@@ -81,25 +86,31 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css\" rel=\"stylesheet\">
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css\" rel=\"stylesheet\">
 
+
+  <!-- OwlCarousel Stylesheets -->
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\">
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css\">
+
+
     <!-- Libraries Stylesheet -->
     <link href=\"";
-        // line 27
+        // line 38
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/assets/owl.carousel.min.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
     <link href=\"";
-        // line 28
+        // line 39
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/animate/animate.min.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href=\"";
-        // line 31
+        // line 42
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
 
     <!-- Template Stylesheet -->
     <link href=\"";
-        // line 34
+        // line 45
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
 </head>
@@ -107,19 +118,19 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
 <body>
 
     ";
-        // line 39
-        yield from         $this->loadTemplate("header.html.twig", "base.html.twig", 39)->unwrap()->yield($context);
-        // line 40
+        // line 50
+        yield from         $this->loadTemplate("header.html.twig", "base.html.twig", 50)->unwrap()->yield($context);
+        // line 51
         yield "    
     ";
-        // line 41
+        // line 52
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 43
+        // line 54
         yield "    
  ";
-        // line 44
-        yield from         $this->loadTemplate("footer.html.twig", "base.html.twig", 44)->unwrap()->yield($context);
-        // line 45
+        // line 55
+        yield from         $this->loadTemplate("footer.html.twig", "base.html.twig", 55)->unwrap()->yield($context);
+        // line 56
         yield "    <!-- Back to Top -->
     <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 
@@ -127,29 +138,43 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
     <script src=\"";
-        // line 51
+        // line 62
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 52
+        // line 63
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 53
+        // line 64
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 54
+        // line 65
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 55
+        // line 66
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         yield "\"></script>
-
+     <script>
+        \$(document).ready(function(){
+            \$('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+        });
+    </script>
     <!-- Template Javascript -->
     <script src=\"";
-        // line 58
+        // line 83
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         yield "\"></script>
 </body>
@@ -212,7 +237,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         yield from [];
     }
 
-    // line 41
+    // line 52
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -225,7 +250,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 42
+        // line 53
         yield "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -257,7 +282,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  229 => 42,  216 => 41,  205 => 12,  192 => 11,  169 => 6,  153 => 58,  147 => 55,  143 => 54,  139 => 53,  135 => 52,  131 => 51,  123 => 45,  121 => 44,  118 => 43,  116 => 41,  113 => 40,  111 => 39,  103 => 34,  97 => 31,  91 => 28,  87 => 27,  72 => 15,  68 => 13,  66 => 11,  58 => 6,  51 => 1,);
+        return array (  254 => 53,  241 => 52,  230 => 12,  217 => 11,  194 => 6,  178 => 83,  158 => 66,  154 => 65,  150 => 64,  146 => 63,  142 => 62,  134 => 56,  132 => 55,  129 => 54,  127 => 52,  124 => 51,  122 => 50,  114 => 45,  108 => 42,  102 => 39,  98 => 38,  73 => 16,  68 => 13,  66 => 11,  58 => 6,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -274,9 +299,14 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     
     {% block stylesheets %}
     {% endblock %}
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEJ5m0Wf0R3tdw9JfL7cS5pP/2gX/xFnFbdM7eTSFwqV9Jt9FNB23VrT3PFAk\" crossorigin=\"anonymous\">
 
     <!-- Favicon -->
     <link href=\"{{ asset('img/favicon.ico') }}\" rel=\"icon\">
+<!-- Add Select2 CSS -->
+<link href=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css\" rel=\"stylesheet\" />
+<!-- Add Select2 JS -->
+<script src=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js\"></script>
 
     <!-- Google Web Fonts -->
     <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
@@ -286,6 +316,12 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     <!-- Icon Font Stylesheet -->
     <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css\" rel=\"stylesheet\">
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css\" rel=\"stylesheet\">
+
+
+  <!-- OwlCarousel Stylesheets -->
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\">
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css\">
+
 
     <!-- Libraries Stylesheet -->
     <link href=\"{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}\" rel=\"stylesheet\">
@@ -317,7 +353,21 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     <script src=\"{{ asset('lib/waypoints/waypoints.min.js') }}\"></script>
     <script src=\"{{ asset('lib/counterup/counterup.min.js') }}\"></script>
     <script src=\"{{ asset('lib/owlcarousel/owl.carousel.min.js') }}\"></script>
-
+     <script>
+        \$(document).ready(function(){
+            \$('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+        });
+    </script>
     <!-- Template Javascript -->
     <script src=\"{{ asset('js/main.js') }}\"></script>
 </body>

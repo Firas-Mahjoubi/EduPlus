@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block body %}
+    <h1>Add New User</h1>
+
+    {{ form_start(form) }}
+    
+    <div>
+        <label for="{{ form.nom.vars.id }}">First Name</label>
+        {{ form_widget(form.nom) }}
+        {{ form_errors(form.nom) }}
+    </div>
+
+    <div>
+        <label for="{{ form.prenom.vars.id }}">Last Name</label>
+        {{ form_widget(form.prenom) }}
+        {{ form_errors(form.prenom) }}
+    </div>
+
+    <div>
+        <label for="{{ form.email.vars.id }}">Email</label>
+        {{ form_widget(form.email) }}
+        {{ form_errors(form.email) }}
+    </div>
+
+    <div>
+        <label for="{{ form.password.vars.id }}">Password</label>
+        {{ form_widget(form.password) }}
+        {{ form_errors(form.password) }}
+    </div>
+
+    <div>
+        <label for="{{ form.profilePicture.vars.id }}">Profile Picture</label>
+        {{ form_widget(form.profilePicture) }}
+        {{ form_errors(form.profilePicture) }}
+    </div>
+
+    <div>
+        <label for="{{ form.role.vars.id }}">Role</label>
+        {{ form_widget(form.role) }}
+        {{ form_errors(form.role) }}
+    </div>
+
+    <div>
+        <button type="submit">Save User</button>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

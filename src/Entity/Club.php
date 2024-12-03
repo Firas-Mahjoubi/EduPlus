@@ -26,14 +26,19 @@ class Club
     #[ORM\JoinColumn(nullable: false)]
     private ?User $responsable = null;
 
-    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Member::class)]
+    // Updated to add cascade={"remove"}
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Member::class, cascade: ['remove'])]
     private Collection $members;
 
     #[ORM\OneToMany(mappedBy: 'club', targetEntity: Event::class)]
     private Collection $events;
 
-    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressources::class)]
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressource::class)]
     private Collection $resources;
+
+    // New logo property
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $logo = null;
 
     public function __construct()
     {
@@ -134,24 +139,16 @@ class Club
         return $this;
     }
 
-    public function getResources(): Collection
+
+    // Getters and setters for the logo property
+    public function getLogo(): ?string
     {
-        return $this->resources;
+        return $this->logo;
     }
 
-    public function addResource(Ressources $resource): static
+    public function setLogo(?string $logo): static
     {
-        if (!$this->resources->contains($resource)) {
-            $this->resources[] = $resource;
-            $resource->setClub($this);
-        }
-
-        return $this;
-    }
-
-    public function removeResource(Ressources $resource): static
-    {
-        $this->resources->removeElement($resource);
+        $this->logo = $logo;
 
         return $this;
     }

@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Application;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Recruitment;
+use App\Entity\User;
 use App\Repository\RecruitmentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Form\RecruitmentType;
+use App\Form\ApplicationRType;
 
 #[Route('/g/recrutements')]
 
@@ -108,6 +110,58 @@ public function edit(Request $request, Recruitment $recruitment, ManagerRegistry
         'form' => $form->createView(),
     ]);
 } 
-   
+
+
+#[Route('/apply/{id}', name: 'recruitment_apply')]
+public function apply(Request $request, Recruitment $recruitment, ManagerRegistry $doctrine): Response
+{
+    $user = $this->getUser();
+
+    if (!$user) {
+        $this->addFlash('error', 'Vous devez être connecté pour postuler.');
+        return $this->redirectToRoute('app_login');
+    }
+
+    // Retrieve the club associated with the recruitment
+    $club = $recruitment->getClub();
+    if (!$club) {
+        $this->addFlash('error', 'Aucun club associé à ce recrutement.');
+        return $this->redirectToRoute('app_show_all_user');
+    }
+
+    $application = new Application();
+    $application->setRecruitment($recruitment);
+    $application->setCandidat($user);
+    $application->setClub($club);
+    $application->setDateSoumission(new \DateTime());
+    $application->setStatus('PENDING');
+
+    $form = $this->createForm(ApplicationRType::class, $application);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Handle file uploads (e.g., CV)
+        $cvFile = $form->get('cv')->getData();
+        if ($cvFile) {
+            $cvFileName = uniqid() . '.' . $cvFile->guessExtension();
+            $cvFile->move($this->getParameter('cv_directory'), $cvFileName);
+            $application->setCv($cvFileName);
+        }
+
+        $entityManager = $doctrine->getManager();
+        $entityManager->persist($application);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre candidature a été soumise avec succès.');
+        return $this->redirectToRoute('app_show_all_user');
+    }
+
+    return $this->render('g_recrutements/apply.html.twig', [
+        'form' => $form->createView(),
+        'recruitment' => $recruitment,
+    ]);
+}
+
+
 
 }

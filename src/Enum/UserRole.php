@@ -4,6 +4,14 @@ namespace App\Enum;
 
 enum UserRole: string
 {
-    case ADMIN = 'ROLE_ADMIN';
-    case USER = 'ROLE_USER';
+    case ROLE_USER = 'ROLE_USER';
+    case ROLE_ADMIN = 'ROLE_ADMIN';
+
+    public function getLabel(): string
+    {
+        return match ($this) {
+            self::ROLE_USER => 'User',
+            self::ROLE_ADMIN => 'Admin',
+        };
+    }
 }

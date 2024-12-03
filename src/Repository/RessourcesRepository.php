@@ -2,42 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Ressources;
+use App\Entity\Ressource;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Ressources>
+ * @extends ServiceEntityRepository<Ressource>
  */
 class RessourcesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Ressources::class);
+        parent::__construct($registry, Ressource::class);
     }
 
-    //    /**
-    //     * @return Ressources[] Returns an array of Ressources objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('r')
-    //            ->andWhere('r.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('r.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Ressources
-    //    {
-    //        return $this->createQueryBuilder('r')
-    //            ->andWhere('r.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    /**
+     * Find resources by a search term in their name.
+     *
+     * @param string $search The search term.
+     * @return Ressource[] Returns an array of Ressource objects.
+     */
+    public function findBySearch(string $search): array
+    {
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.nomRessource LIKE :search')
+            ->setParameter('search', '%' . $search . '%')
+            ->getQuery()
+            ->getResult();
+    }
 }

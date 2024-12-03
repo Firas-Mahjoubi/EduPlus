@@ -73,7 +73,7 @@ class __TwigTemplate_814bc044ed5e401d3c32221aa883c0f2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello GUsersController!";
+        yield "Login - EduPlus";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,22 +97,48 @@ class __TwigTemplate_814bc044ed5e401d3c32221aa883c0f2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        yield "<div class=\"container mt-5\">
+    <div class=\"row justify-content-center\">
+        <div class=\"col-md-6\">
+            <div class=\"card\">
+                <div class=\"card-header text-center\">
+                    <h4>Login to EduPlus</h4>
+                </div>
+                <div class=\"card-body\">
+                    <form method=\"post\">
+                        ";
+        // line 15
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15)) {
+            // line 16
+            yield "                            <div class=\"alert alert-info\" role=\"alert\">
+                                You are logged in as ";
+            // line 17
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17), "username", [], "any", false, false, false, 17), "html", null, true);
+            yield ".
+                            </div>
+                        ";
+        }
+        // line 20
+        yield "
+                        <div class=\"mb-3\">
+                            <label for=\"username\" class=\"form-label\">Username</label>
+                            <input type=\"text\" class=\"form-control\" id=\"username\" name=\"_username\" required>
+                        </div>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
+                        <div class=\"mb-3\">
+                            <label for=\"password\" class=\"form-label\">Password</label>
+                            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"_password\" required>
+                        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/src/Controller/GUsersController.php</code></li>
-        <li>Your template at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/templates/g_users/index.html.twig</code></li>
-    </ul>
+                        <button type=\"submit\" class=\"btn btn-primary w-100\">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class=\"mt-3 text-center\">
+                <a href=\"#\">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
 </div>
 ";
         
@@ -145,29 +171,50 @@ class __TwigTemplate_814bc044ed5e401d3c32221aa883c0f2 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  122 => 20,  116 => 17,  113 => 16,  111 => 15,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello GUsersController!{% endblock %}
+{% block title %}Login - EduPlus{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class=\"container mt-5\">
+    <div class=\"row justify-content-center\">
+        <div class=\"col-md-6\">
+            <div class=\"card\">
+                <div class=\"card-header text-center\">
+                    <h4>Login to EduPlus</h4>
+                </div>
+                <div class=\"card-body\">
+                    <form method=\"post\">
+                        {% if app.user %}
+                            <div class=\"alert alert-info\" role=\"alert\">
+                                You are logged in as {{ app.user.username }}.
+                            </div>
+                        {% endif %}
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                        <div class=\"mb-3\">
+                            <label for=\"username\" class=\"form-label\">Username</label>
+                            <input type=\"text\" class=\"form-control\" id=\"username\" name=\"_username\" required>
+                        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/src/Controller/GUsersController.php</code></li>
-        <li>Your template at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/templates/g_users/index.html.twig</code></li>
-    </ul>
+                        <div class=\"mb-3\">
+                            <label for=\"password\" class=\"form-label\">Password</label>
+                            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"_password\" required>
+                        </div>
+
+                        <button type=\"submit\" class=\"btn btn-primary w-100\">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class=\"mt-3 text-center\">
+                <a href=\"#\">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 ", "g_users/index.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_users\\index.html.twig");

@@ -27,12 +27,14 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\InternalProxy
         "\0".parent::class."\0".'nom' => [parent::class, 'nom', null],
         "\0".parent::class."\0".'password' => [parent::class, 'password', null],
         "\0".parent::class."\0".'prenom' => [parent::class, 'prenom', null],
+        "\0".parent::class."\0".'profilePicture' => [parent::class, 'profilePicture', null],
         "\0".parent::class."\0".'role' => [parent::class, 'role', null],
         'email' => [parent::class, 'email', null],
         'id' => [parent::class, 'id', null],
         'nom' => [parent::class, 'nom', null],
         'password' => [parent::class, 'password', null],
         'prenom' => [parent::class, 'prenom', null],
+        'profilePicture' => [parent::class, 'profilePicture', null],
         'role' => [parent::class, 'role', null],
     ];
 

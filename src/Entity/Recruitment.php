@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use App\Entity\Application;
 
 use App\Repository\RecruitmentRepository;
 use Doctrine\Common\Collections\ArrayCollection;
