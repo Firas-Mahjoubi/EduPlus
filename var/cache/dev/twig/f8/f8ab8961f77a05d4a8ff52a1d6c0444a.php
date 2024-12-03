@@ -32,6 +32,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
         $this->parent = false;
 
         $this->blocks = [
+            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -114,293 +115,12 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
   </head>
   <body>
     <div class=\"wrapper\">
-      <!-- Sidebar -->
-      <div class=\"sidebar\" data-background-color=\"dark\">
-        <div class=\"sidebar-logo\">
-          <!-- Logo Header -->
-          <div class=\"logo-header\" data-background-color=\"dark\">
-            <a href=\"index.html\" class=\"logo\">
-              <img
-              src=\"";
-        // line 59
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/kaiadmin/logo_light.svg"), "html", null, true);
-        yield "\"
-                alt=\"navbar brand\"
-                class=\"navbar-brand\"
-                height=\"20\"
-              />
-            </a>
-            <div class=\"nav-toggle\">
-              <button class=\"btn btn-toggle toggle-sidebar\">
-                <i class=\"gg-menu-right\"></i>
-              </button>
-              <button class=\"btn btn-toggle sidenav-toggler\">
-                <i class=\"gg-menu-left\"></i>
-              </button>
-            </div>
-            <button class=\"topbar-toggler more\">
-              <i class=\"gg-more-vertical-alt\"></i>
-            </button>
-          </div>
-          <!-- End Logo Header -->
-        </div>
-        <div class=\"sidebar-wrapper scrollbar scrollbar-inner\">
-          <div class=\"sidebar-content\">
-            <ul class=\"nav nav-secondary\">
-              <li class=\"nav-item active\">
-                <a
-                  data-bs-toggle=\"collapse\"
-                  href=\"#dashboard\"
-                  class=\"collapsed\"
-                  aria-expanded=\"false\"
-                >
-                  <i class=\"fas fa-home\"></i>
-                  <p>Dashboard</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"dashboard\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"../demo1/index.html\">
-                        <span class=\"sub-item\">Dashboard 1</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-section\">
-                <span class=\"sidebar-mini-icon\">
-                  <i class=\"fa fa-ellipsis-h\"></i>
-                </span>
-                <h4 class=\"text-section\">Components</h4>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#base\">
-                  <i class=\"fas fa-layer-group\"></i>
-                  <p>Base</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"base\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"components/avatars.html\">
-                        <span class=\"sub-item\">Avatars</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/buttons.html\">
-                        <span class=\"sub-item\">Buttons</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/gridsystem.html\">
-                        <span class=\"sub-item\">Grid System</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/panels.html\">
-                        <span class=\"sub-item\">Panels</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/notifications.html\">
-                        <span class=\"sub-item\">Notifications</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/sweetalert.html\">
-                        <span class=\"sub-item\">Sweet Alert</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/font-awesome-icons.html\">
-                        <span class=\"sub-item\">Font Awesome Icons</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/simple-line-icons.html\">
-                        <span class=\"sub-item\">Simple Line Icons</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/typography.html\">
-                        <span class=\"sub-item\">Typography</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#sidebarLayouts\">
-                  <i class=\"fas fa-th-list\"></i>
-                  <p>Sidebar Layouts</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"sidebarLayouts\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"sidebar-style-2.html\">
-                        <span class=\"sub-item\">Sidebar Style 2</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"icon-menu.html\">
-                        <span class=\"sub-item\">Icon Menu</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#forms\">
-                  <i class=\"fas fa-pen-square\"></i>
-                  <p>Forms</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"forms\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"forms/forms.html\">
-                        <span class=\"sub-item\">Basic Form</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#tables\">
-                  <i class=\"fas fa-table\"></i>
-                  <p>Tables</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"tables\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"tables/tables.html\">
-                        <span class=\"sub-item\">Basic Table</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"tables/datatables.html\">
-                        <span class=\"sub-item\">Datatables</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#maps\">
-                  <i class=\"fas fa-map-marker-alt\"></i>
-                  <p>Maps</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"maps\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"maps/googlemaps.html\">
-                        <span class=\"sub-item\">Google Maps</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"maps/jsvectormap.html\">
-                        <span class=\"sub-item\">Jsvectormap</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#charts\">
-                  <i class=\"far fa-chart-bar\"></i>
-                  <p>Charts</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"charts\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"charts/charts.html\">
-                        <span class=\"sub-item\">Chart Js</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"charts/sparkline.html\">
-                        <span class=\"sub-item\">Sparkline</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a href=\"widgets.html\">
-                  <i class=\"fas fa-desktop\"></i>
-                  <p>Widgets</p>
-                  <span class=\"badge badge-success\">4</span>
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a href=\"../../documentation/index.html\">
-                  <i class=\"fas fa-file\"></i>
-                  <p>Documentation</p>
-                  <span class=\"badge badge-secondary\">1</span>
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#submenu\">
-                  <i class=\"fas fa-bars\"></i>
-                  <p>Menu Levels</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"submenu\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a data-bs-toggle=\"collapse\" href=\"#subnav1\">
-                        <span class=\"sub-item\">Level 1</span>
-                        <span class=\"caret\"></span>
-                      </a>
-                      <div class=\"collapse\" id=\"subnav1\">
-                        <ul class=\"nav nav-collapse subnav\">
-                          <li>
-                            <a href=\"#\">
-                              <span class=\"sub-item\">Level 2</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href=\"#\">
-                              <span class=\"sub-item\">Level 2</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <a data-bs-toggle=\"collapse\" href=\"#subnav2\">
-                        <span class=\"sub-item\">Level 1</span>
-                        <span class=\"caret\"></span>
-                      </a>
-                      <div class=\"collapse\" id=\"subnav2\">
-                        <ul class=\"nav nav-collapse subnav\">
-                          <li>
-                            <a href=\"#\">
-                              <span class=\"sub-item\">Level 2</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <a href=\"#\">
-                        <span class=\"sub-item\">Level 1</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- End Sidebar -->
-
+     
+      ";
+        // line 53
+        yield from         $this->loadTemplate("/sidebar.html.twig", "base_backoffice.html.twig", 53)->unwrap()->yield($context);
+        // line 54
+        yield "
       <div class=\"main-panel\">
         <div class=\"main-header\">
           <div class=\"main-header-logo\">
@@ -409,7 +129,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
               <a href=\"index.html\" class=\"logo\">
                 <img
                 src=\"";
-        // line 343
+        // line 62
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/kaiadmin/logo_light.svg"), "html", null, true);
         yield "\"
                   alt=\"navbar brand\"
@@ -510,7 +230,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 441
+        // line 160
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/jm_denis.jpg"), "html", null, true);
         yield "\"
                           
@@ -527,7 +247,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 455
+        // line 174
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/chadengle.jpg"), "html", null, true);
         yield "\"
                                
@@ -544,7 +264,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 469
+        // line 188
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/mlane.jpg"), "html", null, true);
         yield "\"
                                
@@ -563,7 +283,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 485
+        // line 204
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/talha.jpg"), "html", null, true);
         yield "\"
                                
@@ -635,7 +355,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 554
+        // line 273
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/profile2.jpg"), "html", null, true);
         yield "\"
                                
@@ -757,7 +477,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                     <div class=\"avatar-sm\">
                       <img
                       src=\"";
-        // line 673
+        // line 392
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/profile.jpg"), "html", null, true);
         yield "\"
                         
@@ -777,7 +497,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                           <div class=\"avatar-lg\">
                             <img
                             src=\"";
-        // line 690
+        // line 409
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/profile.jpg"), "html", null, true);
         yield "\"
                            
@@ -820,18 +540,11 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
             <div
               class=\"d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4\"
             >
-              <div>
-                <h3 class=\"fw-bold mb-3\">Dashboard</h3>
-                <h6 class=\"op-7 mb-2\">Free Bootstrap 5 Admin Dashboard</h6>
-              </div>
-              <div class=\"ms-md-auto py-2 py-md-0\">
-                <a href=\"#\" class=\"btn btn-label-info btn-round me-2\">Manage</a>
-                <a href=\"#\" class=\"btn btn-primary btn-round\">Add Customer</a>
-              </div>
-            </div>
-           
-           
-            
+            ";
+        // line 450
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 452
+        yield "          </div>
           </div>
         </div>
 
@@ -853,12 +566,10 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
               </ul>
             </nav>
             <div class=\"copyright\">
-              2024, made with <i class=\"fa fa-heart heart text-danger\"></i> by
-              <a href=\"http://www.themekita.com\">ThemeKita</a>
+              2024 by EduPlus
             </div>
             <div>
-              Distributed by
-              <a target=\"_blank\" href=\"https://themewagon.com/\">ThemeWagon</a>.
+              
             </div>
           </div>
         </footer>
@@ -1062,91 +773,91 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
     <!--   Core JS Files   -->
     
     <script src=\"";
-        // line 972
+        // line 680
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/jquery-3.7.1.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 973
+        // line 681
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/popper.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 974
+        // line 682
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/bootstrap.min.js"), "html", null, true);
         yield "\" ></script>
 
     <!-- jQuery Scrollbar -->
     <script src=\"";
-        // line 977
+        // line 685
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"), "html", null, true);
         yield "\" ></script>
     
 
     <!-- Chart JS -->
     <script src=\"";
-        // line 981
+        // line 689
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/chart.js/chart.min.js"), "html", null, true);
         yield "\" ></script>
     
 
     <!-- jQuery Sparkline -->
     <script src=\"";
-        // line 985
+        // line 693
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jquery.sparkline/jquery.sparkline.min.js"), "html", null, true);
         yield "\" ></script>
   
 
     <!-- Chart Circle -->
     <script src=\"";
-        // line 989
+        // line 697
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/chart-circle/circles.min.js"), "html", null, true);
         yield "\" ></script>
  
 
     <!-- Datatables -->
     <script src=\"";
-        // line 993
+        // line 701
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/datatables/datatables.min.js"), "html", null, true);
         yield "\" ></script>
     
 
     <!-- Bootstrap Notify -->
     <script src=\"";
-        // line 997
+        // line 705
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/bootstrap-notify/bootstrap-notify.min.js"), "html", null, true);
         yield "\" ></script>
    
 
     <!-- jQuery Vector Maps -->
     <script src=\"";
-        // line 1001
+        // line 709
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jsvectormap/jsvectormap.min.js"), "html", null, true);
         yield "\" ></script>
     <script src=\"";
-        // line 1002
+        // line 710
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jsvectormap/world.js"), "html", null, true);
         yield "\" ></script>
 
 
     <!-- Sweet Alert -->
     <script src=\"";
-        // line 1006
+        // line 714
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/sweetalert/sweetalert.min.js"), "html", null, true);
         yield "\" ></script>
  
 
     <!-- Kaiadmin JS -->
     <script src=\"";
-        // line 1010
+        // line 718
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/kaiadmin.min.js"), "html", null, true);
         yield "\" ></script>
     
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src=\"";
-        // line 1013
+        // line 721
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/setting-demo.js"), "html", null, true);
         yield "\" ></script>
     <script src=\"";
-        // line 1014
+        // line 722
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/demo.js"), "html", null, true);
         yield "\" ></script>
     <script>
@@ -1189,6 +900,30 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
         yield from [];
     }
 
+    // line 450
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_body(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 451
+        yield "            ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -1210,7 +945,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  1150 => 1014,  1146 => 1013,  1140 => 1010,  1133 => 1006,  1126 => 1002,  1122 => 1001,  1115 => 997,  1108 => 993,  1101 => 989,  1094 => 985,  1087 => 981,  1080 => 977,  1074 => 974,  1070 => 973,  1066 => 972,  781 => 690,  761 => 673,  639 => 554,  567 => 485,  548 => 469,  531 => 455,  514 => 441,  413 => 343,  126 => 59,  112 => 48,  102 => 41,  98 => 40,  94 => 39,  71 => 19,  61 => 12,  48 => 1,);
+        return array (  917 => 451,  904 => 450,  861 => 722,  857 => 721,  851 => 718,  844 => 714,  837 => 710,  833 => 709,  826 => 705,  819 => 701,  812 => 697,  805 => 693,  798 => 689,  791 => 685,  785 => 682,  781 => 681,  777 => 680,  547 => 452,  545 => 450,  501 => 409,  481 => 392,  359 => 273,  287 => 204,  268 => 188,  251 => 174,  234 => 160,  133 => 62,  123 => 54,  121 => 53,  113 => 48,  103 => 41,  99 => 40,  95 => 39,  72 => 19,  62 => 12,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -1266,289 +1001,8 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
   </head>
   <body>
     <div class=\"wrapper\">
-      <!-- Sidebar -->
-      <div class=\"sidebar\" data-background-color=\"dark\">
-        <div class=\"sidebar-logo\">
-          <!-- Logo Header -->
-          <div class=\"logo-header\" data-background-color=\"dark\">
-            <a href=\"index.html\" class=\"logo\">
-              <img
-              src=\"{{ asset('/img/kaiadmin/logo_light.svg') }}\"
-                alt=\"navbar brand\"
-                class=\"navbar-brand\"
-                height=\"20\"
-              />
-            </a>
-            <div class=\"nav-toggle\">
-              <button class=\"btn btn-toggle toggle-sidebar\">
-                <i class=\"gg-menu-right\"></i>
-              </button>
-              <button class=\"btn btn-toggle sidenav-toggler\">
-                <i class=\"gg-menu-left\"></i>
-              </button>
-            </div>
-            <button class=\"topbar-toggler more\">
-              <i class=\"gg-more-vertical-alt\"></i>
-            </button>
-          </div>
-          <!-- End Logo Header -->
-        </div>
-        <div class=\"sidebar-wrapper scrollbar scrollbar-inner\">
-          <div class=\"sidebar-content\">
-            <ul class=\"nav nav-secondary\">
-              <li class=\"nav-item active\">
-                <a
-                  data-bs-toggle=\"collapse\"
-                  href=\"#dashboard\"
-                  class=\"collapsed\"
-                  aria-expanded=\"false\"
-                >
-                  <i class=\"fas fa-home\"></i>
-                  <p>Dashboard</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"dashboard\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"../demo1/index.html\">
-                        <span class=\"sub-item\">Dashboard 1</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-section\">
-                <span class=\"sidebar-mini-icon\">
-                  <i class=\"fa fa-ellipsis-h\"></i>
-                </span>
-                <h4 class=\"text-section\">Components</h4>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#base\">
-                  <i class=\"fas fa-layer-group\"></i>
-                  <p>Base</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"base\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"components/avatars.html\">
-                        <span class=\"sub-item\">Avatars</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/buttons.html\">
-                        <span class=\"sub-item\">Buttons</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/gridsystem.html\">
-                        <span class=\"sub-item\">Grid System</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/panels.html\">
-                        <span class=\"sub-item\">Panels</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/notifications.html\">
-                        <span class=\"sub-item\">Notifications</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/sweetalert.html\">
-                        <span class=\"sub-item\">Sweet Alert</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/font-awesome-icons.html\">
-                        <span class=\"sub-item\">Font Awesome Icons</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/simple-line-icons.html\">
-                        <span class=\"sub-item\">Simple Line Icons</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/typography.html\">
-                        <span class=\"sub-item\">Typography</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#sidebarLayouts\">
-                  <i class=\"fas fa-th-list\"></i>
-                  <p>Sidebar Layouts</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"sidebarLayouts\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"sidebar-style-2.html\">
-                        <span class=\"sub-item\">Sidebar Style 2</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"icon-menu.html\">
-                        <span class=\"sub-item\">Icon Menu</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#forms\">
-                  <i class=\"fas fa-pen-square\"></i>
-                  <p>Forms</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"forms\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"forms/forms.html\">
-                        <span class=\"sub-item\">Basic Form</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#tables\">
-                  <i class=\"fas fa-table\"></i>
-                  <p>Tables</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"tables\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"tables/tables.html\">
-                        <span class=\"sub-item\">Basic Table</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"tables/datatables.html\">
-                        <span class=\"sub-item\">Datatables</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#maps\">
-                  <i class=\"fas fa-map-marker-alt\"></i>
-                  <p>Maps</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"maps\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"maps/googlemaps.html\">
-                        <span class=\"sub-item\">Google Maps</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"maps/jsvectormap.html\">
-                        <span class=\"sub-item\">Jsvectormap</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#charts\">
-                  <i class=\"far fa-chart-bar\"></i>
-                  <p>Charts</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"charts\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"charts/charts.html\">
-                        <span class=\"sub-item\">Chart Js</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"charts/sparkline.html\">
-                        <span class=\"sub-item\">Sparkline</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class=\"nav-item\">
-                <a href=\"widgets.html\">
-                  <i class=\"fas fa-desktop\"></i>
-                  <p>Widgets</p>
-                  <span class=\"badge badge-success\">4</span>
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a href=\"../../documentation/index.html\">
-                  <i class=\"fas fa-file\"></i>
-                  <p>Documentation</p>
-                  <span class=\"badge badge-secondary\">1</span>
-                </a>
-              </li>
-              <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#submenu\">
-                  <i class=\"fas fa-bars\"></i>
-                  <p>Menu Levels</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"submenu\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a data-bs-toggle=\"collapse\" href=\"#subnav1\">
-                        <span class=\"sub-item\">Level 1</span>
-                        <span class=\"caret\"></span>
-                      </a>
-                      <div class=\"collapse\" id=\"subnav1\">
-                        <ul class=\"nav nav-collapse subnav\">
-                          <li>
-                            <a href=\"#\">
-                              <span class=\"sub-item\">Level 2</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href=\"#\">
-                              <span class=\"sub-item\">Level 2</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <a data-bs-toggle=\"collapse\" href=\"#subnav2\">
-                        <span class=\"sub-item\">Level 1</span>
-                        <span class=\"caret\"></span>
-                      </a>
-                      <div class=\"collapse\" id=\"subnav2\">
-                        <ul class=\"nav nav-collapse subnav\">
-                          <li>
-                            <a href=\"#\">
-                              <span class=\"sub-item\">Level 2</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <a href=\"#\">
-                        <span class=\"sub-item\">Level 1</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- End Sidebar -->
+     
+      {% include '/sidebar.html.twig' %}
 
       <div class=\"main-panel\">
         <div class=\"main-header\">
@@ -1945,18 +1399,9 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
             <div
               class=\"d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4\"
             >
-              <div>
-                <h3 class=\"fw-bold mb-3\">Dashboard</h3>
-                <h6 class=\"op-7 mb-2\">Free Bootstrap 5 Admin Dashboard</h6>
-              </div>
-              <div class=\"ms-md-auto py-2 py-md-0\">
-                <a href=\"#\" class=\"btn btn-label-info btn-round me-2\">Manage</a>
-                <a href=\"#\" class=\"btn btn-primary btn-round\">Add Customer</a>
-              </div>
-            </div>
-           
-           
-            
+            {% block body %}
+            {% endblock %}
+          </div>
           </div>
         </div>
 
@@ -1978,12 +1423,10 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
               </ul>
             </nav>
             <div class=\"copyright\">
-              2024, made with <i class=\"fa fa-heart heart text-danger\"></i> by
-              <a href=\"http://www.themekita.com\">ThemeKita</a>
+              2024 by EduPlus
             </div>
             <div>
-              Distributed by
-              <a target=\"_blank\" href=\"https://themewagon.com/\">ThemeWagon</a>.
+              
             </div>
           </div>
         </footer>

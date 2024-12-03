@@ -58,7 +58,7 @@ class GRessourcesController extends AbstractController
 
     
    
-    #[Route('/g/ressources/new', name: 'ressource_new')]
+    #[Route('/dashboard/ressources/new', name: 'ressource_new')]
     public function new(Request $request): Response
     {
         $ressource = new Ressource();
@@ -94,21 +94,21 @@ class GRessourcesController extends AbstractController
             return $this->redirectToRoute('app_g_ressources');
         }
     
-        return $this->render('g_ressources/new.html.twig', [
+        return $this->render('g_ressources/backOffice/new.html.twig', [
             'form' => $form->createView(),
         ]);
 
         
     
     }
-    #[Route('/g/ressources', name: 'app_g_ressources')]
+    #[Route('/dashboard/ressources', name: 'app_g_ressources')]
     public function index(): Response
     {
         // Fetch all resources from the database
         $ressources = $this->entityManager->getRepository(Ressource::class)->findAll();
 
         // Pass resources to the template
-        return $this->render('g_ressources/index.html.twig', [
+        return $this->render('g_ressources/backOffice/index.html.twig', [
             'ressources' => $ressources,
         ]);
     }
@@ -134,11 +134,11 @@ public function confirmDelete(int $id, Request $request): Response
         throw $this->createNotFoundException('Ressource non trouvée');
     }
 
-    return $this->render('g_ressources/confirm_delete.html.twig', [
+    return $this->render('g_ressources/backOffice/confirm_delete.html.twig', [
         'ressource' => $ressource,
     ]);
 }
-#[Route('/g/ressources/edit/{id}', name: 'ressource_edit')]
+#[Route('g_ressources/backOffice/edit/{id}', name: 'ressource_edit')]
 public function edit(Request $request, Ressource $ressource): Response
 {
     // Create the form and bind it to the existing Ressource entity
@@ -154,7 +154,7 @@ public function edit(Request $request, Ressource $ressource): Response
     }
 
     // Render the form template
-    return $this->render('g_ressources/edit.html.twig', [
+    return $this->render('g_ressources/backOffice/edit.html.twig', [
         'form' => $form->createView(),
         'ressource' => $ressource, // Optionally pass the resource to display additional info
     ]);
@@ -207,11 +207,4 @@ public function edit(Request $request, Ressource $ressource): Response
 
 }
 
-
-
-#[Route('/admin', name: 'admin_dashboard')]
-    public function dashboard(): Response
-    {
-        return $this->render('g_ressources/dashboard.html.twig');
-    }
 }

@@ -32,13 +32,12 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
-        // line 1
+        // line 2
         return "base.html.twig";
     }
 
@@ -51,7 +50,7 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "g_ressources/show.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "g_ressources/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "g_ressources/show.html.twig", 2);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -61,7 +60,7 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
 
     }
 
-    // line 3
+    // line 4
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -84,7 +83,7 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -97,7 +96,7 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "<!-- Blog Start -->
 <div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
     <div class=\"container py-5\">
@@ -116,9 +115,9 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
             <div class=\"col-lg-8\" id=\"ressources-list\">
                 <div class=\"row g-5\" id=\"resources-container\">
                     ";
-        // line 23
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["ressources"]) || array_key_exists("ressources", $context) ? $context["ressources"] : (function () { throw new RuntimeError('Variable "ressources" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["ressources"]) || array_key_exists("ressources", $context) ? $context["ressources"] : (function () { throw new RuntimeError('Variable "ressources" does not exist.', 24, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -134,45 +133,45 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["ressource"]) {
-            // line 24
+            // line 25
             yield "                        <div class=\"col-md-6 wow slideInUp\" data-wow-delay=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 24) * 0.1), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 25) * 0.1), "html", null, true);
             yield "s\">
                             <div class=\"blog-item bg-light rounded shadow-sm overflow-hidden\">
                                 <div class=\"blog-img position-relative overflow-hidden\">
                                     <img class=\"img-fluid\" src=\"";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/ressources/" . CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "image", [], "any", false, false, false, 27))), "html", null, true);
+            // line 28
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/ressources/" . CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "image", [], "any", false, false, false, 28))), "html", null, true);
             yield "\" alt=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 27), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 28), "html", null, true);
             yield "\" style=\"width: 100%; height: 200px; object-fit: cover;\">
                                     <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 28), "html", null, true);
+            // line 29
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 29), "html", null, true);
             yield "</a>
                                 </div>
                                 <div class=\"p-4\">
                                     <div class=\"d-flex mb-3\">
                                         <small class=\"me-3 text-muted\"><i class=\"far fa-user text-primary me-2\"></i> ";
-            // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 32), "html", null, true);
+            // line 33
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 33), "html", null, true);
             yield "</small>
                                         <small class=\"text-muted\"><i class=\"far fa-calendar-alt text-primary me-2\"></i>";
-            // line 33
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "dateCreationRessource", [], "any", false, false, false, 33), "d M, Y"), "html", null, true);
+            // line 34
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "dateCreationRessource", [], "any", false, false, false, 34), "d M, Y"), "html", null, true);
             yield "</small>
                                     </div>
                                     <h4 class=\"mb-3\">";
-            // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 35), "html", null, true);
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 36), "html", null, true);
             yield "</h4>
                                     <p>";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "descriptionRessource", [], "any", false, false, false, 36), "html", null, true);
+            // line 37
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "descriptionRessource", [], "any", false, false, false, 37), "html", null, true);
             yield "</p>
                                     <a class=\"text-uppercase text-primary\" href=\"";
-            // line 37
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("demande_ressource", ["ressourceId" => CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            // line 38
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("demande_ressource", ["ressourceId" => CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 38)]), "html", null, true);
             yield "\">
                                         faire une demande <i class=\"bi bi-arrow-right\"></i>
                                     </a>
@@ -192,14 +191,14 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 45
+            // line 46
             yield "                        <p>Aucune ressource trouvée.</p>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['ressource'], $context['_parent'], $context['_iterated'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 48
         yield "                </div>
             </div>
             <!-- Blog List End -->
@@ -208,76 +207,6 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
     </div>
 </div>
 <!-- Blog End -->
-";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        yield from [];
-    }
-
-    // line 56
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
-    public function block_javascripts(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 57
-        yield "    <script>
-        // JavaScript to trigger AJAX search
-        document.getElementById('search-input').addEventListener('input', function() {
-            var searchTerm = this.value;
-
-            // Make the AJAX request
-            fetch(\"";
-        // line 63
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search_resources_ajax");
-        yield "?search=\" + encodeURIComponent(searchTerm))
-                .then(response => response.json())
-                .then(data => {
-                    var resourcesContainer = document.getElementById('resources-container');
-                    resourcesContainer.innerHTML = '';
-
-                    if (data.ressources.length > 0) {
-                        // Iterate through the resources and render them
-                        data.ressources.forEach(function(ressource) {
-                            var ressourceHtml = `
-                                <div class=\"col-md-6 wow slideInUp\">
-                                    <div class=\"blog-item bg-light rounded shadow-sm overflow-hidden\">
-                                        <div class=\"blog-img position-relative overflow-hidden\">
-                                            <img class=\"img-fluid\" src=\"/uploads/ressources/\${ressource.image}\" alt=\"\${ressource.nomRessource}\" style=\"width: 100%; height: 200px; object-fit: cover;\">
-                                            <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">\${ressource.nomRessource}</a>
-                                        </div>
-                                        <div class=\"p-4\">
-                                            <div class=\"d-flex mb-3\">
-                                                <small class=\"me-3 text-muted\"><i class=\"far fa-user text-primary me-2\"></i> \${ressource.nomRessource}</small>
-                                                <small class=\"text-muted\"><i class=\"far fa-calendar-alt text-primary me-2\"></i>\${ressource.dateCreationRessource}</small>
-                                            </div>
-                                            <h4 class=\"mb-3\">\${ressource.nomRessource}</h4>
-                                            <p>\${ressource.descriptionRessource}</p>
-                                            <a class=\"text-uppercase text-primary\" href=\"\${ressource.nomRessource}\">Lire la suite <i class=\"bi bi-arrow-right\"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                            resourcesContainer.innerHTML += ressourceHtml;
-                        });
-                    } else {
-                        resourcesContainer.innerHTML = '<p>Aucune ressource trouvée.</p>';
-                    }
-                })
-                .catch(error => console.error('Error fetching resources:', error));
-        });
-    </script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -309,12 +238,13 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  243 => 63,  235 => 57,  222 => 56,  203 => 47,  196 => 45,  175 => 37,  171 => 36,  167 => 35,  162 => 33,  158 => 32,  151 => 28,  145 => 27,  138 => 24,  120 => 23,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  202 => 48,  195 => 46,  174 => 38,  170 => 37,  166 => 36,  161 => 34,  157 => 33,  150 => 29,  144 => 28,  137 => 25,  119 => 24,  100 => 7,  87 => 6,  64 => 4,  41 => 2,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("
+{% extends 'base.html.twig' %}
 
 {% block title %}Liste des Ressources{% endblock %}
 
@@ -368,51 +298,6 @@ class __TwigTemplate_e6dec8650b66cda166f8ff47f2266035 extends Template
     </div>
 </div>
 <!-- Blog End -->
-{% endblock %}
-{% block javascripts %}
-    <script>
-        // JavaScript to trigger AJAX search
-        document.getElementById('search-input').addEventListener('input', function() {
-            var searchTerm = this.value;
-
-            // Make the AJAX request
-            fetch(\"{{ path('search_resources_ajax') }}?search=\" + encodeURIComponent(searchTerm))
-                .then(response => response.json())
-                .then(data => {
-                    var resourcesContainer = document.getElementById('resources-container');
-                    resourcesContainer.innerHTML = '';
-
-                    if (data.ressources.length > 0) {
-                        // Iterate through the resources and render them
-                        data.ressources.forEach(function(ressource) {
-                            var ressourceHtml = `
-                                <div class=\"col-md-6 wow slideInUp\">
-                                    <div class=\"blog-item bg-light rounded shadow-sm overflow-hidden\">
-                                        <div class=\"blog-img position-relative overflow-hidden\">
-                                            <img class=\"img-fluid\" src=\"/uploads/ressources/\${ressource.image}\" alt=\"\${ressource.nomRessource}\" style=\"width: 100%; height: 200px; object-fit: cover;\">
-                                            <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">\${ressource.nomRessource}</a>
-                                        </div>
-                                        <div class=\"p-4\">
-                                            <div class=\"d-flex mb-3\">
-                                                <small class=\"me-3 text-muted\"><i class=\"far fa-user text-primary me-2\"></i> \${ressource.nomRessource}</small>
-                                                <small class=\"text-muted\"><i class=\"far fa-calendar-alt text-primary me-2\"></i>\${ressource.dateCreationRessource}</small>
-                                            </div>
-                                            <h4 class=\"mb-3\">\${ressource.nomRessource}</h4>
-                                            <p>\${ressource.descriptionRessource}</p>
-                                            <a class=\"text-uppercase text-primary\" href=\"\${ressource.nomRessource}\">Lire la suite <i class=\"bi bi-arrow-right\"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                            resourcesContainer.innerHTML += ressourceHtml;
-                        });
-                    } else {
-                        resourcesContainer.innerHTML = '<p>Aucune ressource trouvée.</p>';
-                    }
-                })
-                .catch(error => console.error('Error fetching resources:', error));
-        });
-    </script>
 {% endblock %}
 ", "g_ressources/show.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\show.html.twig");
     }

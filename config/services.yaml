@@ -3,6 +3,7 @@ parameters:
   profile_pictures_directory: "../public/uploads/profilePictures"
   cv_directory: '../public/uploads/cv'
   event_pictures_directory: "../public/uploads/events"
+  uploads_directory: "../public/uploads/ressources"
 
 
 services:
