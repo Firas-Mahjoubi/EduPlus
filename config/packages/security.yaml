@@ -18,12 +18,13 @@ security:
                 username_parameter: email   # Match the 'email' field in the login form
                 password_parameter: password # Match the 'password' field in the login form
                 enable_csrf: true  # Enable CSRF protection (instead of csrf_token_generator)
-                default_target_path: app_g_events
+                # Remove or comment out default_target_path
+                # default_target_path: /  # This can be any fallback route
+
             # Logout functionality
             logout:
                 path: app_logout  # Route to logout
                 target: app_login  # Redirect to login page after logout
-
 
             # Remember me functionality
             remember_me:
@@ -31,10 +32,8 @@ security:
                 lifetime: 604800  # Remember me cookie lifetime in seconds (1 week)
                 path: /  # Apply to the entire site
 
-            # Allow anonymous access to the login page (uncomment if you want that)
-            # anonymous: true
-
     access_control:
         # Define any access control rules based on roles here
         # For example:
-        # - { path: ^/admin, roles: ROLE_ADMIN }  # Only allow users with ROLE_ADMIN to access paths starting with '/admin'
+        - { path: ^/events, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
