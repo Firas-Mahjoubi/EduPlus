@@ -73,7 +73,7 @@ class __TwigTemplate_83e27c8c7bed5ebc4b45d9167e608b1a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello GRecrutementsController!";
+        yield "Liste des Recrutements";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,22 +97,154 @@ class __TwigTemplate_83e27c8c7bed5ebc4b45d9167e608b1a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        yield "<div class=\"container mt-5\">
+    <h1 class=\"mb-4 text-center\">Liste des Annonces de Recrutement</h1>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
+    <!-- Message Flash -->
+    ";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "flashes", ["success"], "method", false, false, false, 10));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 11
+            yield "        <div class=\"alert alert-success\">
+            ";
+            // line 12
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+            yield "
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        yield "
+    ";
+        // line 16
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "flashes", ["error"], "method", false, false, false, 16));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 17
+            yield "        <div class=\"alert alert-danger\">
+            ";
+            // line 18
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+            yield "
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
+        yield "
+    <!-- Bouton pour ajouter une annonce -->
+    ";
+        // line 23
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 24
+            yield "        <div class=\"mb-3 text-end\">
+            <a href=\"";
+            // line 25
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_create");
+            yield "\" class=\"btn btn-primary\">Créer une Nouvelle Annonce</a>
+        </div>
+    ";
+        }
+        // line 28
+        yield "
+    <!-- Tableau des recrutements -->
+    <div class=\"table-responsive\">
+        <table class=\"table table-bordered table-striped\">
+            <thead class=\"table-dark\">
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Statut</th>
+                    <th>Date Limite</th>
+                    <th>Club</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ";
+        // line 43
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["liste_recruitement"]) || array_key_exists("liste_recruitement", $context) ? $context["liste_recruitement"] : (function () { throw new RuntimeError('Variable "liste_recruitement" does not exist.', 43, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["recruitment"]) {
+            // line 44
+            yield "                    <tr>
+                        <td>";
+            // line 45
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 45), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 46
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "title", [], "any", false, false, false, 46), "html", null, true);
+            yield "</td>
+                        <td>
+                            <span class=\"badge ";
+            // line 48
+            yield (((CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "status", [], "any", false, false, false, 48) == "open")) ? ("bg-success") : ("bg-danger"));
+            yield "\">
+                                ";
+            // line 49
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::capitalize($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "status", [], "any", false, false, false, 49)), "html", null, true);
+            yield "
+                            </span>
+                        </td>
+                        <td>";
+            // line 52
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "deadline", [], "any", false, false, false, 52), "d/m/Y"), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 53
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "club", [], "any", false, false, false, 53), "id", [], "any", false, false, false, 53), "html", null, true);
+            yield "</td>
+                        <td>
+                            <!-- Bouton Voir -->
+                            <a href=\"";
+            // line 56
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitement_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 56)]), "html", null, true);
+            yield "\" class=\"btn btn-info btn-sm\">Voir</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/src/Controller/GRecrutementsController.php</code></li>
-        <li>Your template at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/templates/g_recrutements/index.html.twig</code></li>
-    </ul>
+                           
+                                <!-- Bouton Modifier -->
+                                <a href=\"";
+            // line 60
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 60)]), "html", null, true);
+            yield "\" class=\"btn btn-warning btn-sm\">Modifier</a>
+                                <!-- Bouton Supprimer -->
+                                <a href=\"";
+            // line 62
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Recruitment_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 62)]), "html", null, true);
+            yield "\" 
+                                   class=\"btn btn-danger btn-sm\" 
+                                   onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');\">
+                                    Supprimer
+                                </a>
+                          
+                        </td>
+                    </tr>
+                ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 71
+            yield "                    <tr>
+                        <td colspan=\"6\" class=\"text-center\">Aucune annonce de recrutement trouvée.</td>
+                    </tr>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['recruitment'], $context['_parent'], $context['_iterated']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 75
+        yield "            </tbody>
+        </table>
+    </div>
 </div>
 ";
         
@@ -145,29 +277,88 @@ class __TwigTemplate_83e27c8c7bed5ebc4b45d9167e608b1a extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  245 => 75,  236 => 71,  222 => 62,  217 => 60,  210 => 56,  204 => 53,  200 => 52,  194 => 49,  190 => 48,  185 => 46,  181 => 45,  178 => 44,  173 => 43,  156 => 28,  150 => 25,  147 => 24,  145 => 23,  141 => 21,  132 => 18,  129 => 17,  125 => 16,  122 => 15,  113 => 12,  110 => 11,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello GRecrutementsController!{% endblock %}
+{% block title %}Liste des Recrutements{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class=\"container mt-5\">
+    <h1 class=\"mb-4 text-center\">Liste des Annonces de Recrutement</h1>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!-- Message Flash -->
+    {% for message in app.flashes('success') %}
+        <div class=\"alert alert-success\">
+            {{ message }}
+        </div>
+    {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/src/Controller/GRecrutementsController.php</code></li>
-        <li>Your template at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/templates/g_recrutements/index.html.twig</code></li>
-    </ul>
+    {% for message in app.flashes('error') %}
+        <div class=\"alert alert-danger\">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <!-- Bouton pour ajouter une annonce -->
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class=\"mb-3 text-end\">
+            <a href=\"{{ path('recruitment_create') }}\" class=\"btn btn-primary\">Créer une Nouvelle Annonce</a>
+        </div>
+    {% endif %}
+
+    <!-- Tableau des recrutements -->
+    <div class=\"table-responsive\">
+        <table class=\"table table-bordered table-striped\">
+            <thead class=\"table-dark\">
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Statut</th>
+                    <th>Date Limite</th>
+                    <th>Club</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recruitment in liste_recruitement %}
+                    <tr>
+                        <td>{{ recruitment.id }}</td>
+                        <td>{{ recruitment.title }}</td>
+                        <td>
+                            <span class=\"badge {{ recruitment.status == 'open' ? 'bg-success' : 'bg-danger' }}\">
+                                {{ recruitment.status | capitalize }}
+                            </span>
+                        </td>
+                        <td>{{ recruitment.deadline|date('d/m/Y') }}</td>
+                        <td>{{ recruitment.club.id }}</td>
+                        <td>
+                            <!-- Bouton Voir -->
+                            <a href=\"{{ path('recruitement_details', { id: recruitment.id }) }}\" class=\"btn btn-info btn-sm\">Voir</a>
+
+                           
+                                <!-- Bouton Modifier -->
+                                <a href=\"{{ path('recruitment_edit', { id: recruitment.id }) }}\" class=\"btn btn-warning btn-sm\">Modifier</a>
+                                <!-- Bouton Supprimer -->
+                                <a href=\"{{ path('Recruitment_delete', { id: recruitment.id }) }}\" 
+                                   class=\"btn btn-danger btn-sm\" 
+                                   onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');\">
+                                    Supprimer
+                                </a>
+                          
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan=\"6\" class=\"text-center\">Aucune annonce de recrutement trouvée.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
 ", "g_recrutements/index.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_recrutements\\index.html.twig");

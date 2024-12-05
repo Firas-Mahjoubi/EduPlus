@@ -77,4 +77,5 @@ class SecurityController extends AbstractController
             'latestEvents' => $latestEvents,
         ]);
     }
+   
 }

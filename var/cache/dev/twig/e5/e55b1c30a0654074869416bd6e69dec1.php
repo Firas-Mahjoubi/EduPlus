@@ -129,35 +129,34 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 56
         yield "    
-    ";
+ ";
         // line 57
         yield from         $this->loadTemplate("footer.html.twig", "base.html.twig", 57)->unwrap()->yield($context);
         // line 58
-        yield "
-    <!-- Back to Top -->
+        yield "    <!-- Back to Top -->
     <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
     <script src=\"";
-        // line 65
+        // line 64
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 66
+        // line 65
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 67
+        // line 66
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 68
+        // line 67
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 69
+        // line 68
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
         yield "\"></script>
      <script>
@@ -177,7 +176,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     </script>
     <!-- Template Javascript -->
     <script src=\"";
-        // line 86
+        // line 85
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         yield "\"></script>
 </body>
@@ -285,7 +284,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  257 => 55,  244 => 54,  233 => 12,  220 => 11,  197 => 6,  181 => 86,  161 => 69,  157 => 68,  153 => 67,  149 => 66,  145 => 65,  136 => 58,  134 => 57,  131 => 56,  129 => 54,  126 => 53,  124 => 52,  116 => 47,  110 => 44,  104 => 41,  100 => 40,  75 => 18,  68 => 13,  66 => 11,  58 => 6,  51 => 1,);
+        return array (  256 => 55,  243 => 54,  232 => 12,  219 => 11,  196 => 6,  180 => 85,  160 => 68,  156 => 67,  152 => 66,  148 => 65,  144 => 64,  136 => 58,  134 => 57,  131 => 56,  129 => 54,  126 => 53,  124 => 52,  116 => 47,  110 => 44,  104 => 41,  100 => 40,  75 => 18,  68 => 13,  66 => 11,  58 => 6,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -346,8 +345,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
     {% block body %}
     {% endblock %}
     
-    {% include 'footer.html.twig' %}
-
+ {% include 'footer.html.twig' %}
     <!-- Back to Top -->
     <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
 

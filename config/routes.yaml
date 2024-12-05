@@ -19,9 +19,11 @@ uploads:
 app_events:
     path: /events
     controller: App\Controller\EventController::index
-admin_dashboard:
-    path: /admin
-    controller: App\Controller\AdminController::index
+
 
 user_dashboard:
     path: /events
+admin:
+    resource: '../src/Controller/AdminController.php'
+    type: annotation
+

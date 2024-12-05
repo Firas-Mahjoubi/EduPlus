@@ -63,7 +63,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         yield "\" class=\"nav-item nav-link active\">Home</a>
                 <a href=\"";
         // line 13
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_index");
         yield "\" class=\"nav-item nav-link\">Clubs</a>
                 <a href=\"";
         // line 14
@@ -258,7 +258,7 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <div class=\"navbar-nav ms-auto py-0\">
                 <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link active\">Home</a>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Clubs</a>
+                <a href=\"{{ path('club_index') }}\" class=\"nav-item nav-link\">Clubs</a>
                 <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Events</a>
                 <a href=\"{{ path('app_g_ressourcess') }}\" class=\"nav-item nav-link\">Ressources</a>
             </div>
