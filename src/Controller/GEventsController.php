@@ -56,65 +56,65 @@ class GEventsController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    // Add a new event
-    #[Route('/add', name: 'app_g_events_add', methods: ['GET', 'POST'])]
-    public function add(Request $request, UserRepository $userRepository): Response
-    {
-        $event = new Event();
-        $form = $this->createForm(EventType::class, $event);
-        $form->handleRequest($request);
+    // // Add a new event
+    // #[Route('/add', name: 'app_g_events_add', methods: ['GET', 'POST'])]
+    // public function add(Request $request, UserRepository $userRepository): Response
+    // {
+    //     $event = new Event();
+    //     $form = $this->createForm(EventType::class, $event);
+    //     $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Handle image upload
-            $image = $form->get('image')->getData();
-            if ($image) {
-                $newFilename = uniqid() . '.' . $image->guessExtension();
-                try {
-                    $image->move(
-                        $this->getParameter('event_pictures_directory'),
-                        $newFilename
-                    );
-                    $event->setImage($newFilename);
-                } catch (FileException $e) {
-                    $this->addFlash('error', 'Error uploading the image.');
-                }
-            }
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         // Handle image upload
+    //         $image = $form->get('image')->getData();
+    //         if ($image) {
+    //             $newFilename = uniqid() . '.' . $image->guessExtension();
+    //             try {
+    //                 $image->move(
+    //                     $this->getParameter('event_pictures_directory'),
+    //                     $newFilename
+    //                 );
+    //                 $event->setImage($newFilename);
+    //             } catch (FileException $e) {
+    //                 $this->addFlash('error', 'Error uploading the image.');
+    //             }
+    //         }
 
-            // Check if the participant limit is enabled
-            if ($form->get('hasParticipantLimit')->getData()) {
-                $event->setHasParticipantLimit(true);
-                $event->setMaxParticipants($form->get('maxParticipants')->getData());
-            } else {
-                $event->setHasParticipantLimit(false);
-                $event->setMaxParticipants(null);
-            }
+    //         // Check if the participant limit is enabled
+    //         if ($form->get('hasParticipantLimit')->getData()) {
+    //             $event->setHasParticipantLimit(true);
+    //             $event->setMaxParticipants($form->get('maxParticipants')->getData());
+    //         } else {
+    //             $event->setHasParticipantLimit(false);
+    //             $event->setMaxParticipants(null);
+    //         }
 
-            // Persist the event
-            $this->entityManager->persist($event);
-            $this->entityManager->flush();
+    //         // Persist the event
+    //         $this->entityManager->persist($event);
+    //         $this->entityManager->flush();
 
-            // Send email notification to all users
-            $users = $userRepository->findAll();
-            foreach ($users as $user) {
-                $email = (new Email())
-                    ->from('YOUR_EMAIL@outlook.com') // Your Outlook email
-                    ->to($user->getEmail())
-                    ->subject('New Event: ' . $event->getTitre())
-                    ->html($this->renderView('emails/new_event.html.twig', [
-                        'event' => $event
-                    ]));
+    //         // Send email notification to all users
+    //         $users = $userRepository->findAll();
+    //         foreach ($users as $user) {
+    //             $email = (new Email())
+    //                 ->from('YOUR_EMAIL@outlook.com') // Your Outlook email
+    //                 ->to($user->getEmail())
+    //                 ->subject('New Event: ' . $event->getTitre())
+    //                 ->html($this->renderView('emails/new_event.html.twig', [
+    //                     'event' => $event
+    //                 ]));
 
-                $this->mailer->send($email);
-            }
+    //             $this->mailer->send($email);
+    //         }
 
-            $this->addFlash('success', 'Event added successfully and emails sent to all users.');
-            return $this->redirectToRoute('app_g_events');
-        }
+    //         $this->addFlash('success', 'Event added successfully and emails sent to all users.');
+    //         return $this->redirectToRoute('app_g_events');
+    //     }
 
-        return $this->render('g_events/add.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
+    //     return $this->render('g_events/add.html.twig', [
+    //         'form' => $form->createView(),
+    //     ]);
+    // }
     
 
 //     Update an existing event

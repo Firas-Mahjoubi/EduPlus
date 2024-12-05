@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* sidebar.html.twig */
+/* /sidebar.html.twig */
 class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
 {
     private Source $source;
@@ -39,10 +39,10 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
 
         // line 1
         yield " <!-- Sidebar -->
@@ -92,7 +92,10 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
           <div class=\"collapse\" id=\"dashboard\">
             <ul class=\"nav nav-collapse\">
               <li>
-                <a href=\"../demo1/index.html\">
+                <a href=\"";
+        // line 45
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_dashboard");
+        yield "\">
                   <span class=\"sub-item\">Dashboard 1</span>
                 </a>
               </li>
@@ -159,7 +162,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
               <li>
                 <a href=\"";
         // line 98
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_add");
         yield "\">
                   <span class=\"sub-item\">ADD </span>
                 </a>
@@ -288,7 +291,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
      */
     public function getTemplateName(): string
     {
-        return "sidebar.html.twig";
+        return "/sidebar.html.twig";
     }
 
     /**
@@ -304,7 +307,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  257 => 169,  249 => 164,  241 => 159,  217 => 138,  209 => 133,  201 => 128,  178 => 108,  170 => 103,  162 => 98,  143 => 82,  135 => 77,  127 => 72,  119 => 67,  57 => 8,  48 => 1,);
+        return array (  260 => 169,  252 => 164,  244 => 159,  220 => 138,  212 => 133,  204 => 128,  181 => 108,  173 => 103,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -353,7 +356,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
           <div class=\"collapse\" id=\"dashboard\">
             <ul class=\"nav nav-collapse\">
               <li>
-                <a href=\"../demo1/index.html\">
+                <a href=\"{{ path('admin_dashboard') }}\">
                   <span class=\"sub-item\">Dashboard 1</span>
                 </a>
               </li>
@@ -406,7 +409,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
           <div class=\"collapse\" id=\"sidebarLayouts\">
             <ul class=\"nav nav-collapse\">
               <li>
-                <a href=\"{{ path('app_logout') }}\">
+                <a href=\"{{ path('app_g_events_add') }}\">
                   <span class=\"sub-item\">ADD </span>
                 </a>
               </li>
@@ -495,6 +498,6 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
     </div>
   </div>
 </div>
-<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\sidebar.html.twig");
+<!-- End Sidebar -->", "/sidebar.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\sidebar.html.twig");
     }
 }

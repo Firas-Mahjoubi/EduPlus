@@ -358,6 +358,7 @@
     <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="mailer.mailer"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\AdminController"/>
@@ -515,7 +516,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.WOrE55H"/>
+      <argument type="service" id=".service_locator.QVnu7.w"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3409,7 +3410,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.WOrE55H"/>
+      <argument type="service" id=".service_locator.QVnu7.w"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7823,6 +7824,12 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.kPUOGb8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.xLj1diB" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7876,12 +7883,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="eventRepository" type="service_closure" id="App\Repository\EventRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.kPUOGb8" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.dANsewa" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7971,9 +7972,10 @@
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.WOrE55H" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QVnu7.w" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AdminController::add" type="service_closure" id=".service_locator.kPUOGb8"/>
         <argument key="App\Controller\AdminController::dashboard" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\ApplicationController::submit" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
@@ -7985,7 +7987,6 @@
         <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController::show" type="service_closure" id=".service_locator.eAaJ0X7"/>
         <argument key="App\Controller\GClubsController::showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
-        <argument key="App\Controller\GEventsController::add" type="service_closure" id=".service_locator.kPUOGb8"/>
         <argument key="App\Controller\GEventsController::cancelParticipation" type="service_closure" id=".service_locator.Y2F5Zqo"/>
         <argument key="App\Controller\GEventsController::delete" type="service_closure" id=".service_locator.dANsewa"/>
         <argument key="App\Controller\GEventsController::index" type="service_closure" id=".service_locator.qE8Flyf"/>
@@ -8012,6 +8013,7 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
+        <argument key="App\Controller\AdminController:add" type="service_closure" id=".service_locator.kPUOGb8"/>
         <argument key="App\Controller\AdminController:dashboard" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\ApplicationController:submit" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
@@ -8023,7 +8025,6 @@
         <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController:show" type="service_closure" id=".service_locator.eAaJ0X7"/>
         <argument key="App\Controller\GClubsController:showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
-        <argument key="App\Controller\GEventsController:add" type="service_closure" id=".service_locator.kPUOGb8"/>
         <argument key="App\Controller\GEventsController:cancelParticipation" type="service_closure" id=".service_locator.Y2F5Zqo"/>
         <argument key="App\Controller\GEventsController:delete" type="service_closure" id=".service_locator.dANsewa"/>
         <argument key="App\Controller\GEventsController:index" type="service_closure" id=".service_locator.qE8Flyf"/>
@@ -10377,7 +10378,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.WOrE55H"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QVnu7.w"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10408,7 +10409,7 @@
     <service id=".service_locator.h77nnpz" alias=".service_locator.yxANsRR"/>
     <service id=".service_locator.uDZJQkm" alias=".service_locator.C98KNaG"/>
     <service id=".service_locator._jt34Sv" alias=".service_locator.9raLMXz"/>
-    <service id=".service_locator.IxqQvz3" alias=".service_locator.WOrE55H"/>
+    <service id=".service_locator.oFXrsae" alias=".service_locator.QVnu7.w"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.q1xrRm3" alias=".service_locator.pSApZh5"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -10435,6 +10436,7 @@
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
     <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
+    <service id=".service_locator.025Wi8b" alias=".service_locator.kPUOGb8"/>
     <service id=".service_locator.g_aAErc" alias=".service_locator.xLj1diB"/>
     <service id=".service_locator.Ary4uWv" alias=".service_locator.koawAmk"/>
     <service id=".service_locator.y.2nYau" alias=".service_locator.eAaJ0X7"/>
@@ -10443,7 +10445,6 @@
     <service id=".service_locator.wjQzAaJ" alias=".service_locator.6.pzLHU"/>
     <service id=".service_locator.zb_P8ny" alias=".service_locator.eOJlB0r"/>
     <service id=".service_locator.fDl8v62" alias=".service_locator.qE8Flyf"/>
-    <service id=".service_locator.025Wi8b" alias=".service_locator.kPUOGb8"/>
     <service id=".service_locator.6oe8hU3" alias=".service_locator.dANsewa"/>
     <service id=".service_locator..51nIrF" alias=".service_locator.UItqPak"/>
     <service id=".service_locator.1u2GJBu" alias=".service_locator.Y2F5Zqo"/>
