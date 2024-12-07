@@ -14,6 +14,12 @@ use Doctrine\DBAL\Types\Types;
 #[ORM\Entity(repositoryClass: ApplicationRepository::class)]
 class Application
 {
+     // Définition des constantes pour les statuts
+     public const STATUS_PENDING = 'PENDING';
+     public const STATUS_VALIDATED = 'VALIDÉE';
+     public const STATUS_REJECTED = 'REJETÉE';
+
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -23,6 +29,8 @@ class Application
     #[ORM\JoinColumn(nullable: false)]
     private ?Recruitment $recruitment = null;
 
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?User $candidat = null;
 
     #[ORM\ManyToOne(targetEntity: Club::class)]
@@ -30,7 +38,7 @@ class Application
     private ?Club $club = null;
 
     #[ORM\Column(type: Types::STRING, length: 50)]
-    private string $status = 'PENDING';
+    private string $status = self::STATUS_PENDING;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private \DateTimeInterface $dateSoumission;
@@ -128,4 +136,31 @@ class Application
         $this->motivationLetter = $motivationLetter;
         return $this;
     }
+
+    public function validate(): void
+    {
+        $this->status = self::STATUS_VALIDATED;
+    }
+
+    public function reject(): void
+    {
+        $this->status = self::STATUS_REJECTED;
+    }
+
+    // Vérifications des statuts
+    public function isValidated(): bool
+    {
+        return $this->status === self::STATUS_VALIDATED;
+    }
+
+    public function isRejected(): bool
+    {
+        return $this->status === self::STATUS_REJECTED;
+    }
+
+    public function isPending(): bool
+    {
+        return $this->status === self::STATUS_PENDING;
+    }
+
 }

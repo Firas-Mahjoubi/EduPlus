@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 16d261,127.0.0.1,GET,http://127.0.0.1:8000/admin/event/update/1,1733590439,a1223b,500,request
 a1223b,127.0.0.1,GET,http://127.0.0.1:8000/admin/event/update/1,1733590439,,500,request
 ccc6d8,127.0.0.1,GET,http://127.0.0.1:8000/admin/event/update/1,1733590498,7f8d41,500,request
@@ -206,3 +207,15 @@ c0b273,127.0.0.1,GET,http://127.0.0.1:8000/events/event/6/discussion,1733602243,
 49b788,127.0.0.1,GET,http://127.0.0.1:8000/events/event/6/discussion,1733602419,,200,request
 cf64d8,127.0.0.1,GET,http://127.0.0.1:8000/events/event/6/discussion,1733602433,,200,request
 3f8da9,127.0.0.1,GET,http://127.0.0.1:8000/events/,1733602450,,200,request
+=======
+3179bb,127.0.0.1,GET,https://127.0.0.1:8000/img/favicon.ico,1733585762,5ed36a,404,request
+5ed36a,127.0.0.1,GET,https://127.0.0.1:8000/img/favicon.ico,1733585762,,404,request
+366a96,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements,1733585764,,301,request
+dd58ee,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/,1733585768,6604f8,500,request
+6604f8,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/,1733585768,,500,request
+8c0d9c,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/,1733585788,,200,request
+7a9040,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/,1733585793,,200,request
+5776bf,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/applications/2,1733585797,,200,request
+64d4a8,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/application/decision/4/valider,1733585806,3322d0,500,request
+3322d0,127.0.0.1,GET,https://127.0.0.1:8000/g/recrutements/application/decision/4/valider,1733585806,,500,request
+>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661
