@@ -22,6 +22,12 @@ class Event
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
+    #[ORM\Column(type: 'boolean')]
+    private bool $hasParticipantLimit = false;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $maxParticipants = null;
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $datedebut = null;
 
@@ -36,7 +42,7 @@ class Event
 
     #[ORM\ManyToMany(targetEntity: User::class)]
     #[ORM\JoinTable(name: 'event_user')]
-    private Collection $participants;
+    private ?Collection $participants = null;
 
     #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'events')]
     #[ORM\JoinColumn(nullable: false)]
@@ -46,6 +52,30 @@ class Event
     #[ORM\JoinColumn(nullable: false)] // Assuming every event needs a bloc
     private ?Bloc $bloc = null; // New property to hold the bloc
 
+
+    public function getHasParticipantLimit(): bool
+    {
+        return $this->hasParticipantLimit;
+    }
+
+    public function setHasParticipantLimit(bool $hasParticipantLimit): self
+    {
+        $this->hasParticipantLimit = $hasParticipantLimit;
+
+        return $this;
+    }
+
+    public function getMaxParticipants(): ?int
+    {
+        return $this->maxParticipants;
+    }
+
+    public function setMaxParticipants(?int $maxParticipants): self
+    {
+        $this->maxParticipants = $maxParticipants;
+
+        return $this;
+    }
     public function __construct()
     {
         $this->participants = new ArrayCollection();
@@ -162,4 +192,16 @@ class Event
         $this->bloc = $bloc;
         return $this;
     }
+    // In your Event entity
+
+public function getFormattedDatedebut(): string
+{
+    return $this->datedebut ? $this->datedebut->format('d M Y') : '';
+}
+
+public function getFormattedDatefin(): string
+{
+    return $this->datefin ? $this->datefin->format('d M Y') : '';
+}
+
 }

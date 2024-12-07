@@ -37,7 +37,7 @@ class __TwigTemplate_2524a98db113f68521674010ed605d10 extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "base_backoffice.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -49,7 +49,7 @@ class __TwigTemplate_2524a98db113f68521674010ed605d10 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "g_events/update.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "g_events/update.html.twig", 1);
+        $this->parent = $this->loadTemplate("base_backoffice.html.twig", "g_events/update.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -251,7 +251,7 @@ class __TwigTemplate_2524a98db113f68521674010ed605d10 extends Template
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base_backoffice.html.twig' %}
 
     {% block body %}
         <div class=\"container mt-5\">

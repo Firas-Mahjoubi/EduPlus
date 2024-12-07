@@ -14,6 +14,9 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+
 
 class EventType extends AbstractType
 {
@@ -23,6 +26,17 @@ class EventType extends AbstractType
             ->add('titre', TextType::class, [
                 'label' => 'Title',
                 'attr' => ['placeholder' => 'Enter event title']
+            ])
+            ->add('hasParticipantLimit', CheckboxType::class, [
+                'label' => 'Limit Number of Participants',
+                'required' => false,
+                'mapped' => true,
+            ])
+            ->add('maxParticipants', IntegerType::class, [
+                'label' => 'Max Participants',
+                'required' => false,
+                'mapped' => true,
+                'attr' => ['placeholder' => 'Enter the maximum number of participants'],
             ])
             ->add('datedebut', DateType::class, [
                 'label' => 'Start Date',
@@ -49,16 +63,16 @@ class EventType extends AbstractType
                 'label' => 'Bloc',
                 'placeholder' => 'Select a bloc',
             ])
-            ->add('participants', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'nom', // This should match the property name for the participant name
-                'multiple' => true, // Multiple participants
-                'expanded' => true, // Render as checkboxes
-                'label' => 'Participants',
-                'attr' => [
-                    'class' => 'select2-searchable form-control', // Add the class for Select2 initialization
-                ],
-            ])
+            // ->add('participants', EntityType::class, [
+            //     'class' => User::class,
+            //     'choice_label' => 'nom', // This should match the property name for the participant name
+            //     'multiple' => true, // Multiple participants
+            //     'expanded' => true, // Render as checkboxes
+            //     'label' => 'Participants',
+            //     'attr' => [
+            //         'class' => 'select2-searchable form-control', // Add the class for Select2 initialization
+            //     ],
+            // ])
              // Add the image field for file upload
              ->add('image', FileType::class, [
                 'label' => 'Event Image (Optional)',

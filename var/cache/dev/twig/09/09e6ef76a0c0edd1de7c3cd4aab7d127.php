@@ -168,11 +168,16 @@ class __TwigTemplate_9c2ae87b06a82eb81c69929cef301bd3 extends Template
                             <a href=\"";
                 // line 40
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 40), "decision" => "valider"]), "html", null, true);
-                yield "\" class=\"btn btn-success btn-sm\">Valider</a>
-                            <a href=\"";
-                // line 41
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 41), "decision" => "rejeter"]), "html", null, true);
-                yield "\" class=\"btn btn-danger btn-sm\">Rejeter</a>
+                yield "\" class=\"btn btn-success btn-sm\">
+                            Valider
+                                    </a>
+                                <a href=\"";
+                // line 43
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 43), "decision" => "rejeter"]), "html", null, true);
+                yield "\" class=\"btn btn-danger btn-sm\">
+                            Rejeter
+                                </a>
+
 
 
                         </td>
@@ -182,12 +187,12 @@ class __TwigTemplate_9c2ae87b06a82eb81c69929cef301bd3 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['application'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 47
+            // line 52
             yield "            </tbody>
         </table>
     ";
         }
-        // line 50
+        // line 55
         yield "</div>
 ";
         
@@ -220,7 +225,7 @@ class __TwigTemplate_9c2ae87b06a82eb81c69929cef301bd3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  191 => 50,  186 => 47,  174 => 41,  170 => 40,  164 => 37,  159 => 35,  155 => 34,  150 => 31,  146 => 29,  138 => 27,  136 => 26,  131 => 23,  127 => 22,  115 => 12,  111 => 10,  109 => 9,  104 => 7,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
+        return array (  196 => 55,  191 => 52,  176 => 43,  170 => 40,  164 => 37,  159 => 35,  155 => 34,  150 => 31,  146 => 29,  138 => 27,  136 => 26,  131 => 23,  127 => 22,  115 => 12,  111 => 10,  109 => 9,  104 => 7,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -264,8 +269,13 @@ class __TwigTemplate_9c2ae87b06a82eb81c69929cef301bd3 extends Template
                             <a href=\"{{ path('application_details', { id: application.id }) }}\" class=\"btn btn-primary btn-sm\">Voir</a>
 
                             
-                            <a href=\"{{ path('application_decision', { id: application.id, decision: 'valider' }) }}\" class=\"btn btn-success btn-sm\">Valider</a>
-                            <a href=\"{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}\" class=\"btn btn-danger btn-sm\">Rejeter</a>
+                            <a href=\"{{ path('application_decision', { id: application.id, decision: 'valider' }) }}\" class=\"btn btn-success btn-sm\">
+                            Valider
+                                    </a>
+                                <a href=\"{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}\" class=\"btn btn-danger btn-sm\">
+                            Rejeter
+                                </a>
+
 
 
                         </td>

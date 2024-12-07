@@ -37,8 +37,13 @@
                             <a href="{{ path('application_details', { id: application.id }) }}" class="btn btn-primary btn-sm">Voir</a>
 
                             
-                            <a href="{{ path('application_decision', { id: application.id, decision: 'valider' }) }}" class="btn btn-success btn-sm">Valider</a>
-                            <a href="{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}" class="btn btn-danger btn-sm">Rejeter</a>
+                            <a href="{{ path('application_decision', { id: application.id, decision: 'valider' }) }}" class="btn btn-success btn-sm">
+                            Valider
+                                    </a>
+                                <a href="{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}" class="btn btn-danger btn-sm">
+                            Rejeter
+                                </a>
+
 
 
                         </td>

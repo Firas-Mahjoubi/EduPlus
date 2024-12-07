@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>New Event Added</title>
+    </head>
+    <body>
+        <h2>New Event: {{ event.titre }}</h2>
+        <p>We are excited to announce a new event coming soon!</p>
+        <p><strong>Description:</strong> {{ event.description }}</p>
+        <p><strong>Start Date:</strong> {{ event.formattedDatedebut }}</p>
+        <p><strong>Location:</strong> {{ event.club.nom }}</p>
+        <p>Click <a href="{{ path('app_g_events_show', {id: event.id}) }}">here</a> for more details and to participate!</p>
+    </body>
+</html>

@@ -13,6 +13,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Form\RecruitmentType;
 use App\Form\ApplicationRType;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mime\Address;
 
 #[Route('/g/recrutements')]
 
@@ -184,32 +188,55 @@ public function listApplications(Recruitment $recruitment, ManagerRegistry $doct
 }
 
 
-#[Route('/application/{id}/decision', name: 'application_decision')]
-public function decideApplication(Application $application, Request $request, ManagerRegistry $doctrine): Response
-{
-    // Vérifiez si l'utilisateur est autorisé (exemple : un admin ou responsable)
-    $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-    $decision = $request->query->get('decision'); // Récupère la décision (valider ou rejeter)
+
+#[Route('/application/decision/{id}/{decision}', name: 'application_decision')]
+public function applicationDecision(
+    Application $application,
+    string $decision,
+    MailerInterface $mailer,
+    ManagerRegistry $doctrine
+): Response {
     $entityManager = $doctrine->getManager();
 
+    // Déterminer le statut et le message
     if ($decision === 'valider') {
-        $application->setStatus('VALIDÉE');
-        $this->addFlash('success', 'Candidature validée avec succès.');
+        $application->setStatus('ACCEPTED');
+        $subject = 'Votre candidature a été acceptée';
+        $message = 'Félicitations ! Votre candidature a été acceptée.';
     } elseif ($decision === 'rejeter') {
-        $application->setStatus('REJETÉE');
-        $this->addFlash('error', 'Candidature rejetée avec succès.');
+        $application->setStatus('REJECTED');
+        $subject = 'Votre candidature a été rejetée';
+        $message = 'Nous sommes désolés, mais votre candidature a été rejetée.';
     } else {
         $this->addFlash('error', 'Décision invalide.');
         return $this->redirectToRoute('recruitment_applications', ['id' => $application->getRecruitment()->getId()]);
     }
 
-    // Sauvegarde de la modification
+    // Mettre à jour le statut dans la base de données
     $entityManager->flush();
+
+    // Vérifier que le candidat est associé à l'application
+    if ($application->getCandidat() && $application->getCandidat()->getEmail()) {
+        // Créer et envoyer l'e-mail
+        $email = (new TemplatedEmail())
+    ->from('your_email@example.com')
+    ->to($application->getCandidat()->getEmail())
+    ->subject($subject)
+    ->htmlTemplate('email/application_decision.html.twig') // Assurez-vous que ce chemin est correct
+    ->context([
+        'application' => $application,
+        'message' => $message,
+    ]);
+
+        $mailer->send($email);
+    }
+
+    // Message flash pour l'administrateur
+    $this->addFlash('success', 'La décision a été enregistrée et un e-mail a été envoyé au candidat.');
 
     return $this->redirectToRoute('recruitment_applications', ['id' => $application->getRecruitment()->getId()]);
 }
-
 
 
 #[Route('/application/{id}/details', name: 'application_details')]
