@@ -155,47 +155,81 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
                         </div>
                     </div>
 
-                    <!-- Average Rating -->
                     <div>
-                        Average Rating:
-                        ";
-            // line 43
-            if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "rating", [], "any", false, false, false, 43)) > 0)) {
-                // line 44
-                yield "                            ";
+    Average Rating:
+    ";
+            // line 42
+            if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "rating", [], "any", false, false, false, 42)) > 0)) {
+                // line 43
+                yield "        ";
                 $context["total"] = 0;
-                // line 45
-                yield "                            ";
+                // line 44
+                yield "        ";
                 $context['_parent'] = $context;
-                $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "rating", [], "any", false, false, false, 45));
+                $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "rating", [], "any", false, false, false, 44));
                 foreach ($context['_seq'] as $context["_key"] => $context["rating"]) {
+                    // line 45
+                    yield "            ";
+                    $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 45, $this->source); })()) + CoreExtension::getAttribute($this->env, $this->source, $context["rating"], "value", [], "any", false, false, false, 45));
                     // line 46
-                    yield "                                ";
-                    $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 46, $this->source); })()) + CoreExtension::getAttribute($this->env, $this->source, $context["rating"], "value", [], "any", false, false, false, 46));
-                    // line 47
-                    yield "                            ";
+                    yield "        ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_key'], $context['rating'], $context['_parent']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 47
+                yield "        ";
+                $context["averageRating"] = Twig\Extension\CoreExtension::round(((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 47, $this->source); })()) / Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "rating", [], "any", false, false, false, 47))), 1, "floor");
                 // line 48
-                yield "                            <span data-coreui-precision=\"0.25\" data-coreui-toggle=\"rating\" data-coreui-value\">";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 48, $this->source); })()) / Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "rating", [], "any", false, false, false, 48))), "html", null, true);
-                yield "</span>
-                        ";
+                yield "
+        <!-- Star Rating -->
+        <span>
+            ";
+                // line 51
+                $context['_parent'] = $context;
+                $context['_seq'] = CoreExtension::ensureTraversable(range(1, 5));
+                foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                    // line 52
+                    yield "                ";
+                    if (($context["i"] <= (isset($context["averageRating"]) || array_key_exists("averageRating", $context) ? $context["averageRating"] : (function () { throw new RuntimeError('Variable "averageRating" does not exist.', 52, $this->source); })()))) {
+                        // line 53
+                        yield "                    <i class=\"fas fa-star text-warning\"></i>
+                ";
+                    } elseif ((                    // line 54
+$context["i"] <= ((isset($context["averageRating"]) || array_key_exists("averageRating", $context) ? $context["averageRating"] : (function () { throw new RuntimeError('Variable "averageRating" does not exist.', 54, $this->source); })()) + 0.5))) {
+                        // line 55
+                        yield "                    <i class=\"fas fa-star-half-alt text-warning\"></i>
+                ";
+                    } else {
+                        // line 57
+                        yield "                    <i class=\"far fa-star text-warning\"></i>
+                ";
+                    }
+                    // line 59
+                    yield "            ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_key'], $context['i'], $context['_parent']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 60
+                yield "        </span>
+        <small>(";
+                // line 61
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["averageRating"]) || array_key_exists("averageRating", $context) ? $context["averageRating"] : (function () { throw new RuntimeError('Variable "averageRating" does not exist.', 61, $this->source); })()), "html", null, true);
+                yield "/5)</small>
+    ";
             } else {
-                // line 50
-                yield "                            <span style=\"color: #aaa;\">No ratings yet</span>
-                        ";
+                // line 63
+                yield "        <span style=\"color: #aaa;\">No ratings yet</span>
+    ";
             }
-            // line 52
-            yield "                    </div>
-
+            // line 65
+            yield "</div>
                     <!-- Description -->
                     <p style=\"margin: 15px 0; color: #333; font-size: 14px;\">
                         ";
-            // line 56
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 56)) > 100)) ? ((Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 56), 0, 100) . "...")) : (CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 56))), "html", null, true);
+            // line 68
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 68)) > 100)) ? ((Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 68), 0, 100) . "...")) : (CoreExtension::getAttribute($this->env, $this->source, $context["club"], "description", [], "any", false, false, false, 68))), "html", null, true);
             yield "
                     </p>
 
@@ -203,13 +237,13 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
                     <div style=\"text-align: center;\">
                         <a 
                             href=\"";
-            // line 62
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["club"], "id", [], "any", false, false, false, 62)]), "html", null, true);
+            // line 74
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["club"], "id", [], "any", false, false, false, 74)]), "html", null, true);
             yield "\" 
                             style=\"padding: 5px 10px; font-size: 14px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;\">
                             Join ";
-            // line 64
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "nom", [], "any", false, false, false, 64), "html", null, true);
+            // line 76
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "nom", [], "any", false, false, false, 76), "html", null, true);
             yield "
                         </a>
                     </div>
@@ -218,7 +252,7 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 69
+            // line 81
             yield "                <div style=\"text-align: center; color: #888; font-size: 14px;\">
                     No clubs found.
                 </div>
@@ -227,7 +261,7 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['club'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 85
         yield "        </div>
     </div>
 ";
@@ -261,7 +295,7 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  231 => 73,  222 => 69,  212 => 64,  207 => 62,  198 => 56,  192 => 52,  188 => 50,  182 => 48,  176 => 47,  173 => 46,  168 => 45,  165 => 44,  163 => 43,  153 => 36,  149 => 35,  143 => 32,  139 => 31,  133 => 27,  128 => 26,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  265 => 85,  256 => 81,  246 => 76,  241 => 74,  232 => 68,  227 => 65,  223 => 63,  218 => 61,  215 => 60,  209 => 59,  205 => 57,  201 => 55,  199 => 54,  196 => 53,  193 => 52,  189 => 51,  184 => 48,  181 => 47,  175 => 46,  172 => 45,  167 => 44,  164 => 43,  162 => 42,  153 => 36,  149 => 35,  143 => 32,  139 => 31,  133 => 27,  128 => 26,  113 => 14,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -305,20 +339,32 @@ class __TwigTemplate_9ea411b1cc74d749311f14de10969259 extends Template
                         </div>
                     </div>
 
-                    <!-- Average Rating -->
                     <div>
-                        Average Rating:
-                        {% if club.rating|length > 0 %}
-                            {% set total = 0 %}
-                            {% for rating in club.rating %}
-                                {% set total = total + rating.value %}
-                            {% endfor %}
-                            <span data-coreui-precision=\"0.25\" data-coreui-toggle=\"rating\" data-coreui-value\">{{ (total / club.rating|length)}}</span>
-                        {% else %}
-                            <span style=\"color: #aaa;\">No ratings yet</span>
-                        {% endif %}
-                    </div>
+    Average Rating:
+    {% if club.rating|length > 0 %}
+        {% set total = 0 %}
+        {% for rating in club.rating %}
+            {% set total = total + rating.value %}
+        {% endfor %}
+        {% set averageRating = (total / club.rating|length)|round(1, 'floor') %}
 
+        <!-- Star Rating -->
+        <span>
+            {% for i in 1..5 %}
+                {% if i <= averageRating %}
+                    <i class=\"fas fa-star text-warning\"></i>
+                {% elseif i <= (averageRating + 0.5) %}
+                    <i class=\"fas fa-star-half-alt text-warning\"></i>
+                {% else %}
+                    <i class=\"far fa-star text-warning\"></i>
+                {% endif %}
+            {% endfor %}
+        </span>
+        <small>({{ averageRating }}/5)</small>
+    {% else %}
+        <span style=\"color: #aaa;\">No ratings yet</span>
+    {% endif %}
+</div>
                     <!-- Description -->
                     <p style=\"margin: 15px 0; color: #333; font-size: 14px;\">
                         {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}

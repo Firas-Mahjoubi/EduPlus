@@ -20,7 +20,12 @@ class Commentary
     #[ORM\JoinColumn(nullable: false)]
     private ?Club $club = null;
 
-    
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTimeInterface $date = null;
 
     public function getId(): ?int
     {
@@ -54,6 +59,30 @@ class Commentary
     public function setClub(?Club $club): static
     {
         $this->club = $club;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): static
+    {
+        $this->date = $date;
 
         return $this;
     }

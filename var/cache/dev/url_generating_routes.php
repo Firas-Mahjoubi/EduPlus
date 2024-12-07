@@ -59,15 +59,11 @@ return [
     'index' => [[], ['_controller' => 'App\\Controller\\GusersController::index'], [], [['text', '/']], [], [], []],
     'uploads' => [['path'], ['_public' => true], ['path' => '.+'], [['variable', '/', '.+', 'path', true], ['text', '/uploads']], [], [], []],
     'app_events' => [[], ['_controller' => 'App\\Controller\\EventController::index'], [], [['text', '/events']], [], [], []],
-<<<<<<< HEAD
-    'App\Controller\ApplicationController::submitForClub' => [['clubId'], ['_controller' => 'App\\Controller\\ApplicationController::submitForClub'], [], [['variable', '/', '[^/]++', 'clubId', true], ['text', '/application/submit']], [], [], []],
-=======
     'user_dashboard' => [[], [], [], [['text', '/events']], [], [], []],
     'app_admin' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/admin/']], [], [], []],
     'admin_dashboard' => [[], ['_controller' => 'App\\Controller\\AdminController::dashboard'], [], [['text', '/admin/dashboard']], [], [], []],
     'app_g_events_add' => [[], ['_controller' => 'App\\Controller\\AdminController::add'], [], [['text', '/admin/event/add']], [], [], []],
-    'App\Controller\ApplicationController::submit' => [[], ['_controller' => 'App\\Controller\\ApplicationController::submit'], [], [['text', '/application']], [], [], []],
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+    'App\Controller\ApplicationController::submitForClub' => [['clubId'], ['_controller' => 'App\\Controller\\ApplicationController::submitForClub'], [], [['variable', '/', '[^/]++', 'clubId', true], ['text', '/application/submit']], [], [], []],
     'App\Controller\GClubsController::index' => [[], ['_controller' => 'App\\Controller\\GClubsController::index'], [], [['text', '/club/']], [], [], []],
     'App\Controller\GClubsController::rateClub' => [['id'], ['_controller' => 'App\\Controller\\GClubsController::rateClub'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/club/rating']], [], [], []],
     'App\Controller\GClubsController::showClubs' => [[], ['_controller' => 'App\\Controller\\GClubsController::showClubs'], [], [['text', '/club/allClubs']], [], [], []],

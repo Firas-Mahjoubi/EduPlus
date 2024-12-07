@@ -5,12 +5,15 @@ namespace App\Controller;
 use App\Entity\Club;
 
 use App\Enum\MemberRole;
+
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 
 use App\Entity\Member;
 use App\Entity\Application;
 
 use App\Entity\Rating;
+use App\Entity\Commentary;
+
 
 use App\Repository\RatingRepository;
 use App\Form\ClubType;
@@ -25,6 +28,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Filesystem\Filesystem;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -89,6 +94,7 @@ class GClubsController extends AbstractController
 
         return $this->redirectToRoute('club_details', ['id' => $id]);
     }
+
     public function getAverageRating(Club $club): float
     {
         $ratings = $club->getRating();
@@ -104,7 +110,7 @@ class GClubsController extends AbstractController
         return $total / count($ratings);
     }
 
-   
+
     #[Route('/allClubs', name: 'club_manage')]
     public function showClubs(ClubRepository $clubRepository): Response
     {
@@ -337,6 +343,47 @@ class GClubsController extends AbstractController
             'club' => $club,
         ]);
     }
+
+    private ManagerRegistry $doctrine;
+
+
+    public function __construct(ManagerRegistry $doctrine)
+    {
+        $this->doctrine = $doctrine;
+    }
+
+
+    public function addComment(Request $request): JsonResponse
+    {
+        $content = $request->request->get('content');
+        $clubId = $request->request->get('club_id');
+
+        if (!$content || !$clubId) {
+            return new JsonResponse(['error' => 'Invalid data'], JsonResponse::HTTP_BAD_REQUEST);
+        }
+
+        // Access the Club repository via the injected doctrine service
+        $club = $this->doctrine->getRepository(Club::class)->find($clubId);
+
+        if (!$club) {
+            return new JsonResponse(['error' => 'Club not found'], JsonResponse::HTTP_NOT_FOUND);
+        }
+
+        // Create a new commentary object
+        $comment = new Commentary();
+        $comment->setContent($content);
+        $comment->setClub($club);
+        $comment->setDate(new \DateTime());
+        $comment->setUser($this->getUser()); // Assuming user is authenticated
+
+        // Persist and flush the comment entity
+        $entityManager = $this->doctrine->getManager();
+        $entityManager->persist($comment);
+        $entityManager->flush();
+
+        return new JsonResponse(['message' => 'Comment added successfully'], JsonResponse::HTTP_CREATED);
+    }
+
 
 
 

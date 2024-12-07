@@ -45,7 +45,6 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "footer.html.twig"));
 
         // line 1
-<<<<<<< HEAD
         yield "  <!-- Footer Start -->
     <div class=\"container-fluid bg-dark text-light mt-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
@@ -53,7 +52,7 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
                 <div class=\"col-lg-4 col-md-6 footer-about\">
                     <div class=\"d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4\">
                         <a href=\"index.html\" class=\"navbar-brand\">
-                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>EduPlus</h1>
+                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>Startup</h1>
                         </a>
                         <p class=\"mt-3 mb-4\">Lorem diam sit erat dolor elitr et, diam lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd eos duo.</p>
                         <form action=\"\">
@@ -115,35 +114,7 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
                                 <a class=\"text-light\" href=\"#\"><i class=\"bi bi-arrow-right text-primary me-2\"></i>Contact Us</a>
                             </div>
                         </div>
-=======
-        yield "<!-- Footer Start -->
-<footer class=\"bg-dark text-light mt-5\">
-    <div class=\"container py-4\">
-        <div class=\"row\">
-            <!-- About Section -->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <h4 class=\"text-primary\">EduPlus</h4>
-                <p>\"Transformez vos idées en réalité avec nous. Nous sommes là pour vous accompagner dans votre parcours, en offrant des solutions innovantes et adaptées à vos besoins.\".</p>
-                <form>
-                    <div class=\"input-group\">
-                        <input type=\"text\" class=\"form-control\" placeholder=\"Your Email\">
-                        <button class=\"btn btn-primary\">Sign Up</button>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
                     </div>
-                </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <h5>Contact Us</h5>
-                <p><i class=\"bi bi-geo-alt-fill text-primary me-2\"></i>ESPRIT,Ariana,Tunis</p>
-                <p><i class=\"bi bi-envelope-fill text-primary me-2\"></i>EduPlus@esprit.tn</p>
-                <p><i class=\"bi bi-phone-fill text-primary me-2\"></i>+216 72 393 855</p>
-                <div class=\"mt-2\">
-                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-facebook-f\"></i></a>
-                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-twitter\"></i></a>
-                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>
-                    <a class=\"btn btn-outline-light btn-sm\" href=\"#\"><i class=\"fab fa-instagram\"></i></a>
                 </div>
             </div>
 
@@ -194,7 +165,6 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
 
     public function getSourceContext(): Source
     {
-<<<<<<< HEAD
         return new Source("  <!-- Footer Start -->
     <div class=\"container-fluid bg-dark text-light mt-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
@@ -202,7 +172,7 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
                 <div class=\"col-lg-4 col-md-6 footer-about\">
                     <div class=\"d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4\">
                         <a href=\"index.html\" class=\"navbar-brand\">
-                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>EduPlus</h1>
+                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>Startup</h1>
                         </a>
                         <p class=\"mt-3 mb-4\">Lorem diam sit erat dolor elitr et, diam lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd eos duo.</p>
                         <form action=\"\">
@@ -264,35 +234,7 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
                                 <a class=\"text-light\" href=\"#\"><i class=\"bi bi-arrow-right text-primary me-2\"></i>Contact Us</a>
                             </div>
                         </div>
-=======
-        return new Source("<!-- Footer Start -->
-<footer class=\"bg-dark text-light mt-5\">
-    <div class=\"container py-4\">
-        <div class=\"row\">
-            <!-- About Section -->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <h4 class=\"text-primary\">EduPlus</h4>
-                <p>\"Transformez vos idées en réalité avec nous. Nous sommes là pour vous accompagner dans votre parcours, en offrant des solutions innovantes et adaptées à vos besoins.\".</p>
-                <form>
-                    <div class=\"input-group\">
-                        <input type=\"text\" class=\"form-control\" placeholder=\"Your Email\">
-                        <button class=\"btn btn-primary\">Sign Up</button>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
                     </div>
-                </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class=\"col-lg-4 col-md-6 mb-4\">
-                <h5>Contact Us</h5>
-                <p><i class=\"bi bi-geo-alt-fill text-primary me-2\"></i>ESPRIT,Ariana,Tunis</p>
-                <p><i class=\"bi bi-envelope-fill text-primary me-2\"></i>EduPlus@esprit.tn</p>
-                <p><i class=\"bi bi-phone-fill text-primary me-2\"></i>+216 72 393 855</p>
-                <div class=\"mt-2\">
-                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-facebook-f\"></i></a>
-                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-twitter\"></i></a>
-                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>
-                    <a class=\"btn btn-outline-light btn-sm\" href=\"#\"><i class=\"fab fa-instagram\"></i></a>
                 </div>
             </div>
 
@@ -313,13 +255,8 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
     <div class=\"bg-primary text-center py-3\">
         <p class=\"mb-0\">&copy; Your Site Name. All rights reserved. Designed by <a href=\"https://htmlcodex.com\" class=\"text-white text-decoration-none\">HTML Codex</a>.</p>
     </div>
-<<<<<<< HEAD
-    <!-- Footer End -->
-    {% block body %}{% endblock %}", "footer.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\footer.html.twig");
-=======
 </footer>
 <!-- Footer End -->
-", "footer.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\footer.html.twig");
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+", "footer.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\footer.html.twig");
     }
 }

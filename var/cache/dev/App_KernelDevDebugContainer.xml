@@ -9,15 +9,9 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-<<<<<<< HEAD
     <parameter key="kernel.build_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
     <parameter key="kernel.cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\log</parameter>
-=======
-    <parameter key="kernel.build_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\log</parameter>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -126,28 +120,16 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\ASUS\Desktop\eduplus1\EduPlus/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-<<<<<<< HEAD
     <parameter key="debug.container.dump">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
-=======
-    <parameter key="debug.container.dump">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-<<<<<<< HEAD
     <parameter key="router.cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.file">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\ASUS\Desktop\eduplus1\EduPlus.App_KernelDevDebugContainer</parameter>
-=======
-    <parameter key="router.cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</parameter>
-    <parameter key="request_listener.http_port">80</parameter>
-    <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/serialization.php</parameter>
-    <parameter key="cache.prefix.seed">_C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus.App_KernelDevDebugContainer</parameter>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -160,19 +142,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-<<<<<<< HEAD
     <parameter key="validator.mapping.cache.file">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
     <parameter key="profiler.storage.dsn">file:C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/profiler</parameter>
-=======
-    <parameter key="validator.mapping.cache.file">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/validation.php</parameter>
-    <parameter key="validator.translation_domain">validators</parameter>
-    <parameter key="profiler_listener.only_exceptions">false</parameter>
-    <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/profiler</parameter>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -238,11 +212,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
-<<<<<<< HEAD
     <parameter key="doctrine.orm.proxy_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/doctrine/orm/Proxies</parameter>
-=======
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/doctrine/orm/Proxies</parameter>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -404,6 +374,7 @@
     <service id="App\Controller\GClubsController" class="App\Controller\GClubsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="doctrine"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GClubsController"/>
       </call>
@@ -557,11 +528,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-<<<<<<< HEAD
-      <argument type="service" id=".service_locator.pNIuD.G"/>
-=======
-      <argument type="service" id=".service_locator.QVnu7.w"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+      <argument type="service" id=".service_locator.cscBwuh"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -642,11 +609,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/http_cache</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/http_cache</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -656,11 +619,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1658,11 +1617,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1681,11 +1636,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/app</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1857,11 +1808,7 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/asset_mapper</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/asset_mapper</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
@@ -2229,11 +2176,7 @@
         </argument>
       </argument>
       <argument type="collection">
-<<<<<<< HEAD
         <argument key="cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/translations</argument>
-=======
-        <argument key="cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/translations</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -3479,11 +3422,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-<<<<<<< HEAD
-      <argument type="service" id=".service_locator.pNIuD.G"/>
-=======
-      <argument type="service" id=".service_locator.QVnu7.w"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+      <argument type="service" id=".service_locator.cscBwuh"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3586,11 +3525,7 @@
       <argument type="service" id=".service_locator.bN.V_Nq.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-<<<<<<< HEAD
         <argument key="cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</argument>
-=======
-        <argument key="cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3769,17 +3704,10 @@
           </service>
         </argument>
       </argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/serialization.php</argument>
-    </service>
-    <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/serialization.php</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3915,11 +3843,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/sessions</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/sessions</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4124,17 +4048,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/validation.php</argument>
-    </service>
-    <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/validation.php</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -4794,11 +4711,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-<<<<<<< HEAD
       <argument>file:C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/profiler</argument>
-=======
-      <argument>file:C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/profiler</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4857,11 +4770,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainer</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/App_KernelDevDebugContainer</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -5434,11 +5343,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-<<<<<<< HEAD
         <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/doctrine/orm/Proxies</argument>
-=======
-        <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/doctrine/orm/Proxies</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5850,11 +5755,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-<<<<<<< HEAD
         <argument key="cache">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/twig</argument>
-=======
-        <argument key="cache">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/twig</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -7060,13 +6961,13 @@
       <argument type="collection">
         <argument key="secret">%env(APP_SECRET)%</argument>
         <argument key="lifetime">604800</argument>
-        <argument key="path">/</argument>
         <argument key="user_providers" type="collection"/>
         <argument key="catch_exceptions">true</argument>
         <argument key="signature_properties" type="collection">
           <argument>password</argument>
         </argument>
         <argument key="name">REMEMBERME</argument>
+        <argument key="path">/</argument>
         <argument key="domain">null</argument>
         <argument key="secure">null</argument>
         <argument key="httponly">true</argument>
@@ -7959,7 +7860,6 @@
         <argument key="parameterBag" type="service_closure" id="parameter_bag"/>
       </argument>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.pnbisVO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7980,14 +7880,6 @@
         <argument key="clubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-      </argument>
-    </service>
-=======
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <service id=".service_locator.eAaJ0X7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8110,19 +8002,12 @@
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
-<<<<<<< HEAD
-    <service id=".service_locator.pNIuD.G" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="App\Controller\ApplicationController::submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
-=======
-    <service id=".service_locator.QVnu7.w" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.cscBwuh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::add" type="service_closure" id=".service_locator.kPUOGb8"/>
         <argument key="App\Controller\AdminController::dashboard" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\ApplicationController::submit" type="service_closure" id=".service_locator.xLj1diB"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+        <argument key="App\Controller\ApplicationController::submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController::clubDetails" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::delete" type="service_closure" id=".service_locator.eLmG6qh"/>
@@ -8135,13 +8020,9 @@
         <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController::searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
-<<<<<<< HEAD
         <argument key="App\Controller\GClubsController::showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::showMembers" type="service_closure" id=".service_locator.eAaJ0X7"/>
-        <argument key="App\Controller\GEventsController::add" type="service_closure" id=".service_locator.CsMkqUa"/>
-=======
         <argument key="App\Controller\GEventsController::cancelParticipation" type="service_closure" id=".service_locator.Y2F5Zqo"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="App\Controller\GEventsController::delete" type="service_closure" id=".service_locator.dANsewa"/>
         <argument key="App\Controller\GEventsController::index" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\GEventsController::participate" type="service_closure" id=".service_locator.UItqPak"/>
@@ -8167,13 +8048,9 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
-<<<<<<< HEAD
-        <argument key="App\Controller\ApplicationController:submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
-=======
         <argument key="App\Controller\AdminController:add" type="service_closure" id=".service_locator.kPUOGb8"/>
         <argument key="App\Controller\AdminController:dashboard" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\ApplicationController:submit" type="service_closure" id=".service_locator.xLj1diB"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+        <argument key="App\Controller\ApplicationController:submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController:clubDetails" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:delete" type="service_closure" id=".service_locator.eLmG6qh"/>
@@ -8186,13 +8063,9 @@
         <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController:searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
-<<<<<<< HEAD
         <argument key="App\Controller\GClubsController:showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:showMembers" type="service_closure" id=".service_locator.eAaJ0X7"/>
-        <argument key="App\Controller\GEventsController:add" type="service_closure" id=".service_locator.CsMkqUa"/>
-=======
         <argument key="App\Controller\GEventsController:cancelParticipation" type="service_closure" id=".service_locator.Y2F5Zqo"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="App\Controller\GEventsController:delete" type="service_closure" id=".service_locator.dANsewa"/>
         <argument key="App\Controller\GEventsController:index" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\GEventsController:participate" type="service_closure" id=".service_locator.UItqPak"/>
@@ -10274,11 +10147,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>DGtqfA0-SP</argument>
       <argument>0</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/app</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -10288,11 +10157,7 @@
       <argument>rDXVATgV6y</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10300,11 +10165,7 @@
       <argument>htqzUXI8YI</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10312,11 +10173,7 @@
       <argument>FPt2tm3MlN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10324,11 +10181,7 @@
       <argument>mBvn17UWcM</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10336,11 +10189,7 @@
       <argument>M5jsGdxF0j</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10348,22 +10197,14 @@
       <argument>L4CooFEGD-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>uLMYlMuvzv</argument>
       <argument>0</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/app</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -10373,11 +10214,7 @@
       <argument>mzRb8KutJo</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10387,11 +10224,7 @@
       <argument>herFDobMyG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10399,11 +10232,7 @@
       <argument>ZKtk-1qaG2</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10411,11 +10240,7 @@
       <argument>pn3CsDtVel</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
-=======
-      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10598,11 +10423,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-<<<<<<< HEAD
-    <service id="argument_resolver.controller_locator" alias=".service_locator.pNIuD.G"/>
-=======
-    <service id="argument_resolver.controller_locator" alias=".service_locator.QVnu7.w"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+    <service id="argument_resolver.controller_locator" alias=".service_locator.cscBwuh"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10634,11 +10455,7 @@
     <service id=".service_locator.h77nnpz" alias=".service_locator.yxANsRR"/>
     <service id=".service_locator.uDZJQkm" alias=".service_locator.C98KNaG"/>
     <service id=".service_locator._jt34Sv" alias=".service_locator.9raLMXz"/>
-<<<<<<< HEAD
-    <service id=".service_locator.CnG0uAN" alias=".service_locator.pNIuD.G"/>
-=======
-    <service id=".service_locator.oFXrsae" alias=".service_locator.QVnu7.w"/>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
+    <service id=".service_locator.N4h8iGM" alias=".service_locator.cscBwuh"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.q1xrRm3" alias=".service_locator.pSApZh5"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -10668,13 +10485,9 @@
     <service id=".service_locator.025Wi8b" alias=".service_locator.kPUOGb8"/>
     <service id=".service_locator.g_aAErc" alias=".service_locator.xLj1diB"/>
     <service id=".service_locator.Ary4uWv" alias=".service_locator.koawAmk"/>
-<<<<<<< HEAD
     <service id=".service_locator.FstHLkj" alias=".service_locator.pnbisVO"/>
     <service id=".service_locator.3nC0eHK" alias=".service_locator.yHlyP5W"/>
     <service id=".service_locator.zb_P8ny" alias=".service_locator.eOJlB0r"/>
-    <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
-=======
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <service id=".service_locator.y.2nYau" alias=".service_locator.eAaJ0X7"/>
     <service id=".service_locator.a3SFFo0" alias=".service_locator.Qclnwot"/>
     <service id=".service_locator.xJW9LrD" alias=".service_locator.eLmG6qh"/>

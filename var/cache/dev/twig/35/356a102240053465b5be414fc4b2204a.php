@@ -63,59 +63,12 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         yield "\" class=\"nav-item nav-link active\">Home</a>
                 <a href=\"";
         // line 13
-<<<<<<< HEAD
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">About</a>
-                <a href=\"";
-        // line 14
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"nav-item nav-link\">Services</a>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"";
-        // line 18
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Blog Grid</a>
-                        <a href=\"";
-        // line 19
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Blog Detail</a>
-                    </div>
-                </div>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"";
-        // line 25
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Pricing Plan</a>
-                        <a href=\"";
-        // line 26
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Our Features</a>
-                        <a href=\"";
-        // line 27
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Team Members</a>
-                        <a href=\"";
-        // line 28
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Testimonial</a>
-                        <a href=\"";
-        // line 29
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
-        yield "\" class=\"dropdown-item\">Free Quote</a>
-                    </div>
-                </div>
-=======
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_index");
         yield "\" class=\"nav-item nav-link\">Clubs</a>
                 <a href=\"";
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events");
         yield "\" class=\"nav-item nav-link\">Events</a>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
                 <a href=\"";
         // line 15
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_ressourcess");
@@ -305,32 +258,9 @@ class __TwigTemplate_3ff006b093920432531b1f4d61310cd4 extends Template
         <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
             <div class=\"navbar-nav ms-auto py-0\">
                 <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link active\">Home</a>
-<<<<<<< HEAD
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">About</a>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Services</a>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Blog</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Blog Grid</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Blog Detail</a>
-                    </div>
-                </div>
-                <div class=\"nav-item dropdown\">
-                    <a href=\"#\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\">Pages</a>
-                    <div class=\"dropdown-menu m-0\">
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Pricing Plan</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Our Features</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Team Members</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Testimonial</a>
-                        <a href=\"{{ path('app_g_events') }}\" class=\"dropdown-item\">Free Quote</a>
-                    </div>
-                </div>
-                <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Contact</a>
-=======
                 <a href=\"{{ path('club_index') }}\" class=\"nav-item nav-link\">Clubs</a>
                 <a href=\"{{ path('app_g_events') }}\" class=\"nav-item nav-link\">Events</a>
                 <a href=\"{{ path('app_g_ressourcess') }}\" class=\"nav-item nav-link\">Ressources</a>
->>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
             </div>
 
             <!-- User Profile Dropdown -->
