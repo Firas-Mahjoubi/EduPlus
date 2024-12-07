@@ -9,9 +9,15 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
+<<<<<<< HEAD
     <parameter key="kernel.build_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
     <parameter key="kernel.cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\log</parameter>
+=======
+    <parameter key="kernel.build_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\log</parameter>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -80,7 +86,9 @@
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
     <parameter key="club_logos_directory">../public/uploads/logos</parameter>
     <parameter key="profile_pictures_directory">../public/uploads/profilePictures</parameter>
+    <parameter key="cv_directory">../public/uploads/cv</parameter>
     <parameter key="event_pictures_directory">../public/uploads/events</parameter>
+    <parameter key="uploads_directory">../public/uploads/ressources</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -118,16 +126,28 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\ASUS\Desktop\eduplus1\EduPlus/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
+<<<<<<< HEAD
     <parameter key="debug.container.dump">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+=======
+    <parameter key="debug.container.dump">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
+<<<<<<< HEAD
     <parameter key="router.cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.file">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\ASUS\Desktop\eduplus1\EduPlus.App_KernelDevDebugContainer</parameter>
+=======
+    <parameter key="router.cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</parameter>
+    <parameter key="request_listener.http_port">80</parameter>
+    <parameter key="request_listener.https_port">443</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/serialization.php</parameter>
+    <parameter key="cache.prefix.seed">_C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus.App_KernelDevDebugContainer</parameter>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -140,11 +160,19 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
+<<<<<<< HEAD
     <parameter key="validator.mapping.cache.file">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
     <parameter key="profiler.storage.dsn">file:C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/profiler</parameter>
+=======
+    <parameter key="validator.mapping.cache.file">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.translation_domain">validators</parameter>
+    <parameter key="profiler_listener.only_exceptions">false</parameter>
+    <parameter key="profiler_listener.only_main_requests">false</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/profiler</parameter>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -210,7 +238,11 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
+<<<<<<< HEAD
     <parameter key="doctrine.orm.proxy_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/doctrine/orm/Proxies</parameter>
+=======
+    <parameter key="doctrine.orm.proxy_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/doctrine/orm/Proxies</parameter>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -353,6 +385,15 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
+    <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="mailer.mailer"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\AdminController"/>
+      </call>
+    </service>
     <service id="App\Controller\ApplicationController" class="App\Controller\ApplicationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -370,6 +411,8 @@
     <service id="App\Controller\GEventsController" class="App\Controller\GEventsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="mailer.mailer"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GEventsController"/>
       </call>
@@ -410,6 +453,9 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Form\ApplicationRType" class="App\Form\ApplicationRType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -420,6 +466,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\EventType" class="App\Form\EventType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RecruitmentType" class="App\Form\RecruitmentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
@@ -508,7 +557,11 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.pNIuD.G"/>
+=======
+      <argument type="service" id=".service_locator.QVnu7.w"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -589,7 +642,11 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/http_cache</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/http_cache</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -599,7 +656,11 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1426,10 +1487,12 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ApplicationRType</argument>
         <argument>App\Form\ApplicationType</argument>
         <argument>App\Form\ClubType</argument>
         <argument>App\Form\DemandeRessourceType</argument>
         <argument>App\Form\EventType</argument>
+        <argument>App\Form\RecruitmentType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\RessourceType</argument>
         <argument>App\Form\UserType</argument>
@@ -1595,7 +1658,11 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1614,7 +1681,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/app</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1786,7 +1857,11 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/asset_mapper</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/asset_mapper</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
@@ -2154,7 +2229,11 @@
         </argument>
       </argument>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/translations</argument>
+=======
+        <argument key="cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/translations</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -3400,7 +3479,11 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.pNIuD.G"/>
+=======
+      <argument type="service" id=".service_locator.QVnu7.w"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3503,7 +3586,11 @@
       <argument type="service" id=".service_locator.bN.V_Nq.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</argument>
+=======
+        <argument key="cache_dir">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3682,10 +3769,17 @@
           </service>
         </argument>
       </argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/serialization.php</argument>
+    </service>
+    <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/serialization.php</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3821,7 +3915,11 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/sessions</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/sessions</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3889,7 +3987,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.sMRhSKg"/>
+      <argument type="service" id=".service_locator.pSApZh5"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4026,10 +4124,17 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/validation.php</argument>
+    </service>
+    <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/validation.php</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -4689,7 +4794,11 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
+<<<<<<< HEAD
       <argument>file:C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/profiler</argument>
+=======
+      <argument>file:C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/profiler</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4748,7 +4857,11 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainer</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/App_KernelDevDebugContainer</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -5321,7 +5434,11 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
+<<<<<<< HEAD
         <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/doctrine/orm/Proxies</argument>
+=======
+        <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/doctrine/orm/Proxies</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5733,7 +5850,11 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
+<<<<<<< HEAD
         <argument key="cache">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/twig</argument>
+=======
+        <argument key="cache">C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/twig</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -6428,7 +6549,22 @@
         </service>
       </argument>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.CDzo50D"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.28NqKnb"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -6828,8 +6964,8 @@
       <call method="setOptions">
         <argument type="collection">
           <argument key="login_path">app_login</argument>
-          <argument key="default_target_path">app_g_events</argument>
           <argument key="always_use_default_target_path">false</argument>
+          <argument key="default_target_path">/</argument>
           <argument key="target_path_parameter">_target_path</argument>
           <argument key="use_referer">false</argument>
         </argument>
@@ -7016,6 +7152,22 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="security.firewall.map.context.main" type="service_closure" id="security.firewall.map.context.main"/>
+      </argument>
+    </service>
+    <service id=".security.request_matcher.oXlVfaF" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/events</argument>
+    </service>
+    <service id=".security.request_matcher.CDzo50D" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.oXlVfaF"/>
+      </argument>
+    </service>
+    <service id=".security.request_matcher.obhk0jm" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.28NqKnb" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.obhk0jm"/>
       </argument>
     </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">
@@ -7291,6 +7443,9 @@
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ApplicationController" class="App\Controller\ApplicationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ApplicationController" class="App\Controller\ApplicationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ApplicationController" class="App\Controller\ApplicationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7315,6 +7470,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ApplicationRType" class="App\Form\ApplicationRType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ApplicationRType" class="App\Form\ApplicationRType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClubType" class="App\Form\ClubType" autowire="true" abstract="true"/>
@@ -7323,6 +7480,8 @@
     <service id=".abstract.instanceof.App\Form\DemandeRessourceType" class="App\Form\DemandeRessourceType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EventType" class="App\Form\EventType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EventType" class="App\Form\EventType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RecruitmentType" class="App\Form\RecruitmentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RecruitmentType" class="App\Form\RecruitmentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RessourceType" class="App\Form\RessourceType" autowire="true" abstract="true"/>
@@ -7774,6 +7933,18 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kPUOGb8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.xLj1diB" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7788,6 +7959,7 @@
         <argument key="parameterBag" type="service_closure" id="parameter_bag"/>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.pnbisVO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7814,6 +7986,8 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+=======
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <service id=".service_locator.eAaJ0X7" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7863,13 +8037,48 @@
         <argument key="eventRepository" type="service_closure" id="App\Repository\EventRepository"/>
       </argument>
     </service>
-    <service id=".errored.9Uzv6Y1" class="App\Repository\RessourceRepository">
-      <tag name="container.error" message="Cannot determine controller argument for &quot;App\Controller\GRessourcesController::indexxx()&quot;: the $ressourceRepository argument is type-hinted with the non-existent class or interface: &quot;App\Repository\RessourceRepository&quot;."/>
-    </service>
-    <service id=".service_locator.tFzYa_f" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Y2F5Zqo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="ressourceRepository" type="service_closure" id=".errored.9Uzv6Y1"/>
+        <argument key="event" type="service_closure" id=".errored..service_locator.Y2F5Zqo.App\Entity\Event"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Xw86vfZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="rec" type="service_closure" id="App\Repository\RecruitmentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.q2iM02Z" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service_closure" id="App\Repository\RecruitmentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.yxANsRR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service_closure" id="doctrine"/>
+        <argument key="rec" type="service_closure" id=".errored..service_locator.yxANsRR.App\Entity\Recruitment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.IwuOEF6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service_closure" id="doctrine"/>
+      </argument>
+    </service>
+    <service id=".service_locator.C98KNaG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
+        <argument key="recruitment" type="service_closure" id=".errored..service_locator.C98KNaG.App\Entity\Recruitment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.jgzxFbe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ressourceRepository" type="service_closure" id="App\Repository\RessourcesRepository"/>
       </argument>
     </service>
     <service id=".service_locator.K7XrrNx" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7901,10 +8110,19 @@
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.pNIuD.G" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ApplicationController::submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
+=======
+    <service id=".service_locator.QVnu7.w" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\AdminController::add" type="service_closure" id=".service_locator.kPUOGb8"/>
+        <argument key="App\Controller\AdminController::dashboard" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ApplicationController::submit" type="service_closure" id=".service_locator.xLj1diB"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController::clubDetails" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::delete" type="service_closure" id=".service_locator.eLmG6qh"/>
@@ -7917,27 +8135,45 @@
         <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController::searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
+<<<<<<< HEAD
         <argument key="App\Controller\GClubsController::showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::showMembers" type="service_closure" id=".service_locator.eAaJ0X7"/>
         <argument key="App\Controller\GEventsController::add" type="service_closure" id=".service_locator.CsMkqUa"/>
+=======
+        <argument key="App\Controller\GEventsController::cancelParticipation" type="service_closure" id=".service_locator.Y2F5Zqo"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="App\Controller\GEventsController::delete" type="service_closure" id=".service_locator.dANsewa"/>
         <argument key="App\Controller\GEventsController::index" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\GEventsController::participate" type="service_closure" id=".service_locator.UItqPak"/>
         <argument key="App\Controller\GEventsController::show" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\GEventsController::update" type="service_closure" id=".service_locator.UItqPak"/>
+        <argument key="App\Controller\GRecrutementsController::apply" type="service_closure" id=".service_locator.C98KNaG"/>
+        <argument key="App\Controller\GRecrutementsController::authorDelete1" type="service_closure" id=".service_locator.yxANsRR"/>
+        <argument key="App\Controller\GRecrutementsController::authorDetails" type="service_closure" id=".service_locator.q2iM02Z"/>
+        <argument key="App\Controller\GRecrutementsController::edit" type="service_closure" id=".service_locator.C98KNaG"/>
+        <argument key="App\Controller\GRecrutementsController::recruitmentAdd" type="service_closure" id=".service_locator.IwuOEF6"/>
+        <argument key="App\Controller\GRecrutementsController::show_all" type="service_closure" id=".service_locator.Xw86vfZ"/>
+        <argument key="App\Controller\GRecrutementsController::show_alluser" type="service_closure" id=".service_locator.Xw86vfZ"/>
         <argument key="App\Controller\GRessourcesController::delete" type="service_closure" id=".service_locator.K7XrrNx"/>
         <argument key="App\Controller\GRessourcesController::demandeRessource" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\GRessourcesController::edit" type="service_closure" id=".service_locator.K7XrrNx"/>
-        <argument key="App\Controller\GRessourcesController::indexxx" type="service_closure" id=".service_locator.tFzYa_f"/>
+        <argument key="App\Controller\GRessourcesController::indexxx" type="service_closure" id=".service_locator.jgzxFbe"/>
         <argument key="App\Controller\GUsersController::index" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\GUsersController::new" type="service_closure" id=".service_locator.6fNvpDm"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.9raLMXz"/>
+        <argument key="App\Controller\SecurityController::adminDashboard" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.stWY4Dj"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
+<<<<<<< HEAD
         <argument key="App\Controller\ApplicationController:submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
+=======
+        <argument key="App\Controller\AdminController:add" type="service_closure" id=".service_locator.kPUOGb8"/>
+        <argument key="App\Controller\AdminController:dashboard" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ApplicationController:submit" type="service_closure" id=".service_locator.xLj1diB"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController:clubDetails" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:delete" type="service_closure" id=".service_locator.eLmG6qh"/>
@@ -7950,21 +8186,33 @@
         <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
         <argument key="App\Controller\GClubsController:searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
+<<<<<<< HEAD
         <argument key="App\Controller\GClubsController:showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:showMembers" type="service_closure" id=".service_locator.eAaJ0X7"/>
         <argument key="App\Controller\GEventsController:add" type="service_closure" id=".service_locator.CsMkqUa"/>
+=======
+        <argument key="App\Controller\GEventsController:cancelParticipation" type="service_closure" id=".service_locator.Y2F5Zqo"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
         <argument key="App\Controller\GEventsController:delete" type="service_closure" id=".service_locator.dANsewa"/>
         <argument key="App\Controller\GEventsController:index" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\GEventsController:participate" type="service_closure" id=".service_locator.UItqPak"/>
         <argument key="App\Controller\GEventsController:show" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\GEventsController:update" type="service_closure" id=".service_locator.UItqPak"/>
+        <argument key="App\Controller\GRecrutementsController:apply" type="service_closure" id=".service_locator.C98KNaG"/>
+        <argument key="App\Controller\GRecrutementsController:authorDelete1" type="service_closure" id=".service_locator.yxANsRR"/>
+        <argument key="App\Controller\GRecrutementsController:authorDetails" type="service_closure" id=".service_locator.q2iM02Z"/>
+        <argument key="App\Controller\GRecrutementsController:edit" type="service_closure" id=".service_locator.C98KNaG"/>
+        <argument key="App\Controller\GRecrutementsController:recruitmentAdd" type="service_closure" id=".service_locator.IwuOEF6"/>
+        <argument key="App\Controller\GRecrutementsController:show_all" type="service_closure" id=".service_locator.Xw86vfZ"/>
+        <argument key="App\Controller\GRecrutementsController:show_alluser" type="service_closure" id=".service_locator.Xw86vfZ"/>
         <argument key="App\Controller\GRessourcesController:delete" type="service_closure" id=".service_locator.K7XrrNx"/>
         <argument key="App\Controller\GRessourcesController:demandeRessource" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\GRessourcesController:edit" type="service_closure" id=".service_locator.K7XrrNx"/>
-        <argument key="App\Controller\GRessourcesController:indexxx" type="service_closure" id=".service_locator.tFzYa_f"/>
+        <argument key="App\Controller\GRessourcesController:indexxx" type="service_closure" id=".service_locator.jgzxFbe"/>
         <argument key="App\Controller\GUsersController:index" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\GUsersController:new" type="service_closure" id=".service_locator.6fNvpDm"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.9raLMXz"/>
+        <argument key="App\Controller\SecurityController:adminDashboard" type="service_closure" id=".service_locator.qE8Flyf"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.stWY4Dj"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -8127,13 +8375,15 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.sMRhSKg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pSApZh5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ApplicationRType" type="service_closure" id="App\Form\ApplicationRType"/>
         <argument key="App\Form\ApplicationType" type="service_closure" id="App\Form\ApplicationType"/>
         <argument key="App\Form\ClubType" type="service_closure" id="App\Form\ClubType"/>
         <argument key="App\Form\DemandeRessourceType" type="service_closure" id="App\Form\DemandeRessourceType"/>
         <argument key="App\Form\EventType" type="service_closure" id="App\Form\EventType"/>
+        <argument key="App\Form\RecruitmentType" type="service_closure" id="App\Form\RecruitmentType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\RessourceType" type="service_closure" id="App\Form\RessourceType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
@@ -8636,6 +8886,12 @@
         <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
+      <argument>App\Controller\AdminController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
     <service id=".service_locator.O2p6Lk7.App\Controller\ApplicationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ApplicationController"/>
       <argument>App\Controller\ApplicationController</argument>
@@ -8864,6 +9120,7 @@
       <call method="allowControllers">
         <argument type="collection">
           <argument>App\Kernel</argument>
+          <argument>App\Controller\AdminController</argument>
           <argument>App\Controller\ApplicationController</argument>
           <argument>App\Controller\GClubsController</argument>
           <argument>App\Controller\GEventsController</argument>
@@ -9086,6 +9343,15 @@
     </service>
     <service id=".errored..service_locator.dANsewa.App\Entity\Event" class="App\Entity\Event">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.dANsewa&quot;: it needs an instance of &quot;App\Entity\Event&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.Y2F5Zqo.App\Entity\Event" class="App\Entity\Event">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Y2F5Zqo&quot;: it needs an instance of &quot;App\Entity\Event&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.yxANsRR.App\Entity\Recruitment" class="App\Entity\Recruitment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.yxANsRR&quot;: it needs an instance of &quot;App\Entity\Recruitment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.C98KNaG.App\Entity\Recruitment" class="App\Entity\Recruitment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.C98KNaG&quot;: it needs an instance of &quot;App\Entity\Recruitment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.K7XrrNx.App\Entity\Ressource" class="App\Entity\Ressource">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.K7XrrNx&quot;: it needs an instance of &quot;App\Entity\Ressource&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10008,7 +10274,11 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>DGtqfA0-SP</argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/app</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -10018,7 +10288,11 @@
       <argument>rDXVATgV6y</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10026,7 +10300,11 @@
       <argument>htqzUXI8YI</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10034,7 +10312,11 @@
       <argument>FPt2tm3MlN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10042,7 +10324,11 @@
       <argument>mBvn17UWcM</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10050,7 +10336,11 @@
       <argument>M5jsGdxF0j</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10058,14 +10348,22 @@
       <argument>L4CooFEGD-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>uLMYlMuvzv</argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/app</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -10075,7 +10373,11 @@
       <argument>mzRb8KutJo</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10085,7 +10387,11 @@
       <argument>herFDobMyG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10093,7 +10399,11 @@
       <argument>ZKtk-1qaG2</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10101,7 +10411,11 @@
       <argument>pn3CsDtVel</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\frsma\OneDrive\Desktop\projetSymfony\eduplis\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10241,6 +10555,7 @@
     <service id="doctrine.dbal.event_manager" alias="doctrine.dbal.default_connection.event_manager"/>
     <service id="Doctrine\DBAL\Connection $defaultConnection" alias="doctrine.dbal.default_connection"/>
     <service id="Doctrine\ORM\EntityManagerInterface" alias="doctrine.orm.default_entity_manager"/>
+    <service id="doctrine.orm.metadata.annotation_reader" alias="annotation_reader"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager" public="true"/>
     <service id="doctrine.orm.default_metadata_cache" alias="cache.doctrine.orm.default.metadata"/>
     <service id="doctrine.orm.default_result_cache" alias="cache.doctrine.orm.default.result"/>
@@ -10283,7 +10598,11 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
+<<<<<<< HEAD
     <service id="argument_resolver.controller_locator" alias=".service_locator.pNIuD.G"/>
+=======
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QVnu7.w"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10312,10 +10631,16 @@
     <service id=".service_locator.uu1Sr_s" alias=".service_locator.6.pzLHU"/>
     <service id=".service_locator.Tps9Q2I" alias=".service_locator.dANsewa"/>
     <service id=".service_locator.Yzf6g69" alias=".service_locator.UItqPak"/>
+    <service id=".service_locator.h77nnpz" alias=".service_locator.yxANsRR"/>
+    <service id=".service_locator.uDZJQkm" alias=".service_locator.C98KNaG"/>
     <service id=".service_locator._jt34Sv" alias=".service_locator.9raLMXz"/>
+<<<<<<< HEAD
     <service id=".service_locator.CnG0uAN" alias=".service_locator.pNIuD.G"/>
+=======
+    <service id=".service_locator.oFXrsae" alias=".service_locator.QVnu7.w"/>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.ukuZyC6" alias=".service_locator.sMRhSKg"/>
+    <service id=".service_locator.q1xrRm3" alias=".service_locator.pSApZh5"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jUv.zyj" alias=".service_locator.O2p6Lk7"/>
@@ -10339,12 +10664,17 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
+    <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
+    <service id=".service_locator.025Wi8b" alias=".service_locator.kPUOGb8"/>
     <service id=".service_locator.g_aAErc" alias=".service_locator.xLj1diB"/>
     <service id=".service_locator.Ary4uWv" alias=".service_locator.koawAmk"/>
+<<<<<<< HEAD
     <service id=".service_locator.FstHLkj" alias=".service_locator.pnbisVO"/>
     <service id=".service_locator.3nC0eHK" alias=".service_locator.yHlyP5W"/>
     <service id=".service_locator.zb_P8ny" alias=".service_locator.eOJlB0r"/>
     <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
+=======
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     <service id=".service_locator.y.2nYau" alias=".service_locator.eAaJ0X7"/>
     <service id=".service_locator.a3SFFo0" alias=".service_locator.Qclnwot"/>
     <service id=".service_locator.xJW9LrD" alias=".service_locator.eLmG6qh"/>
@@ -10352,6 +10682,13 @@
     <service id=".service_locator.fDl8v62" alias=".service_locator.qE8Flyf"/>
     <service id=".service_locator.6oe8hU3" alias=".service_locator.dANsewa"/>
     <service id=".service_locator..51nIrF" alias=".service_locator.UItqPak"/>
+    <service id=".service_locator.1u2GJBu" alias=".service_locator.Y2F5Zqo"/>
+    <service id=".service_locator.ry0QvGj" alias=".service_locator.Xw86vfZ"/>
+    <service id=".service_locator.prXriqN" alias=".service_locator.q2iM02Z"/>
+    <service id=".service_locator.5MDqNOS" alias=".service_locator.yxANsRR"/>
+    <service id=".service_locator.SHSttcO" alias=".service_locator.IwuOEF6"/>
+    <service id=".service_locator.luz4cwZ" alias=".service_locator.C98KNaG"/>
+    <service id=".service_locator.cAXwThL" alias=".service_locator.jgzxFbe"/>
     <service id=".service_locator.UFcjQiI" alias=".service_locator.K7XrrNx"/>
     <service id=".service_locator.Z0pqhng" alias=".service_locator.6fNvpDm"/>
     <service id=".service_locator.3UqhY5j" alias=".service_locator.9raLMXz"/>

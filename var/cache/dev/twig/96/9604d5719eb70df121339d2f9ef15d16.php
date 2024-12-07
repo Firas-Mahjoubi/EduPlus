@@ -32,7 +32,6 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
         $this->parent = false;
 
         $this->blocks = [
-            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -46,6 +45,7 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "footer.html.twig"));
 
         // line 1
+<<<<<<< HEAD
         yield "  <!-- Footer Start -->
     <div class=\"container-fluid bg-dark text-light mt-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
@@ -115,56 +115,63 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
                                 <a class=\"text-light\" href=\"#\"><i class=\"bi bi-arrow-right text-primary me-2\"></i>Contact Us</a>
                             </div>
                         </div>
+=======
+        yield "<!-- Footer Start -->
+<footer class=\"bg-dark text-light mt-5\">
+    <div class=\"container py-4\">
+        <div class=\"row\">
+            <!-- About Section -->
+            <div class=\"col-lg-4 col-md-6 mb-4\">
+                <h4 class=\"text-primary\">EduPlus</h4>
+                <p>\"Transformez vos idées en réalité avec nous. Nous sommes là pour vous accompagner dans votre parcours, en offrant des solutions innovantes et adaptées à vos besoins.\".</p>
+                <form>
+                    <div class=\"input-group\">
+                        <input type=\"text\" class=\"form-control\" placeholder=\"Your Email\">
+                        <button class=\"btn btn-primary\">Sign Up</button>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
                     </div>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class=\"col-lg-4 col-md-6 mb-4\">
+                <h5>Contact Us</h5>
+                <p><i class=\"bi bi-geo-alt-fill text-primary me-2\"></i>ESPRIT,Ariana,Tunis</p>
+                <p><i class=\"bi bi-envelope-fill text-primary me-2\"></i>EduPlus@esprit.tn</p>
+                <p><i class=\"bi bi-phone-fill text-primary me-2\"></i>+216 72 393 855</p>
+                <div class=\"mt-2\">
+                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-facebook-f\"></i></a>
+                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-twitter\"></i></a>
+                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>
+                    <a class=\"btn btn-outline-light btn-sm\" href=\"#\"><i class=\"fab fa-instagram\"></i></a>
                 </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class=\"col-lg-4 col-md-6 mb-4\">
+                <h5>Quick Links</h5>
+                <ul class=\"list-unstyled\">
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Home</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> About Us</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Services</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Recruitements</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Contact</a></li>
+
+                </ul>
             </div>
         </div>
     </div>
-    <div class=\"container-fluid text-white\" style=\"background: #061429;\">
-        <div class=\"container text-center\">
-            <div class=\"row justify-content-end\">
-                <div class=\"col-lg-8 col-md-6\">
-                    <div class=\"d-flex align-items-center justify-content-center\" style=\"height: 75px;\">
-                        <p class=\"mb-0\">&copy; <a class=\"text-white border-bottom\" href=\"#\">Your Site Name</a>. All Rights Reserved. 
-\t\t\t\t\t\t
-\t\t\t\t\t\t<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from \"https://htmlcodex.com/credit-removal\". Thank you for your support. ***/-->
-\t\t\t\t\t\tDesigned by <a class=\"text-white border-bottom\" href=\"https://htmlcodex.com\">HTML Codex</a></p>
-                        <br>Distributed By: <a class=\"border-bottom\" href=\"https://themewagon.com\" target=\"_blank\">ThemeWagon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class=\"bg-primary text-center py-3\">
+        <p class=\"mb-0\">&copy; Your Site Name. All rights reserved. Designed by <a href=\"https://htmlcodex.com\" class=\"text-white text-decoration-none\">HTML Codex</a>.</p>
     </div>
-    <!-- Footer End -->
-    ";
-        // line 91
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+</footer>
+<!-- Footer End -->
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        yield from [];
-    }
-
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
-    public function block_body(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
         yield from [];
     }
@@ -182,11 +189,12 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  141 => 91,  49 => 1,);
+        return array (  48 => 1,);
     }
 
     public function getSourceContext(): Source
     {
+<<<<<<< HEAD
         return new Source("  <!-- Footer Start -->
     <div class=\"container-fluid bg-dark text-light mt-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
         <div class=\"container\">
@@ -256,27 +264,62 @@ class __TwigTemplate_66d710576358a136abda06e54a25e3b8 extends Template
                                 <a class=\"text-light\" href=\"#\"><i class=\"bi bi-arrow-right text-primary me-2\"></i>Contact Us</a>
                             </div>
                         </div>
+=======
+        return new Source("<!-- Footer Start -->
+<footer class=\"bg-dark text-light mt-5\">
+    <div class=\"container py-4\">
+        <div class=\"row\">
+            <!-- About Section -->
+            <div class=\"col-lg-4 col-md-6 mb-4\">
+                <h4 class=\"text-primary\">EduPlus</h4>
+                <p>\"Transformez vos idées en réalité avec nous. Nous sommes là pour vous accompagner dans votre parcours, en offrant des solutions innovantes et adaptées à vos besoins.\".</p>
+                <form>
+                    <div class=\"input-group\">
+                        <input type=\"text\" class=\"form-control\" placeholder=\"Your Email\">
+                        <button class=\"btn btn-primary\">Sign Up</button>
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
                     </div>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class=\"col-lg-4 col-md-6 mb-4\">
+                <h5>Contact Us</h5>
+                <p><i class=\"bi bi-geo-alt-fill text-primary me-2\"></i>ESPRIT,Ariana,Tunis</p>
+                <p><i class=\"bi bi-envelope-fill text-primary me-2\"></i>EduPlus@esprit.tn</p>
+                <p><i class=\"bi bi-phone-fill text-primary me-2\"></i>+216 72 393 855</p>
+                <div class=\"mt-2\">
+                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-facebook-f\"></i></a>
+                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-twitter\"></i></a>
+                    <a class=\"btn btn-outline-light btn-sm me-2\" href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>
+                    <a class=\"btn btn-outline-light btn-sm\" href=\"#\"><i class=\"fab fa-instagram\"></i></a>
                 </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class=\"col-lg-4 col-md-6 mb-4\">
+                <h5>Quick Links</h5>
+                <ul class=\"list-unstyled\">
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Home</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> About Us</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Services</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Recruitements</a></li>
+                    <li><a href=\"#\" class=\"text-light text-decoration-none\"><i class=\"bi bi-chevron-right\"></i> Contact</a></li>
+
+                </ul>
             </div>
         </div>
     </div>
-    <div class=\"container-fluid text-white\" style=\"background: #061429;\">
-        <div class=\"container text-center\">
-            <div class=\"row justify-content-end\">
-                <div class=\"col-lg-8 col-md-6\">
-                    <div class=\"d-flex align-items-center justify-content-center\" style=\"height: 75px;\">
-                        <p class=\"mb-0\">&copy; <a class=\"text-white border-bottom\" href=\"#\">Your Site Name</a>. All Rights Reserved. 
-\t\t\t\t\t\t
-\t\t\t\t\t\t<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from \"https://htmlcodex.com/credit-removal\". Thank you for your support. ***/-->
-\t\t\t\t\t\tDesigned by <a class=\"text-white border-bottom\" href=\"https://htmlcodex.com\">HTML Codex</a></p>
-                        <br>Distributed By: <a class=\"border-bottom\" href=\"https://themewagon.com\" target=\"_blank\">ThemeWagon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class=\"bg-primary text-center py-3\">
+        <p class=\"mb-0\">&copy; Your Site Name. All rights reserved. Designed by <a href=\"https://htmlcodex.com\" class=\"text-white text-decoration-none\">HTML Codex</a>.</p>
     </div>
+<<<<<<< HEAD
     <!-- Footer End -->
     {% block body %}{% endblock %}", "footer.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\footer.html.twig");
+=======
+</footer>
+<!-- Footer End -->
+", "footer.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\footer.html.twig");
+>>>>>>> c833b8a74c735c5e13611c5fa5b159719b6f1d30
     }
 }

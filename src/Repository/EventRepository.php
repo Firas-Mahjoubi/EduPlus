@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Event;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @extends ServiceEntityRepository<Event>
@@ -16,28 +17,36 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    //    /**
-    //     * @return Event[] Returns an array of Event objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('e')
-    //            ->andWhere('e.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('e.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    /**
+     * Find upcoming events that have a start date greater than or equal to the current date.
+     *
+     * @param \DateTimeInterface $currentDate
+     * @return Event[]
+     */
+   // EventRepository.php
 
-    //    public function findOneBySomeField($value): ?Event
-    //    {
-    //        return $this->createQueryBuilder('e')
-    //            ->andWhere('e.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+// Find upcoming events (greater than or equal to current date)
+public function findUpcomingEvents(\DateTimeInterface $currentDate): array
+{
+    return $this->createQueryBuilder('e')
+        ->where('e.datedebut >= :date')
+        ->setParameter('date', $currentDate)
+        ->orderBy('e.datedebut', 'ASC')  // Order by start date ascending
+        ->getQuery()
+        ->getResult();
+}
+
+// Find latest events (last X events by descending start date)
+public function findLatestEvents(int $limit): array
+{
+    return $this->createQueryBuilder('e')
+        ->orderBy('e.datedebut', 'DESC') // Order by start date descending
+        ->setMaxResults($limit)
+        ->getQuery()
+        ->getResult();
+}
+
+
+ 
+   
 }

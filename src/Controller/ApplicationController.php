@@ -44,4 +44,5 @@ class ApplicationController extends AbstractController
 
         return $this->json(['success' => true, 'message' => 'Application submitted successfully!']);
     }
+    
 }

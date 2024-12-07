@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recrutements Disponibles{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Nos recrutements</h1>
+
+    <!-- Messages Flash -->
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <!-- Liste des annonces -->
+    <div class="row">
+        {% for recruitment in liste_recruitement %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recruitment.title }}</h5>
+                        <p class="card-text">
+                            <strong>Description :</strong> {{ recruitment.description|slice(0, 100) }}...
+                        </p>
+                        <p class="card-text">
+                            <strong>Statut :</strong> 
+                            <span class="badge {{ recruitment.status == 'open' ? 'bg-success' : 'bg-danger' }}">
+                                {{ recruitment.status | capitalize }}
+                            </span>
+                        </p>
+                        <p class="card-text"><strong>Date Limite :</strong> {{ recruitment.deadline|date('d/m/Y') }}</p>
+                        <p class="card-text"><strong>Lieu :</strong> {{ recruitment.location }}</p>
+                        <!-- Bouton Postuler -->
+                        <a href="{{ path('recruitment_apply', { id: recruitment.id }) }}" class="btn btn-success btn-sm">Postuler</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    Aucune annonce de recrutement disponible pour le moment.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

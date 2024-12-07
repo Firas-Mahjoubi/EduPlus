@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Postuler à une annonce{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Postuler à l'annonce : {{ recruitment.title }}</h1>
+
+    <!-- Messages Flash -->
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <!-- Formulaire de candidature -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Remplissez les informations suivantes pour postuler</h5>
+                    {{ form_start(form) }}
+                    
+                    <!-- CV -->
+                    <div class="form-group mb-3">
+                        {{ form_label(form.cv, 'Télécharger votre CV', { 'label_attr': { 'class': 'form-label' } }) }}
+                        {{ form_widget(form.cv, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form.cv) }}
+                    </div>
+
+                    <!-- Lettre de motivation -->
+                    <div class="form-group mb-3">
+                        {{ form_label(form.motivationLetter, 'Lettre de motivation', { 'label_attr': { 'class': 'form-label' } }) }}
+                        {{ form_widget(form.motivationLetter, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form.motivationLetter) }}
+                    </div>
+
+                    <!-- Statut (facultatif) -->
+                    {% if form.status is defined %}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.status, 'Statut', { 'label_attr': { 'class': 'form-label' } }) }}
+                            {{ form_widget(form.status, { 'attr': { 'class': 'form-control' } }) }}
+                            {{ form_errors(form.status) }}
+                        </div>
+                    {% endif %}
+
+                    <!-- Club (facultatif, si pertinent) -->
+                    {% if form.club is defined %}
+                        <div class="form-group mb-3">
+                            {{ form_label(form.club, 'Club', { 'label_attr': { 'class': 'form-label' } }) }}
+                            {{ form_widget(form.club, { 'attr': { 'class': 'form-control' } }) }}
+                            {{ form_errors(form.club) }}
+                        </div>
+                    {% endif %}
+
+                    <!-- Bouton de soumission -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success">Postuler</button>
+                        <a href="{{ path('app_show_all_user') }}" class="btn btn-secondary">Annuler</a>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
