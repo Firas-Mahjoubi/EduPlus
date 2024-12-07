@@ -34,7 +34,10 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
+            'scripts' => [$this, 'block_scripts'],
         ];
     }
 
@@ -52,134 +55,107 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
 <html lang=\"en\">
 
 <head>
-    <meta charset=\"utf-8\">
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta name=\"keywords\" content=\"Club, Events, Community, Activities\">
+    <meta name=\"description\" content=\"Explore our community clubs and events. Join us for exciting activities and connect with like-minded individuals.\">
     <title>";
-        // line 6
+        // line 9
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
-    <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
-    <meta content=\"Free HTML Templates\" name=\"keywords\">
-    <meta content=\"Free HTML Templates\" name=\"description\">
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\">
-
-    ";
-        // line 12
-        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 14
-        yield "    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEJ5m0Wf0R3tdw9JfL7cS5pP/2gX/xFnFbdM7eTSFwqV9Jt9FNB23VrT3PFAk\" crossorigin=\"anonymous\">
 
     <!-- Favicon -->
-    <link href=\"";
-        // line 17
+    <link rel=\"icon\" href=\"";
+        // line 12
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/favicon.ico"), "html", null, true);
-        yield "\" rel=\"icon\">
-<!-- Add Select2 CSS -->
-<link href=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css\" rel=\"stylesheet\" />
-<!-- Add Select2 JS -->
-<script src=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js\"></script>
+        yield "\" />
 
-    <!-- Google Web Fonts -->
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <!-- Fonts -->
     <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">
 
-    <!-- Icon Font Stylesheet -->
-    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css\" rel=\"stylesheet\">
-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css\" rel=\"stylesheet\">
+    <!-- CSS Libraries -->
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/css/coreui.min.css\" rel=\"stylesheet\">
+<link href=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/css/coreui.min.css\" rel=\"stylesheet\">
 
-
-  <!-- OwlCarousel Stylesheets -->
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\">
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css\">
-
-
-    <!-- Libraries Stylesheet -->
+    <!-- Template Styles -->
     <link href=\"";
-        // line 39
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/assets/owl.carousel.min.css"), "html", null, true);
-        yield "\" rel=\"stylesheet\">
-    <link href=\"";
-        // line 40
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/animate/animate.min.css"), "html", null, true);
-        yield "\" rel=\"stylesheet\">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href=\"";
-        // line 43
+        // line 26
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
-
-    <!-- Template Stylesheet -->
     <link href=\"";
-        // line 46
+        // line 27
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
-</head>
+
+    ";
+        // line 29
+        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
+        // line 30
+        yield "</head>
 
 <body>
+    ";
+        // line 33
+        yield from $this->unwrap()->yieldBlock('header', $context, $blocks);
+        // line 36
+        yield "
+    <main>
+        ";
+        // line 38
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 39
+        yield "    </main>
 
     ";
-        // line 51
-        yield from         $this->loadTemplate("header.html.twig", "base.html.twig", 51)->unwrap()->yield($context);
-        // line 52
-        yield "    
-    ";
-        // line 53
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 55
-        yield "    
-    ";
-        // line 56
-        yield from         $this->loadTemplate("footer.html.twig", "base.html.twig", 56)->unwrap()->yield($context);
-        // line 57
+        // line 41
+        yield from $this->unwrap()->yieldBlock('footer', $context, $blocks);
+        // line 44
         yield "
     <!-- Back to Top -->
-    <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
+    <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\">
+        <i class=\"bi bi-arrow-up\"></i>
+    </a>
 
     <!-- JavaScript Libraries -->
     <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/js/coreui.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/js/coreui.bundle.min.js\"></script>
+
+
+    <!-- Custom Scripts -->
     <script src=\"";
-        // line 64
+        // line 60
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/wow/wow.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 65
+        // line 61
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/easing/easing.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 66
+        // line 62
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/waypoints/waypoints.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 67
+        // line 63
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/counterup/counterup.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 68
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/owlcarousel/owl.carousel.min.js"), "html", null, true);
-        yield "\"></script>
-     <script>
-        \$(document).ready(function(){
-            \$('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    600: { items: 2 },
-                    1000: { items: 3 }
-                }
-            });
-        });
-    </script>
-    <!-- Template Javascript -->
-    <script src=\"";
-        // line 85
+        // line 64
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/main.js"), "html", null, true);
         yield "\"></script>
-</body>
+
+    ";
+        // line 66
+        yield from $this->unwrap()->yieldBlock('scripts', $context, $blocks);
+        // line 101
+        yield "</body>
 
 </html>
 ";
@@ -192,7 +168,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         yield from [];
     }
 
-    // line 6
+    // line 9
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -215,7 +191,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         yield from [];
     }
 
-    // line 12
+    // line 29
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -228,7 +204,32 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 13
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 33
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_header(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 34
+        yield "        ";
+        yield from         $this->loadTemplate("header.html.twig", "base.html.twig", 34)->unwrap()->yield($context);
+        // line 35
         yield "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -239,7 +240,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         yield from [];
     }
 
-    // line 53
+    // line 38
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -252,8 +253,90 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 54
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 41
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_footer(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 42
+        yield "        ";
+        yield from         $this->loadTemplate("footer.html.twig", "base.html.twig", 42)->unwrap()->yield($context);
+        // line 43
         yield "    ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 66
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_scripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        // line 67
+        yield "        <script>
+            \$(document).ready(function() {
+                \$('.owl-carousel').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true,
+                    responsive: {
+                        0: { items: 1 },
+                        600: { items: 2 },
+                        1000: { items: 3 }
+                    }
+                });
+            });
+
+            // Initialize CoreUI components
+            document.addEventListener('DOMContentLoaded', function() {
+                const coreuiRatingElements = document.querySelectorAll('[data-coreui-toggle=\"rating\"]');
+                coreuiRatingElements.forEach(function(element) {
+                    new coreui.Rating(element);
+                });
+            });
+        </script>
+        <script>
+  document.addEventListener(\"DOMContentLoaded\", function() {
+    // Initialize CoreUI rating
+    const ratings = document.querySelectorAll('[data-coreui-toggle=\"rating\"]');
+    ratings.forEach(function(rating) {
+      new coreui.Rating(rating);
+    });
+  });
+</script>
+
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -284,7 +367,7 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  256 => 54,  243 => 53,  232 => 13,  219 => 12,  196 => 6,  180 => 85,  160 => 68,  156 => 67,  152 => 66,  148 => 65,  144 => 64,  135 => 57,  133 => 56,  130 => 55,  128 => 53,  125 => 52,  123 => 51,  115 => 46,  109 => 43,  103 => 40,  99 => 39,  74 => 17,  69 => 14,  67 => 12,  58 => 6,  51 => 1,);
+        return array (  306 => 67,  293 => 66,  282 => 43,  279 => 42,  266 => 41,  244 => 38,  233 => 35,  230 => 34,  217 => 33,  195 => 29,  172 => 9,  158 => 101,  156 => 66,  151 => 64,  147 => 63,  143 => 62,  139 => 61,  135 => 60,  117 => 44,  115 => 41,  111 => 39,  109 => 38,  105 => 36,  103 => 33,  98 => 30,  96 => 29,  91 => 27,  87 => 26,  70 => 12,  64 => 9,  54 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -293,87 +376,102 @@ class __TwigTemplate_cd7ab637085438591a80aafad3fca7da extends Template
 <html lang=\"en\">
 
 <head>
-    <meta charset=\"utf-8\">
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta name=\"keywords\" content=\"Club, Events, Community, Activities\">
+    <meta name=\"description\" content=\"Explore our community clubs and events. Join us for exciting activities and connect with like-minded individuals.\">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">
-    <meta content=\"Free HTML Templates\" name=\"keywords\">
-    <meta content=\"Free HTML Templates\" name=\"description\">
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\">
-
-    {% block stylesheets %}
-    {% endblock %}
-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KyZXEJ5m0Wf0R3tdw9JfL7cS5pP/2gX/xFnFbdM7eTSFwqV9Jt9FNB23VrT3PFAk\" crossorigin=\"anonymous\">
 
     <!-- Favicon -->
-    <link href=\"{{ asset('img/favicon.ico') }}\" rel=\"icon\">
-<!-- Add Select2 CSS -->
-<link href=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css\" rel=\"stylesheet\" />
-<!-- Add Select2 JS -->
-<script src=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js\"></script>
+    <link rel=\"icon\" href=\"{{ asset('img/favicon.ico') }}\" />
 
-    <!-- Google Web Fonts -->
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <!-- Fonts -->
     <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">
 
-    <!-- Icon Font Stylesheet -->
-    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css\" rel=\"stylesheet\">
-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css\" rel=\"stylesheet\">
+    <!-- CSS Libraries -->
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/css/coreui.min.css\" rel=\"stylesheet\">
+<link href=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/css/coreui.min.css\" rel=\"stylesheet\">
 
-
-  <!-- OwlCarousel Stylesheets -->
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\">
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css\">
-
-
-    <!-- Libraries Stylesheet -->
-    <link href=\"{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}\" rel=\"stylesheet\">
-    <link href=\"{{ asset('lib/animate/animate.min.css') }}\" rel=\"stylesheet\">
-
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Template Styles -->
     <link href=\"{{ asset('css/bootstrap.min.css') }}\" rel=\"stylesheet\">
-
-    <!-- Template Stylesheet -->
     <link href=\"{{ asset('css/style.css') }}\" rel=\"stylesheet\">
+
+    {% block stylesheets %}{% endblock %}
 </head>
 
 <body>
-
-    {% include 'header.html.twig' %}
-    
-    {% block body %}
+    {% block header %}
+        {% include 'header.html.twig' %}
     {% endblock %}
-    
-    {% include 'footer.html.twig' %}
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+
+    {% block footer %}
+        {% include 'footer.html.twig' %}
+    {% endblock %}
 
     <!-- Back to Top -->
-    <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>
+    <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square rounded back-to-top\">
+        <i class=\"bi bi-arrow-up\"></i>
+    </a>
 
     <!-- JavaScript Libraries -->
     <script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/js/coreui.min.js\"></script>
+    <script src=\"https://cdn.jsdelivr.net/npm/@coreui/coreui@4.0.0/dist/js/coreui.bundle.min.js\"></script>
+
+
+    <!-- Custom Scripts -->
     <script src=\"{{ asset('lib/wow/wow.min.js') }}\"></script>
     <script src=\"{{ asset('lib/easing/easing.min.js') }}\"></script>
     <script src=\"{{ asset('lib/waypoints/waypoints.min.js') }}\"></script>
     <script src=\"{{ asset('lib/counterup/counterup.min.js') }}\"></script>
-    <script src=\"{{ asset('lib/owlcarousel/owl.carousel.min.js') }}\"></script>
-     <script>
-        \$(document).ready(function(){
-            \$('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                dots: true,
-                responsive: {
-                    0: { items: 1 },
-                    600: { items: 2 },
-                    1000: { items: 3 }
-                }
-            });
-        });
-    </script>
-    <!-- Template Javascript -->
     <script src=\"{{ asset('js/main.js') }}\"></script>
+
+    {% block scripts %}
+        <script>
+            \$(document).ready(function() {
+                \$('.owl-carousel').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true,
+                    responsive: {
+                        0: { items: 1 },
+                        600: { items: 2 },
+                        1000: { items: 3 }
+                    }
+                });
+            });
+
+            // Initialize CoreUI components
+            document.addEventListener('DOMContentLoaded', function() {
+                const coreuiRatingElements = document.querySelectorAll('[data-coreui-toggle=\"rating\"]');
+                coreuiRatingElements.forEach(function(element) {
+                    new coreui.Rating(element);
+                });
+            });
+        </script>
+        <script>
+  document.addEventListener(\"DOMContentLoaded\", function() {
+    // Initialize CoreUI rating
+    const ratings = document.querySelectorAll('[data-coreui-toggle=\"rating\"]');
+    ratings.forEach(function(rating) {
+      new coreui.Rating(rating);
+    });
+  });
+</script>
+
+    {% endblock %}
 </body>
 
 </html>

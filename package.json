@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@coreui/coreui": "^5.2.0",
     "select2": "^4.1.0-rc.0"
   }
 }

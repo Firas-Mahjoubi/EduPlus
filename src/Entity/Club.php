@@ -26,25 +26,31 @@ class Club
     #[ORM\JoinColumn(nullable: false)]
     private ?User $responsable = null;
 
-    // Updated to add cascade={"remove"}
     #[ORM\OneToMany(mappedBy: 'club', targetEntity: Member::class, cascade: ['remove'])]
     private Collection $members;
 
     #[ORM\OneToMany(mappedBy: 'club', targetEntity: Event::class)]
     private Collection $events;
 
-    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressources::class)]
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Ressource::class)]
     private Collection $resources;
 
-    // New logo property
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $logo = null;
+
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Commentary::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    private Collection $commentaries;
+
+    #[ORM\OneToMany(mappedBy: 'club', targetEntity: Rating::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    private Collection $rating;
 
     public function __construct()
     {
         $this->members = new ArrayCollection();
         $this->events = new ArrayCollection();
         $this->resources = new ArrayCollection();
+        $this->commentaries = new ArrayCollection();
+        $this->rating = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -139,29 +145,6 @@ class Club
         return $this;
     }
 
-    public function getResources(): Collection
-    {
-        return $this->resources;
-    }
-
-    public function addResource(Ressources $resource): static
-    {
-        if (!$this->resources->contains($resource)) {
-            $this->resources[] = $resource;
-            $resource->setClub($this);
-        }
-
-        return $this;
-    }
-
-    public function removeResource(Ressources $resource): static
-    {
-        $this->resources->removeElement($resource);
-
-        return $this;
-    }
-
-    // Getters and setters for the logo property
     public function getLogo(): ?string
     {
         return $this->logo;
@@ -170,6 +153,57 @@ class Club
     public function setLogo(?string $logo): static
     {
         $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getCommentaries(): Collection
+    {
+        return $this->commentaries;
+    }
+
+    public function addCommentary(Commentary $commentary): static
+    {
+        if (!$this->commentaries->contains($commentary)) {
+            $this->commentaries[] = $commentary;
+            $commentary->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentary(Commentary $commentary): static
+    {
+        $this->commentaries->removeElement($commentary);
+
+        return $this;
+    }
+
+    public function getRating(): Collection
+    {
+        return $this->rating;
+    }
+
+    public function setRating(Collection $rating): static
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function addRating(Rating $rating): static
+    {
+        if (!$this->rating->contains($rating)) {
+            $this->rating[] = $rating;
+            $rating->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRating(Rating $rating): static
+    {
+        $this->rating->removeElement($rating);
 
         return $this;
     }

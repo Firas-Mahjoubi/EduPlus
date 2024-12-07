@@ -97,86 +97,128 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <div class=\"container mt-5\">
+        yield "
+    <div class=\"container mt-5\">
         <h1>Events</h1>
-
-        <a href=\"";
-        // line 9
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_add");
-        yield "\" class=\"btn btn-primary mb-3\">Add New Event</a>
 
         ";
         // line 11
-        if ( !Twig\Extension\CoreExtension::testEmpty((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 11, $this->source); })()))) {
-            // line 12
-            yield "            <div class=\"row\">
-                ";
-            // line 13
-            $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 13, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-                // line 14
-                yield "                    <div class=\"col-md-4 mb-4\">
-                        <div class=\"card\">
-                            ";
-                // line 16
-                if (CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 16)) {
-                    // line 17
-                    yield "                                <img src=\"";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 17))), "html", null, true);
-                    yield "\" class=\"card-img-top\" alt=\"Event Image\">
-                            ";
-                } else {
-                    // line 19
-                    yield "                                <img src=\"https://via.placeholder.com/150\" class=\"card-img-top\" alt=\"No Image Available\">
-                            ";
-                }
-                // line 21
-                yield "                            <div class=\"card-body\">
-                                <h5 class=\"card-title\">";
-                // line 22
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 22), "html", null, true);
-                yield "</h5>
-                                <p class=\"card-text\">
-                                    <strong>Start Date:</strong> ";
-                // line 24
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datedebut", [], "any", false, false, false, 24), "d-m-Y H:i"), "html", null, true);
-                yield "<br>
-                                    <strong>End Date:</strong> ";
-                // line 25
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datefin", [], "any", false, false, false, 25), "d-m-Y H:i"), "html", null, true);
-                yield "
-                                </p>
-                                <a href=\"";
-                // line 27
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-                yield "\" class=\"btn btn-info btn-sm\">View</a>
-                                <a href=\"";
-                // line 28
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_update", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-                yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
-                                <a href=\"";
-                // line 29
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-                yield "\" class=\"btn btn-danger btn-sm\">Delete</a>
-                            </div>
-                        </div>
-                    </div>
-                ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_key'], $context['event'], $context['_parent']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 34
-            yield "            </div>
-        ";
-        } else {
-            // line 36
-            yield "            <p>No events available.</p>
-        ";
+        yield "
+       
+
+
+     <!-- Events Section Start -->
+<div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
+    <div class=\"container py-5\">
+        <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
+            <h5 class=\"fw-bold text-primary text-uppercase\">Upcoming Events</h5>
+            <h1 class=\"mb-0\">Participate in Our Latest Events</h1>
+        </div>
+        <div class=\"row g-5\">
+            ";
+        // line 23
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 23, $this->source); })()));
+        $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
         }
-        // line 38
-        yield "    </div>
+        foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
+            // line 24
+            yield "                <div class=\"col-lg-4 wow slideInUp\" data-wow-delay=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 24) * 0.3), "html", null, true);
+            yield "s\">
+                    <div class=\"event-item bg-light rounded overflow-hidden\">
+                        <div class=\"event-img position-relative overflow-hidden\">
+                            <img class=\"img-fluid\" src=\"";
+            // line 27
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 27)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . CoreExtension::getAttribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 27)))) : ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/default-event.jpg"))), "html", null, true);
+            yield "\" alt=\"Event Image\">
+                            <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">
+                                ";
+            // line 29
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["event"], "club", [], "any", false, false, false, 29), "nom", [], "any", false, false, false, 29), "html", null, true);
+            yield "
+                            </a>
+                        </div>
+                        <div class=\"p-4\">
+                            <div class=\"d-flex mb-3\">
+                                <small class=\"me-3\">
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    Start: ";
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datedebut", [], "any", false, false, false, 36), "d M Y H:i"), "html", null, true);
+            yield "
+                                </small>
+                                <small>
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    End: ";
+            // line 40
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "datefin", [], "any", false, false, false, 40), "d M Y H:i"), "html", null, true);
+            yield "
+                                </small>
+                            </div>
+                            <h4 class=\"mb-3\">";
+            // line 43
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "titre", [], "any", false, false, false, 43), "html", null, true);
+            yield "</h4>
+                            <p>";
+            // line 44
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "description", [], "any", false, false, false, 44), 0, 100), "html", null, true);
+            yield "...</p>
+                            ";
+            // line 45
+            if (CoreExtension::inFilter(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 45, $this->source); })()), "user", [], "any", false, false, false, 45), CoreExtension::getAttribute($this->env, $this->source, $context["event"], "participants", [], "any", false, false, false, 45))) {
+                // line 46
+                yield "                                <span class=\"badge bg-success\">Participating</span>
+                            ";
+            } else {
+                // line 48
+                yield "                                <a class=\"btn btn-primary btn-sm\" href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_event_participate", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 48)]), "html", null, true);
+                yield "\">Participate</a>
+                            ";
+            }
+            // line 50
+            yield "                        </div>
+                    </div>
+                </div>
+            ";
+            $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['revindex0'], $context['loop']['revindex'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        if (!$context['_iterated']) {
+            // line 54
+            yield "                <p class=\"text-center text-muted\">No events available at the moment.</p>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['event'], $context['_parent'], $context['_iterated'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 56
+        yield "        </div>
+    </div>
+</div>
+<!-- Events Section End -->
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -208,7 +250,7 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  179 => 38,  175 => 36,  171 => 34,  160 => 29,  156 => 28,  152 => 27,  147 => 25,  143 => 24,  138 => 22,  135 => 21,  131 => 19,  125 => 17,  123 => 16,  119 => 14,  115 => 13,  112 => 12,  110 => 11,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  216 => 56,  209 => 54,  193 => 50,  187 => 48,  183 => 46,  181 => 45,  177 => 44,  173 => 43,  167 => 40,  160 => 36,  150 => 29,  145 => 27,  138 => 24,  120 => 23,  106 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -218,39 +260,62 @@ class __TwigTemplate_c1422b86adb4703ffd1a3a5b0a8d6fca extends Template
 {% block title %}Events List{% endblock %}
 
 {% block body %}
+
     <div class=\"container mt-5\">
         <h1>Events</h1>
 
-        <a href=\"{{ path('app_g_events_add') }}\" class=\"btn btn-primary mb-3\">Add New Event</a>
+        {# <a href=\"{{ path('app_g_events_add') }}\" class=\"btn btn-primary mb-3\">Add New Event</a> #}
 
-        {% if events is not empty %}
-            <div class=\"row\">
-                {% for event in events %}
-                    <div class=\"col-md-4 mb-4\">
-                        <div class=\"card\">
-                            {% if event.image %}
-                                <img src=\"{{ asset('uploads/events/' ~ event.image) }}\" class=\"card-img-top\" alt=\"Event Image\">
-                            {% else %}
-                                <img src=\"https://via.placeholder.com/150\" class=\"card-img-top\" alt=\"No Image Available\">
-                            {% endif %}
-                            <div class=\"card-body\">
-                                <h5 class=\"card-title\">{{ event.titre }}</h5>
-                                <p class=\"card-text\">
-                                    <strong>Start Date:</strong> {{ event.datedebut|date('d-m-Y H:i') }}<br>
-                                    <strong>End Date:</strong> {{ event.datefin|date('d-m-Y H:i') }}
-                                </p>
-                                <a href=\"{{ path('app_g_events_show', {'id': event.id}) }}\" class=\"btn btn-info btn-sm\">View</a>
-                                <a href=\"{{ path('app_g_events_update', {'id': event.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
-                                <a href=\"{{ path('app_g_events_delete', {'id': event.id}) }}\" class=\"btn btn-danger btn-sm\">Delete</a>
+       
+
+
+     <!-- Events Section Start -->
+<div class=\"container-fluid py-5 wow fadeInUp\" data-wow-delay=\"0.1s\">
+    <div class=\"container py-5\">
+        <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
+            <h5 class=\"fw-bold text-primary text-uppercase\">Upcoming Events</h5>
+            <h1 class=\"mb-0\">Participate in Our Latest Events</h1>
+        </div>
+        <div class=\"row g-5\">
+            {% for event in events %}
+                <div class=\"col-lg-4 wow slideInUp\" data-wow-delay=\"{{ loop.index0 * 0.3 }}s\">
+                    <div class=\"event-item bg-light rounded overflow-hidden\">
+                        <div class=\"event-img position-relative overflow-hidden\">
+                            <img class=\"img-fluid\" src=\"{{ event.image ? asset('uploads/events/' ~ event.image) : asset('img/default-event.jpg') }}\" alt=\"Event Image\">
+                            <a class=\"position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4\" href=\"#\">
+                                {{ event.club.nom }}
+                            </a>
+                        </div>
+                        <div class=\"p-4\">
+                            <div class=\"d-flex mb-3\">
+                                <small class=\"me-3\">
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    Start: {{ event.datedebut|date('d M Y H:i') }}
+                                </small>
+                                <small>
+                                    <i class=\"far fa-calendar-alt text-primary me-2\"></i>
+                                    End: {{ event.datefin|date('d M Y H:i') }}
+                                </small>
                             </div>
+                            <h4 class=\"mb-3\">{{ event.titre }}</h4>
+                            <p>{{ event.description|slice(0, 100) }}...</p>
+                            {% if app.user in event.participants %}
+                                <span class=\"badge bg-success\">Participating</span>
+                            {% else %}
+                                <a class=\"btn btn-primary btn-sm\" href=\"{{ path('app_event_participate', { id: event.id }) }}\">Participate</a>
+                            {% endif %}
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        {% else %}
-            <p>No events available.</p>
-        {% endif %}
+                </div>
+            {% else %}
+                <p class=\"text-center text-muted\">No events available at the moment.</p>
+            {% endfor %}
+        </div>
     </div>
+</div>
+<!-- Events Section End -->
+
+
 {% endblock %}
 ", "g_events/index.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\index.html.twig");
     }

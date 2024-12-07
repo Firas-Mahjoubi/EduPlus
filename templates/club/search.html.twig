@@ -1,18 +1,16 @@
-<form action="{{ path('club_search') }}" method="get" class="d-flex mb-3">
-    <input type="text" name="query" class="form-control" placeholder="Search clubs..." value="{{ searchQuery }}">
-    <button type="submit" class="btn btn-primary ms-2">Search</button>
-</form>
+{% extends 'base.html.twig' %}
 
-{% if clubs is not empty %}
-    <div class="list-group">
-        {% for club in clubs %}
-            <div class="list-group-item">
-                <h5>{{ club.nom }}</h5>
-                <p>{{ club.description }}</p>
-                <a href="{{ path('club_show', {'id': club.id}) }}" class="btn btn-info">View Club</a>
-            </div>
-        {% endfor %}
-    </div>
-{% else %}
-    <p>No clubs found.</p>
-{% endif %}
+{% block title %}{{ club.nom }}{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>{{ club.nom }} Details</h1>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Name:</strong> {{ club.nom }}</li>
+        <li class="list-group-item"><strong>Location:</strong> {{ club.location }}</li>
+        <li class="list-group-item"><strong>Founded Year:</strong> {{ club.foundedYear }}</li>
+    </ul>
+
+    <a href="{{ path('club_search') }}" class="btn btn-primary mt-3">Back to Search</a>
+</div>
+{% endblock %}

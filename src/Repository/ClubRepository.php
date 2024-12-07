@@ -17,15 +17,15 @@ class ClubRepository extends ServiceEntityRepository
     }
     // src/Repository/ClubRepository.php
 
-    public function findBySearchQuery(string $query)
+
+    public function findByName(string $name): array
     {
         return $this->createQueryBuilder('c')
-            ->where('c.nom LIKE :query')
-            ->setParameter('query', '%' . $query . '%') // Search by club name
+            ->where('c.nom LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
             ->getQuery()
             ->getResult();
     }
-
 
     //    /**
     //     * @return Club[] Returns an array of Club objects

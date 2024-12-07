@@ -1,9 +1,7 @@
-# config/services.yaml
-
 parameters:
   club_logos_directory: "../public/uploads/logos"
   profile_pictures_directory: "../public/uploads/profilePictures"
-  event_pictures_directory: "../public/uploads/events"  # Fixed the indentation
+  event_pictures_directory: "../public/uploads/events"
 
 services:
   _defaults:
@@ -16,3 +14,7 @@ services:
       - "../src/DependencyInjection/"
       - "../src/Entity/"
       - "../src/Kernel.php"
+
+  App\Repository\:
+    resource: "../src/Repository"
+    tags: ["doctrine.repository_service"]

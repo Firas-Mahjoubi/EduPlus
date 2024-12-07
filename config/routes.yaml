@@ -14,3 +14,8 @@ uploads:
     _public: true
   requirements:
     path: .+
+
+    
+app_events:
+    path: /events
+    controller: App\Controller\EventController::index
