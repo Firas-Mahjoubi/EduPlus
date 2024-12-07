@@ -20,8 +20,7 @@ class Member
     #[ORM\JoinColumn(nullable: false)]
     private ?User $utilisateur = null;
 
-    #[ORM\ManyToOne(targetEntity: Club::class)]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'members')]    #[ORM\JoinColumn(nullable: false)]
     private ?Club $club = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]

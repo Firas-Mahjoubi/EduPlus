@@ -26,12 +26,10 @@ class RecruitmentType extends AbstractType
             ->add('dateCreated', null, [
                 'widget' => 'single_text'
             ])
-            ->add('dateUpdated', null, [
-                'widget' => 'single_text'
-            ])
+            
             ->add('club', EntityType::class, [
                 'class' => Club::class,
-                'choice_label' => 'name',
+                'choice_label' => 'nom',
                 'placeholder' => 'Select a Club',
             ])
             

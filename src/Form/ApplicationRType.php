@@ -27,9 +27,7 @@ class ApplicationRType extends AbstractType
                 'label' => 'Lettre de motivation',
                 'required' => true,
             ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Soumettre la candidature',
-            ]);
+           ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

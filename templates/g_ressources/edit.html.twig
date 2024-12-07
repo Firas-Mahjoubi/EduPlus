@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit une ressource{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Edit une ressource</h1>
+        {{ form_start(form) }}
+        
+        <div class="form-group">
+            {{ form_label(form.nomRessource) }}
+            {{ form_widget(form.nomRessource, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.nomRessource) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.type) }}
+            {{ form_widget(form.type, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.type) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.quantite) }}
+            {{ form_widget(form.quantite, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.quantite) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.descriptionRessource) }}
+            {{ form_widget(form.descriptionRessource, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.descriptionRessource) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image, { 'attr': {'class': 'form-control-file'} }) }}
+            {{ form_errors(form.image) }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

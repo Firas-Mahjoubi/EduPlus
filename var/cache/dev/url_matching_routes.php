@@ -85,16 +85,25 @@ return [
                                 .'|lete/([^/]++)(*:556)'
                             .')'
                             .'|edit/([^/]++)(*:578)'
-                            .'|apply/([^/]++)(*:600)'
+                            .'|appl(?'
+                                .'|y/([^/]++)(*:603)'
+                                .'|ication(?'
+                                    .'|s/([^/]++)(*:631)'
+                                    .'|/([^/]++)/de(?'
+                                        .'|cision(*:660)'
+                                        .'|tails(*:673)'
+                                    .')'
+                                .')'
+                            .')'
                         .')'
                         .'|ssources/delete/(?'
-                            .'|([^/]++)(*:636)'
-                            .'|confirm/([^/]++)(*:660)'
+                            .'|([^/]++)(*:712)'
+                            .'|confirm/([^/]++)(*:736)'
                         .')'
                     .')'
-                    .'|_ressources/backOffice/edit/([^/]++)(*:706)'
+                    .'|_ressources/backOffice/edit/([^/]++)(*:782)'
                 .')'
-                .'|/uploads/(.+)(*:728)'
+                .'|/uploads/(.+)(*:804)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -120,11 +129,14 @@ return [
         535 => [[['_route' => 'recruitement_details', '_controller' => 'App\\Controller\\GRecrutementsController::authorDetails'], ['id'], null, null, false, true, null]],
         556 => [[['_route' => 'Recruitment_delete', '_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], ['id'], null, null, false, true, null]],
         578 => [[['_route' => 'recruitment_edit', '_controller' => 'App\\Controller\\GRecrutementsController::edit'], ['id'], null, null, false, true, null]],
-        600 => [[['_route' => 'recruitment_apply', '_controller' => 'App\\Controller\\GRecrutementsController::apply'], ['id'], null, null, false, true, null]],
-        636 => [[['_route' => 'ressource_delete', '_controller' => 'App\\Controller\\GRessourcesController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, true, null]],
-        660 => [[['_route' => 'ressource_delete_confirm', '_controller' => 'App\\Controller\\GRessourcesController::confirmDelete'], ['id'], null, null, false, true, null]],
-        706 => [[['_route' => 'ressource_edit', '_controller' => 'App\\Controller\\GRessourcesController::edit'], ['id'], null, null, false, true, null]],
-        728 => [
+        603 => [[['_route' => 'recruitment_apply', '_controller' => 'App\\Controller\\GRecrutementsController::apply'], ['id'], null, null, false, true, null]],
+        631 => [[['_route' => 'recruitment_applications', '_controller' => 'App\\Controller\\GRecrutementsController::listApplications'], ['id'], null, null, false, true, null]],
+        660 => [[['_route' => 'application_decision', '_controller' => 'App\\Controller\\GRecrutementsController::decideApplication'], ['id'], null, null, false, false, null]],
+        673 => [[['_route' => 'application_details', '_controller' => 'App\\Controller\\GRecrutementsController::showApplicationDetails'], ['id'], null, null, false, false, null]],
+        712 => [[['_route' => 'ressource_delete', '_controller' => 'App\\Controller\\GRessourcesController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, true, null]],
+        736 => [[['_route' => 'ressource_delete_confirm', '_controller' => 'App\\Controller\\GRessourcesController::confirmDelete'], ['id'], null, null, false, true, null]],
+        782 => [[['_route' => 'ressource_edit', '_controller' => 'App\\Controller\\GRessourcesController::edit'], ['id'], null, null, false, true, null]],
+        804 => [
             [['_route' => 'uploads', '_public' => true], ['path'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

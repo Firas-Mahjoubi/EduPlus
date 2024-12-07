@@ -40,14 +40,22 @@ class GRecrutementsController extends AbstractController
     }
 
     #[Route('/details/{id}', name: 'recruitement_details')]
+public function authorDetails(RecruitmentRepository $repo, $id): Response
+{
+    // Rechercher le recrutement par ID
+    $recruitment = $repo->find($id);
 
-    public function authorDetails(RecruitmentRepository $repo, $id): Response
-
-    {
-        return $this->render('g_recrutements/show.html.twig', [
-            'recruitment'=> $repo ->find($id)
-        ]);
+    // Si le recrutement n'existe pas, affiche un message d'erreur
+    if (!$recruitment) {
+        throw $this->createNotFoundException('Recrutement non trouvé.');
     }
+
+    // Rendre la vue avec le recrutement trouvé
+    return $this->render('g_recrutements/show.html.twig', [
+        'recruitment' => $recruitment,
+    ]);
+}
+
 
     #[Route('/delete/{id}', name: 'Recruitment_delete')]
     public function authorDelete1(Recruitment $rec, ManagerRegistry $manager)
@@ -116,6 +124,7 @@ public function edit(Request $request, Recruitment $recruitment, ManagerRegistry
 public function apply(Request $request, Recruitment $recruitment, ManagerRegistry $doctrine): Response
 {
     $user = $this->getUser();
+    
 
     if (!$user) {
         $this->addFlash('error', 'Vous devez être connecté pour postuler.');
@@ -159,6 +168,62 @@ public function apply(Request $request, Recruitment $recruitment, ManagerRegistr
     return $this->render('g_recrutements/apply.html.twig', [
         'form' => $form->createView(),
         'recruitment' => $recruitment,
+    ]);
+}
+
+
+#[Route('/applications/{id}', name: 'recruitment_applications')]
+public function listApplications(Recruitment $recruitment, ManagerRegistry $doctrine): Response
+{
+    $applications = $doctrine->getRepository(Application::class)->findBy(['recruitment' => $recruitment]);
+
+    return $this->render('g_recrutements/applications.html.twig', [
+        'applications' => $applications,
+        'recruitment' => $recruitment,
+    ]);
+}
+
+
+#[Route('/application/{id}/decision', name: 'application_decision')]
+public function decideApplication(Application $application, Request $request, ManagerRegistry $doctrine): Response
+{
+    // Vérifiez si l'utilisateur est autorisé (exemple : un admin ou responsable)
+    $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+    $decision = $request->query->get('decision'); // Récupère la décision (valider ou rejeter)
+    $entityManager = $doctrine->getManager();
+
+    if ($decision === 'valider') {
+        $application->setStatus('VALIDÉE');
+        $this->addFlash('success', 'Candidature validée avec succès.');
+    } elseif ($decision === 'rejeter') {
+        $application->setStatus('REJETÉE');
+        $this->addFlash('error', 'Candidature rejetée avec succès.');
+    } else {
+        $this->addFlash('error', 'Décision invalide.');
+        return $this->redirectToRoute('recruitment_applications', ['id' => $application->getRecruitment()->getId()]);
+    }
+
+    // Sauvegarde de la modification
+    $entityManager->flush();
+
+    return $this->redirectToRoute('recruitment_applications', ['id' => $application->getRecruitment()->getId()]);
+}
+
+
+
+#[Route('/application/{id}/details', name: 'application_details')]
+public function showApplicationDetails(Application $application): Response
+{
+    // Vérifiez que la candidature est valide
+    if (!$application->getCandidat()) {
+        $this->addFlash('error', 'Aucun candidat associé à cette candidature.');
+        return $this->redirectToRoute('recruitment_applications', ['id' => $application->getRecruitment()->getId()]);
+    }
+
+    return $this->render('g_recrutements/application_details.html.twig', [
+        'application' => $application,
+        'candidat' => $application->getCandidat(),
     ]);
 }
 

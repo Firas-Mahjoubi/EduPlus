@@ -189,45 +189,61 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                 </div>
               </li>
               <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#forms\">
-                  <i class=\"fas fa-pen-square\"></i>
-                  <p>RECRUTEMENT</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"forms\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"";
+  <a data-bs-toggle=\"collapse\" href=\"#forms\">
+    <i class=\"fas fa-pen-square\"></i>
+    <p>RECRUTEMENT</p>
+    <span class=\"caret\"></span>
+  </a>
+  <div class=\"collapse\" id=\"forms\">
+    <ul class=\"nav nav-collapse\">
+      <li>
+        <a href=\"";
         // line 129
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_add");
+        yield "\">
+          <span class=\"sub-item\">ADD</span>
+        </a>
+      </li>
+      ";
+        // line 133
+        if (array_key_exists("recruitment", $context)) {
+            // line 134
+            yield "        <li>
+          <a href=\"";
+            // line 135
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 135, $this->source); })()), "id", [], "any", false, false, false, 135)]), "html", null, true);
+            yield "\">
+            <span class=\"sub-item\">UPDATE</span>
+          </a>
+        </li>
+      ";
+        } else {
+            // line 140
+            yield "        <li>
+          <a href=\"#\" class=\"disabled\">
+            <span class=\"sub-item\">UPDATE (Not available)</span>
+          </a>
+        </li>
+      ";
+        }
+        // line 146
+        yield "      <li>
+        <a href=\"";
+        // line 147
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
-                        <span class=\"sub-item\">ADD </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"";
-        // line 134
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        yield "\">
-                        <span class=\"sub-item\">UPDATE </span>
-                      </a>
-                    </li>
-                    <li> 
-                      <a href=\"";
-        // line 139
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        yield "\">
-                        <span class=\"sub-item\">DELETE </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/avatars.html\">
-                        <span class=\"sub-item\">SHOW</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+          <span class=\"sub-item\">DELETE</span>
+        </a>
+      </li>
+      <li>
+        <a href=\"components/avatars.html\">
+          <span class=\"sub-item\">SHOW</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+
               <li class=\"nav-item\">
                 <a data-bs-toggle=\"collapse\" href=\"#charts\">
                   <i class=\"far fa-chart-bar\"></i>
@@ -238,7 +254,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                   <ul class=\"nav nav-collapse\">
                     <li>
                       <a href=\"";
-        // line 160
+        // line 169
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
                         <span class=\"sub-item\">ADD </span>
@@ -246,7 +262,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                     </li>
                     <li>
                       <a href=\"";
-        // line 165
+        // line 174
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
                         <span class=\"sub-item\">UPDATE </span>
@@ -254,7 +270,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                     </li>
                     <li> 
                       <a href=\"";
-        // line 170
+        // line 179
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
                         <span class=\"sub-item\">DELETE </span>
@@ -305,7 +321,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  258 => 170,  250 => 165,  242 => 160,  218 => 139,  210 => 134,  202 => 129,  179 => 109,  171 => 104,  163 => 99,  144 => 83,  136 => 78,  128 => 73,  120 => 68,  58 => 9,  48 => 1,);
+        return array (  274 => 179,  266 => 174,  258 => 169,  233 => 147,  230 => 146,  222 => 140,  214 => 135,  211 => 134,  209 => 133,  202 => 129,  179 => 109,  171 => 104,  163 => 99,  144 => 83,  136 => 78,  128 => 73,  120 => 68,  58 => 9,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -430,36 +446,45 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                 </div>
               </li>
               <li class=\"nav-item\">
-                <a data-bs-toggle=\"collapse\" href=\"#forms\">
-                  <i class=\"fas fa-pen-square\"></i>
-                  <p>RECRUTEMENT</p>
-                  <span class=\"caret\"></span>
-                </a>
-                <div class=\"collapse\" id=\"forms\">
-                  <ul class=\"nav nav-collapse\">
-                    <li>
-                      <a href=\"{{ path('app_logout') }}\">
-                        <span class=\"sub-item\">ADD </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"{{ path('app_logout') }}\">
-                        <span class=\"sub-item\">UPDATE </span>
-                      </a>
-                    </li>
-                    <li> 
-                      <a href=\"{{ path('app_logout') }}\">
-                        <span class=\"sub-item\">DELETE </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=\"components/avatars.html\">
-                        <span class=\"sub-item\">SHOW</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+  <a data-bs-toggle=\"collapse\" href=\"#forms\">
+    <i class=\"fas fa-pen-square\"></i>
+    <p>RECRUTEMENT</p>
+    <span class=\"caret\"></span>
+  </a>
+  <div class=\"collapse\" id=\"forms\">
+    <ul class=\"nav nav-collapse\">
+      <li>
+        <a href=\"{{ path('recruitment_add') }}\">
+          <span class=\"sub-item\">ADD</span>
+        </a>
+      </li>
+      {% if recruitment is defined %}
+        <li>
+          <a href=\"{{ path('recruitment_edit', { id: recruitment.id }) }}\">
+            <span class=\"sub-item\">UPDATE</span>
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <a href=\"#\" class=\"disabled\">
+            <span class=\"sub-item\">UPDATE (Not available)</span>
+          </a>
+        </li>
+      {% endif %}
+      <li>
+        <a href=\"{{ path('app_logout') }}\">
+          <span class=\"sub-item\">DELETE</span>
+        </a>
+      </li>
+      <li>
+        <a href=\"components/avatars.html\">
+          <span class=\"sub-item\">SHOW</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+
               <li class=\"nav-item\">
                 <a data-bs-toggle=\"collapse\" href=\"#charts\">
                   <i class=\"far fa-chart-bar\"></i>

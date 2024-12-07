@@ -118,36 +118,45 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#forms">
-                  <i class="fas fa-pen-square"></i>
-                  <p>RECRUTEMENT</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="forms">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="{{ path('app_logout') }}">
-                        <span class="sub-item">ADD </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ path('app_logout') }}">
-                        <span class="sub-item">UPDATE </span>
-                      </a>
-                    </li>
-                    <li> 
-                      <a href="{{ path('app_logout') }}">
-                        <span class="sub-item">DELETE </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="components/avatars.html">
-                        <span class="sub-item">SHOW</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+  <a data-bs-toggle="collapse" href="#forms">
+    <i class="fas fa-pen-square"></i>
+    <p>RECRUTEMENT</p>
+    <span class="caret"></span>
+  </a>
+  <div class="collapse" id="forms">
+    <ul class="nav nav-collapse">
+      <li>
+        <a href="{{ path('recruitment_add') }}">
+          <span class="sub-item">ADD</span>
+        </a>
+      </li>
+      {% if recruitment is defined %}
+        <li>
+          <a href="{{ path('recruitment_edit', { id: recruitment.id }) }}">
+            <span class="sub-item">UPDATE</span>
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <a href="#" class="disabled">
+            <span class="sub-item">UPDATE (Not available)</span>
+          </a>
+        </li>
+      {% endif %}
+      <li>
+        <a href="{{ path('app_logout') }}">
+          <span class="sub-item">DELETE</span>
+        </a>
+      </li>
+      <li>
+        <a href="components/avatars.html">
+          <span class="sub-item">SHOW</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#charts">
                   <i class="far fa-chart-bar"></i>

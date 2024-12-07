@@ -181,11 +181,20 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
             // line 39
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "location", [], "any", false, false, false, 39), "html", null, true);
             yield "</p>
+                        
                         <!-- Bouton Postuler -->
                         <a href=\"";
-            // line 41
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_apply", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 41)]), "html", null, true);
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_apply", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 42)]), "html", null, true);
             yield "\" class=\"btn btn-success btn-sm\">Postuler</a>
+                        
+                        <!-- Bouton Voir les candidatures -->
+                        <a href=\"";
+            // line 45
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_applications", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "id", [], "any", false, false, false, 45)]), "html", null, true);
+            yield "\" class=\"btn btn-primary btn-sm\"> 
+                            Voir les candidatures
+                        </a>
                     </div>
                 </div>
             </div>
@@ -193,7 +202,7 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 46
+            // line 52
             yield "            <div class=\"col-12\">
                 <div class=\"alert alert-warning text-center\">
                     Aucune annonce de recrutement disponible pour le moment.
@@ -204,7 +213,7 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['recruitment'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 52
+        // line 58
         yield "    </div>
 </div>
 ";
@@ -238,7 +247,7 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  208 => 52,  197 => 46,  187 => 41,  182 => 39,  178 => 38,  172 => 35,  168 => 34,  161 => 30,  156 => 28,  151 => 25,  146 => 24,  141 => 21,  132 => 18,  129 => 17,  125 => 16,  122 => 15,  113 => 12,  110 => 11,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  217 => 58,  206 => 52,  194 => 45,  188 => 42,  182 => 39,  178 => 38,  172 => 35,  168 => 34,  161 => 30,  156 => 28,  151 => 25,  146 => 24,  141 => 21,  132 => 18,  129 => 17,  125 => 16,  122 => 15,  113 => 12,  110 => 11,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -282,8 +291,14 @@ class __TwigTemplate_e60e720c784a08f1cde89126df41c193 extends Template
                         </p>
                         <p class=\"card-text\"><strong>Date Limite :</strong> {{ recruitment.deadline|date('d/m/Y') }}</p>
                         <p class=\"card-text\"><strong>Lieu :</strong> {{ recruitment.location }}</p>
+                        
                         <!-- Bouton Postuler -->
                         <a href=\"{{ path('recruitment_apply', { id: recruitment.id }) }}\" class=\"btn btn-success btn-sm\">Postuler</a>
+                        
+                        <!-- Bouton Voir les candidatures -->
+                        <a href=\"{{ path('recruitment_applications', { id: recruitment.id }) }}\" class=\"btn btn-primary btn-sm\"> 
+                            Voir les candidatures
+                        </a>
                     </div>
                 </div>
             </div>

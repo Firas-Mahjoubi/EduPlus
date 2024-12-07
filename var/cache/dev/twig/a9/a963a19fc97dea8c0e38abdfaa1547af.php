@@ -201,7 +201,7 @@ class __TwigTemplate_83e27c8c7bed5ebc4b45d9167e608b1a extends Template
             yield "</td>
                         <td>";
             // line 53
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "club", [], "any", false, false, false, 53), "id", [], "any", false, false, false, 53), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["recruitment"], "club", [], "any", false, false, false, 53), "nom", [], "any", false, false, false, 53), "html", null, true);
             yield "</td>
                         <td>
                             <!-- Bouton Voir -->
@@ -334,7 +334,7 @@ class __TwigTemplate_83e27c8c7bed5ebc4b45d9167e608b1a extends Template
                             </span>
                         </td>
                         <td>{{ recruitment.deadline|date('d/m/Y') }}</td>
-                        <td>{{ recruitment.club.id }}</td>
+                        <td>{{ recruitment.club.nom }}</td>
                         <td>
                             <!-- Bouton Voir -->
                             <a href=\"{{ path('recruitement_details', { id: recruitment.id }) }}\" class=\"btn btn-info btn-sm\">Voir</a>
