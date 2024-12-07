@@ -30,7 +30,6 @@ security:
             remember_me:
                 secret: '%kernel.secret%'  # Should be a unique, secret value (usually from the kernel secret)
                 lifetime: 604800  # Remember me cookie lifetime in seconds (1 week)
-                path: /  # Apply to the entire site
 
     access_control:
         # Define any access control rules based on roles here

@@ -5,18 +5,15 @@ namespace App\Form;
 use App\Entity\Event;
 use App\Entity\Club;
 use App\Entity\Bloc;
-use App\Entity\User;
-
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;  // Add this import for file uploads
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-
 
 class EventType extends AbstractType
 {
@@ -31,7 +28,15 @@ class EventType extends AbstractType
                 'label' => 'Limit Number of Participants',
                 'required' => false,
                 'mapped' => true,
+                'attr' => [
+                    'class' => 'form-check-input',
+                    'id' => 'has-limit-checkbox',
+                    'onclick' => 'toggleMaxParticipants()',  // Inline handler
+                ],
             ])
+            
+            
+    
             ->add('maxParticipants', IntegerType::class, [
                 'label' => 'Max Participants',
                 'required' => false,
@@ -40,7 +45,7 @@ class EventType extends AbstractType
             ])
             ->add('datedebut', DateType::class, [
                 'label' => 'Start Date',
-                'widget' => 'single_text', // This makes it use an HTML5 date picker
+                'widget' => 'single_text',
             ])
             ->add('datefin', DateType::class, [
                 'label' => 'End Date',
@@ -53,30 +58,19 @@ class EventType extends AbstractType
             ])
             ->add('club', EntityType::class, [
                 'class' => Club::class,
-                'choice_label' => 'nom', // Assuming 'name' is a property of Club
+                'choice_label' => 'nom',
                 'label' => 'Club',
                 'placeholder' => 'Select a club',
             ])
             ->add('bloc', EntityType::class, [
                 'class' => Bloc::class,
-                'choice_label' => 'name', // Assuming 'name' is a property of Bloc
+                'choice_label' => 'name',
                 'label' => 'Bloc',
                 'placeholder' => 'Select a bloc',
             ])
-            // ->add('participants', EntityType::class, [
-            //     'class' => User::class,
-            //     'choice_label' => 'nom', // This should match the property name for the participant name
-            //     'multiple' => true, // Multiple participants
-            //     'expanded' => true, // Render as checkboxes
-            //     'label' => 'Participants',
-            //     'attr' => [
-            //         'class' => 'select2-searchable form-control', // Add the class for Select2 initialization
-            //     ],
-            // ])
-             // Add the image field for file upload
-             ->add('image', FileType::class, [
+            ->add('image', FileType::class, [
                 'label' => 'Event Image (Optional)',
-                'mapped' => false,  // The file is not mapped to the entity directly
+                'mapped' => false,
                 'required' => false,
                 'attr' => ['class' => 'form-control-file'],
             ]);

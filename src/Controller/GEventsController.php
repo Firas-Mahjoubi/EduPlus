@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\EventMessage;
 use App\Entity\Event;
 use App\Form\EventType;
 use App\Repository\EventRepository;
@@ -14,6 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 
 #[Route('/events')]
@@ -48,6 +52,21 @@ class GEventsController extends AbstractController
             'latestEvents' => $latestEvents,
         ]);
     }
+    #[Route('/events', name: 'app_event_list')]
+    public function search(Request $request, EventRepository $eventRepository): Response
+{
+    $search = $request->query->get('search', '');
+    $upcomingEvents = $eventRepository->findUpcomingEvents($search);
+    $latestEvents = $eventRepository->findLatestEvents($search);
+    
+    // Render the results as a partial Twig template
+    $html = $this->renderView('g_events/list.html.twig', [
+        'upcomingEvents' => $upcomingEvents,
+        'latestEvents' => $latestEvents,
+    ]);
+    
+    return new Response($html); // Return a plain Response with the HTML
+}
     private $mailer;
 
     public function __construct(MailerInterface $mailer, EntityManagerInterface $entityManager)
@@ -56,66 +75,7 @@ class GEventsController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    // // Add a new event
-    // #[Route('/add', name: 'app_g_events_add', methods: ['GET', 'POST'])]
-    // public function add(Request $request, UserRepository $userRepository): Response
-    // {
-    //     $event = new Event();
-    //     $form = $this->createForm(EventType::class, $event);
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         // Handle image upload
-    //         $image = $form->get('image')->getData();
-    //         if ($image) {
-    //             $newFilename = uniqid() . '.' . $image->guessExtension();
-    //             try {
-    //                 $image->move(
-    //                     $this->getParameter('event_pictures_directory'),
-    //                     $newFilename
-    //                 );
-    //                 $event->setImage($newFilename);
-    //             } catch (FileException $e) {
-    //                 $this->addFlash('error', 'Error uploading the image.');
-    //             }
-    //         }
-
-    //         // Check if the participant limit is enabled
-    //         if ($form->get('hasParticipantLimit')->getData()) {
-    //             $event->setHasParticipantLimit(true);
-    //             $event->setMaxParticipants($form->get('maxParticipants')->getData());
-    //         } else {
-    //             $event->setHasParticipantLimit(false);
-    //             $event->setMaxParticipants(null);
-    //         }
-
-    //         // Persist the event
-    //         $this->entityManager->persist($event);
-    //         $this->entityManager->flush();
-
-    //         // Send email notification to all users
-    //         $users = $userRepository->findAll();
-    //         foreach ($users as $user) {
-    //             $email = (new Email())
-    //                 ->from('YOUR_EMAIL@outlook.com') // Your Outlook email
-    //                 ->to($user->getEmail())
-    //                 ->subject('New Event: ' . $event->getTitre())
-    //                 ->html($this->renderView('emails/new_event.html.twig', [
-    //                     'event' => $event
-    //                 ]));
-
-    //             $this->mailer->send($email);
-    //         }
-
-    //         $this->addFlash('success', 'Event added successfully and emails sent to all users.');
-    //         return $this->redirectToRoute('app_g_events');
-    //     }
-
-    //     return $this->render('g_events/add.html.twig', [
-    //         'form' => $form->createView(),
-    //     ]);
-    // }
-    
+ 
 
 //     Update an existing event
 //    Show Event (View details of the event)
@@ -146,45 +106,8 @@ public function show( EventRepository $eventRepository): Response
         ]);
 }
 
-// Update Event (Update an existing event)
-#[Route('/update/{id}', name: 'app_g_events_update', methods: ['GET', 'POST'])]
-public function update(int $id, Request $request, EntityManagerInterface $entityManager, EventRepository $eventRepository): Response
-{
-    $event = $eventRepository->find($id);
-    if (!$event) {
-        throw $this->createNotFoundException('Event not found.');
-    }
 
-    $form = $this->createForm(EventType::class, $event);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-        // Handle the form submission and image upload
-        $entityManager->flush();
-        $this->addFlash('success', 'Event updated successfully.');
-
-        return $this->redirectToRoute('app_g_events_show', ['id' => $event->getId()]);
-    }
-
-    return $this->render('g_events/update.html.twig', [
-        'form' => $form->createView(),
-        'event' => $event,  // Pass the event object to the template
-    ]);
-}
-
-    // Delete an event
-    #[Route('/delete/{id}', name: 'app_g_events_delete', methods: ['GET'])]
-    public function delete(Event $event, EntityManagerInterface $entityManager): Response
-    {
-        $entityManager->remove($event);
-        $entityManager->flush();
-
-        $this->addFlash('success', 'Event deleted successfully.');
-
-        return $this->redirectToRoute('app_g_events');
-    }
-
-    // Event participation
+//     // Event participation
     #[Route('/participate/{id}', name: 'app_event_participate', methods: ['POST', 'GET'])]
     public function participate(int $id, EventRepository $eventRepository, EntityManagerInterface $entityManager): Response
     {
@@ -233,4 +156,80 @@ public function update(int $id, Request $request, EntityManagerInterface $entity
          // Redirect to the events list
          return $this->redirectToRoute('app_g_events');
      }
+    
+    #[Route("/event/{id}", name:"event_details")]
+    public function showev($id, EntityManagerInterface $entityManager): Response
+    {
+        // Fetch the event from the database using the id
+        $event = $entityManager->getRepository(Event::class)->find($id);
+
+        // If the event is not found, you can handle it accordingly (e.g., return a 404)
+        if (!$event) {
+            throw $this->createNotFoundException('The event does not exist');
+        }
+
+        // Render the event details template
+        return $this->render('g_events/details.html.twig', [
+            'event' => $event,
+        ]);
+    }
+#[Route("/event/{id}/discussion", name:"event_discussion")]
+public function eventDiscussion($id, EntityManagerInterface $entityManager): Response
+{
+    // Fetch the event from the database using the id
+    $event = $entityManager->getRepository(Event::class)->find($id);
+
+    // If the event is not found, you can handle it accordingly (e.g., return a 404)
+    if (!$event) {
+        throw $this->createNotFoundException('The event does not exist');
+    }
+
+    // Check if the current user is participating in the event
+    $user = $this->getUser();
+    if (!$user || !$event->getParticipants()->contains($user)) {
+        // Redirect to event details if the user is not a participant
+        $this->addFlash('error', 'You must be a participant to access the event discussion.');
+        return $this->redirectToRoute('event_details', ['id' => $id]);
+    }
+
+    // Render the event discussion template
+    return $this->render('g_events/discussion.html.twig', [
+        'event' => $event,
+    ]);
+}
+
+#[Route('/event/{id}/discussion/post', name: 'event_post_message', methods: ['POST'])]
+public function postMessage(Request $request, $id, EntityManagerInterface $entityManager): RedirectResponse
+{
+    // Fetch the event from the database using the id
+    $event = $entityManager->getRepository(Event::class)->find($id);
+
+    if (!$event) {
+        throw $this->createNotFoundException('The event does not exist');
+    }
+
+    // Check if the user is participating
+    $user = $this->getUser();
+    if (!$event->getParticipants()->contains($user)) {
+        $this->addFlash('error', 'You must be a participant to post a message.');
+        return $this->redirectToRoute('event_discussion', ['id' => $id]);
+    }
+
+    // Get the message content from the form
+    $messageContent = $request->request->get('message');
+    if ($messageContent) {
+        // Create and save the message
+        $message = new EventMessage();
+        $message->setUser($user);
+        $message->setEvent($event);
+        $message->setContent($messageContent);
+
+        // Persist the message
+        $entityManager->persist($message);
+        $entityManager->flush();
+    }
+
+    // Redirect back to the event discussion page
+    return $this->redirectToRoute('event_discussion', ['id' => $id]);
+}
 }
