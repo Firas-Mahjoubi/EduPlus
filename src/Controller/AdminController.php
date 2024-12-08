@@ -17,6 +17,9 @@ use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Csrf\CsrfToken;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 
 
 #[Route('/admin')]  
@@ -71,7 +74,7 @@ class AdminController extends AbstractController
                         $newFilename
                     );
                     $event->setImage($newFilename);
-                } catch (FileException $e) {
+                } catch (\Exception $e) {
                     $this->addFlash('error', 'Error uploading the image.');
                 }
             }
@@ -86,19 +89,26 @@ class AdminController extends AbstractController
             }
 
             // Persist the event
-            $this->entityManager->persist($event);
-            $this->entityManager->flush();
+            $this->entityManager->persist($event); // Use injected entity manager
+            $this->entityManager->flush(); // Save to the database
+
+            // Generate PDF
+            $pdfContent = $this->renderView('emails/event_pdf.html.twig', [
+                'event' => $event,
+            ]);
+            $pdf = $this->generatePdf($pdfContent);
 
             // Send email notification to all users
             $users = $userRepository->findAll();
             foreach ($users as $user) {
                 $email = (new Email())
-                    ->from('mahjoubi.firas@esprit.tn')
+                    ->from('no-reply@yourdomain.com')
                     ->to($user->getEmail())
                     ->subject('New Event: ' . $event->getTitre())
                     ->html($this->renderView('emails/new_event.html.twig', [
                         'event' => $event
-                    ]));
+                    ]))
+                    ->attach($pdf, 'event-details.pdf', 'application/pdf');
 
                 $this->mailer->send($email);
             }
@@ -110,6 +120,24 @@ class AdminController extends AbstractController
         return $this->render('g_events/add.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    private function generatePdf(string $htmlContent): string
+    {
+        // Initialize Dompdf
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isPhpEnabled', true);
+        $dompdf = new Dompdf($options);
+
+        // Load HTML content
+        $dompdf->loadHtml($htmlContent);
+
+        // Render PDF (first pass)
+        $dompdf->render();
+
+        // Stream PDF to browser
+        return $dompdf->output(); // Return the generated PDF content
     }
     #[Route('/event/backoffice', name: 'app_event_dashboard_backoffice')]
     public function dashboardevents(Request $request, EventRepository $eventRepository): Response
