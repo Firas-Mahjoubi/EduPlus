@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* @Doctrine/Collector/db.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/ae/ae52eaf9ea43799057676553bfccf034.php
+class __TwigTemplate_c13a7f7777afe184421915e1397f64da extends Template
+========
 class __TwigTemplate_5c73a31023650488b4365a5b7b84539f extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/12/128f5daaf6ff0ca7bfdc0a71e8453e40.php
 {
     private Source $source;
     /**

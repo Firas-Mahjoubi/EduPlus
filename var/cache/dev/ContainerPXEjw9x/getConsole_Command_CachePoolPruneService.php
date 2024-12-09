@@ -1,7 +1,16 @@
 <?php
 
+<<<<<<< HEAD:var/cache/dev/ContainerPXEjw9x/getConsole_Command_CachePoolPruneService.php
 namespace ContainerPXEjw9x;
 
+=======
+<<<<<<<< HEAD:var/cache/dev/Container5bYnsck/getConsole_Command_CachePoolPruneService.php
+namespace Container5bYnsck;
+
+========
+namespace ContainerBg3qXMC;
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/ContainerBg3qXMC/getConsole_Command_CachePoolPruneService.php
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb:var/cache/dev/ContainerBg3qXMC/getConsole_Command_CachePoolPruneService.php
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -37,7 +46,8 @@ class getConsole_Command_CachePoolPruneService extends App_KernelDevDebugContain
             yield 'cache.security_expression_language' => ($container->privates['cache.security_expression_language'] ?? self::getCache_SecurityExpressionLanguageService($container));
             yield 'cache.security_is_granted_attribute_expression_language' => ($container->services['cache.security_is_granted_attribute_expression_language'] ?? self::getCache_SecurityIsGrantedAttributeExpressionLanguageService($container));
             yield 'cache.security_token_verifier' => ($container->privates['cache.security_token_verifier'] ?? self::getCache_SecurityTokenVerifierService($container));
-        }, 14));
+            yield 'cache.webpack_encore' => ($container->privates['cache.webpack_encore'] ?? self::getCache_WebpackEncoreService($container));
+        }, 15));
 
         $instance->setName('cache:pool:prune');
         $instance->setDescription('Prune cache pools');

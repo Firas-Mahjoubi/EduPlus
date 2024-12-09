@@ -1,7 +1,16 @@
 <?php
 
+<<<<<<< HEAD:var/cache/dev/ContainerPXEjw9x/getCacheWarmerService.php
 namespace ContainerPXEjw9x;
 
+=======
+<<<<<<<< HEAD:var/cache/dev/Container5bYnsck/getCacheWarmerService.php
+namespace Container5bYnsck;
+
+========
+namespace ContainerBg3qXMC;
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/ContainerBg3qXMC/getCacheWarmerService.php
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb:var/cache/dev/ContainerBg3qXMC/getCacheWarmerService.php
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -31,6 +40,7 @@ class getCacheWarmerService extends App_KernelDevDebugContainer
             yield 5 => ($container->privates['validator.mapping.cache_warmer'] ?? $container->load('getValidator_Mapping_CacheWarmerService'));
             yield 6 => ($container->privates['doctrine.orm.proxy_cache_warmer'] ?? $container->load('getDoctrine_Orm_ProxyCacheWarmerService'));
             yield 7 => ($container->privates['twig.template_cache_warmer'] ?? $container->load('getTwig_TemplateCacheWarmerService'));
-        }, 8), true, ($container->targetDir.''.'/App_KernelDevDebugContainerDeprecations.log'));
+            yield 8 => ($container->privates['webpack_encore.entrypoint_lookup.cache_warmer'] ?? $container->load('getWebpackEncore_EntrypointLookup_CacheWarmerService'));
+        }, 9), true, ($container->targetDir.''.'/App_KernelDevDebugContainerDeprecations.log'));
     }
 }

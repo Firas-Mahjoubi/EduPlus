@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* base_backoffice.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/67/671ecfb6090f1d5bbbdb0fe78c9bba4a.php
+class __TwigTemplate_3065cfbfb49ce2761d03554b8810969d extends Template
+========
 class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/4c/4c8794d5ca0d6d12679e1c84989fc844.php
 {
     private Source $source;
     /**
@@ -57,10 +61,6 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
     />
     <link
       rel=\"icon\"
-     href=\"";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/kaiadmin/favicon.ico  "), "html", null, true);
-        yield "\"
       type=\"image/x-icon\"
     />
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
@@ -68,7 +68,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
     <!-- Fonts and icons -->
     
     <script src=\"";
-        // line 19
+        // line 18
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/webfont/webfont.min.js"), "html", null, true);
         yield "\"></script>
     <script>
@@ -91,15 +91,15 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
 
     <!-- CSS Files -->
     <link href=\"";
-        // line 39
+        // line 38
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"";
-        // line 40
+        // line 39
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/plugins.min.css"), "html", null, true);
         yield "\"/>
     <link rel=\"stylesheet\" href=\"";
-        // line 41
+        // line 40
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/kaiadmin.min.css"), "html", null, true);
         yield "\"/>
     <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
@@ -109,7 +109,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
   </head>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel=\"stylesheet\" href=\"";
-        // line 48
+        // line 47
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/public/css/demo.css"), "html", null, true);
         yield "\"/>
   </head>
@@ -117,9 +117,14 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
     <div class=\"wrapper\">
      
       ";
+        // line 52
+        yield from         $this->loadTemplate("/sidebar.html.twig", "base_backoffice.html.twig", 52)->unwrap()->yield($context);
         // line 53
+<<<<<<<< HEAD:var/cache/dev/twig/67/671ecfb6090f1d5bbbdb0fe78c9bba4a.php
+========
         yield from $this->loadTemplate("/sidebar.html.twig", "base_backoffice.html.twig", 53)->unwrap()->yield($context);
         // line 54
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/4c/4c8794d5ca0d6d12679e1c84989fc844.php
         yield "
       <div class=\"main-panel\">
         <div class=\"main-header\">
@@ -129,7 +134,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
               <a href=\"index.html\" class=\"logo\">
                 <img
                 src=\"";
-        // line 62
+        // line 61
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/kaiadmin/logo_light.svg"), "html", null, true);
         yield "\"
                   alt=\"navbar brand\"
@@ -153,7 +158,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
           </div>
 
        ";
-        // line 444
+        // line 443
         yield "
      </div>
 
@@ -163,9 +168,9 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
            class=\"d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4\"
          >
          ";
-        // line 452
+        // line 451
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 454
+        // line 453
         yield "       </div>
        </div>
      </div>
@@ -395,91 +400,91 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
  <!--   Core JS Files   -->
  
  <script src=\"";
-        // line 682
+        // line 681
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/jquery-3.7.1.min.js"), "html", null, true);
         yield "\"></script>
  <script src=\"";
-        // line 683
+        // line 682
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/popper.min.js"), "html", null, true);
         yield "\"></script>
  <script src=\"";
-        // line 684
+        // line 683
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/bootstrap.min.js"), "html", null, true);
         yield "\" ></script>
 
  <!-- jQuery Scrollbar -->
  <script src=\"";
-        // line 687
+        // line 686
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"), "html", null, true);
         yield "\" ></script>
  
 
  <!-- Chart JS -->
  <script src=\"";
-        // line 691
+        // line 690
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/chart.js/chart.min.js"), "html", null, true);
         yield "\" ></script>
  
 
  <!-- jQuery Sparkline -->
  <script src=\"";
-        // line 695
+        // line 694
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jquery.sparkline/jquery.sparkline.min.js"), "html", null, true);
         yield "\" ></script>
 
 
  <!-- Chart Circle -->
  <script src=\"";
-        // line 699
+        // line 698
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/chart-circle/circles.min.js"), "html", null, true);
         yield "\" ></script>
 
 
  <!-- Datatables -->
  <script src=\"";
-        // line 703
+        // line 702
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/datatables/datatables.min.js"), "html", null, true);
         yield "\" ></script>
  
 
  <!-- Bootstrap Notify -->
  <script src=\"";
-        // line 707
+        // line 706
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/bootstrap-notify/bootstrap-notify.min.js"), "html", null, true);
         yield "\" ></script>
 
 
  <!-- jQuery Vector Maps -->
  <script src=\"";
-        // line 711
+        // line 710
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jsvectormap/jsvectormap.min.js"), "html", null, true);
         yield "\" ></script>
  <script src=\"";
-        // line 712
+        // line 711
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jsvectormap/world.js"), "html", null, true);
         yield "\" ></script>
 
 
  <!-- Sweet Alert -->
  <script src=\"";
-        // line 716
+        // line 715
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/sweetalert/sweetalert.min.js"), "html", null, true);
         yield "\" ></script>
 
 
  <!-- Kaiadmin JS -->
  <script src=\"";
-        // line 720
+        // line 719
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/kaiadmin.min.js"), "html", null, true);
         yield "\" ></script>
  
  <!-- Kaiadmin DEMO methods, don't include it in your project! -->
  <script src=\"";
-        // line 723
+        // line 722
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/setting-demo.js"), "html", null, true);
         yield "\" ></script>
  <script src=\"";
-        // line 724
+        // line 723
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/demo.js"), "html", null, true);
         yield "\" ></script>
  <script>
@@ -521,7 +526,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
         yield from [];
     }
 
-    // line 452
+    // line 451
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -534,7 +539,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 453
+        // line 452
         yield "         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -566,7 +571,7 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  538 => 453,  525 => 452,  483 => 724,  479 => 723,  473 => 720,  466 => 716,  459 => 712,  455 => 711,  448 => 707,  441 => 703,  434 => 699,  427 => 695,  420 => 691,  413 => 687,  407 => 684,  403 => 683,  399 => 682,  169 => 454,  167 => 452,  157 => 444,  133 => 62,  123 => 54,  121 => 53,  113 => 48,  103 => 41,  99 => 40,  95 => 39,  72 => 19,  62 => 12,  49 => 1,);
+        return array (  534 => 452,  521 => 451,  479 => 723,  475 => 722,  469 => 719,  462 => 715,  455 => 711,  451 => 710,  444 => 706,  437 => 702,  430 => 698,  423 => 694,  416 => 690,  409 => 686,  403 => 683,  399 => 682,  395 => 681,  165 => 453,  163 => 451,  153 => 443,  129 => 61,  119 => 53,  117 => 52,  109 => 47,  99 => 40,  95 => 39,  91 => 38,  68 => 18,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -582,7 +587,6 @@ class __TwigTemplate_1dc464c35f38ec97043305d7c64f09af extends Template
     />
     <link
       rel=\"icon\"
-     href=\"{{ asset('/img/kaiadmin/favicon.ico  ') }}\"
       type=\"image/x-icon\"
     />
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">

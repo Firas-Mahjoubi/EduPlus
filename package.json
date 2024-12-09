@@ -2,5 +2,15 @@
   "dependencies": {
     "@coreui/coreui": "^5.2.0",
     "select2": "^4.1.0-rc.0"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^5.0.1",
+    "sass": "^1.82.0",
+    "sass-loader": "^16.0.4",
+    "webpack-notifier": "^1.15.0"
+  },
+  "scripts": {
+    "dev": "encore dev --watch",
+    "build": "encore production"
   }
 }

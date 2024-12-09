@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* g_ressources/show.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/e1/e1df49e37015f651b824df3bdd03cea8.php
+class __TwigTemplate_ad75af9cb2750d7c966600263e3050eb extends Template
+========
 class __TwigTemplate_c5cd4f5b190b7773db9ce2b318561a22 extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/df/df9b76dc7568b93b932fcefdf7913386.php
 {
     private Source $source;
     /**

@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* sidebar.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/9f/9ff8869caeb409f055936a9fab0bd91f.php
+class __TwigTemplate_e3019b5ee805eb128feb19b798aa9dae extends Template
+========
 class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/4a/4ac09310136ee35c14711ca7b20a0ea9.php
 {
     private Source $source;
     /**
@@ -162,30 +166,9 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
               <li>
                 <a href=\"";
         // line 98
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_events_add");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_event_dashboard_backoffice");
         yield "\">
-                  <span class=\"sub-item\">ADD </span>
-                </a>
-              </li>
-              <li>
-                <a href=\"";
-        // line 103
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        yield "\">
-                  <span class=\"sub-item\">UPDATE </span>
-                </a>
-              </li>
-              <li> 
-                <a href=\"";
-        // line 108
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        yield "\">
-                  <span class=\"sub-item\">DELETE </span>
-                </a>
-              </li>
-              <li>
-                <a href=\"components/avatars.html\">
-                  <span class=\"sub-item\">SHOW</span>
+                  <span class=\"sub-item\">Dashboard </span>
                 </a>
               </li>
           </div>
@@ -200,7 +183,7 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
             <ul class=\"nav nav-collapse\">
               <li>
                 <a href=\"";
-        // line 128
+        // line 113
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
                   <span class=\"sub-item\">ADD </span>
@@ -208,7 +191,7 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
               </li>
               <li>
                 <a href=\"";
-        // line 133
+        // line 118
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
                   <span class=\"sub-item\">UPDATE </span>
@@ -216,7 +199,7 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
               </li>
               <li> 
                 <a href=\"";
-        // line 138
+        // line 123
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">
                   <span class=\"sub-item\">DELETE </span>
@@ -230,6 +213,7 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
             </ul>
           </div>
         </li>
+<<<<<<< HEAD
       <li class=\"nav-item\">
   <a data-bs-toggle=\"collapse\" href=\"#charts\">
     <i class=\"far fa-chart-bar\"></i>
@@ -261,6 +245,36 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
         <a href=\"";
         // line 172
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_manage");
+=======
+        <li class=\"nav-item\">
+          <a data-bs-toggle=\"collapse\" href=\"#charts\">
+            <i class=\"far fa-chart-bar\"></i>
+            <p>CLUB</p>
+            <span class=\"caret\"></span>
+          </a>
+          <div class=\"collapse\" id=\"charts\">
+            <ul class=\"nav nav-collapse\">
+              <li>
+                <a href=\"";
+        // line 144
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        yield "\">
+                  <span class=\"sub-item\">ADD </span>
+                </a>
+              </li>
+              <li>
+                <a href=\"";
+        // line 149
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        yield "\">
+                  <span class=\"sub-item\">UPDATE </span>
+                </a>
+              </li>
+              <li> 
+                <a href=\"";
+        // line 154
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb
         yield "\">
           <span class=\"sub-item\">DELETE</span>
         </a>
@@ -314,7 +328,11 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
      */
     public function getDebugInfo(): array
     {
+<<<<<<< HEAD
         return array (  272 => 178,  263 => 172,  254 => 166,  245 => 160,  220 => 138,  212 => 133,  204 => 128,  181 => 108,  173 => 103,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
+=======
+        return array (  239 => 154,  231 => 149,  223 => 144,  199 => 123,  191 => 118,  183 => 113,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb
     }
 
     public function getSourceContext(): Source
@@ -416,23 +434,8 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
           <div class=\"collapse\" id=\"sidebarLayouts\">
             <ul class=\"nav nav-collapse\">
               <li>
-                <a href=\"{{ path('app_g_events_add') }}\">
-                  <span class=\"sub-item\">ADD </span>
-                </a>
-              </li>
-              <li>
-                <a href=\"{{ path('app_logout') }}\">
-                  <span class=\"sub-item\">UPDATE </span>
-                </a>
-              </li>
-              <li> 
-                <a href=\"{{ path('app_logout') }}\">
-                  <span class=\"sub-item\">DELETE </span>
-                </a>
-              </li>
-              <li>
-                <a href=\"components/avatars.html\">
-                  <span class=\"sub-item\">SHOW</span>
+                <a href=\"{{ path('app_event_dashboard_backoffice') }}\">
+                  <span class=\"sub-item\">Dashboard </span>
                 </a>
               </li>
           </div>
@@ -509,6 +512,14 @@ class __TwigTemplate_cc3592c7392429f337a4a8fb15a85df7 extends Template
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 <!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\sidebar.html.twig");
+=======
+<<<<<<<< HEAD:var/cache/dev/twig/9f/9ff8869caeb409f055936a9fab0bd91f.php
+<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\sidebar.html.twig");
+========
+<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\sidebar.html.twig");
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/4a/4ac09310136ee35c14711ca7b20a0ea9.php
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb
     }
 }

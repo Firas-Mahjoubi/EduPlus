@@ -15,8 +15,14 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Security\Csrf\CsrfToken;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
-#[Route('/admin')]  // Add the '/admin' prefix here at the class level
+
+
+#[Route('/admin')]  
 class AdminController extends AbstractController
 {
     private $entityManager;
@@ -68,7 +74,7 @@ class AdminController extends AbstractController
                         $newFilename
                     );
                     $event->setImage($newFilename);
-                } catch (FileException $e) {
+                } catch (\Exception $e) {
                     $this->addFlash('error', 'Error uploading the image.');
                 }
             }
@@ -83,19 +89,26 @@ class AdminController extends AbstractController
             }
 
             // Persist the event
-            $this->entityManager->persist($event);
-            $this->entityManager->flush();
+            $this->entityManager->persist($event); // Use injected entity manager
+            $this->entityManager->flush(); // Save to the database
+
+            // Generate PDF
+            $pdfContent = $this->renderView('emails/event_pdf.html.twig', [
+                'event' => $event,
+            ]);
+            $pdf = $this->generatePdf($pdfContent);
 
             // Send email notification to all users
             $users = $userRepository->findAll();
             foreach ($users as $user) {
                 $email = (new Email())
-                    ->from('mahjoubi.firas@esprit.tn') // Your Outlook email
+                    ->from('no-reply@yourdomain.com')
                     ->to($user->getEmail())
                     ->subject('New Event: ' . $event->getTitre())
                     ->html($this->renderView('emails/new_event.html.twig', [
                         'event' => $event
-                    ]));
+                    ]))
+                    ->attach($pdf, 'event-details.pdf', 'application/pdf');
 
                 $this->mailer->send($email);
             }
@@ -108,4 +121,77 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    private function generatePdf(string $htmlContent): string
+    {
+        // Initialize Dompdf
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isPhpEnabled', true);
+        $dompdf = new Dompdf($options);
+
+        // Load HTML content
+        $dompdf->loadHtml($htmlContent);
+
+        // Render PDF (first pass)
+        $dompdf->render();
+
+        // Stream PDF to browser
+        return $dompdf->output(); // Return the generated PDF content
+    }
+    #[Route('/event/backoffice', name: 'app_event_dashboard_backoffice')]
+    public function dashboardevents(Request $request, EventRepository $eventRepository): Response
+    {
+        $search = $request->query->get('search', '');
+        $events = $eventRepository->findBySearch($search); // Search function implemented in EventRepository
+
+        return $this->render('g_events/dashboard.html.twig', [
+            'events' => $events,
+        ]);
+    }
+    #[Route('/event/update/{id}', name: 'app_g_events_update', methods: ['GET', 'POST'])]
+public function update(int $id, Request $request, EntityManagerInterface $entityManager, EventRepository $eventRepository): Response
+{
+    $event = $eventRepository->find($id);
+    if (!$event) {
+        throw $this->createNotFoundException('Event not found.');
+    }
+
+    $form = $this->createForm(EventType::class, $event);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Handle the form submission and image upload
+        $entityManager->flush();
+        $this->addFlash('success', 'Event updated successfully.');
+
+        return $this->redirectToRoute('app_event_dashboard_backoffice', ['id' => $event->getId()]);
+    }
+
+    return $this->render('g_events/update.html.twig', [
+        'form' => $form->createView(),
+        'event' => $event,  // Pass the event object to the template
+    ]);
+}
+
+    // Delete an event
+    #[Route('/event/delete/{id}', name: 'app_g_events_delete', methods: ['POST'])]
+public function delete(Event $event, EntityManagerInterface $entityManager, CsrfTokenManagerInterface $csrfTokenManager, Request $request): Response
+{
+    // Verify CSRF Token
+    $token = $request->request->get('_token');
+    if (!$csrfTokenManager->isTokenValid(new CsrfToken('delete' . $event->getId(), $token))) {
+        throw $this->createAccessDeniedException('Invalid CSRF token.');
+    }
+
+    // Remove the event from the database
+    $entityManager->remove($event);
+    $entityManager->flush();
+
+    // Add a success message to the session flash
+    $this->addFlash('success', 'Event deleted successfully.');
+
+    // Redirect to the event dashboard
+    return $this->redirectToRoute('app_event_dashboard_backoffice');
+}
 }

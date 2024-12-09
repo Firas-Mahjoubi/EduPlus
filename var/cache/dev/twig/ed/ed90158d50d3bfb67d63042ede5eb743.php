@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* @WebProfiler/Collector/workflow.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/8c/8cc3ca1252dad6d08dee8d7e5e4c016f.php
+class __TwigTemplate_6c5110757fe9a4744e1a8ea490598a1c extends Template
+========
 class __TwigTemplate_122e394d873081a7ffea02ade701a687 extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/ed/ed90158d50d3bfb67d63042ede5eb743.php
 {
     private Source $source;
     /**

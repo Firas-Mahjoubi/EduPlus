@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* @email/default/notification/body.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/1a/1ad8d82d8e0c53cd68ae3bd8809914c8.php
+class __TwigTemplate_c68a61e16a0c0ab57159ed33f5d354c5 extends Template
+========
 class __TwigTemplate_78d23034bfb6d85238e243dec5e35baa extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/55/55265b872f915b31c635ae4baf924a5f.php
 {
     private Source $source;
     /**

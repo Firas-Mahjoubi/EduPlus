@@ -26,13 +26,13 @@ security:
         path: app_logout # Route to logout
         target: app_login # Redirect to login page after logout
 
-      # Remember me functionality
+            # Remember me functionality
       remember_me:
-        secret: "%kernel.secret%" # Should be a unique, secret value (usually from the kernel secret)
-        lifetime: 604800 # Remember me cookie lifetime in seconds (1 week)
+        secret: '%kernel.secret%'  # Should be a unique, secret value (usually from the kernel secret)
+        lifetime: 604800  # Remember me cookie lifetime in seconds (1 week)
 
   access_control:
     # Define any access control rules based on roles here
-    # For example:
+    # For example: 
     - { path: ^/events, roles: ROLE_USER }
     - { path: ^/admin, roles: ROLE_ADMIN }

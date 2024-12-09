@@ -1,7 +1,16 @@
 <?php
 
+<<<<<<< HEAD:var/cache/dev/ContainerPXEjw9x/getTwig_TemplateCacheWarmerService.php
 namespace ContainerPXEjw9x;
 
+=======
+<<<<<<<< HEAD:var/cache/dev/Container5bYnsck/getTwig_TemplateCacheWarmerService.php
+namespace Container5bYnsck;
+
+========
+namespace ContainerBg3qXMC;
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/ContainerBg3qXMC/getTwig_TemplateCacheWarmerService.php
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb:var/cache/dev/ContainerBg3qXMC/getTwig_TemplateCacheWarmerService.php
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;

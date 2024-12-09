@@ -1,7 +1,16 @@
 <?php
 
+<<<<<<< HEAD:var/cache/dev/ContainerPXEjw9x/getEvent2Service.php
 namespace ContainerPXEjw9x;
 
+=======
+<<<<<<<< HEAD:var/cache/dev/Container5bYnsck/getEvent2Service.php
+namespace Container5bYnsck;
+
+========
+namespace ContainerBg3qXMC;
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/ContainerBg3qXMC/getEvent2Service.php
+>>>>>>> 2acf55cd003850f9f9b822e41246069addbeb4cb:var/cache/dev/ContainerBg3qXMC/getEvent2Service.php
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -13,12 +22,12 @@ use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 class getEvent2Service extends App_KernelDevDebugContainer
 {
     /**
-     * Gets the private '.errored..service_locator.dANsewa.App\Entity\Event' shared service.
+     * Gets the private '.errored..service_locator.xHAhUTS.App\Entity\Event' shared service.
      *
      * @return \App\Entity\Event
      */
     public static function do($container, $lazyLoad = true)
     {
-        throw new RuntimeException('Cannot autowire service ".service_locator.dANsewa": it needs an instance of "App\\Entity\\Event" but this type has been excluded in "config/services.yaml".');
+        throw new RuntimeException('Cannot autowire service ".service_locator.xHAhUTS": it needs an instance of "App\\Entity\\Event" but this type has been excluded in "config/services.yaml".');
     }
 }

@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* @DoctrineMigrations/Collector/migrations.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/ab/ab9b730ad315bcfe9389ea2f9dbad371.php
+class __TwigTemplate_03d3ae27c7106aeb95de2adc798c1267 extends Template
+========
 class __TwigTemplate_e882e0c90c039768dbf84641f2af6f44 extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/f5/f50bceb05d62454dfbee3ea2b196b496.php
 {
     private Source $source;
     /**

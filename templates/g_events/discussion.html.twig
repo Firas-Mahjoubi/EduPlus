@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event Discussion{% endblock %}
+
+{% block body %}
+<main class="content">
+    <div class="container p-0">
+        <h1 class="h3 mb-3">Messages</h1>
+
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-12 col-lg-7 col-xl-9">
+                    <!-- Chat Header -->
+                    <div class="py-3 px-4 border-bottom bg-light">
+                        <div class="d-flex align-items-center">
+                            <div class="pl-3 flex-grow-1">
+                                <strong>{{ event.titre }}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Messages -->
+                    <div class="chat-messages p-4" style="max-height: 500px; overflow-y: auto;">
+                        {% for message in event.messages %}
+                        <div class="chat-message{% if message.user.id == app.user.id %}-right{% else %}-left{% endif %} pb-4">
+                            <div>
+                                <img src="{{ asset('uploads/profilePictures/' ~ message.user.profilePicture) }}" class="rounded-circle" width="40" height="40" alt="{{ message.user.nom }}">
+                                <div class="text-muted small text-nowrap mt-2">{{ message.createdAt|date("H:i") }}</div>
+                            </div>
+                            <div class="bg-light rounded py-2 px-3 {% if message.user.id == app.user.id %}mr-3{% else %}ml-3{% endif %} flex-shrink-1">
+                                <div class="font-weight-bold mb-1">{{ message.user.nom }}</div>
+                                <p>{{ message.content }}</p>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="text-center text-muted">No messages yet. Be the first to post!</div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="flex-grow-0 py-3 px-4 border-top">
+                        <div class="input-group">
+                            <form method="post" action="{{ path('event_post_message', { id: event.id }) }}" class="w-100">
+                                <input type="text" class="form-control" name="message" placeholder="Type your message" required>
+                                <button class="btn btn-primary" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    .chat-online {
+        color: #34ce57;
+    }
+
+    .chat-offline {
+        color: #e4606d;
+    }
+
+    .chat-messages {
+        display: flex;
+        flex-direction: column;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    .chat-message-left, .chat-message-right {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .chat-message-left {
+        margin-right: auto;
+    }
+
+    .chat-message-right {
+        flex-direction: row-reverse;
+        margin-left: auto;
+    }
+
+    .chat-message-left .bg-light, .chat-message-right .bg-light {
+        border-radius: 8px;
+        max-width: 80%;
+    }
+
+    .py-3 {
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
+    }
+
+    .px-4 {
+        padding-right: 1.5rem!important;
+        padding-left: 1.5rem!important;
+    }
+
+    .flex-grow-0 {
+        flex-grow: 0!important;
+    }
+
+    .border-top {
+        border-top: 1px solid #dee2e6!important;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .input-group input {
+        border-radius: 20px 0 0 20px;
+    }
+
+    .input-group button {
+        border-radius: 0 20px 20px 0;
+    }
+
+    .bg-light {
+        background-color: #f8f9fa!important;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .font-weight-bold {
+        font-weight: 600;
+    }
+
+    .text-muted {
+        color: #6c757d!important;
+    }
+</style>
+{% endblock %}

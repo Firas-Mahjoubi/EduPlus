@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* g_ressources/backOffice/confirm_delete.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/5c/5ce776986fa33b1c3f3ffedddcf28a2c.php
+class __TwigTemplate_40991aff408fb9af7f7fc96b4a11d0bc extends Template
+========
 class __TwigTemplate_0a617c151a550eaa83fe5920ea00d1f9 extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/7e/7e7f588b7e033c379f1dbd8c66d526fb.php
 {
     private Source $source;
     /**

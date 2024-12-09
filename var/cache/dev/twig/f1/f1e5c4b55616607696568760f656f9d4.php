@@ -15,7 +15,11 @@ use Twig\Template;
 use Twig\TemplateWrapper;
 
 /* club/pending_members.html.twig */
+<<<<<<<< HEAD:var/cache/dev/twig/a5/a5fc6e57b3afb8901f4bf0d9ad309c9b.php
+class __TwigTemplate_591b00649ecd553c5fac5120bbd6269f extends Template
+========
 class __TwigTemplate_eee05575e4f5bdf97d433575b533f86b extends Template
+>>>>>>>> 7b24a4db39587ab85a1972100e28e5aa92097661:var/cache/dev/twig/f1/f1e5c4b55616607696568760f656f9d4.php
 {
     private Source $source;
     /**

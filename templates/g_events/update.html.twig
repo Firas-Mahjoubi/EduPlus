@@ -5,11 +5,11 @@
             <h1>Update Event</h1>
     
             {{ form_start(form) }}
-            
+    
             <!-- Title Field -->
             <div class="mb-3">
                 {{ form_label(form.titre) }}
-                {{ form_widget(form.titre, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_widget(form.titre, { 'attr': { 'class': 'form-control', 'placeholder': 'Enter event title' } }) }}
                 <div class="invalid-feedback">
                     {{ form_errors(form.titre) }}
                 </div>
@@ -18,25 +18,25 @@
             <!-- Description Field -->
             <div class="mb-3">
                 {{ form_label(form.description) }}
-                {{ form_widget(form.description, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_widget(form.description, { 'attr': { 'class': 'form-control', 'placeholder': 'Optional description' } }) }}
                 <div class="invalid-feedback">
                     {{ form_errors(form.description) }}
                 </div>
             </div>
     
-            <!-- Date Debut Field -->
+            <!-- Start Date Field -->
             <div class="mb-3">
                 {{ form_label(form.datedebut) }}
-                {{ form_widget(form.datedebut, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_widget(form.datedebut, { 'attr': { 'class': 'form-control', 'placeholder': 'Select start date' } }) }}
                 <div class="invalid-feedback">
                     {{ form_errors(form.datedebut) }}
                 </div>
             </div>
     
-            <!-- Date Fin Field -->
+            <!-- End Date Field -->
             <div class="mb-3">
                 {{ form_label(form.datefin) }}
-                {{ form_widget(form.datefin, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_widget(form.datefin, { 'attr': { 'class': 'form-control', 'placeholder': 'Select end date' } }) }}
                 <div class="invalid-feedback">
                     {{ form_errors(form.datefin) }}
                 </div>
@@ -60,19 +60,47 @@
                 </div>
             </div>
     
-            <!-- Participants Field -->
+            <!-- Participant Limit Checkbox -->
             <div class="mb-3">
-                {{ form_label(form.participants) }}
-                {{ form_widget(form.participants, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_label(form.hasParticipantLimit) }}
+                {{ form_widget(form.hasParticipantLimit, { 'attr': { 'class': 'form-check-input', 'onclick': 'ShowHideDiv(this)' } }) }}
                 <div class="invalid-feedback">
-                    {{ form_errors(form.participants) }}
+                    {{ form_errors(form.hasParticipantLimit) }}
+                </div>
+            </div>
+    
+            <!-- Max Participants Field -->
+            <div class="mb-3" id="max-participants-container" style="display: {% if form.hasParticipantLimit.vars.value %} block {% else %} none {% endif %};">
+                {{ form_label(form.maxParticipants) }}
+                {{ form_widget(form.maxParticipants, { 'attr': { 'class': 'form-control', 'placeholder': 'Enter the maximum number of participants' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.maxParticipants) }}
+                </div>
+            </div>
+    
+            <!-- Image Upload Field -->
+            <div class="mb-3">
+                {{ form_label(form.image) }}
+                {{ form_widget(form.image, { 'attr': { 'class': 'form-control-file' } }) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.image) }}
                 </div>
             </div>
     
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary">Update Event</button>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Update Event</button>
+            </div>
     
             {{ form_end(form) }}
         </div>
+    
+        <script type="text/javascript">
+            // Function to show or hide the max participants input field
+            function ShowHideDiv(checkbox) {
+                var maxParticipantsContainer = document.getElementById("max-participants-container");
+                maxParticipantsContainer.style.display = checkbox.checked ? "block" : "none";
+            }
+        </script>
     {% endblock %}
     
