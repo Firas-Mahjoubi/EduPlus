@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Ressource;
 use App\Entity\Evenement;
 use App\Entity\Club;
-
+use App\Entity\User;
 #[ORM\Entity(repositoryClass: DemandeRessourceRepository::class)]
 class DemandeRessource
 {
@@ -30,22 +30,16 @@ class DemandeRessource
     #[ORM\JoinColumn(nullable: false)]
     private ?Ressource $ressource = null;
 
-    // Ajout de la relation avec Evenement
-    #[ORM\ManyToOne(targetEntity: Event::class)]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Event $evenement = null;
-
     
     #[ORM\ManyToOne(targetEntity: Event::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?Event $event = null;
 
-
-
     public function __construct()
     {
         // Initialisation automatique de la date à la création de l'objet
         $this->dateDemande = new \DateTime();
+        $this->statutDemande='En attente';
     }
 
     public function getId(): ?int
@@ -102,19 +96,6 @@ class DemandeRessource
 
         return $this;
     }
-
-    // Getter et Setter pour l'Evenement
-    public function getEvenement(): ?Event
-    {
-        return $this->evenement;
-    }
-
-    public function setEvenement(?Event $evenement): static
-    {
-        $this->evenement = $evenement;
-
-        return $this;
-    }
    
 
     public function getEvent(): ?Event
@@ -127,4 +108,5 @@ class DemandeRessource
         $this->event = $event;
         return $this;
     }
+    
 }

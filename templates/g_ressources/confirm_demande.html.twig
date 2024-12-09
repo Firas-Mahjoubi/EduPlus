@@ -1,0 +1,27 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block title %}Confirmer la demande{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Confirm demande?</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Êtes-vous sûr de vouloir demander la ressource <strong>{{ ressource.nomRessource }}</strong> ?</p>
+                        <form action="{{ path('ressource_delete', { 'id': ressource.id }) }}" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ressource.id) }}">
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ path('app_g_ressourcess') }}" class="btn btn-secondary">Annuler</a>
+                                <button type="submit" class="btn btn-danger">Demande</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

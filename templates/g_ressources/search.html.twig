@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search Resources{% endblock %}
+
+{% block body %}
+<h1>Search Resources</h1>
+
+<input type="text" id="search-input" class="form-control" placeholder="Search by type or name..." />
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody id="results">
+        <!-- Search results will appear here -->
+    </tbody>
+</table>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('public/js/search.js') }}"></script>
+{% endblock %}
+

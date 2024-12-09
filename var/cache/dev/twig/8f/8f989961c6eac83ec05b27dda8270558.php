@@ -137,7 +137,7 @@ class __TwigTemplate_be045c41cbcfad96a90e3e21f4799676 extends Template
         </div>
 
         <!-- Champ Quantité (initialement caché) -->
-        <div class=\"form-group\" id=\"quantite-field\" style=\"display: none;\">
+        <div class=\"form-group\" id=\"quantite-field\">
             ";
         // line 25
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "quantite", [], "any", false, false, false, 25), 'label');
@@ -153,7 +153,7 @@ class __TwigTemplate_be045c41cbcfad96a90e3e21f4799676 extends Template
         </div>
 
         <!-- Champ Montant (initialement caché) -->
-        <div class=\"form-group\" id=\"montant-field\" style=\"display: none;\">
+        <div class=\"form-group\" id=\"montant-field\" \">
             ";
         // line 32
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), "montant", [], "any", false, false, false, 32), 'label');
@@ -315,14 +315,14 @@ class __TwigTemplate_be045c41cbcfad96a90e3e21f4799676 extends Template
         </div>
 
         <!-- Champ Quantité (initialement caché) -->
-        <div class=\"form-group\" id=\"quantite-field\" style=\"display: none;\">
+        <div class=\"form-group\" id=\"quantite-field\">
             {{ form_label(form.quantite) }}
             {{ form_widget(form.quantite, { 'attr': {'class': 'form-control'} }) }}
             {{ form_errors(form.quantite) }}
         </div>
 
         <!-- Champ Montant (initialement caché) -->
-        <div class=\"form-group\" id=\"montant-field\" style=\"display: none;\">
+        <div class=\"form-group\" id=\"montant-field\" \">
             {{ form_label(form.montant) }}
             {{ form_widget(form.montant, { 'attr': {'class': 'form-control'} }) }}
             {{ form_errors(form.montant) }}

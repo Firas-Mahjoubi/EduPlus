@@ -30,12 +30,14 @@ class DemandeRessourceType extends AbstractType
                 'label' => 'Événement',
                 'required' => true,  // Assurez-vous que le champ est requis
             ])
+           
             
             
             ->add('quantite', NumberType::class, [
                 'label' => 'Quantité',
                 'required' => false,
             ]);
+            
     
             // Le champ 'dateDemande' ne doit pas être ajouté ici si vous l'avez déjà pré-rempli dans l'entité.
             // Cependant, si vous devez afficher la date dans le formulaire pour modification ou pour toute autre raison, vous pouvez l'ajouter.
@@ -46,6 +48,7 @@ class DemandeRessourceType extends AbstractType
             // ])
           
     }
+  
 
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -53,4 +56,5 @@ class DemandeRessourceType extends AbstractType
             'data_class' => DemandeRessource::class,
         ]);
     }
+    
 }

@@ -102,7 +102,7 @@ class __TwigTemplate_e377db3dc6a65742714ecdda245dad85 extends Template
             <div class=\"col-md-8\">
                 <div class=\"card\">
                     <div class=\"card-header\">
-                        <h2>Confirmer la suppression</h2>
+                        <h2>Confirm deletion?</h2>
                     </div>
                     <div class=\"card-body\">
                         <p>Êtes-vous sûr de vouloir supprimer la ressource <strong>";
@@ -176,7 +176,7 @@ class __TwigTemplate_e377db3dc6a65742714ecdda245dad85 extends Template
             <div class=\"col-md-8\">
                 <div class=\"card\">
                     <div class=\"card-header\">
-                        <h2>Confirmer la suppression</h2>
+                        <h2>Confirm deletion?</h2>
                     </div>
                     <div class=\"card-body\">
                         <p>Êtes-vous sûr de vouloir supprimer la ressource <strong>{{ ressource.nomRessource }}</strong> ?</p>

@@ -97,9 +97,23 @@ class __TwigTemplate_96b2dba2aaf278409c8048ddfa4cce8c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <div class=\"container py-5\">
-        <h1 class=\"mb-4\">List of Resources</h1>
-        
+        yield "
+    <div class=\"container py-5\">
+
+         <div class=\"mb-4\">
+     <div class=\"input-group\">
+                  <div class=\"input-group-prepend\">
+                    <button type=\"submit\" class=\"btn btn-search pe-1\">
+                      <i class=\"fa fa-search search-icon\"></i>
+                    </button>
+                  </div>
+                  <input
+                    type=\"text\"
+                    placeholder=\"Search ...\"
+                    class=\"form-control\"
+                  />
+                </div>
+                </div>
         <table class=\"table table-striped table-bordered\">
             <thead>
                 <tr>
@@ -116,67 +130,67 @@ class __TwigTemplate_96b2dba2aaf278409c8048ddfa4cce8c extends Template
             </thead>
             <tbody>
                 ";
-        // line 24
+        // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["ressources"]) || array_key_exists("ressources", $context) ? $context["ressources"] : (function () { throw new RuntimeError('Variable "ressources" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["ressources"]) || array_key_exists("ressources", $context) ? $context["ressources"] : (function () { throw new RuntimeError('Variable "ressources" does not exist.', 38, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["ressource"]) {
-            // line 25
+            // line 39
             yield "                    <tr>
                         <td>";
-            // line 26
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 26), "html", null, true);
+            // line 40
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 40), "html", null, true);
             yield "</td>
                         <td>";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 27), "html", null, true);
+            // line 41
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "nomRessource", [], "any", false, false, false, 41), "html", null, true);
             yield "</td>
                         <td>";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "type", [], "any", false, false, false, 28), "html", null, true);
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "type", [], "any", false, false, false, 42), "html", null, true);
             yield "</td>
                         <td>";
-            // line 29
-            ((CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "montant", [], "any", false, false, false, 29)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "montant", [], "any", false, false, false, 29), "html", null, true)) : (yield "-"));
+            // line 43
+            ((CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "montant", [], "any", false, false, false, 43)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "montant", [], "any", false, false, false, 43), "html", null, true)) : (yield "-"));
             yield "</td>
                         <td>";
-            // line 30
-            ((CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "quantite", [], "any", false, false, false, 30)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "quantite", [], "any", false, false, false, 30), "html", null, true)) : (yield "-"));
+            // line 44
+            ((CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "quantite", [], "any", false, false, false, 44)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "quantite", [], "any", false, false, false, 44), "html", null, true)) : (yield "-"));
             yield "</td>
                         <td>";
-            // line 31
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "descriptionRessource", [], "any", false, false, false, 31), "html", null, true);
+            // line 45
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "descriptionRessource", [], "any", false, false, false, 45), "html", null, true);
             yield "</td>
                         <td>";
-            // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "dateCreationRessource", [], "any", false, false, false, 32), "Y-m-d"), "html", null, true);
+            // line 46
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "dateCreationRessource", [], "any", false, false, false, 46), "Y-m-d"), "html", null, true);
             yield "</td>
                         <td>
                             ";
-            // line 34
-            if (CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "image", [], "any", false, false, false, 34)) {
-                // line 35
+            // line 48
+            if (CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "image", [], "any", false, false, false, 48)) {
+                // line 49
                 yield "                            <img src=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/ressources/" . CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "image", [], "any", false, false, false, 35))), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/ressources/" . CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "image", [], "any", false, false, false, 49))), "html", null, true);
                 yield "\" width=\"100\"> 
                             ";
             } else {
-                // line 37
+                // line 51
                 yield "                                <span>Aucune image</span>
                             ";
             }
-            // line 39
+            // line 53
             yield "                        </td>
                         <td>
                         
                              <div><a href=\"";
-            // line 42
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ressource_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 42)]), "html", null, true);
+            // line 56
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ressource_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 56)]), "html", null, true);
             yield "\" class=\"btn btn-warning btn-sm\">UPDATE</a></div>
                              <div> <br></div>
                             <div><a href=\"";
-            // line 44
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ressource_delete_confirm", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 44)]), "html", null, true);
+            // line 58
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ressource_delete_confirm", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ressource"], "id", [], "any", false, false, false, 58)]), "html", null, true);
             yield "\" class=\"btn btn-danger btn-sm\">DELETE</a></div>
                             
                         </td>
@@ -185,7 +199,7 @@ class __TwigTemplate_96b2dba2aaf278409c8048ddfa4cce8c extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 49
+            // line 63
             yield "                    <tr>
                         <td colspan=\"10\" class=\"text-center\">Aucune ressource trouvée.</td>
                     </tr>
@@ -194,7 +208,7 @@ class __TwigTemplate_96b2dba2aaf278409c8048ddfa4cce8c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['ressource'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 67
         yield "            </tbody>
         </table>
     </div>
@@ -229,7 +243,7 @@ class __TwigTemplate_96b2dba2aaf278409c8048ddfa4cce8c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  198 => 53,  189 => 49,  179 => 44,  174 => 42,  169 => 39,  165 => 37,  159 => 35,  157 => 34,  152 => 32,  148 => 31,  144 => 30,  140 => 29,  136 => 28,  132 => 27,  128 => 26,  125 => 25,  120 => 24,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  212 => 67,  203 => 63,  193 => 58,  188 => 56,  183 => 53,  179 => 51,  173 => 49,  171 => 48,  166 => 46,  162 => 45,  158 => 44,  154 => 43,  150 => 42,  146 => 41,  142 => 40,  139 => 39,  134 => 38,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -239,9 +253,23 @@ class __TwigTemplate_96b2dba2aaf278409c8048ddfa4cce8c extends Template
 {% block title %}Liste des Ressources{% endblock %}
 
 {% block body %}
+
     <div class=\"container py-5\">
-        <h1 class=\"mb-4\">List of Resources</h1>
-        
+
+         <div class=\"mb-4\">
+     <div class=\"input-group\">
+                  <div class=\"input-group-prepend\">
+                    <button type=\"submit\" class=\"btn btn-search pe-1\">
+                      <i class=\"fa fa-search search-icon\"></i>
+                    </button>
+                  </div>
+                  <input
+                    type=\"text\"
+                    placeholder=\"Search ...\"
+                    class=\"form-control\"
+                  />
+                </div>
+                </div>
         <table class=\"table table-striped table-bordered\">
             <thead>
                 <tr>

@@ -27,6 +27,12 @@ return [
         '/dashboard/ressources/new' => [[['_route' => 'ressource_new', '_controller' => 'App\\Controller\\GRessourcesController::new'], null, null, null, false, false, null]],
         '/dashboard/ressources' => [[['_route' => 'app_g_ressources', '_controller' => 'App\\Controller\\GRessourcesController::index'], null, null, null, false, false, null]],
         '/g/ressources/demande' => [[['_route' => 'demande_ressource', '_controller' => 'App\\Controller\\GRessourcesController::demandeRessource'], null, null, null, false, false, null]],
+        '/ressources/live-search' => [[['_route' => 'ressource_live_search', '_controller' => 'App\\Controller\\GRessourcesController::liveSearch'], null, ['GET' => 0], null, false, false, null]],
+        '/dashboard' => [[['_route' => 'app_dashboard', '_controller' => 'App\\Controller\\GRessourcesController::dashboard'], null, null, null, false, false, null]],
+        '/notifications/latest' => [[['_route' => 'latest_notifications', '_controller' => 'App\\Controller\\GRessourcesController::fetchLatestNotifications'], null, null, null, false, false, null]],
+        '/notifications' => [[['_route' => 'all_notifications', '_controller' => 'App\\Controller\\GRessourcesController::fetchAllNotifications'], null, null, null, false, false, null]],
+        '/admin/dashboard' => [[['_route' => 'admin_dashboard', '_controller' => 'App\\Controller\\GRessourcesController::dashboardd'], null, null, null, false, false, null]],
+        '/get-notifications' => [[['_route' => 'get_notifications', '_controller' => 'App\\Controller\\GRessourcesController::getNotifications'], null, null, null, false, false, null]],
         '/user/new' => [[['_route' => 'user_new', '_controller' => 'App\\Controller\\GUsersController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/users' => [[['_route' => 'user_index', '_controller' => 'App\\Controller\\GUsersController::index'], null, ['GET' => 0], null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -82,7 +88,15 @@ return [
                     .')'
                     .'|_ressources/backOffice/edit/([^/]++)(*:595)'
                 .')'
-                .'|/uploads/(.+)(*:617)'
+                .'|/notification/([^/]++)/mark\\-(?'
+                    .'|as\\-read(*:644)'
+                    .'|read(*:656)'
+                .')'
+                .'|/admin/demande/([^/]++)(?'
+                    .'|(*:691)'
+                    .'|/edit\\-status(*:712)'
+                .')'
+                .'|/uploads/(.+)(*:734)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -108,7 +122,11 @@ return [
         526 => [[['_route' => 'ressource_delete', '_controller' => 'App\\Controller\\GRessourcesController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, true, null]],
         550 => [[['_route' => 'ressource_delete_confirm', '_controller' => 'App\\Controller\\GRessourcesController::confirmDelete'], ['id'], null, null, false, true, null]],
         595 => [[['_route' => 'ressource_edit', '_controller' => 'App\\Controller\\GRessourcesController::edit'], ['id'], null, null, false, true, null]],
-        617 => [
+        644 => [[['_route' => 'notification_mark_as_read', '_controller' => 'App\\Controller\\GRessourcesController::markAsRead'], ['id'], null, null, false, false, null]],
+        656 => [[['_route' => 'mark_notification_read', '_controller' => 'App\\Controller\\GRessourcesController::markNotificationRead'], ['id'], null, null, false, false, null]],
+        691 => [[['_route' => 'admin_demande_detail', '_controller' => 'App\\Controller\\GRessourcesController::detailDemande'], ['id'], null, null, false, true, null]],
+        712 => [[['_route' => 'admin_demande_status', '_controller' => 'App\\Controller\\GRessourcesController::editStatus'], ['id'], null, null, false, false, null]],
+        734 => [
             [['_route' => 'uploads', '_public' => true], ['path'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -1,11 +1,15 @@
 <?php
 namespace App\Controller;
+use App\Form\StatutDemandeType;
 
 use App\Entity\Ressource;
 use App\Entity\DemandeRessource;
 use App\Entity\Club;
+use App\Entity\Notification;
+use App\Repository\NotificationRepository;
 use App\Form\DemandeRessourceType;
 use App\Form\DemandeType;
+use App\Form\AdminDemandeStatusType;
 use App\Form\RessourceType;
 use App\Repository\RessourcesRepository;  
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,15 +19,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\ORM\EntityManagerInterface; // Ajout de l'import pour l'EntityManagerInterface
+use Doctrine\Persistence\ManagerRegistry;  // For Doctrine
 
 class GRessourcesController extends AbstractController
 {
     private $entityManager;
+    private $doctrine;
+    private NotificationRepository $notificationRepository;
 
-    // Injection de EntityManagerInterface via le constructeur
-    public function __construct(EntityManagerInterface $entityManager)
+
+    public function __construct(EntityManagerInterface $entityManager, ManagerRegistry $doctrine,NotificationRepository $notificationRepository)
     {
         $this->entityManager = $entityManager;
+        $this->doctrine = $doctrine;
+        $this->notificationRepository = $notificationRepository;
     }
     #[Route('/g/ressources', name: 'app_g_ressources')]
     public function indexx(): Response
@@ -162,49 +171,253 @@ public function edit(Request $request, Ressource $ressource): Response
 
 
 
-//partie demande 
-/**
-     * @Route("/demande/ressource", name="demande_ressource")
-     */
-    #[Route('/g/ressources/demande', name: 'demande_ressource')]
-    public function demandeRessource(Request $request, EntityManagerInterface $entityManager)
-    {
-        $demande = new DemandeRessource();
+// //partie demande 
+// /**
+//      * @Route("/demande/ressource", name="demande_ressource")
+//      */
+//     #[Route('/g/ressources/demande', name: 'demande_ressource')]
+//     public function demandeRessource(Request $request, EntityManagerInterface $entityManager)
+//     {
+//         $demande = new DemandeRessource();
     
-        // Récupérer l'ID de la ressource depuis l'URL
-        $ressourceId = $request->query->get('ressourceId');
+//         // Récupérer l'ID de la ressource depuis l'URL
+//         $ressourceId = $request->query->get('ressourceId');
     
-        if ($ressourceId) {
-            // Trouver la ressource par ID
-            $ressource = $entityManager->getRepository(Ressource::class)->find($ressourceId);
-            if ($ressource) {
-                // Pré-remplir la ressource dans la demande
-                $demande->setRessource($ressource);
-            }
-        }
+//         if ($ressourceId) {
+//             // Trouver la ressource par ID
+//             $ressource = $entityManager->getRepository(Ressource::class)->find($ressourceId);
+//             if ($ressource) {
+//                 // Pré-remplir la ressource dans la demande
+//                 $demande->setRessource($ressource);
+//             }
+//         }
     
-        $form = $this->createForm(DemandeRessourceType::class, $demande);
-        $form->handleRequest($request);
+//         $form = $this->createForm(DemandeRessourceType::class, $demande);
+//         $form->handleRequest($request);
     
-        if ($form->isSubmitted() && $form->isValid()) {
-            $demande->setDateDemande(new \DateTime());
-            $demande->setStatutDemande('en attente');
+//         if ($form->isSubmitted() && $form->isValid()) {
+//             $demande = $form->getData();
+//             $demande->setDateDemande(new \DateTime());
+//             $demande->setStatutDemande('en attente');
     
-            // Associer le club actuellement connecté
-           // $demande->setClub($this->getUser()->getClub());
-    
-            $entityManager->persist($demande);
-            $entityManager->flush();
-    
-            // Rediriger après la demande
-            return $this->redirectToRoute('demande_liste');
-        }
-    
-        return $this->render('g_ressources/demandeRessource.html.twig', [
-            'form' => $form->createView(),
-        ]);
 
+          
+            
+            
+//             // Associer le club actuellement connecté
+//            // $demande->setClub($this->getUser()->getClub());
+    
+//             $entityManager->persist($demande);
+//             $entityManager->flush();
+            
+//             $this->addFlash('success', 'Votre demande a été envoyée avec succès.');
+//             // Rediriger après la demande
+//             return $this->redirectToRoute('demande_ressource');
+//         }
+    
+//         return $this->render('g_ressources/demandeRessource.html.twig', [
+//             'form' => $form->createView(),
+//         ]);
+//     }
+#[Route('/g/ressources/demande', name: 'demande_ressource')]
+public function demandeRessource(Request $request, EntityManagerInterface $entityManager)
+{
+    $demande = new DemandeRessource();
 
+    $ressourceId = $request->query->get('ressourceId');
+
+    if ($ressourceId) {
+        $ressource = $entityManager->getRepository(Ressource::class)->find($ressourceId);
+        if ($ressource) {
+            $demande->setRessource($ressource);
+        }
+    }
+
+    $form = $this->createForm(DemandeRessourceType::class, $demande);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $demande = $form->getData();
+        $demande->setDateDemande(new \DateTime());
+        $demande->setStatutDemande('en attente');
+
+        // Créer la notification liée à la demande
+        $notification = new Notification();
+        $notification->setContent('Une nouvelle demande de ressource a été soumise.');
+        $notification->setStatus(0);
+        $notification->setCreatedAt(new \DateTimeImmutable());
+        $notification->setDemandeRessource($demande);
+
+        $entityManager->persist($notification);
+        $entityManager->persist($demande);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre demande a été envoyée avec succès.');
+        return $this->redirectToRoute('demande_ressource');
+    }
+
+    return $this->render('g_ressources/demandeRessource.html.twig', [
+        'form' => $form->createView(),
+    ]);
 }
 
+
+    #[Route('/ressources/live-search', name: 'ressource_live_search', methods: ['GET'])]
+    public function liveSearch(Request $request, RessourcesRepository $ressourceRepository): JsonResponse
+    {
+        $query = $request->query->get('q', '');
+        $resources = $ressourceRepository->searchByQuery($query);
+    
+        $response = array_map(function ($ressource) {
+            return [
+                'id' => $ressource->getId(),
+                'nomRessource' => $ressource->getNomRessource(),
+                'descriptionRessource' => $ressource->getDescriptionRessource(),
+                'dateCreationRessource' => $ressource->getDateCreationRessource()->format('d M, Y'),
+                'image' => $ressource->getImage(),
+            ];
+        }, $resources);
+    
+        return new JsonResponse($response);
+    }
+
+    #[Route('/dashboard', name: 'app_dashboard')]
+    public function dashboard(EntityManagerInterface $entityManager): Response
+    {
+        // Fetch all unread notifications
+        $notifications = $entityManager->getRepository(Notification::class)->findBy(['status' => 'unread']);
+    
+        // Return the dashboard view with notifications passed to Twig
+        return $this->render('g_ressources/backOffice/notification.html.twig', [
+            'notifications' => $notifications,
+        ]);
+    }
+
+#[Route('/notification/{id}/mark-as-read', name: 'notification_mark_as_read')]
+public function markAsRead(int $id): Response
+{
+    $notification = $this->entityManager->getRepository(Notification::class)->find($id);
+
+    if ($notification) {
+        $notification->setStatus('read');
+        $this->entityManager->flush();
+    }
+
+    return $this->redirectToRoute('app_dashboard');
+}
+
+
+#[Route('/admin/demande/{id}', name: 'admin_demande_detail')]
+public function detailDemande(int $id, EntityManagerInterface $entityManager, Request $request): Response
+{
+    $demande = $entityManager->getRepository(DemandeRessource::class)->find($id);
+
+    if (!$demande) {
+        throw $this->createNotFoundException('La demande de ressource n\'existe pas.');
+    }
+
+    $form = $this->createForm(StatutDemandeType::class, $demande);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Le statut de la demande a été mis à jour.');
+        return $this->redirectToRoute('app_dashboard');
+    }
+
+    return $this->render('g_ressources/backOffice/demande_detail.html.twig', [
+        'demande' => $demande,
+        'form' => $form->createView(),
+    ]);
+}
+
+ #[Route('/admin/demande/{id}/edit-status', name: 'admin_demande_status')]
+ public function editStatus(Request $request, DemandeRessource $demande): Response
+ {
+     // Créez le formulaire en liant l'entité 'DemandeRessource'
+     $form = $this->createForm(AdminDemandeStatusType::class, $demande);
+ 
+     $form->handleRequest($request);
+ 
+     if ($form->isSubmitted() && $form->isValid()) {
+         // Sauvegardez les changements dans la base de données
+         $entityManager = $this->doctrine->getManager();
+         $entityManager->flush();
+ 
+         $this->addFlash('success', 'Le statut de la demande a été mis à jour.');
+         return $this->redirectToRoute('app_dashboard');
+     }
+ 
+     return $this->render('g_ressources/backOffice/demande_edit_status.html.twig', [
+         'form' => $form->createView(),
+         'demande' => $demande,
+     ]);
+ }
+ #[Route('/notifications/latest', name: 'latest_notifications')]
+ public function fetchLatestNotifications(NotificationRepository $notificationRepository): Response
+ {
+     $notifications = $notificationRepository->findBy(
+         ['isRead' => false], // Filter unread notifications
+         ['createdAt' => 'DESC'], // Order by the latest first
+         4 // Limit to the latest 4 notifications
+     );
+
+     return $this->json($notifications);
+ }
+
+ #[Route('/notifications', name: 'all_notifications')]
+ public function fetchAllNotifications(NotificationRepository $notificationRepository): Response
+ {
+     $notifications = $notificationRepository->findBy(
+         [],
+         ['createdAt' => 'DESC'] // Order by the latest first
+     );
+
+     return $this->render('g_ressources/backOffice/all.html.twig', [
+         'notifications' => $notifications,
+     ]);
+ }
+
+ #[Route('/admin/dashboard', name: 'admin_dashboard')]
+    public function dashboardd(): Response
+    {
+        // Fetch the latest 4 unread notifications
+        $notifications = $this->notificationRepository->findBy(
+            ['status' => 'unread'],  // Assuming 'unread' is the status
+            ['createdAt' => 'DESC'],
+            4
+        );
+
+        return $this->render('base_backoffice.html.twig', [
+            'notifications' => $notifications,
+        ]);
+    }
+
+    #[Route('/get-notifications', name: 'get_notifications')]
+    public function getNotifications(): JsonResponse
+    {
+        // Dummy data for testing
+        $notifications = [
+            ['content' => 'New notification 1', 'createdAt' => '2024-12-07'],
+            ['content' => 'New notification 2', 'createdAt' => '2024-12-06'],
+            ['content' => 'New notification 3', 'createdAt' => '2024-12-05']
+        ];
+
+        return new JsonResponse($notifications); // Return JSON
+    }
+    
+    #[Route('/notification/{id}/mark-read', name: 'mark_notification_read')]
+    public function markNotificationRead(Notification $notification): Response
+    {
+        // Update the notification status to 'read'
+        $notification->setStatus(1);
+        
+        // Use injected EntityManagerInterface instead of getDoctrine()
+        $this->entityManager->flush();
+
+        // Redirect back to the dashboard
+        return $this->redirectToRoute('admin_dashboard');
+    }
+    
 }

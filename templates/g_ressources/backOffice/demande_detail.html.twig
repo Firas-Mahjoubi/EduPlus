@@ -1,0 +1,51 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Détails de la demande</h1>
+
+    <!-- Card for resource details -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4 class="card-title">Informations de la demande</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Resource Name -->
+                <div class="col-md-4 mb-3">
+                    <p><strong>Ressource :</strong> {{ demande.ressource.nomRessource }}</p>
+                </div>
+                <!-- Quantity -->
+                <div class="col-md-4 mb-3">
+                    <p><strong>Quantité :</strong> {{ demande.quantite }}</p>
+                </div>
+                <!-- Current Status -->
+                <div class="col-md-4 mb-3">
+                    <p><strong>Statut actuel :</strong> {{ demande.statutDemande }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                {% if demande.ressource.image %}
+                    <div class="col-md-4 mb-3">
+                        <img src="{{ asset('uploads/ressources/' ~ demande.ressource.image) }}" alt="Image de la ressource" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Card for status modification form -->
+   <div class="card-body">
+    {{ form_start(form) }}
+        <div class="form-group mb-4">
+            <label for="statutDemande">Statut de la demande</label>
+            {{ form_widget(form.statutDemande, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Mettre à jour</button>
+    {{ form_end(form) }}
+</div>
+
+    </div>
+</div>
+{% endblock %}

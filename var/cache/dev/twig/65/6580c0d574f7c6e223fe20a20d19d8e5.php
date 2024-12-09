@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* /sidebar.html.twig */
+/* sidebar.html.twig */
 class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
 {
     private Source $source;
@@ -39,10 +39,10 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
 
         // line 1
         yield "
@@ -122,30 +122,30 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                         <span class=\"sub-item\">ADD </span>
                       </a>
                     </li>
-                    <!-- <li>
-                      <a href=\"";
-        // line 73
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_ressources");
-        yield "\">
-                        <span class=\"sub-item\">UPDATE </span>
-                      </a>
-                    </li>
-                    <li> 
-                      <a href=\"";
-        // line 78
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_ressources");
-        yield "\">
-                        <span class=\"sub-item\">DELETE </span>
-                      </a>
-                    </li> -->
                     <li>
                       <a href=\"";
-        // line 83
+        // line 73
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_ressources");
         yield "\">
                         <span class=\"sub-item\">SHOW</span>
                       </a>
                     </li>
+                     <li>
+                      <a href=\"";
+        // line 78
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard");
+        yield "\">
+                        <span class=\"sub-item\">DEMANDES </span>
+                      </a>
+                    </li>
+                   <!-- <li> 
+                      <a href=\"";
+        // line 83
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_g_ressources");
+        yield "\">
+                        <span class=\"sub-item\">DELETE </span>
+                      </a>
+                    </li> -->
                   </ul>
                 </div>
               </li>
@@ -289,7 +289,7 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
      */
     public function getTemplateName(): string
     {
-        return "/sidebar.html.twig";
+        return "sidebar.html.twig";
     }
 
     /**
@@ -381,21 +381,21 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
                         <span class=\"sub-item\">ADD </span>
                       </a>
                     </li>
-                    <!-- <li>
-                      <a href=\"{{ path('app_g_ressources') }}\">
-                        <span class=\"sub-item\">UPDATE </span>
-                      </a>
-                    </li>
-                    <li> 
-                      <a href=\"{{ path('app_g_ressources') }}\">
-                        <span class=\"sub-item\">DELETE </span>
-                      </a>
-                    </li> -->
                     <li>
                       <a href=\"{{ path('app_g_ressources') }}\">
                         <span class=\"sub-item\">SHOW</span>
                       </a>
                     </li>
+                     <li>
+                      <a href=\"{{ path('app_dashboard') }}\">
+                        <span class=\"sub-item\">DEMANDES </span>
+                      </a>
+                    </li>
+                   <!-- <li> 
+                      <a href=\"{{ path('app_g_ressources') }}\">
+                        <span class=\"sub-item\">DELETE </span>
+                      </a>
+                    </li> -->
                   </ul>
                 </div>
               </li>
@@ -497,6 +497,6 @@ class __TwigTemplate_74bea9fb247b08223486cf6ca6667258 extends Template
           </div>
         </div>
       </div>
-      <!-- End Sidebar -->", "/sidebar.html.twig", "C:\\Users\\ghass\\Desktop\\Eduplus1\\EduPlus\\templates\\sidebar.html.twig");
+      <!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\ghass\\Desktop\\Eduplus1\\EduPlus\\templates\\sidebar.html.twig");
     }
 }

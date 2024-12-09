@@ -159,18 +159,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
               <nav
                 class=\"navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex\"
               >
-                <div class=\"input-group\">
-                  <div class=\"input-group-prepend\">
-                    <button type=\"submit\" class=\"btn btn-search pe-1\">
-                      <i class=\"fa fa-search search-icon\"></i>
-                    </button>
-                  </div>
-                  <input
-                    type=\"text\"
-                    placeholder=\"Search ...\"
-                    class=\"form-control\"
-                  />
-                </div>
+               
               </nav>
 
               <ul class=\"navbar-nav topbar-nav ms-md-auto align-items-center\">
@@ -230,7 +219,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 160
+        // line 149
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/jm_denis.jpg"), "html", null, true);
         yield "\"
                           
@@ -247,7 +236,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 174
+        // line 163
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/chadengle.jpg"), "html", null, true);
         yield "\"
                                
@@ -264,7 +253,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 188
+        // line 177
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/mlane.jpg"), "html", null, true);
         yield "\"
                                
@@ -283,7 +272,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                             <div class=\"notif-img\">
                               <img
                               src=\"";
-        // line 204
+        // line 193
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/talha.jpg"), "html", null, true);
         yield "\"
                                
@@ -306,88 +295,28 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                     </li>
                   </ul>
                 </li>
-                <li class=\"nav-item topbar-icon dropdown hidden-caret\">
-                  <a
-                    class=\"nav-link dropdown-toggle\"
-                    href=\"#\"
-                    id=\"notifDropdown\"
-                    role=\"button\"
-                    data-bs-toggle=\"dropdown\"
-                    aria-haspopup=\"true\"
-                    aria-expanded=\"false\"
-                  >
-                    <i class=\"fa fa-bell\"></i>
-                    <span class=\"notification\">4</span>
-                  </a>
-                  <ul
-                    class=\"dropdown-menu notif-box animated fadeIn\"
-                    aria-labelledby=\"notifDropdown\"
-                  >
-                    <li>
-                      <div class=\"dropdown-title\">
-                        You have 4 new notification
-                      </div>
-                    </li>
-                    <li>
-                      <div class=\"notif-scroll scrollbar-outer\">
-                        <div class=\"notif-center\">
-                          <a href=\"#\">
-                            <div class=\"notif-icon notif-primary\">
-                              <i class=\"fa fa-user-plus\"></i>
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\"> New user registered </span>
-                              <span class=\"time\">5 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href=\"#\">
-                            <div class=\"notif-icon notif-success\">
-                              <i class=\"fa fa-comment\"></i>
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\">
-                                Rahmad commented on Admin
-                              </span>
-                              <span class=\"time\">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href=\"#\">
-                            <div class=\"notif-img\">
-                              <img
-                              src=\"";
-        // line 273
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/profile2.jpg"), "html", null, true);
-        yield "\"
-                               
-                                alt=\"Img Profile\"
-                              />
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\">
-                                Reza send messages to you
-                              </span>
-                              <span class=\"time\">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href=\"#\">
-                            <div class=\"notif-icon notif-danger\">
-                              <i class=\"fa fa-heart\"></i>
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\"> Farrah liked Admin </span>
-                              <span class=\"time\">17 minutes ago</span>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <a class=\"see-all\" href=\"javascript:void(0);\"
-                        >See all notifications<i class=\"fa fa-angle-right\"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+<!-- ////////////////////////////// -->
+
+<!-- Dropdown Menu -->
+<ul id=\"notif-list\" class=\"dropdown-menu messages-notif-box animated fadeIn\" aria-labelledby=\"messageDropdown\">
+    <li>
+        <div class=\"dropdown-title d-flex justify-content-between align-items-center\">
+            Notifications
+            <a href=\"#\" class=\"small\">Mark all as read</a>
+        </div>
+    </li>
+    <li>
+        <div class=\"message-notif-scroll scrollbar-outer\">
+            <div class=\"notif-center\">
+                <!-- Notifications will be dynamically injected here -->
+            </div>
+        </div>
+    </li>
+    <li>
+        <a class=\"see-all\" href=\"javascript:void(0);\">See all notifications <i class=\"fa fa-angle-right\"></i></a>
+    </li>
+</ul>
+
                 <li class=\"nav-item topbar-icon dropdown hidden-caret\">
                   <a
                     class=\"nav-link\"
@@ -477,7 +406,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                     <div class=\"avatar-sm\">
                       <img
                       src=\"";
-        // line 392
+        // line 324
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/profile.jpg"), "html", null, true);
         yield "\"
                         
@@ -497,7 +426,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                           <div class=\"avatar-lg\">
                             <img
                             src=\"";
-        // line 409
+        // line 341
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/img/profile.jpg"), "html", null, true);
         yield "\"
                            
@@ -541,9 +470,9 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
               class=\"d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4\"
             >
             ";
-        // line 450
+        // line 382
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 452
+        // line 384
         yield "          </div>
           </div>
         </div>
@@ -773,91 +702,91 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
     <!--   Core JS Files   -->
     
     <script src=\"";
-        // line 680
+        // line 612
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/jquery-3.7.1.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 681
+        // line 613
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/popper.min.js"), "html", null, true);
         yield "\"></script>
     <script src=\"";
-        // line 682
+        // line 614
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/core/bootstrap.min.js"), "html", null, true);
         yield "\" ></script>
 
     <!-- jQuery Scrollbar -->
     <script src=\"";
-        // line 685
+        // line 617
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"), "html", null, true);
         yield "\" ></script>
     
 
     <!-- Chart JS -->
     <script src=\"";
-        // line 689
+        // line 621
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/chart.js/chart.min.js"), "html", null, true);
         yield "\" ></script>
     
 
     <!-- jQuery Sparkline -->
     <script src=\"";
-        // line 693
+        // line 625
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jquery.sparkline/jquery.sparkline.min.js"), "html", null, true);
         yield "\" ></script>
   
 
     <!-- Chart Circle -->
     <script src=\"";
-        // line 697
+        // line 629
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/chart-circle/circles.min.js"), "html", null, true);
         yield "\" ></script>
  
 
     <!-- Datatables -->
     <script src=\"";
-        // line 701
+        // line 633
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/datatables/datatables.min.js"), "html", null, true);
         yield "\" ></script>
     
 
     <!-- Bootstrap Notify -->
     <script src=\"";
-        // line 705
+        // line 637
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/bootstrap-notify/bootstrap-notify.min.js"), "html", null, true);
         yield "\" ></script>
    
 
     <!-- jQuery Vector Maps -->
     <script src=\"";
-        // line 709
+        // line 641
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jsvectormap/jsvectormap.min.js"), "html", null, true);
         yield "\" ></script>
     <script src=\"";
-        // line 710
+        // line 642
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/jsvectormap/world.js"), "html", null, true);
         yield "\" ></script>
 
-
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <!-- Sweet Alert -->
     <script src=\"";
-        // line 714
+        // line 646
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/plugin/sweetalert/sweetalert.min.js"), "html", null, true);
         yield "\" ></script>
  
 
     <!-- Kaiadmin JS -->
     <script src=\"";
-        // line 718
+        // line 650
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/kaiadmin.min.js"), "html", null, true);
         yield "\" ></script>
     
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src=\"";
-        // line 721
+        // line 653
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/setting-demo.js"), "html", null, true);
         yield "\" ></script>
     <script src=\"";
-        // line 722
+        // line 654
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/demo.js"), "html", null, true);
         yield "\" ></script>
     <script>
@@ -888,6 +817,9 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
         fillColor: \"rgba(255, 165, 52, .14)\",
       });
     </script>
+
+
+
   </body>
 </html>
 ";
@@ -900,7 +832,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
         yield from [];
     }
 
-    // line 450
+    // line 382
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -913,7 +845,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 451
+        // line 383
         yield "            ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -945,7 +877,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  917 => 451,  904 => 450,  861 => 722,  857 => 721,  851 => 718,  844 => 714,  837 => 710,  833 => 709,  826 => 705,  819 => 701,  812 => 697,  805 => 693,  798 => 689,  791 => 685,  785 => 682,  781 => 681,  777 => 680,  547 => 452,  545 => 450,  501 => 409,  481 => 392,  359 => 273,  287 => 204,  268 => 188,  251 => 174,  234 => 160,  133 => 62,  123 => 54,  121 => 53,  113 => 48,  103 => 41,  99 => 40,  95 => 39,  72 => 19,  62 => 12,  49 => 1,);
+        return array (  849 => 383,  836 => 382,  790 => 654,  786 => 653,  780 => 650,  773 => 646,  766 => 642,  762 => 641,  755 => 637,  748 => 633,  741 => 629,  734 => 625,  727 => 621,  720 => 617,  714 => 614,  710 => 613,  706 => 612,  476 => 384,  474 => 382,  430 => 341,  410 => 324,  276 => 193,  257 => 177,  240 => 163,  223 => 149,  133 => 62,  123 => 54,  121 => 53,  113 => 48,  103 => 41,  99 => 40,  95 => 39,  72 => 19,  62 => 12,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -1039,18 +971,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
               <nav
                 class=\"navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex\"
               >
-                <div class=\"input-group\">
-                  <div class=\"input-group-prepend\">
-                    <button type=\"submit\" class=\"btn btn-search pe-1\">
-                      <i class=\"fa fa-search search-icon\"></i>
-                    </button>
-                  </div>
-                  <input
-                    type=\"text\"
-                    placeholder=\"Search ...\"
-                    class=\"form-control\"
-                  />
-                </div>
+               
               </nav>
 
               <ul class=\"navbar-nav topbar-nav ms-md-auto align-items-center\">
@@ -1174,85 +1095,28 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
                     </li>
                   </ul>
                 </li>
-                <li class=\"nav-item topbar-icon dropdown hidden-caret\">
-                  <a
-                    class=\"nav-link dropdown-toggle\"
-                    href=\"#\"
-                    id=\"notifDropdown\"
-                    role=\"button\"
-                    data-bs-toggle=\"dropdown\"
-                    aria-haspopup=\"true\"
-                    aria-expanded=\"false\"
-                  >
-                    <i class=\"fa fa-bell\"></i>
-                    <span class=\"notification\">4</span>
-                  </a>
-                  <ul
-                    class=\"dropdown-menu notif-box animated fadeIn\"
-                    aria-labelledby=\"notifDropdown\"
-                  >
-                    <li>
-                      <div class=\"dropdown-title\">
-                        You have 4 new notification
-                      </div>
-                    </li>
-                    <li>
-                      <div class=\"notif-scroll scrollbar-outer\">
-                        <div class=\"notif-center\">
-                          <a href=\"#\">
-                            <div class=\"notif-icon notif-primary\">
-                              <i class=\"fa fa-user-plus\"></i>
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\"> New user registered </span>
-                              <span class=\"time\">5 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href=\"#\">
-                            <div class=\"notif-icon notif-success\">
-                              <i class=\"fa fa-comment\"></i>
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\">
-                                Rahmad commented on Admin
-                              </span>
-                              <span class=\"time\">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href=\"#\">
-                            <div class=\"notif-img\">
-                              <img
-                              src=\"{{ asset('/img/profile2.jpg') }}\"
-                               
-                                alt=\"Img Profile\"
-                              />
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\">
-                                Reza send messages to you
-                              </span>
-                              <span class=\"time\">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href=\"#\">
-                            <div class=\"notif-icon notif-danger\">
-                              <i class=\"fa fa-heart\"></i>
-                            </div>
-                            <div class=\"notif-content\">
-                              <span class=\"block\"> Farrah liked Admin </span>
-                              <span class=\"time\">17 minutes ago</span>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <a class=\"see-all\" href=\"javascript:void(0);\"
-                        >See all notifications<i class=\"fa fa-angle-right\"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+<!-- ////////////////////////////// -->
+
+<!-- Dropdown Menu -->
+<ul id=\"notif-list\" class=\"dropdown-menu messages-notif-box animated fadeIn\" aria-labelledby=\"messageDropdown\">
+    <li>
+        <div class=\"dropdown-title d-flex justify-content-between align-items-center\">
+            Notifications
+            <a href=\"#\" class=\"small\">Mark all as read</a>
+        </div>
+    </li>
+    <li>
+        <div class=\"message-notif-scroll scrollbar-outer\">
+            <div class=\"notif-center\">
+                <!-- Notifications will be dynamically injected here -->
+            </div>
+        </div>
+    </li>
+    <li>
+        <a class=\"see-all\" href=\"javascript:void(0);\">See all notifications <i class=\"fa fa-angle-right\"></i></a>
+    </li>
+</ul>
+
                 <li class=\"nav-item topbar-icon dropdown hidden-caret\">
                   <a
                     class=\"nav-link\"
@@ -1661,7 +1525,7 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
     <script src=\"{{ asset('/js/plugin/jsvectormap/jsvectormap.min.js') }}\" ></script>
     <script src=\"{{ asset('/js/plugin/jsvectormap/world.js') }}\" ></script>
 
-
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <!-- Sweet Alert -->
     <script src=\"{{ asset('/js/plugin/sweetalert/sweetalert.min.js') }}\" ></script>
  
@@ -1700,6 +1564,9 @@ class __TwigTemplate_f3f4b4d02908605666e60a4d97a85382 extends Template
         fillColor: \"rgba(255, 165, 52, .14)\",
       });
     </script>
+
+
+
   </body>
 </html>
 ", "base_backoffice.html.twig", "C:\\Users\\ghass\\Desktop\\Eduplus1\\EduPlus\\templates\\base_backoffice.html.twig");

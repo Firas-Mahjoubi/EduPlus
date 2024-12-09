@@ -1,0 +1,18 @@
+{# templates/backOffice/_notification_dropdown.html.twig #}
+<ul class="dropdown-menu notif-box animated fadeIn">
+    <li>
+        <div class="dropdown-title">
+            You have <span id="notif-count">{{ notifications|length }}</span> new notifications
+        </div>
+    </li>
+    <li>
+        <div class="notif-scroll scrollbar-outer">
+            <div class="notif-center" id="notif-list">
+                {# Placeholder for notifications, will be updated by JavaScript #}
+            </div>
+        </div>
+    </li>
+    <li>
+        <a class="see-all" href="{{ path('app_dashboard') }}">See all notifications<i class="fa fa-angle-right"></i></a>
+    </li>
+</ul>

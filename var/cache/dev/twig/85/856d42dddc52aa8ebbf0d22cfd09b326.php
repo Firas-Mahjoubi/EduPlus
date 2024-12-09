@@ -164,7 +164,7 @@ class __TwigTemplate_a1da09bfd0240ad8670ec48d8f428741 extends Template
         yield "
         </div>
 
-        <div class=\"form-group\">
+        <div class=\"form-group\" >
             ";
         // line 35
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), "image", [], "any", false, false, false, 35), 'label');
@@ -257,7 +257,7 @@ class __TwigTemplate_a1da09bfd0240ad8670ec48d8f428741 extends Template
             {{ form_errors(form.descriptionRessource) }}
         </div>
 
-        <div class=\"form-group\">
+        <div class=\"form-group\" >
             {{ form_label(form.image) }}
             {{ form_widget(form.image, { 'attr': {'class': 'form-control-file'} }) }}
             {{ form_errors(form.image) }}

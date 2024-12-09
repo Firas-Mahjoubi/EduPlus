@@ -1,0 +1,28 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="mb-4">Tableau de bord</h1>
+
+    {% if notifications is not empty %}
+        <div class="alert alert-info">
+            <h4 class="alert-heading">Vous avez des demandes non lues !</h4>
+            <ul class="list-unstyled">
+                {% for notification in notifications %}
+                    <li class="mb-3">
+                        <strong>{{ notification.content }}</strong> - 
+                        <small>{{ notification.createdAt|date('d M, Y') }}</small>
+                        <div class="mt-2">
+                            <a href="{{ path('admin_demande_detail', {'id': notification.demandeRessource.id}) }}" class="btn btn-primary btn-sm">Voir la demande</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <div class="alert alert-secondary">
+            <p>Aucune notification à afficher.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

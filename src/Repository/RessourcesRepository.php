@@ -16,18 +16,27 @@ class RessourcesRepository extends ServiceEntityRepository
         parent::__construct($registry, Ressource::class);
     }
 
-    /**
-     * Find resources by a search term in their name.
-     *
-     * @param string $search The search term.
-     * @return Ressource[] Returns an array of Ressource objects.
-     */
-    public function findBySearch(string $search): array
+    // /**
+    //  * Find resources by a search term in their name.
+    //  *
+    //  * @param string $search The search term.
+    //  * @return Ressource[] Returns an array of Ressource objects.
+    //  */
+    // public function findBySearch(string $search): array
+    // {
+    //     return $this->createQueryBuilder('r')
+    //         ->andWhere('r.nomRessource LIKE :search')
+    //         ->setParameter('search', '%' . $search . '%')
+    //         ->getQuery()
+    //         ->getResult();
+    // }
+    public function searchByQuery(string $query): array
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.nomRessource LIKE :search')
-            ->setParameter('search', '%' . $search . '%')
+            ->andWhere('LOWER(r.Type) LIKE :query OR LOWER(r.nomRessource) LIKE :query')
+            ->setParameter('query', '%' . strtolower($query) . '%')
             ->getQuery()
             ->getResult();
     }
+    
 }

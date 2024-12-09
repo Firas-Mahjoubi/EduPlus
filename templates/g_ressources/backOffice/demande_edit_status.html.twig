@@ -1,0 +1,34 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block title %}Modifier le statut de la demande{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Modifier le statut de la demande</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Formulaire de mise à jour du statut</h3>
+        </div>
+        <div class="card-body">
+
+            <div class="mb-3">
+                {{ form_label(form.statutDemande, 'Statut de la demande', {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.statutDemande, {'attr': {'class': 'form-select'}}) }}
+                {{ form_errors(form.statutDemande) }}
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary" type="submit">Enregistrer</button>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+        
+    </div>
+
+    <br>
+    <a href="{{ path('app_g_ressources') }}" class="btn btn-secondary">Retour au tableau de bord</a>
+</div>
+{% endblock %}

@@ -1,28 +1,29 @@
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Liste des Ressources{% endblock %}
 
+
 {% block body %}
 <!-- Blog Start -->
+
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
-            
+
             <!-- Search Form Start -->
             <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                 <div class="input-group">
-                    <input type="text" id="search-input" class="form-control p-3" placeholder="Search by keyword..." aria-label="Search">
+                    <input type="text" id="search-input" class="form-control p-3" placeholder="Search for a resource...">
                     <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                 </div>
             </div>
             <!-- Search Form End -->
-            
+
             <!-- Blog List Start -->
-            <div class="col-lg-8" id="ressources-list">
-                <div class="row g-5" id="resources-container">
+            <div class="col-8" id="ressources-list">
+                <div class="row g-4" id="resources-container">
                     {% for ressource in ressources %}
-                        <div class="col-md-6 wow slideInUp" data-wow-delay="{{ loop.index * 0.1 }}s">
+                        <div class="col-md-5 wow slideInUp" data-wow-delay="{{ loop.index * 0.1 }}s">
                             <div class="blog-item bg-light rounded shadow-sm overflow-hidden">
                                 <div class="blog-img position-relative overflow-hidden">
                                     <img class="img-fluid" src="{{ asset('uploads/ressources/' ~ ressource.image) }}" alt="{{ ressource.nomRessource }}" style="width: 100%; height: 200px; object-fit: cover;">
@@ -35,10 +36,12 @@
                                     </div>
                                     <h4 class="mb-3">{{ ressource.nomRessource }}</h4>
                                     <p>{{ ressource.descriptionRessource }}</p>
-                                    <a class="text-uppercase text-primary" href="{{ path('demande_ressource', { 'ressourceId': ressource.id }) }}">
-                                        faire une demande <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                                                 
+                                    <form method="get" action="{{ path('demande_ressource', { 'ressourceId': ressource.id }) }}">
+                                        <button type="submit" class="btn btn-primary text-uppercase">
+                                            faire une demande <i class="bi bi-arrow-right"></i>
+                                        </button>
+                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -48,9 +51,73 @@
                 </div>
             </div>
             <!-- Blog List End -->
-
+            <div class="col-12 wow slideInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+                <nav aria-label="Page navigation">
+                  <ul class="pagination pagination-lg m-0">
+                    <li class="page-item disabled">
+                      <a class="page-link rounded-0" href="#" aria-label="Previous">
+                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                      </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link rounded-0" href="#" aria-label="Next">
+                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
         </div>
+        
     </div>
+    
 </div>
 <!-- Blog End -->
+
+{% block javascripts %}
+<script>
+    document.getElementById('search-input').addEventListener('input', function () {
+        const query = this.value;
+
+        fetch(`/ressources/live-search?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('resources-container');
+                container.innerHTML = '';
+
+                if (data.length === 0) {
+                    container.innerHTML = '<p>Aucune ressource trouvée.</p>';
+                } else {
+                    data.forEach(resource => {
+                        const html = `
+                            <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
+                                <div class="blog-item bg-light rounded shadow-sm overflow-hidden">
+                                    <div class="blog-img position-relative overflow-hidden">
+                                        <img class="img-fluid" src="/uploads/ressources/${resource.image}" alt="${resource.nomRessource}" style="width: 100%; height: 200px; object-fit: cover;">
+                                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="#">${resource.nomRessource}</a>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="d-flex mb-3">
+                                            <small class="me-3 text-muted"><i class="far fa-user text-primary me-2"></i>${resource.nomRessource}</small>
+                                            <small class="text-muted"><i class="far fa-calendar-alt text-primary me-2"></i>${resource.dateCreationRessource}</small>
+                                        </div>
+                                        <h4 class="mb-3">${resource.nomRessource}</h4>
+                                        <p>${resource.descriptionRessource}</p>
+                                        <a class="text-uppercase text-primary" href="/ressources/${resource.id}/demande">
+                                            faire une demande <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('beforeend', html);
+                    });
+                }
+            });
+    });
+</script>
+{% endblock %}
 {% endblock %}
