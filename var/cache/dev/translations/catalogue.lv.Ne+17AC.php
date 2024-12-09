@@ -117,6 +117,10 @@ $catalogue = new MessageCatalogue('lv', array (
     'This URL is missing a top-level domain.' => 'Šim URL trūkst augšējā līmeņa domēna.',
     'This value is too short. It should contain at least one word.|This value is too short. It should contain at least {{ min }} words.' => 'Šī vērtība ir pārāk īsa. Tai būtu jābūt vismaz vienu vārdu garai.|Šī vērtība ir pārāk īsa. Tai būtu jābūt ne mazāk kā {{ min }} vārdus garai.',
     'This value is too long. It should contain one word.|This value is too long. It should contain {{ max }} words or less.' => 'Šī vērtība ir pārāk gara. Tai būtu jābūt vienam vārdam.|Šī vērtība ir pārāk gara. Tai būtu jābūt ne vairāk kā {{ max }} vārdus garai.',
+    'This value does not represent a valid week in the ISO 8601 format.' => 'Šī vērtība neatspoguļo nedēļu ISO 8601 formatā.',
+    'This value is not a valid week.' => 'Šī vērtība nav derīga nedēļa.',
+    'This value should not be before week "{{ min }}".' => 'Šai vērtībai nevajadzētu būt pirms "{{ min }}" nedēļas.',
+    'This value should not be after week "{{ max }}".' => 'Šai vērtībai nevajadzētu būt pēc "{{ max }}" nedēļas.',
     'This form should not contain extra fields.' => 'Šajā veidlapā nevajadzētu būt papildus ievades laukiem.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Augšupielādētā faila izmērs bija par lielu. Lūdzu mēģiniet augšupielādēt mazāka izmēra failu.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'Dotais CSRF talons nav derīgs. Lūdzu mēģiniet vēlreiz iesniegt veidlapu.',
@@ -171,7 +175,7 @@ $catalogue = new MessageCatalogue('lv', array (
     'Too many failed login attempts, please try again later.' => 'Pārāk daudz atteiktu autentifikācijas mēģinājumu, lūdzu, mēģiniet vēlreiz vēlāk.',
     'Invalid or expired login link.' => 'Autentifikācijas saite ir nederīga vai arī tai ir beidzies derīguma termiņš.',
     'Too many failed login attempts, please try again in %minutes% minute.' => 'Pārāk daudz nesekmīgu autentifikācijas mēģinājumu, lūdzu mēģiniet vēlreiz pēc %minutes% minūtes.',
-    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Pārāk daudz neveiksmīgu autentifikācijas mēģinājumu, lūdzu, mēģiniet vēlreiz pēc %minutes% minūtes.|Pārāk daudz neveiksmīgu autentifikācijas mēģinājumu, lūdzu, mēģiniet vēlreiz pēc %minutes% minūtēm.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Pārāk daudz neveiksmīgu autentifikācijas mēģinājumu, lūdzu, mēģiniet vēlreiz pēc %minutes% minūtēm.',
   ),
 ));
 

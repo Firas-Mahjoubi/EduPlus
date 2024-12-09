@@ -1,174 +1,85 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Clubs{% endblock %}
+
 {% block body %}
-<div class="container mt-5">
-    <!-- Club Card -->
-    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-        <!-- Card Header -->
-        <div class="card-header bg-primary text-white text-center py-4">
-            <h2 class="fw-bold mb-0">{{ club.nom }}</h2>
+    <div class="container mt-5">
+        <h1 class="text-center text-primary mb-5">Clubs</h1>
+
+        <!-- Search Form -->
+        <div class="mb-4">
+            <form action="{{ path('club_index') }}" method="get" class="form-inline d-flex justify-content-center">
+                <input type="text" name="search" value="{{ searchTerm }}" class="form-control w-50" placeholder="Search by club name" aria-label="Search Clubs">
+                <button type="submit" class="btn btn-primary ms-3">Search</button>
+            </form>
         </div>
 
-        <!-- Card Body -->
-        <div class="card-body">
-            <div class="row g-4 align-items-center">
-                <!-- Image Section -->
-                <div class="col-lg-6 text-center">
-                    <img 
-                        src="{{ asset('uploads/logos/' ~ club.logo) }}" 
-                        alt="{{ club.nom }}" 
-                        class="img-fluid rounded shadow-sm border border-secondary" 
-                        style="max-height: 300px; object-fit: contain;">
-                </div>
+      
 
-                <!-- Club Details Section -->
-                <div class="col-lg-6">
-                    <h4 class="text-primary fw-bold">{{ club.nom }}</h4>
-                    <p class="text-muted">{{ club.description }}</p>
-
-                    <!-- Apply Button -->
-                    <button 
-                        id="applyButton" 
-                        class="btn btn-gradient btn-success btn-lg w-100 d-flex align-items-center justify-content-center gap-2">
-                        <i class="fas fa-user-plus"></i> Apply for this Club
-                    </button>
-
-                    <!-- Loading Spinner -->
-                    <div 
-                        id="loadingSpinner" 
-                        class="text-center mt-3" 
-                        style="display: none;">
-                        <div class="spinner-border text-success" role="status">
-                            <span class="visually-hidden">Loading...</span>
+        <!-- Owl Carousel for Clubs -->
+        <div class="owl-carousel testimonial-carousel wow fadeInUp mt-4" data-wow-delay="0.6s">
+            {% for clubWithRating in clubsWithRatings %}
+                {% set club = clubWithRating.club %}
+                <div class="testimonial-item bg-light my-4 shadow-sm rounded-lg overflow-hidden">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded-circle border" 
+                             src="{{ asset('uploads/logos/' ~ club.logo) }}" 
+                             alt="{{ club.nom }}" 
+                             style="width: 70px; height: 70px; object-fit: cover;">
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1 font-weight-bold">{{ club.nom }}</h4>
+                            <small class="text-muted text-uppercase">{{ club.description }}</small>
                         </div>
                     </div>
+
+                    <div class="pt-4 pb-5 px-5">
+                        <p class="text-muted" style="font-size: 1.1rem;">
+                            {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}
+                        </p>
+                    </div>
+
+                    <div class="text-center pb-4">
+                        <p class="text-muted">
+                            {% set rating = clubWithRating.averageRating|round(1) %}
+                            {% for i in 1..5 %}
+                                <i class="bi {% if i <= rating %}bi-star-fill{% else %}bi-star{% endif %} text-warning"></i>
+                            {% endfor %}
+                        </p>
+                        <a href="{{ path('club_details', {'id': club.id}) }}" class="btn btn-primary">Join {{ club.nom }}</a>
+                    </div>
                 </div>
-            </div>
+            {% else %}
+                <div class="testimonial-item bg-light my-4 shadow-sm rounded-lg overflow-hidden">
+                    <div class="pt-4 pb-5 px-5 text-center">
+                        <p class="text-muted">No clubs found.</p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-
-        <!-- Feedback Section -->
-        <div id="feedback" class="mt-3"></div>
-
-        <!-- Commentaries Section -->
-        <section class="gradient-custom">
-            <div class="container my-5 py-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-12 col-lg-10 col-xl-8">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <h4 class="text-center mb-4 pb-2">Commentaries</h4>
-
-                                <!-- Loop through commentaries -->
-                                {% for commentary in club.commentaries %}
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="d-flex flex-start">
-                                                <img class="rounded-circle shadow-1-strong me-3"
-                                                    src="{{ asset('uploads/avatars/' ~ commentary.user.avatar) }}" 
-                                                    alt="avatar" width="65" height="65" />
-                                                <div class="flex-grow-1 flex-shrink-1">
-                                                    <div>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <p class="mb-1">
-                                                                {{ commentary.user.username }} <span class="small">- {{ commentary.createdAt|date('Y-m-d H:i') }}</span>
-                                                            </p>
-                                                            <a href="#!"><i class="fas fa-reply fa-xs"></i><span class="small"> reply</span></a>
-                                                        </div>
-                                                        <p class="small mb-0">
-                                                            {{ commentary.content }}
-                                                        </p>
-                                                    </div>
-
-                                                    <!-- Display replies if any -->
-                                                    {% if commentary.replies is not empty %}
-                                                        <div class="d-flex flex-start mt-4">
-                                                            {% for reply in commentary.replies %}
-                                                                <a class="me-3" href="#!">
-                                                                    <img class="rounded-circle shadow-1-strong"
-                                                                        src="{{ asset('uploads/avatars/' ~ reply.user.avatar) }}" 
-                                                                        alt="avatar" width="65" height="65" />
-                                                                </a>
-                                                                <div class="flex-grow-1 flex-shrink-1">
-                                                                    <div>
-                                                                        <div class="d-flex justify-content-between align-items-center">
-                                                                            <p class="mb-1">
-                                                                                {{ reply.user.username }} <span class="small">- {{ reply.createdAt|date('Y-m-d H:i') }}</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        <p class="small mb-0">
-                                                                            {{ reply.content }}
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            {% endfor %}
-                                                        </div>
-                                                    {% endif %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% else %}
-                                    <p class="text-center text-muted">No commentaries yet. Be the first to comment!</p>
-                                {% endfor %}
-
-                                <!-- Add new commentary form -->
-                                <div class="d-flex flex-start mt-4">
-                                    <img class="rounded-circle shadow-1-strong me-3"
-                                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" 
-                                        alt="avatar" width="65" height="65" />
-                                    <div class="flex-grow-1 flex-shrink-1">
-                                        <form method="post" action="{{ path('add_commentary', {'clubId': club.id}) }}">
-                                            <textarea class="form-control" name="content" placeholder="Write a commentary..." rows="3"></textarea>
-                                            <button type="submit" class="btn btn-primary btn-sm mt-2">Post Commentary</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
-</div>
+{% endblock %}
 
-<!-- JavaScript -->
-<script>
-    document.getElementById('applyButton').addEventListener('click', function () {
-        const feedback = document.getElementById('feedback');
-        const spinner = document.getElementById('loadingSpinner');
-        
-        feedback.innerHTML = '';
-        spinner.style.display = 'block';
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function () {
+            let searchTerm = "{{ searchTerm }}".toLowerCase();
+            let startPosition = 0;
 
-        fetch('{{ path('application_submit_club', {'clubId': club.id}) }}', {
-            method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({}) 
-        })
-        .then(response => response.json())
-        .then(data => {
-            spinner.style.display = 'none';
+            // Find the index of the first matching club
+            $(".testimonial-item").each(function (index) {
+                if ($(this).find("h4").text().toLowerCase().includes(searchTerm)) {
+                    startPosition = index;
+                    return false; // Break the loop
+                }
+            });
 
-            feedback.innerHTML = `
-                <div class="alert ${data.success ? 'alert-success' : 'alert-danger'} text-center">
-                    <i class="${data.success ? 'fas fa-check-circle' : 'fas fa-exclamation-triangle'}"></i> 
-                    ${data.message}
-                </div>`;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            spinner.style.display = 'none';
-
-            feedback.innerHTML = `
-                <div class="alert alert-danger text-center">
-                    <i class="fas fa-exclamation-circle"></i> 
-                    An error occurred. Please try again later.
-                </div>`;
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                startPosition: startPosition, // Start carousel at the matching club
+            });
         });
-    });
-</script>
+    </script>
 {% endblock %}

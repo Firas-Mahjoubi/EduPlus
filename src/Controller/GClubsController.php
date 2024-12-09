@@ -18,6 +18,8 @@ use App\Entity\Commentary;
 use App\Repository\RatingRepository;
 use App\Form\ClubType;
 use App\Repository\ClubRepository;
+use App\Repository\CommentaryRepository;
+
 use App\Repository\MemberRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -38,10 +40,28 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 class GClubsController extends AbstractController
 {
     #[Route('/', name: 'club_index')]
-    public function index(ManagerRegistry $doctrine, ParameterBagInterface $parameterBag): Response
-    {
-        $clubs = $doctrine->getRepository(Club::class)->findAll();
+    public function index(
+        ManagerRegistry $doctrine,
+        ParameterBagInterface $parameterBag,
+        ClubRepository $clubRepository,
+        Request $request
+    ): Response {
         $logosDirectory = $parameterBag->get('club_logos_directory');
+        $searchTerm = $request->query->get('search', ''); // Default to an empty string if no search term is provided
+
+        // If a search term is provided, filter clubs by name ('nom')
+        if ($searchTerm) {
+            $clubs = $clubRepository->createQueryBuilder('c')
+                ->where('c.nom LIKE :searchTerm')
+                ->setParameter('searchTerm', '%' . $searchTerm . '%')
+                ->getQuery()
+                ->getResult();
+        } else {
+            // If no search term is provided, show all clubs
+            $clubs = $clubRepository->findAll();
+        }
+
+        // Prepare clubs with ratings
         $clubsWithRatings = [];
         foreach ($clubs as $club) {
             $averageRating = $this->getAverageRating($club); // Calculate the average rating
@@ -51,13 +71,14 @@ class GClubsController extends AbstractController
             ];
         }
 
+        // Render the view
         return $this->render('club/index.html.twig', [
             'clubsWithRatings' => $clubsWithRatings,
-
-            'clubs' => $clubs,
             'logos_directory' => $logosDirectory,
+            'searchTerm' => $searchTerm,
         ]);
     }
+
     #[Route('/rating/{id}', name: 'rate_club')]
     public function rateClub(
         Request $request,
@@ -124,37 +145,23 @@ class GClubsController extends AbstractController
 
     public function list(Request $request, ClubRepository $clubRepository)
     {
-        // Get the search term (if any)
-        $searchTerm = $request->query->get('search', '');
+        $searchTerm = $request->query->get('search', '');  // Default to empty string if no search term is provided
 
-        // Find clubs matching the search term
-        $clubs = $clubRepository->createQueryBuilder('c')
-            ->where('c.nom LIKE :searchTerm OR c.description LIKE :searchTerm')
-            ->setParameter('searchTerm', '%' . $searchTerm . '%')
-            ->getQuery()
-            ->getResult();
-
-        // Fetch all clubs for display
-        $allClubs = $clubRepository->findAll();
-
-        // Initialize the searched club to null
-        $searchedClub = null;
-
-        // If a search term is provided, find the searched club
+        // If a search term is provided, filter by club name ('nom')
         if ($searchTerm) {
-            foreach ($allClubs as $club) {
-                if (str_contains(strtolower($club->getNom()), strtolower($searchTerm))) {
-                    $searchedClub = $club;
-                    break;
-                }
-            }
+            $clubs = $clubRepository->createQueryBuilder('c')
+                ->where('c.nom LIKE :searchTerm')  // Search only by club name
+                ->setParameter('searchTerm', '%' . $searchTerm . '%')
+                ->getQuery()
+                ->getResult();
+        } else {
+            // If no search term is provided, show all clubs
+            $clubs = $clubRepository->findAll();
         }
 
-        // Pass the clubs and searchedClub variables to the template
-        return $this->render('club/index.html.twig', [
-            'clubs' => $clubs,
-            'allClubs' => $allClubs,
-            'searchedClub' => $searchedClub, // Ensure searchedClub is passed to the template
+        return $this->render('club/adminclub.html.twig', [
+            'clubs' => $clubs,  // Pass the clubs (either filtered or all)
+            'searchTerm' => $searchTerm,  // Pass the current search term (if any)
         ]);
     }
     #[Route('/new', name: 'club_new', methods: ['GET', 'POST'])]
@@ -330,17 +337,22 @@ class GClubsController extends AbstractController
 
 
 
-    #[Route('/club/{id}', name: 'club_details')]
-    public function clubDetails(int $id, ClubRepository $clubRepository): Response
+    #[Route('/club/{id}', name: 'club_details', requirements: ['id' => '\d+'])]
+    public function clubDetails(int $id, ClubRepository $clubRepository, CommentaryRepository $commentaryRepository): Response
     {
+        // Fetch the club by ID
         $club = $clubRepository->find($id);
 
         if (!$club) {
             throw $this->createNotFoundException('Club not found');
         }
 
+        // Fetch the comments associated with the club
+        $comments = $commentaryRepository->findBy(['club' => $club]);
+
         return $this->render('club/details.html.twig', [
             'club' => $club,
+            'comments' => $comments, // Pass comments to the template
         ]);
     }
 
@@ -353,36 +365,8 @@ class GClubsController extends AbstractController
     }
 
 
-    public function addComment(Request $request): JsonResponse
-    {
-        $content = $request->request->get('content');
-        $clubId = $request->request->get('club_id');
 
-        if (!$content || !$clubId) {
-            return new JsonResponse(['error' => 'Invalid data'], JsonResponse::HTTP_BAD_REQUEST);
-        }
 
-        // Access the Club repository via the injected doctrine service
-        $club = $this->doctrine->getRepository(Club::class)->find($clubId);
-
-        if (!$club) {
-            return new JsonResponse(['error' => 'Club not found'], JsonResponse::HTTP_NOT_FOUND);
-        }
-
-        // Create a new commentary object
-        $comment = new Commentary();
-        $comment->setContent($content);
-        $comment->setClub($club);
-        $comment->setDate(new \DateTime());
-        $comment->setUser($this->getUser()); // Assuming user is authenticated
-
-        // Persist and flush the comment entity
-        $entityManager = $this->doctrine->getManager();
-        $entityManager->persist($comment);
-        $entityManager->flush();
-
-        return new JsonResponse(['message' => 'Comment added successfully'], JsonResponse::HTTP_CREATED);
-    }
 
 
 

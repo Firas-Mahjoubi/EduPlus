@@ -50,7 +50,7 @@
                             </span>
                         </td>
                         <td>{{ recruitment.deadline|date('d/m/Y') }}</td>
-                        <td>{{ recruitment.club.id }}</td>
+                        <td>{{ recruitment.club.nom }}</td>
                         <td>
                             <!-- Bouton Voir -->
                             <a href="{{ path('recruitement_details', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir</a>

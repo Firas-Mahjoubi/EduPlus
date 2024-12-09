@@ -9,6 +9,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: 'user')]
@@ -34,11 +36,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: "string", enumType: UserRole::class)]
     private UserRole $role;
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Member::class, cascade: ['persist', 'remove'])]
+    private Collection $memberships;
+
 
     // Profile picture, default to 'default.png'
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $profilePicture = null;
-
     public function __construct()
     {
         // Default role can be set here if needed

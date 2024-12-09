@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidatures pour {{ recruitment.title }}{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Candidatures pour : {{ recruitment.title }}</h1>
+
+    {% if applications|length == 0 %}
+        <div class="alert alert-warning text-center">Aucune candidature trouvée pour ce recrutement.</div>
+    {% else %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom du candidat</th>
+                    <th>Statut</th>
+                    <th>Date de soumission</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in applications %}
+                    <tr>
+                        <td>
+
+    {% if application.candidat %}
+                        {{ application.candidat.nom }} {{ application.candidat.prenom }}
+                    {% else %}
+                        Nom non disponible
+                    {% endif %}
+
+
+                        </td>
+                        <td>{{ application.status }}</td>
+                        <td>{{ application.dateSoumission|date('d/m/Y') }}</td>
+                        <td>
+                            <a href="{{ path('application_details', { id: application.id }) }}" class="btn btn-primary btn-sm">Voir</a>
+
+                            
+                            <a href="{{ path('application_decision', { id: application.id, decision: 'valider' }) }}" class="btn btn-success btn-sm">
+                            Valider
+                                    </a>
+                                <a href="{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}" class="btn btn-danger btn-sm">
+                            Rejeter
+                                </a>
+
+
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+{% endblock %}
