@@ -30,8 +30,8 @@ class __TwigTemplate_2cf82f88fe573dec4cc1e1199fa35cf5 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -64,30 +64,6 @@ class __TwigTemplate_2cf82f88fe573dec4cc1e1199fa35cf5 extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_title(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 3, $this->source); })()), "nom", [], "any", false, false, false, 3), "html", null, true);
-        yield " Details";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        yield from [];
-    }
-
-    // line 5
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
     public function block_body(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
@@ -97,39 +73,105 @@ class __TwigTemplate_2cf82f88fe573dec4cc1e1199fa35cf5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "    <div class=\"container mt-3\">
-        <h1>";
-        // line 7
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 7, $this->source); })()), "nom", [], "any", false, false, false, 7), "html", null, true);
-        yield " Details</h1>
-        <div class=\"row\">
-            <div class=\"col-md-6\">
-                <img src=\"";
-        // line 10
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/logos/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 10, $this->source); })()), "logo", [], "any", false, false, false, 10))), "html", null, true);
-        yield "\" alt=\"";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 10, $this->source); })()), "nom", [], "any", false, false, false, 10), "html", null, true);
-        yield "\" class=\"img-fluid rounded\">
-            </div>
-            <div class=\"col-md-6\">
-                <h3>";
-        // line 13
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 13, $this->source); })()), "nom", [], "any", false, false, false, 13), "html", null, true);
-        yield "</h3>
-                <p>";
-        // line 14
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 14, $this->source); })()), "description", [], "any", false, false, false, 14), "html", null, true);
-        yield "</p>
-            </div>
+        // line 4
+        yield "<div class=\"container mt-5\">
+    <!-- Club Card -->
+    <div class=\"card shadow-lg border-0 rounded-4 overflow-hidden\">
+        <!-- Card Header -->
+        <div class=\"card-header bg-primary text-white text-center py-4\">
+            <h2 class=\"fw-bold mb-0\">";
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 9, $this->source); })()), "nom", [], "any", false, false, false, 9), "html", null, true);
+        yield "</h2>
         </div>
-        <div class=\"mt-4\">
-            <a href=\"";
+
+        <!-- Card Body -->
+        <div class=\"card-body\">
+            <div class=\"row g-4 align-items-center\">
+                <!-- Image Section -->
+                <div class=\"col-lg-6 text-center\">
+                    <img 
+                        src=\"";
         // line 18
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_submit");
-        yield "\" class=\"btn btn-success\">Apply for this Club</a>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/logos/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 18, $this->source); })()), "logo", [], "any", false, false, false, 18))), "html", null, true);
+        yield "\" 
+                        alt=\"";
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 19, $this->source); })()), "nom", [], "any", false, false, false, 19), "html", null, true);
+        yield "\" 
+                        class=\"img-fluid rounded shadow-sm border border-secondary\" 
+                        style=\"max-height: 300px; object-fit: contain;\">
+                </div>
+
+                <!-- Club Details Section -->
+                <div class=\"col-lg-6\">
+                    <h4 class=\"text-primary fw-bold\">";
+        // line 26
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 26, $this->source); })()), "nom", [], "any", false, false, false, 26), "html", null, true);
+        yield "</h4>
+                    <p class=\"text-muted\">";
+        // line 27
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 27, $this->source); })()), "description", [], "any", false, false, false, 27), "html", null, true);
+        yield "</p>
+
+                    <!-- Apply Button -->
+                    <button 
+                        id=\"applyButton\" 
+                        class=\"btn btn-gradient btn-success btn-lg w-100 d-flex align-items-center justify-content-center gap-2\">
+                        <i class=\"fas fa-user-plus\"></i> Apply for this Club
+                    </button>
+
+                    <!-- Loading Spinner -->
+                    <div 
+                        id=\"loadingSpinner\" 
+                        class=\"text-center mt-3\" 
+                        style=\"display: none;\">
+                        <div class=\"spinner-border text-success\" role=\"status\">
+                            <span class=\"visually-hidden\">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 52
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 53
+        yield "<script>
+\$(document).ready(function () {
+    // Handle Apply Button
+    \$('#applyButton').on('click', function () {
+        \$('#loadingSpinner').show();
+        // Simulate apply action
+        setTimeout(function () {
+            \$('#loadingSpinner').hide();
+            alert('You have successfully applied for the club.');
+        }, 2000);
+    });
+});
+</script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -161,31 +203,76 @@ class __TwigTemplate_2cf82f88fe573dec4cc1e1199fa35cf5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  129 => 18,  122 => 14,  118 => 13,  110 => 10,  104 => 7,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
+        return array (  162 => 53,  149 => 52,  114 => 27,  110 => 26,  100 => 19,  96 => 18,  84 => 9,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}{{ club.nom }} Details{% endblock %}
-
 {% block body %}
-    <div class=\"container mt-3\">
-        <h1>{{ club.nom }} Details</h1>
-        <div class=\"row\">
-            <div class=\"col-md-6\">
-                <img src=\"{{ asset('uploads/logos/' ~ club.logo) }}\" alt=\"{{ club.nom }}\" class=\"img-fluid rounded\">
-            </div>
-            <div class=\"col-md-6\">
-                <h3>{{ club.nom }}</h3>
-                <p>{{ club.description }}</p>
-            </div>
+<div class=\"container mt-5\">
+    <!-- Club Card -->
+    <div class=\"card shadow-lg border-0 rounded-4 overflow-hidden\">
+        <!-- Card Header -->
+        <div class=\"card-header bg-primary text-white text-center py-4\">
+            <h2 class=\"fw-bold mb-0\">{{ club.nom }}</h2>
         </div>
-        <div class=\"mt-4\">
-            <a href=\"{{ path('application_submit') }}\" class=\"btn btn-success\">Apply for this Club</a>
+
+        <!-- Card Body -->
+        <div class=\"card-body\">
+            <div class=\"row g-4 align-items-center\">
+                <!-- Image Section -->
+                <div class=\"col-lg-6 text-center\">
+                    <img 
+                        src=\"{{ asset('uploads/logos/' ~ club.logo) }}\" 
+                        alt=\"{{ club.nom }}\" 
+                        class=\"img-fluid rounded shadow-sm border border-secondary\" 
+                        style=\"max-height: 300px; object-fit: contain;\">
+                </div>
+
+                <!-- Club Details Section -->
+                <div class=\"col-lg-6\">
+                    <h4 class=\"text-primary fw-bold\">{{ club.nom }}</h4>
+                    <p class=\"text-muted\">{{ club.description }}</p>
+
+                    <!-- Apply Button -->
+                    <button 
+                        id=\"applyButton\" 
+                        class=\"btn btn-gradient btn-success btn-lg w-100 d-flex align-items-center justify-content-center gap-2\">
+                        <i class=\"fas fa-user-plus\"></i> Apply for this Club
+                    </button>
+
+                    <!-- Loading Spinner -->
+                    <div 
+                        id=\"loadingSpinner\" 
+                        class=\"text-center mt-3\" 
+                        style=\"display: none;\">
+                        <div class=\"spinner-border text-success\" role=\"status\">
+                            <span class=\"visually-hidden\">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+\$(document).ready(function () {
+    // Handle Apply Button
+    \$('#applyButton').on('click', function () {
+        \$('#loadingSpinner').show();
+        // Simulate apply action
+        setTimeout(function () {
+            \$('#loadingSpinner').hide();
+            alert('You have successfully applied for the club.');
+        }, 2000);
+    });
+});
+</script>
 {% endblock %}
 ", "club/details.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\details.html.twig");
     }

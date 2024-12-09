@@ -132,37 +132,41 @@
             </ul>
           </div>
         </li>
-        <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#charts">
-            <i class="far fa-chart-bar"></i>
-            <p>CLUB</p>
-            <span class="caret"></span>
-          </a>
-          <div class="collapse" id="charts">
-            <ul class="nav nav-collapse">
-              <li>
-                <a href="{{ path('app_logout') }}">
-                  <span class="sub-item">ADD </span>
-                </a>
-              </li>
-              <li>
-                <a href="{{ path('app_logout') }}">
-                  <span class="sub-item">UPDATE </span>
-                </a>
-              </li>
-              <li> 
-                <a href="{{ path('app_logout') }}">
-                  <span class="sub-item">DELETE </span>
-                </a>
-              </li>
-              <li>
-                <a href="components/avatars.html">
-                  <span class="sub-item">SHOW</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
+      <li class="nav-item">
+  <a data-bs-toggle="collapse" href="#charts">
+    <i class="far fa-chart-bar"></i>
+    <p>CLUB</p>
+    <span class="caret"></span>
+  </a>
+  <div class="collapse" id="charts">
+    <ul class="nav nav-collapse">
+      <li>
+        <!-- Add Club -->
+        <a href="{{ path('club_new') }}">
+          <span class="sub-item">ADD</span>
+        </a>
+      </li>
+      <li>
+        <!-- Update Club -->
+        <a href="{{ path('club_manage') }}">
+          <span class="sub-item">UPDATE</span>
+        </a>
+      </li>
+      <li>
+        <!-- Delete Club -->
+        <a href="{{ path('club_manage') }}">
+          <span class="sub-item">DELETE</span>
+        </a>
+      </li>
+      <li>
+        <!-- Show Clubs -->
+        <a href="{{ path('club_list') }}">
+          <span class="sub-item">SHOW</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
         
 
       </ul>

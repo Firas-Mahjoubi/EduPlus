@@ -5,10 +5,21 @@ namespace App\Controller;
 use App\Entity\Club;
 
 use App\Enum\MemberRole;
+
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
+
 use App\Entity\Member;
 use App\Entity\Application;
+
+use App\Entity\Rating;
+use App\Entity\Commentary;
+
+
+use App\Repository\RatingRepository;
 use App\Form\ClubType;
 use App\Repository\ClubRepository;
+use App\Repository\CommentaryRepository;
+
 use App\Repository\MemberRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,6 +29,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Filesystem\Filesystem;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Security\Core\Security;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
@@ -25,17 +40,130 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 class GClubsController extends AbstractController
 {
     #[Route('/', name: 'club_index')]
-    public function index(ManagerRegistry $doctrine, ParameterBagInterface $parameterBag): Response
-    {
-        $clubs = $doctrine->getRepository(Club::class)->findAll();
+    public function index(
+        ManagerRegistry $doctrine,
+        ParameterBagInterface $parameterBag,
+        ClubRepository $clubRepository,
+        Request $request
+    ): Response {
         $logosDirectory = $parameterBag->get('club_logos_directory');
+        $searchTerm = $request->query->get('search', ''); // Default to an empty string if no search term is provided
 
+        // If a search term is provided, filter clubs by name ('nom')
+        if ($searchTerm) {
+            $clubs = $clubRepository->createQueryBuilder('c')
+                ->where('c.nom LIKE :searchTerm')
+                ->setParameter('searchTerm', '%' . $searchTerm . '%')
+                ->getQuery()
+                ->getResult();
+        } else {
+            // If no search term is provided, show all clubs
+            $clubs = $clubRepository->findAll();
+        }
+
+        // Prepare clubs with ratings
+        $clubsWithRatings = [];
+        foreach ($clubs as $club) {
+            $averageRating = $this->getAverageRating($club); // Calculate the average rating
+            $clubsWithRatings[] = [
+                'club' => $club,
+                'averageRating' => $averageRating,
+            ];
+        }
+
+        // Render the view
         return $this->render('club/index.html.twig', [
-            'clubs' => $clubs,
+            'clubsWithRatings' => $clubsWithRatings,
             'logos_directory' => $logosDirectory,
+            'searchTerm' => $searchTerm,
         ]);
     }
 
+    #[Route('/rating/{id}', name: 'rate_club')]
+    public function rateClub(
+        Request $request,
+        Security $security,
+        ClubRepository $clubRepository,
+        RatingRepository $ratingRepository,
+        int $id
+    ) {
+        $club = $clubRepository->find($id);
+
+        if (!$club) {
+            throw $this->createNotFoundException('Club not found');
+        }
+
+        $user = $security->getUser();
+        if (!$user) {
+            // Redirect to login page if the user is not logged in
+            return $this->redirectToRoute('app_login');
+        }
+
+        $ratingValue = $request->request->get('rating');
+        if ($ratingValue >= 1 && $ratingValue <= 5) {
+            // Save the new rating
+            $rating = new Rating();
+            $rating->setClub($club);
+            $rating->setValue((float) $ratingValue);
+
+            $ratingRepository->save($rating); // Persist the rating
+
+            $this->addFlash('success', 'Rating added successfully!');
+        } else {
+            $this->addFlash('error', 'Invalid rating. Please provide a rating between 1 and 5.');
+        }
+
+        return $this->redirectToRoute('club_details', ['id' => $id]);
+    }
+
+    public function getAverageRating(Club $club): float
+    {
+        $ratings = $club->getRating();
+        if ($ratings->isEmpty()) {
+            return 0.0; // Default if no ratings
+        }
+
+        $total = 0;
+        foreach ($ratings as $rating) {
+            $total += $rating->getValue();
+        }
+
+        return $total / count($ratings);
+    }
+
+
+    #[Route('/allClubs', name: 'club_manage')]
+    public function showClubs(ClubRepository $clubRepository): Response
+    {
+        $clubs = $clubRepository->findAll();
+
+        return $this->render('club/allClubs.html.twig', [
+            'clubs' => $clubs,
+        ]);
+    }
+    #[Route('/listallClubs', name: 'club_list')]
+
+    public function list(Request $request, ClubRepository $clubRepository)
+    {
+        $searchTerm = $request->query->get('search', '');  // Default to empty string if no search term is provided
+
+        // If a search term is provided, filter by club name ('nom')
+        if ($searchTerm) {
+            $clubs = $clubRepository->createQueryBuilder('c')
+                ->where('c.nom LIKE :searchTerm')  // Search only by club name
+                ->setParameter('searchTerm', '%' . $searchTerm . '%')
+                ->getQuery()
+                ->getResult();
+        } else {
+            // If no search term is provided, show all clubs
+            $clubs = $clubRepository->findAll();
+        }
+
+        return $this->render('club/adminclub.html.twig', [
+            'clubs' => $clubs,  // Pass the clubs (either filtered or all)
+            'searchTerm' => $searchTerm,  // Pass the current search term (if any)
+        ]);
+    }
     #[Route('/new', name: 'club_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -65,7 +193,7 @@ class GClubsController extends AbstractController
     }
 
     #[Route('/{id}', name: 'club_show', methods: ['GET'])]
-    public function show(Club $club, MemberRepository $memberRepository): Response
+    public function showMembers(Club $club, MemberRepository $memberRepository): Response
     {
         $members = $memberRepository->findBy(['club' => $club]);
 
@@ -74,6 +202,7 @@ class GClubsController extends AbstractController
             'members' => $members,
         ]);
     }
+
 
     #[Route('/{id}/acceptApplication/{applicationId}', name: 'club_accept_application', methods: ['POST'])]
     public function acceptApplication(
@@ -94,7 +223,7 @@ class GClubsController extends AbstractController
         $role = $request->get('role');
 
         try {
-            $roleEnum = MemberRole::from($role); 
+            $roleEnum = MemberRole::from($role);
         } catch (\ValueError $e) {
             $this->addFlash('error', 'Invalid role selected.');
             return $this->redirectToRoute('club_applications', ['clubId' => $club->getId()]);
@@ -116,6 +245,21 @@ class GClubsController extends AbstractController
         $this->addFlash('success', 'Application accepted, and member added successfully!');
         return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
     }
+    #[Route('/{id}/search', name: 'club_search_by_id', methods: ['GET'])]
+    public function searchById(int $id, ClubRepository $clubRepository): Response
+    {
+        $club = $clubRepository->find($id);
+
+        if (!$club) {
+            $this->addFlash('error', 'Club not found.');
+            return $this->redirectToRoute('club_index'); // Or any other redirect route
+        }
+
+        return $this->render('club/club_details.html.twig', [
+            'club' => $club,
+        ]);
+    }
+
 
     #[Route('/{id}/rejectApplication/{applicationId}', name: 'club_reject_application', methods: ['POST'])]
     public function rejectApplication(Club $club, ApplicationRepository $applicationRepository, int $applicationId, EntityManagerInterface $entityManager): Response
@@ -187,23 +331,43 @@ class GClubsController extends AbstractController
         return $this->render('application/club_applications.html.twig', [
             'club' => $club,
             'applications' => $applications,
-            'roles' => $roles, 
+            'roles' => $roles,
         ]);
     }
 
-    #[Route('/club/{id}', name: 'club_details')]
-    public function clubDetails(int $id, ClubRepository $clubRepository): Response
+
+
+    #[Route('/club/{id}', name: 'club_details', requirements: ['id' => '\d+'])]
+    public function clubDetails(int $id, ClubRepository $clubRepository, CommentaryRepository $commentaryRepository): Response
     {
+        // Fetch the club by ID
         $club = $clubRepository->find($id);
 
         if (!$club) {
             throw $this->createNotFoundException('Club not found');
         }
 
+        // Fetch the comments associated with the club
+        $comments = $commentaryRepository->findBy(['club' => $club]);
+
         return $this->render('club/details.html.twig', [
             'club' => $club,
+            'comments' => $comments, // Pass comments to the template
         ]);
     }
+
+    private ManagerRegistry $doctrine;
+
+
+    public function __construct(ManagerRegistry $doctrine)
+    {
+        $this->doctrine = $doctrine;
+    }
+
+
+
+
+
 
 
 

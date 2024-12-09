@@ -15,6 +15,17 @@ class ClubRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Club::class);
     }
+    // src/Repository/ClubRepository.php
+
+
+    public function findByName(string $name): array
+    {
+        return $this->createQueryBuilder('c')
+            ->where('c.nom LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
+            ->getQuery()
+            ->getResult();
+    }
 
     //    /**
     //     * @return Club[] Returns an array of Club objects

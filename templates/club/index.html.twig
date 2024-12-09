@@ -3,35 +3,53 @@
 {% block title %}Clubs{% endblock %}
 
 {% block body %}
-    <div class="container mt-3">
-        <h1>Clubs</h1>
+    <div class="container mt-5">
+        <h1 class="text-center text-primary mb-5">Clubs</h1>
 
-        <!-- Owl Carousel -->
+        <!-- Search Form -->
+        <div class="mb-4">
+            <form action="{{ path('club_index') }}" method="get" class="form-inline d-flex justify-content-center">
+                <input type="text" name="search" value="{{ searchTerm }}" class="form-control w-50" placeholder="Search by club name" aria-label="Search Clubs">
+                <button type="submit" class="btn btn-primary ms-3">Search</button>
+            </form>
+        </div>
+
+      
+
+        <!-- Owl Carousel for Clubs -->
         <div class="owl-carousel testimonial-carousel wow fadeInUp mt-4" data-wow-delay="0.6s">
-            {% for club in clubs %}
-                <div class="testimonial-item bg-light my-4">
-                    <!-- Club Information -->
+            {% for clubWithRating in clubsWithRatings %}
+                {% set club = clubWithRating.club %}
+                <div class="testimonial-item bg-light my-4 shadow-sm rounded-lg overflow-hidden">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                       <img 
-                            class="img-fluid rounded" 
-                            src="{{ asset('uploads/logos/' ~ club.logo) }}" 
-                            alt="{{ club.nom }}" 
-                            style="width: 60px; height: 60px;">
+                        <img class="img-fluid rounded-circle border" 
+                             src="{{ asset('uploads/logos/' ~ club.logo) }}" 
+                             alt="{{ club.nom }}" 
+                             style="width: 70px; height: 70px; object-fit: cover;">
                         <div class="ps-4">
-                            <h4 class="text-primary mb-1">{{ club.nom }}</h4>
-                            <small class="text-uppercase">{{ club.description }}</small>  
+                            <h4 class="text-primary mb-1 font-weight-bold">{{ club.nom }}</h4>
+                            <small class="text-muted text-uppercase">{{ club.description }}</small>
                         </div>
                     </div>
+
                     <div class="pt-4 pb-5 px-5">
-                        {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}
+                        <p class="text-muted" style="font-size: 1.1rem;">
+                            {{ club.description|length > 100 ? club.description|slice(0, 100) ~ '...' : club.description }}
+                        </p>
                     </div>
-                    <div class="text-center">
-                        <!-- Selection Button -->
+
+                    <div class="text-center pb-4">
+                        <p class="text-muted">
+                            {% set rating = clubWithRating.averageRating|round(1) %}
+                            {% for i in 1..5 %}
+                                <i class="bi {% if i <= rating %}bi-star-fill{% else %}bi-star{% endif %} text-warning"></i>
+                            {% endfor %}
+                        </p>
                         <a href="{{ path('club_details', {'id': club.id}) }}" class="btn btn-primary">Join {{ club.nom }}</a>
                     </div>
                 </div>
             {% else %}
-                <div class="testimonial-item bg-light msy-4">
+                <div class="testimonial-item bg-light my-4 shadow-sm rounded-lg overflow-hidden">
                     <div class="pt-4 pb-5 px-5 text-center">
                         <p class="text-muted">No clubs found.</p>
                     </div>
@@ -39,4 +57,29 @@
             {% endfor %}
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function () {
+            let searchTerm = "{{ searchTerm }}".toLowerCase();
+            let startPosition = 0;
+
+            // Find the index of the first matching club
+            $(".testimonial-item").each(function (index) {
+                if ($(this).find("h4").text().toLowerCase().includes(searchTerm)) {
+                    startPosition = index;
+                    return false; // Break the loop
+                }
+            });
+
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                startPosition: startPosition, // Start carousel at the matching club
+            });
+        });
+    </script>
 {% endblock %}
