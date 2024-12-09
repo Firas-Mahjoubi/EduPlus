@@ -36,6 +36,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: "string", enumType: UserRole::class)]
     private UserRole $role;
+    
     #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Member::class, cascade: ['persist', 'remove'])]
     private Collection $memberships;
 
