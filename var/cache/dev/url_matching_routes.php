@@ -77,28 +77,30 @@ return [
                         .'|rating/([^/]++)(*:359)'
                         .'|([^/]++)(?'
                             .'|(*:378)'
-                            .'|/(?'
-                                .'|a(?'
-                                    .'|cceptApplication/([^/]++)(*:419)'
-                                    .'|pplications(*:438)'
-                                .')'
-                                .'|search(*:453)'
-                                .'|rejectApplication/([^/]++)(*:487)'
-                                .'|edit(*:499)'
-                            .')'
+                            .'|/remove\\-member/([^/]++)(*:410)'
                         .')'
-                        .'|club/(\\d+)(*:519)'
-                        .'|delete/([^/]++)(*:542)'
+                        .'|club/([^/]++)/manage\\-members(*:448)'
+                        .'|([^/]++)/(?'
+                            .'|a(?'
+                                .'|cceptApplication/([^/]++)(*:497)'
+                                .'|pplications(*:516)'
+                            .')'
+                            .'|search(*:531)'
+                            .'|rejectApplication/([^/]++)(*:565)'
+                            .'|edit(*:577)'
+                        .')'
+                        .'|club/(\\d+)(*:596)'
+                        .'|delete/([^/]++)(*:619)'
                     .')'
                 .')'
                 .'|/events/(?'
-                    .'|participate/([^/]++)(*:583)'
-                    .'|([^/]++)/cancel(*:606)'
+                    .'|participate/([^/]++)(*:660)'
+                    .'|([^/]++)/cancel(*:683)'
                     .'|event/([^/]++)(?'
-                        .'|(*:631)'
+                        .'|(*:708)'
                         .'|/discussion(?'
-                            .'|(*:653)'
-                            .'|/post(*:666)'
+                            .'|(*:730)'
+                            .'|/post(*:743)'
                         .')'
                     .')'
                 .')'
@@ -106,29 +108,29 @@ return [
                     .'|/re(?'
                         .'|crutements/(?'
                             .'|de(?'
-                                .'|tails/([^/]++)(*:721)'
-                                .'|lete/([^/]++)(*:742)'
+                                .'|tails/([^/]++)(*:798)'
+                                .'|lete/([^/]++)(*:819)'
                             .')'
-                            .'|edit/([^/]++)(*:764)'
+                            .'|edit/([^/]++)(*:841)'
                             .'|appl(?'
-                                .'|y/([^/]++)(*:789)'
+                                .'|y/([^/]++)(*:866)'
                                 .'|ication(?'
-                                    .'|s/([^/]++)(*:817)'
+                                    .'|s/([^/]++)(*:894)'
                                     .'|/(?'
-                                        .'|decision/([^/]++)/([^/]++)(*:855)'
-                                        .'|([^/]++)/details(*:879)'
+                                        .'|decision/([^/]++)/([^/]++)(*:932)'
+                                        .'|([^/]++)/details(*:956)'
                                     .')'
                                 .')'
                             .')'
                         .')'
                         .'|ssources/delete/(?'
-                            .'|([^/]++)(*:918)'
-                            .'|confirm/([^/]++)(*:942)'
+                            .'|([^/]++)(*:995)'
+                            .'|confirm/([^/]++)(*:1019)'
                         .')'
                     .')'
-                    .'|_ressources/backOffice/edit/([^/]++)(*:988)'
+                    .'|_ressources/backOffice/edit/([^/]++)(*:1066)'
                 .')'
-                .'|/uploads/(.+)(*:1010)'
+                .'|/uploads/(.+)(*:1089)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -146,29 +148,31 @@ return [
         329 => [[['_route' => 'comment_reply', '_controller' => 'App\\Controller\\CommentaryController::addReply'], ['commentId'], ['POST' => 0], null, false, true, null]],
         359 => [[['_route' => 'rate_club', '_controller' => 'App\\Controller\\GClubsController::rateClub'], ['id'], null, null, false, true, null]],
         378 => [[['_route' => 'club_show', '_controller' => 'App\\Controller\\GClubsController::showMembers'], ['id'], ['GET' => 0], null, false, true, null]],
-        419 => [[['_route' => 'club_accept_application', '_controller' => 'App\\Controller\\GClubsController::acceptApplication'], ['id', 'applicationId'], ['POST' => 0], null, false, true, null]],
-        438 => [[['_route' => 'club_applications', '_controller' => 'App\\Controller\\GClubsController::showClubApplications'], ['clubId'], null, null, false, false, null]],
-        453 => [[['_route' => 'club_search_by_id', '_controller' => 'App\\Controller\\GClubsController::searchById'], ['id'], ['GET' => 0], null, false, false, null]],
-        487 => [[['_route' => 'club_reject_application', '_controller' => 'App\\Controller\\GClubsController::rejectApplication'], ['id', 'applicationId'], ['POST' => 0], null, false, true, null]],
-        499 => [[['_route' => 'club_edit', '_controller' => 'App\\Controller\\GClubsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        519 => [[['_route' => 'club_details', '_controller' => 'App\\Controller\\GClubsController::clubDetails'], ['id'], null, null, false, true, null]],
-        542 => [[['_route' => 'club_delete', '_controller' => 'App\\Controller\\GClubsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        583 => [[['_route' => 'app_event_participate', '_controller' => 'App\\Controller\\GEventsController::participate'], ['id'], ['POST' => 0, 'GET' => 1], null, false, true, null]],
-        606 => [[['_route' => 'app_event_cancel_participation', '_controller' => 'App\\Controller\\GEventsController::cancelParticipation'], ['id'], null, null, false, false, null]],
-        631 => [[['_route' => 'event_details', '_controller' => 'App\\Controller\\GEventsController::showev'], ['id'], null, null, false, true, null]],
-        653 => [[['_route' => 'event_discussion', '_controller' => 'App\\Controller\\GEventsController::eventDiscussion'], ['id'], null, null, false, false, null]],
-        666 => [[['_route' => 'event_post_message', '_controller' => 'App\\Controller\\GEventsController::postMessage'], ['id'], ['POST' => 0], null, false, false, null]],
-        721 => [[['_route' => 'recruitement_details', '_controller' => 'App\\Controller\\GRecrutementsController::authorDetails'], ['id'], null, null, false, true, null]],
-        742 => [[['_route' => 'Recruitment_delete', '_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], ['id'], null, null, false, true, null]],
-        764 => [[['_route' => 'recruitment_edit', '_controller' => 'App\\Controller\\GRecrutementsController::edit'], ['id'], null, null, false, true, null]],
-        789 => [[['_route' => 'recruitment_apply', '_controller' => 'App\\Controller\\GRecrutementsController::apply'], ['id'], null, null, false, true, null]],
-        817 => [[['_route' => 'recruitment_applications', '_controller' => 'App\\Controller\\GRecrutementsController::listApplications'], ['id'], null, null, false, true, null]],
-        855 => [[['_route' => 'application_decision', '_controller' => 'App\\Controller\\GRecrutementsController::applicationDecision'], ['id', 'decision'], null, null, false, true, null]],
-        879 => [[['_route' => 'application_details', '_controller' => 'App\\Controller\\GRecrutementsController::showApplicationDetails'], ['id'], null, null, false, false, null]],
-        918 => [[['_route' => 'ressource_delete', '_controller' => 'App\\Controller\\GRessourcesController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, true, null]],
-        942 => [[['_route' => 'ressource_delete_confirm', '_controller' => 'App\\Controller\\GRessourcesController::confirmDelete'], ['id'], null, null, false, true, null]],
-        988 => [[['_route' => 'ressource_edit', '_controller' => 'App\\Controller\\GRessourcesController::edit'], ['id'], null, null, false, true, null]],
-        1010 => [
+        410 => [[['_route' => 'remove_member', '_controller' => 'App\\Controller\\GClubsController::removeMember'], ['clubId', 'memberId'], ['POST' => 0], null, false, true, null]],
+        448 => [[['_route' => 'club_manage_members', '_controller' => 'App\\Controller\\GClubsController::manageMembers'], ['id'], null, null, false, false, null]],
+        497 => [[['_route' => 'club_accept_application', '_controller' => 'App\\Controller\\GClubsController::acceptApplication'], ['id', 'applicationId'], ['POST' => 0], null, false, true, null]],
+        516 => [[['_route' => 'club_applications', '_controller' => 'App\\Controller\\GClubsController::showClubApplications'], ['clubId'], null, null, false, false, null]],
+        531 => [[['_route' => 'club_search_by_id', '_controller' => 'App\\Controller\\GClubsController::searchById'], ['id'], ['GET' => 0], null, false, false, null]],
+        565 => [[['_route' => 'club_reject_application', '_controller' => 'App\\Controller\\GClubsController::rejectApplication'], ['id', 'applicationId'], ['POST' => 0], null, false, true, null]],
+        577 => [[['_route' => 'club_edit', '_controller' => 'App\\Controller\\GClubsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        596 => [[['_route' => 'club_details', '_controller' => 'App\\Controller\\GClubsController::clubDetails'], ['id'], null, null, false, true, null]],
+        619 => [[['_route' => 'club_delete', '_controller' => 'App\\Controller\\GClubsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        660 => [[['_route' => 'app_event_participate', '_controller' => 'App\\Controller\\GEventsController::participate'], ['id'], ['POST' => 0, 'GET' => 1], null, false, true, null]],
+        683 => [[['_route' => 'app_event_cancel_participation', '_controller' => 'App\\Controller\\GEventsController::cancelParticipation'], ['id'], null, null, false, false, null]],
+        708 => [[['_route' => 'event_details', '_controller' => 'App\\Controller\\GEventsController::showev'], ['id'], null, null, false, true, null]],
+        730 => [[['_route' => 'event_discussion', '_controller' => 'App\\Controller\\GEventsController::eventDiscussion'], ['id'], null, null, false, false, null]],
+        743 => [[['_route' => 'event_post_message', '_controller' => 'App\\Controller\\GEventsController::postMessage'], ['id'], ['POST' => 0], null, false, false, null]],
+        798 => [[['_route' => 'recruitement_details', '_controller' => 'App\\Controller\\GRecrutementsController::authorDetails'], ['id'], null, null, false, true, null]],
+        819 => [[['_route' => 'Recruitment_delete', '_controller' => 'App\\Controller\\GRecrutementsController::authorDelete1'], ['id'], null, null, false, true, null]],
+        841 => [[['_route' => 'recruitment_edit', '_controller' => 'App\\Controller\\GRecrutementsController::edit'], ['id'], null, null, false, true, null]],
+        866 => [[['_route' => 'recruitment_apply', '_controller' => 'App\\Controller\\GRecrutementsController::apply'], ['id'], null, null, false, true, null]],
+        894 => [[['_route' => 'recruitment_applications', '_controller' => 'App\\Controller\\GRecrutementsController::listApplications'], ['id'], null, null, false, true, null]],
+        932 => [[['_route' => 'application_decision', '_controller' => 'App\\Controller\\GRecrutementsController::applicationDecision'], ['id', 'decision'], null, null, false, true, null]],
+        956 => [[['_route' => 'application_details', '_controller' => 'App\\Controller\\GRecrutementsController::showApplicationDetails'], ['id'], null, null, false, false, null]],
+        995 => [[['_route' => 'ressource_delete', '_controller' => 'App\\Controller\\GRessourcesController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, true, null]],
+        1019 => [[['_route' => 'ressource_delete_confirm', '_controller' => 'App\\Controller\\GRessourcesController::confirmDelete'], ['id'], null, null, false, true, null]],
+        1066 => [[['_route' => 'ressource_edit', '_controller' => 'App\\Controller\\GRessourcesController::edit'], ['id'], null, null, false, true, null]],
+        1089 => [
             [['_route' => 'uploads', '_public' => true], ['path'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

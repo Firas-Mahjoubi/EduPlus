@@ -223,6 +223,6 @@ class __TwigTemplate_77d3db601a19033324bbf485670c45a9 extends Template
     </div>
 </div>
 {% endblock %}
-", "g_recrutements/application_details.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_recrutements\\application_details.html.twig");
+", "g_recrutements/application_details.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_recrutements\\application_details.html.twig");
     }
 }

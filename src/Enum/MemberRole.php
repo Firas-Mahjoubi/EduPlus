@@ -11,4 +11,5 @@ enum MemberRole: string
     case PRESIDENT = 'president';
     case VICE_PRESIDENT = 'vice_president';
     case TREASURER = 'treasurer';
+    case ADMIN = 'admin';
 }

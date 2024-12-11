@@ -170,6 +170,6 @@ class __TwigTemplate_2b4a255163fc5c33587208424cecc523 extends Template
     </ul>
 </div>
 {% endblock %}
-", "commentary/index.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\commentary\\index.html.twig");
+", "commentary/index.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\commentary\\index.html.twig");
     }
 }

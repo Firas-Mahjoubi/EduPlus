@@ -473,6 +473,6 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
     </div>
   </div>
 </div>
-<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\sidebar.html.twig");
+<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\sidebar.html.twig");
     }
 }

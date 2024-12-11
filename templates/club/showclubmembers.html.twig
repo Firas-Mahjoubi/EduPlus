@@ -11,6 +11,7 @@
             <h5 class="fw-bold text-primary text-uppercase">Team Members</h5>
             <h1 class="mb-0 text-secondary">{{ club.nom }}</h1>
         </div>
+
         <div class="row g-4">
             {% if members is empty %}
                 <p class="text-center text-muted">No members in this club yet.</p>
@@ -42,6 +43,11 @@
                                     <a class="btn btn-outline-primary btn-sm" href="#"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
+
+                            <!-- Remove Member Button -->
+                            <form action="{{ path('remove_member', {'clubId': club.id, 'memberId': member.id}) }}" method="post" class="text-center">
+                                <button type="submit" class="btn btn-danger btn-sm mt-2">Remove Member</button>
+                            </form>
                         </div>
                     </div>
                 {% endfor %}

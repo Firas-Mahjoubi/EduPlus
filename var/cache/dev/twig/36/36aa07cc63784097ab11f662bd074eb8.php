@@ -265,6 +265,6 @@ class __TwigTemplate_516df34c3953dfc7f912e726f4522a80 extends Template
     </div>
 </div>
 {% endblock %}
-", "security/login.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\security\\login.html.twig");
     }
 }

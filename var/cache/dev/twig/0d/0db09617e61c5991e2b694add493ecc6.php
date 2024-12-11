@@ -1319,6 +1319,6 @@ class __TwigTemplate_5651a65cec183931e0baa327c37bd394 extends Template
    });
  </script>
 </body>
-</html>", "base_backoffice.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\base_backoffice.html.twig");
+</html>", "base_backoffice.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\base_backoffice.html.twig");
     }
 }

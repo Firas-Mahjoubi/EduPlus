@@ -19,6 +19,7 @@ use App\Repository\RatingRepository;
 use App\Form\ClubType;
 use App\Repository\ClubRepository;
 use App\Repository\CommentaryRepository;
+use App\Entity\user;
 
 use App\Repository\MemberRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -200,6 +201,47 @@ class GClubsController extends AbstractController
         return $this->render('club/showclubmembers.html.twig', [
             'club' => $club,
             'members' => $members,
+        ]);
+    }
+
+    
+    #[Route('/{clubId}/remove-member/{memberId}', name: 'remove_member', methods: ['POST'])]
+    public function removeMember(int $clubId, int $memberId, ClubRepository $clubRepository, MemberRepository $memberRepository): Response
+    {
+        $club = $clubRepository->find($clubId);
+        $member = $memberRepository->find($memberId);
+
+        if ($club && $member) {
+            $memberRepository->remove($member);  // Delete the member
+            $this->addFlash('success', 'Member removed successfully!');
+        } else {
+            $this->addFlash('error', 'Member not found.');
+        }
+
+        return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
+    }
+
+
+    #[Route('/club/{id}/manage-members', name: 'club_manage_members')]
+    public function manageMembers(Club $club)
+    {
+        // Ensure the user is a member and is a president
+        $user = $this->getUser();
+        $isPresident = false;
+
+        foreach ($club->getMembers() as $member) {
+            if ($member->getUtilisateur() === $user && $member->getRole()->value === 'PRESIDENT') {
+                $isPresident = true;
+                break;
+            }
+        }
+
+        if (!$isPresident) {
+            throw $this->createAccessDeniedException('You are not authorized to manage this club.');
+        }
+
+        return $this->render('club/showclubmembers.html.twig', [
+            'club' => $club,
         ]);
     }
 

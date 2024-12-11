@@ -110,18 +110,19 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 12, $this->source); })()), "nom", [], "any", false, false, false, 12), "html", null, true);
         yield "</h1>
         </div>
+
         <div class=\"row g-4\">
             ";
-        // line 15
-        if (Twig\Extension\CoreExtension::testEmpty((isset($context["members"]) || array_key_exists("members", $context) ? $context["members"] : (function () { throw new RuntimeError('Variable "members" does not exist.', 15, $this->source); })()))) {
-            // line 16
+        // line 16
+        if (Twig\Extension\CoreExtension::testEmpty((isset($context["members"]) || array_key_exists("members", $context) ? $context["members"] : (function () { throw new RuntimeError('Variable "members" does not exist.', 16, $this->source); })()))) {
+            // line 17
             yield "                <p class=\"text-center text-muted\">No members in this club yet.</p>
             ";
         } else {
-            // line 18
+            // line 19
             yield "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["members"]) || array_key_exists("members", $context) ? $context["members"] : (function () { throw new RuntimeError('Variable "members" does not exist.', 18, $this->source); })()));
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["members"]) || array_key_exists("members", $context) ? $context["members"] : (function () { throw new RuntimeError('Variable "members" does not exist.', 19, $this->source); })()));
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -136,31 +137,31 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["member"]) {
-                // line 19
+                // line 20
                 yield "                    <div class=\"col-lg-4 col-md-6 wow slideInUp\" data-wow-delay=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 19) * 0.2), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 20) * 0.2), "html", null, true);
                 yield "s\" style=\"visibility: visible; animation-delay: ";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 19) * 0.2), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 20) * 0.2), "html", null, true);
                 yield "s; animation-name: slideInUp;\">
                         <div class=\"team-item bg-light rounded shadow-sm overflow-hidden\">
                             <div class=\"team-img position-relative overflow-hidden text-center p-3\">
                                 ";
-                // line 22
-                if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 22), "profilePicture", [], "any", false, false, false, 22)) {
-                    // line 23
+                // line 23
+                if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 23), "profilePicture", [], "any", false, false, false, 23)) {
+                    // line 24
                     yield "                                    <img class=\"img-fluid border shadow-sm\" src=\"";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/profilePictures/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 23), "profilePicture", [], "any", false, false, false, 23))), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/profilePictures/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 24), "profilePicture", [], "any", false, false, false, 24))), "html", null, true);
                     yield "\" 
                                          alt=\"";
-                    // line 24
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 24), "nom", [], "any", false, false, false, 24), "html", null, true);
+                    // line 25
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 25), "nom", [], "any", false, false, false, 25), "html", null, true);
                     yield " ";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 24), "prenom", [], "any", false, false, false, 24), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 25), "prenom", [], "any", false, false, false, 25), "html", null, true);
                     yield " profile picture\" 
                                          style=\"width: 150px; height: 150px; object-fit: cover; border-radius: 50%;\">
                                 ";
                 } else {
-                    // line 27
+                    // line 28
                     yield "                                    <img class=\"img-fluid border shadow-sm\" src=\"";
                     yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/profilePictures/default.png"), "html", null, true);
                     yield "\" 
@@ -168,22 +169,22 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
                                          style=\"width: 150px; height: 150px; object-fit: cover; border-radius: 50%;\">
                                 ";
                 }
-                // line 31
+                // line 32
                 yield "                            </div>
                             <div class=\"text-center py-3 px-3\">
                                 <h4 class=\"text-primary mb-1\">";
-                // line 33
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 33), "nom", [], "any", false, false, false, 33), "html", null, true);
+                // line 34
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 34), "nom", [], "any", false, false, false, 34), "html", null, true);
                 yield " ";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 33), "prenom", [], "any", false, false, false, 33), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "utilisateur", [], "any", false, false, false, 34), "prenom", [], "any", false, false, false, 34), "html", null, true);
                 yield "</h4>
                                 <span class=\"badge bg-secondary text-white text-uppercase mb-2\">";
-                // line 34
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "role", [], "any", false, false, false, 34), "value", [], "any", false, false, false, 34), "html", null, true);
+                // line 35
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["member"], "role", [], "any", false, false, false, 35), "value", [], "any", false, false, false, 35), "html", null, true);
                 yield "</span>
                                 <p class=\"text-muted small\">Joined: ";
-                // line 35
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["member"], "dateAdhesion", [], "any", false, false, false, 35), "Y-m-d"), "html", null, true);
+                // line 36
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["member"], "dateAdhesion", [], "any", false, false, false, 36), "Y-m-d"), "html", null, true);
                 yield "</p>
                             </div>
                             <div class=\"text-center py-2 border-top\">
@@ -194,6 +195,14 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
                                     <a class=\"btn btn-outline-primary btn-sm\" href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>
                                 </div>
                             </div>
+
+                            <!-- Remove Member Button -->
+                            <form action=\"";
+                // line 48
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("remove_member", ["clubId" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 48, $this->source); })()), "id", [], "any", false, false, false, 48), "memberId" => CoreExtension::getAttribute($this->env, $this->source, $context["member"], "id", [], "any", false, false, false, 48)]), "html", null, true);
+                yield "\" method=\"post\" class=\"text-center\">
+                                <button type=\"submit\" class=\"btn btn-danger btn-sm mt-2\">Remove Member</button>
+                            </form>
                         </div>
                     </div>
                 ";
@@ -209,10 +218,10 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['member'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 48
+            // line 54
             yield "            ";
         }
-        // line 49
+        // line 55
         yield "        </div>
     </div>
 </div>
@@ -247,7 +256,7 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  216 => 49,  213 => 48,  186 => 35,  182 => 34,  176 => 33,  172 => 31,  164 => 27,  156 => 24,  151 => 23,  149 => 22,  140 => 19,  122 => 18,  118 => 16,  116 => 15,  110 => 12,  104 => 8,  91 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  225 => 55,  222 => 54,  202 => 48,  187 => 36,  183 => 35,  177 => 34,  173 => 32,  165 => 28,  157 => 25,  152 => 24,  150 => 23,  141 => 20,  123 => 19,  119 => 17,  117 => 16,  110 => 12,  104 => 8,  91 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -265,6 +274,7 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
             <h5 class=\"fw-bold text-primary text-uppercase\">Team Members</h5>
             <h1 class=\"mb-0 text-secondary\">{{ club.nom }}</h1>
         </div>
+
         <div class=\"row g-4\">
             {% if members is empty %}
                 <p class=\"text-center text-muted\">No members in this club yet.</p>
@@ -296,6 +306,11 @@ class __TwigTemplate_a2cf490f7e2a04218720ce7a431bae29 extends Template
                                     <a class=\"btn btn-outline-primary btn-sm\" href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>
                                 </div>
                             </div>
+
+                            <!-- Remove Member Button -->
+                            <form action=\"{{ path('remove_member', {'clubId': club.id, 'memberId': member.id}) }}\" method=\"post\" class=\"text-center\">
+                                <button type=\"submit\" class=\"btn btn-danger btn-sm mt-2\">Remove Member</button>
+                            </form>
                         </div>
                     </div>
                 {% endfor %}

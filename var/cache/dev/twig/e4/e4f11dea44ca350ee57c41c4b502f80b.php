@@ -459,6 +459,6 @@ class __TwigTemplate_eb0d4d3b93b05fa8a27f783ca09c25a3 extends Template
     }
 </style>
 {% endblock %}
-", "g_events/discussion.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\discussion.html.twig");
+", "g_events/discussion.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_events\\discussion.html.twig");
     }
 }
