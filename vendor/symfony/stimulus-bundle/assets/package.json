@@ -8,8 +8,15 @@
         "build": "node ../../../bin/build_package.js .",
         "watch": "node ../../../bin/build_package.js . --watch",
         "test": "../../../bin/test_package.sh .",
+<<<<<<< HEAD
         "check": "biome check",
         "ci": "biome ci"
+=======
+        "lint": "biome lint --write",
+        "format": "biome format --write",
+        "check-lint": "biome lint",
+        "check-format": "biome format"
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     },
     "symfony": {
         "needsPackageAsADependency": false,

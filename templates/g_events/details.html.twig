@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event Details{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Event Image -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" 
+                         src="{{ event.image ? asset('uploads/events/' ~ event.image) : asset('img/default-event.jpg') }}" 
+                         alt="Event Image">
+                </div>
+            </div>
+
+            <!-- Event Details -->
+            <div class="col-md-8">
+                <h1 class="mb-4">{{ event.titre }}</h1>
+
+                <!-- Club Name -->
+                <h4>Club: <span class="text-primary">{{ event.club.nom }}</span></h4>
+
+                <!-- Bloc Information -->
+                <p><strong>Bloc:</strong> {{ event.bloc.name }}</p> <!-- Assuming the Bloc entity has a 'nom' property -->
+
+                <!-- Description -->
+                <p>{{ event.description }}</p>
+
+                <!-- Dates -->
+                <p><strong>Start:</strong> {{ event.formattedDatedebut }}</p>
+                <p><strong>End:</strong> {{ event.formattedDatefin }}</p>
+
+                <!-- Participants -->
+                <h5>Participants</h5>
+                <p>{{ event.getNbrParticipants() }} / {{ event.maxParticipants ?? 'No limit' }} participants</p>
+
+                <!-- Participation and Discussion Button -->
+                {% if app.user in event.participants %}
+                    <span class="badge bg-success">Participating</span>
+                    <a class="btn btn-danger btn-sm" href="{{ path('app_event_cancel_participation', { id: event.id }) }}">Cancel Participation</a>
+
+                    <!-- Button to go to the event discussion -->
+                    <a class="btn btn-info btn-sm mt-3" href="{{ path('event_discussion', { id: event.id }) }}">Go to Event Discussion</a>
+                {% elseif event.participants|length < event.maxParticipants %}
+                    <a class="btn btn-primary btn-sm" href="{{ path('app_event_participate', { id: event.id }) }}">Participate</a>
+                {% else %}
+                    <span class="badge bg-danger">Event Full</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -29,9 +29,15 @@ class TempNameExpression extends AbstractExpression
             trigger_deprecation('twig/twig', '3.15', 'The "%s" class is deprecated.', self::class);
         }
 
+<<<<<<< HEAD
         if (null !== $name && (\is_int($name) || ctype_digit($name))) {
             $name = (int) $name;
         } elseif (\in_array($name, self::RESERVED_NAMES)) {
+=======
+        if (null !== $name && (is_int($name) || ctype_digit($name))) {
+            $name = (int) $name;
+        } elseif (in_array($name, self::RESERVED_NAMES)) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             $name = "\u{035C}".$name;
         }
 

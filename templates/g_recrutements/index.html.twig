@@ -1,20 +1,79 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GRecrutementsController!{% endblock %}
+{% block title %}Liste des Recrutements{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Liste des Annonces de Recrutement</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!-- Message Flash -->
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/src/Controller/GRecrutementsController.php</code></li>
-        <li>Your template at <code>C:/Users/frsma/OneDrive/Desktop/Nouveau dossier/EduPlus/templates/g_recrutements/index.html.twig</code></li>
-    </ul>
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <!-- Bouton pour ajouter une annonce -->
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="mb-3 text-end">
+            <a href="{{ path('recruitment_create') }}" class="btn btn-primary">Créer une Nouvelle Annonce</a>
+        </div>
+    {% endif %}
+
+    <!-- Tableau des recrutements -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Statut</th>
+                    <th>Date Limite</th>
+                    <th>Club</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recruitment in liste_recruitement %}
+                    <tr>
+                        <td>{{ recruitment.id }}</td>
+                        <td>{{ recruitment.title }}</td>
+                        <td>
+                            <span class="badge {{ recruitment.status == 'open' ? 'bg-success' : 'bg-danger' }}">
+                                {{ recruitment.status | capitalize }}
+                            </span>
+                        </td>
+                        <td>{{ recruitment.deadline|date('d/m/Y') }}</td>
+                        <td>{{ recruitment.club.nom }}</td>
+                        <td>
+                            <!-- Bouton Voir -->
+                            <a href="{{ path('recruitement_details', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir</a>
+
+                           
+                                <!-- Bouton Modifier -->
+                                <a href="{{ path('recruitment_edit', { id: recruitment.id }) }}" class="btn btn-warning btn-sm">Modifier</a>
+                                <!-- Bouton Supprimer -->
+                                <a href="{{ path('Recruitment_delete', { id: recruitment.id }) }}" 
+                                   class="btn btn-danger btn-sm" 
+                                   onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');">
+                                    Supprimer
+                                </a>
+                          
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center">Aucune annonce de recrutement trouvée.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}

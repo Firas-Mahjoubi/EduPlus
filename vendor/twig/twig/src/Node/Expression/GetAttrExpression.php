@@ -18,6 +18,10 @@ use Twig\Template;
 
 class GetAttrExpression extends AbstractExpression
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     /**
      * @param ArrayExpression|NameExpression|null $arguments
      */

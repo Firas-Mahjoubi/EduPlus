@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType; // Update this
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -36,7 +37,7 @@ class RegistrationFormType extends AbstractType
                     new NotBlank(['message' => 'Please enter your first name']),
                 ],
             ])
-            ->add('email', TextType::class, [
+            ->add('email', EmailType::class, [ // Changed to EmailType
                 'label' => 'Email Address',
                 'attr' => ['class' => 'form-control'],
                 'constraints' => [
@@ -51,9 +52,9 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['class' => 'form-control-file'],
                 'constraints' => [
                     new File([
-                        'mimeTypes' => ['image/jpeg', 'image/png', 'image/gif'],
+                        'mimeTypes' => ['image/jpeg', 'image/png', 'image/gif','image/jpg'],
                         'mimeTypesMessage' => 'Please upload a valid image file (jpg, png, gif)',
-                        'maxSize' => '2M',
+                        'maxSize' => '100M',
                         'maxSizeMessage' => 'The image file is too large. Maximum allowed size is 2MB.',
                     ])
                 ],

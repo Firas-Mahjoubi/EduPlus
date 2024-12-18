@@ -35,7 +35,11 @@ class FilesystemLoader implements LoaderInterface
 
     /**
      * @param string|string[] $paths    A path or an array of paths where to look for templates
+<<<<<<< HEAD
      * @param string|null     $rootPath The root path common to all relative paths (null for getcwd())
+=======
+     * @param string|null  $rootPath The root path common to all relative paths (null for getcwd())
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
      */
     public function __construct($paths = [], ?string $rootPath = null)
     {

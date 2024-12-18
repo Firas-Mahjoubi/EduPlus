@@ -16,6 +16,10 @@ use Twig\Compiler;
 use Twig\Extension\CoreExtension;
 use Twig\Node\EmptyNode;
 use Twig\Node\Expression\AbstractExpression;
+<<<<<<< HEAD
+=======
+use Twig\Node\Expression\ConditionalExpression;
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
 use Twig\Node\Expression\ConstantExpression;
 use Twig\Node\Expression\FilterExpression;
 use Twig\Node\Expression\GetAttrExpression;
@@ -42,7 +46,11 @@ class DefaultFilter extends FilterExpression
     public function __construct(Node $node, TwigFilter|ConstantExpression $filter, Node $arguments, int $lineno)
     {
         if (!$node instanceof AbstractExpression) {
+<<<<<<< HEAD
             trigger_deprecation('twig/twig', '3.15', 'Not passing a "%s" instance to the "node" argument of "%s" is deprecated ("%s" given).', AbstractExpression::class, static::class, \get_class($node));
+=======
+            trigger_deprecation('twig/twig', '3.15', 'Not passing a "%s" instance to the "node" argument of "%s" is deprecated ("%s" given).', AbstractExpression::class, static::class, get_class($node));
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         }
 
         if ($filter instanceof TwigFilter) {

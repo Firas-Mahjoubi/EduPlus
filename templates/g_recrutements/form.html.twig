@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Recrutement{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Créer un Nouveau Recrutement</h1>
+
+    <!-- Card pour le formulaire -->
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h5 class="mb-0">Formulaire de Recrutement</h5>
+        </div>
+        <div class="card-body">
+            {{ form_start(f, { 'attr': { 'class': 'needs-validation', 'novalidate': 'novalidate' } }) }}
+            
+            <!-- Organisation des champs -->
+            <div class="row">
+                <!-- Titre -->
+                <div class="col-md-6 mb-3">
+                    {{ form_label(f.title, 'Titre', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.title, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.title) }}
+                </div>
+
+                <!-- Description -->
+                <div class="col-md-6 mb-3">
+                    {{ form_label(f.description, 'Description', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.description, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.description) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Statut -->
+                <div class="col-md-6 mb-3">
+                    {{ form_label(f.status, 'Statut', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.status, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.status) }}
+                </div>
+
+                <!-- Date Limite -->
+                <div class="col-md-6 mb-3">
+                    {{ form_label(f.deadline, 'Date Limite', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.deadline, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.deadline) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Compétences -->
+                <div class="col-md-6 mb-3">
+                    {{ form_label(f.requirements, 'Compétences', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.requirements, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.requirements) }}
+                </div>
+
+                <!-- Lieu -->
+                <div class="col-md-6 mb-3">
+                    {{ form_label(f.location, 'Lieu', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.location, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.location) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Club -->
+                <div class="col-md-12 mb-3">
+                    {{ form_label(f.club, 'Club', { 'label_attr': { 'class': 'form-label fw-bold' } }) }}
+                    {{ form_widget(f.club, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(f.club) }}
+                </div>
+            </div>
+
+            <!-- Boutons -->
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
+                <a href="{{ path('app_show_all') }}" class="btn btn-secondary">Annuler</a>
+            </div>
+
+            {{ form_end(f) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

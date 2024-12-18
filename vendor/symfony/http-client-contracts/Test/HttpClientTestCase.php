@@ -36,6 +36,7 @@ abstract class HttpClientTestCase extends TestCase
     {
         TestHttpServer::stop(8067);
         TestHttpServer::stop(8077);
+        TestHttpServer::stop(8087);
     }
 
     abstract protected function getHttpClient(string $testCase): HttpClientInterface;

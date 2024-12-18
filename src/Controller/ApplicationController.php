@@ -11,46 +11,35 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
+use App\Entity\ApplicationClub;
 
 class ApplicationController extends AbstractController
 {
-    #[Route('/application', name: 'application_submit')]
-    public function submit(Request $request, ClubRepository $clubRepository, EntityManagerInterface $entityManager): Response
-    {
-        $clubs = $clubRepository->findAll();
+    #[Route('/application/submit/{clubId}', name: 'application_submit_club', methods: ['POST'])]
+    public function submitForClub(
+        int $clubId,
+        ClubRepository $clubRepository,
+        EntityManagerInterface $entityManager
+    ): Response {
+        $club = $clubRepository->find($clubId);
 
-        $application = new Application();
-
-        $form = $this->createForm(ApplicationType::class, $application, [
-            'clubs' => $clubs,
-        ]);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $application = $form->getData();
-
-
-
-            // when done with the login instead of 11 getUser->getid
-
-
-            $user = $entityManager->getRepository(User::class)->find(15); 
-            if ($user) {
-                $application->setCandidat($user); 
-            } else {
-                throw $this->createNotFoundException('User not found');
-            }
-
-            $entityManager->persist($application);
-            $entityManager->flush();
-
-            $this->addFlash('success', 'Your application has been submitted successfully!');
-            return $this->redirectToRoute('application_submit');
+        if (!$club) {
+            return $this->json(['success' => false, 'message' => 'Club not found'], 404);
         }
 
-        return $this->render('application/submit.html.twig', [
-            'form' => $form->createView(),
-        ]);
+        $user = $this->getUser();
+
+        if (!$user) {
+            return $this->json(['success' => false, 'message' => 'User not logged in'], 401);
+        }
+
+        $application = new ApplicationClub();
+        $application->setCandidat($user);
+        $application->setClub($club);
+
+        $entityManager->persist($application);
+        $entityManager->flush();
+
+        return $this->json(['success' => true, 'message' => 'Application submitted successfully!']);
     }
 }

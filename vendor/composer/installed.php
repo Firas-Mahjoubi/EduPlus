@@ -3,7 +3,11 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => '15326c467d1d6335117229a011b4bf0c5bc52581',
+=======
+        'reference' => '9da0b99c51a83956b91be3d8658741920bfba028',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +17,11 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '15326c467d1d6335117229a011b4bf0c5bc52581',
+=======
+            'reference' => '9da0b99c51a83956b91be3d8658741920bfba028',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -25,6 +33,15 @@
             'reference' => '4313d26ada5e0c4edfbd1dc481a92ff7bff91f12',
             'type' => 'library',
             'install_path' => __DIR__ . '/./semver',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'doctrine/annotations' => array(
+            'pretty_version' => '2.0.2',
+            'version' => '2.0.2.0',
+            'reference' => '901c2ee5d26eb64ff43c47976e114bf00843acf7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/annotations',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -154,6 +171,33 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'dompdf/dompdf' => array(
+            'pretty_version' => 'v3.0.1',
+            'version' => '3.0.1.0',
+            'reference' => '2d622faf9aa1f8f7f24dd094e49b5cf6c0c5d4e6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dompdf/dompdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'dompdf/php-font-lib' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '6137b7d4232b7f16c882c75e4ca3991dbcf6fe2d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dompdf/php-font-lib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'dompdf/php-svg-lib' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'reference' => 'eb045e518185298eb6ff8d80d0d0c6b17aecd9af',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dompdf/php-svg-lib',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'egulias/email-validator' => array(
             'pretty_version' => '4.0.2',
             'version' => '4.0.2.0',
@@ -188,12 +232,18 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../masterminds/html5',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'monolog/monolog' => array(
+<<<<<<< HEAD
             'pretty_version' => '3.8.1',
             'version' => '3.8.1.0',
             'reference' => 'aef6ee73a77a66e404dd6540934a9ef1b3c855b4',
+=======
+            'pretty_version' => '3.8.0',
+            'version' => '3.8.0.0',
+            'reference' => '32e515fdc02cdafbe4593e30a9350d486b125b67',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(),
@@ -257,9 +307,15 @@
             'dev_requirement' => false,
         ),
         'phpdocumentor/reflection-docblock' => array(
+<<<<<<< HEAD
             'pretty_version' => '5.6.1',
             'version' => '5.6.1.0',
             'reference' => 'e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8',
+=======
+            'pretty_version' => '5.6.0',
+            'version' => '5.6.0.0',
+            'reference' => 'f3558a4c23426d12bffeaab463f8a8d8b681193c',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpdocumentor/reflection-docblock',
             'aliases' => array(),
@@ -439,6 +495,15 @@
             'provided' => array(
                 0 => '1.0|2.0|3.0',
             ),
+        ),
+        'sabberworm/php-css-parser' => array(
+            'pretty_version' => 'v8.7.0',
+            'version' => '8.7.0.0',
+            'reference' => 'f414ff953002a9b18e3a116f5e462c56f21237cf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sabberworm/php-css-parser',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '1.0.2',
@@ -831,9 +896,15 @@
             'dev_requirement' => false,
         ),
         'symfony/http-client-contracts' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v3.5.2',
             'version' => '3.5.2.0',
             'reference' => 'ee8d807ab20fcb51267fdace50fbe3494c31e645',
+=======
+            'pretty_version' => 'v3.5.1',
+            'version' => '3.5.1.0',
+            'reference' => 'c2f3ad828596624ca39ea40f83617ef51ca8bbf9',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/http-client-contracts',
             'aliases' => array(),
@@ -1164,9 +1235,15 @@
             ),
         ),
         'symfony/stimulus-bundle' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v2.22.1',
             'version' => '2.22.1.0',
             'reference' => 'e13034d428354023c82a1db108d40fdf6cec2d36',
+=======
+            'pretty_version' => 'v2.22.0',
+            'version' => '2.22.0.0',
+            'reference' => '2e840a3b12f06b33441cc3eb8907f51b806a7e4b',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/stimulus-bundle',
             'aliases' => array(),
@@ -1233,9 +1310,15 @@
             'dev_requirement' => false,
         ),
         'symfony/ux-turbo' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v2.22.1',
             'version' => '2.22.1.0',
             'reference' => '97718ea4bca26f0db843c3c0de338d6900c5a002',
+=======
+            'pretty_version' => 'v2.22.0',
+            'version' => '2.22.0.0',
+            'reference' => 'f7af0aa09190354dd4630ea330d8a3fc3e8ef278',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/ux-turbo',
             'aliases' => array(),
@@ -1286,6 +1369,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'symfony/webpack-encore-bundle' => array(
+            'pretty_version' => 'v2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => 'e335394b68a775a9b2bd173a8ba4fd2001f3870c',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/webpack-encore-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/yaml' => array(
             'pretty_version' => 'v6.4.13',
             'version' => '6.4.13.0',
@@ -1305,8 +1397,13 @@
             'dev_requirement' => true,
         ),
         'twig/extra-bundle' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v3.17.0',
             'version' => '3.17.0.0',
+=======
+            'pretty_version' => 'v3.16.0',
+            'version' => '3.16.0.0',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'reference' => '9746573ca4bc1cd03a767a183faadaf84e0c31fa',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../twig/extra-bundle',
@@ -1314,9 +1411,15 @@
             'dev_requirement' => false,
         ),
         'twig/twig' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v3.17.1',
             'version' => '3.17.1.0',
             'reference' => '677ef8da6497a03048192aeeb5aa3018e379ac71',
+=======
+            'pretty_version' => 'v3.16.0',
+            'version' => '3.16.0.0',
+            'reference' => '475ad2dc97d65d8631393e721e7e44fb544f0561',
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/twig',
             'aliases' => array(),

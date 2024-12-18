@@ -75,7 +75,11 @@ final class MacroTokenParser extends AbstractTokenParser
         $stream = $this->parser->getStream();
         $stream->expect(Token::PUNCTUATION_TYPE, '(', 'A list of arguments must begin with an opening parenthesis');
         while (!$stream->test(Token::PUNCTUATION_TYPE, ')')) {
+<<<<<<< HEAD
             if (\count($arguments)) {
+=======
+            if (count($arguments)) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
                 $stream->expect(Token::PUNCTUATION_TYPE, ',', 'Arguments must be separated by a comma');
 
                 // if the comma above was a trailing comma, early exit the argument parse loop

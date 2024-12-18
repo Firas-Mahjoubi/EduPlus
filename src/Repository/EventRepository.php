@@ -16,28 +16,56 @@ class EventRepository extends ServiceEntityRepository
         parent::__construct($registry, Event::class);
     }
 
-    //    /**
-    //     * @return Event[] Returns an array of Event objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('e')
-    //            ->andWhere('e.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('e.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    /**
+     * Find upcoming events based on the current date and an optional search term.
+     *
+     * @param string|null $search Search term for event titles.
+     * @return Event[]
+     */
+    public function findUpcomingEvents(?string $search = null): array
+    {
+        $qb = $this->createQueryBuilder('e')
+            ->where('e.datedebut > :now') // Updated field name
+            ->setParameter('now', new \DateTime())
+            ->orderBy('e.datedebut', 'ASC'); // Updated field name
+    
+        if ($search) {
+            $qb->andWhere('e.titre LIKE :search')
+                ->setParameter('search', '%' . $search . '%');
+        }
+    
+        return $qb->getQuery()->getResult();
+    }
+    
 
-    //    public function findOneBySomeField($value): ?Event
-    //    {
-    //        return $this->createQueryBuilder('e')
-    //            ->andWhere('e.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    /**
+     * Find the latest past events based on the current date and an optional search term.
+     *
+     * @param string|null $search Search term for event titles.
+     * @return Event[]
+     */
+    public function findLatestEvents(?string $search = null): array
+    {
+        $qb = $this->createQueryBuilder('e')
+            ->where('e.datefin < :now') // Use the correct field name here
+            ->setParameter('now', new \DateTime())
+            ->orderBy('e.datefin', 'DESC'); // Use the correct field name here
+    
+        if ($search) {
+            $qb->andWhere('e.titre LIKE :search')
+                ->setParameter('search', '%' . $search . '%');
+        }
+    
+        return $qb->getQuery()->getResult();
+    }
+    public function findBySearch(string $search): array
+    {
+        $qb = $this->createQueryBuilder('e')
+            ->where('e.titre LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->orderBy('e.datedebut', 'ASC'); // Or any other sorting method you prefer
+
+        return $qb->getQuery()->getResult();
+    }
+    
 }

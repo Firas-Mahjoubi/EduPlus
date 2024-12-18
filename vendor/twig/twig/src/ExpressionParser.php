@@ -92,7 +92,11 @@ class ExpressionParser
 
     public function parseExpression($precedence = 0)
     {
+<<<<<<< HEAD
         if (\func_num_args() > 1) {
+=======
+        if (func_num_args() > 1) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             trigger_deprecation('twig/twig', '3.15', 'Passing a second argument ($allowArrow) to "%s()" is deprecated.', __METHOD__);
         }
 
@@ -153,7 +157,11 @@ class ExpressionParser
             /** @var AbstractExpression $node */
             $node = $expr->getNode('node');
             foreach ($this->precedenceChanges as $operatorName => $changes) {
+<<<<<<< HEAD
                 if (!\in_array($unaryOp, $changes)) {
+=======
+                if (!in_array($unaryOp, $changes)) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
                     continue;
                 }
                 if ($node->hasAttribute('operator') && $operatorName === $node->getAttribute('operator')) {
@@ -616,10 +624,17 @@ class ExpressionParser
     {
         $namedArguments = false;
         $definition = false;
+<<<<<<< HEAD
         if (\func_num_args() > 1) {
             $definition = func_get_arg(1);
         }
         if (\func_num_args() > 0) {
+=======
+        if (func_num_args() > 1) {
+            $definition = func_get_arg(1);
+        }
+        if (func_num_args() > 0) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             trigger_deprecation('twig/twig', '3.15', 'Passing arguments to "%s()" is deprecated.', __METHOD__);
             $namedArguments = func_get_arg(0);
         }
@@ -931,8 +946,15 @@ class ExpressionParser
             $token = $stream->next();
             if (
                 Token::NAME_TYPE == $token->getType()
+<<<<<<< HEAD
                 || Token::NUMBER_TYPE == $token->getType()
                 || (Token::OPERATOR_TYPE == $token->getType() && preg_match(Lexer::REGEX_NAME, $token->getValue()))
+=======
+                ||
+                Token::NUMBER_TYPE == $token->getType()
+                ||
+                (Token::OPERATOR_TYPE == $token->getType() && preg_match(Lexer::REGEX_NAME, $token->getValue()))
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             ) {
                 $attribute = new ConstantExpression($token->getValue(), $token->getLine());
             } else {
@@ -947,9 +969,17 @@ class ExpressionParser
 
         if (
             $node instanceof NameExpression
+<<<<<<< HEAD
             && (
                 null !== $this->parser->getImportedSymbol('template', $node->getAttribute('name'))
                 || '_self' === $node->getAttribute('name') && $attribute instanceof ConstantExpression
+=======
+            &&
+            (
+                null !== $this->parser->getImportedSymbol('template', $node->getAttribute('name'))
+                ||
+                '_self' === $node->getAttribute('name') && $attribute instanceof ConstantExpression
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             )
         ) {
             return new MacroReferenceExpression(new TemplateVariable($node->getAttribute('name'), $node->getTemplateLine()), 'macro_'.$attribute->getAttribute('value'), $arguments, $node->getTemplateLine());

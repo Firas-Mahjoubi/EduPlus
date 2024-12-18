@@ -4,15 +4,18 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            
+            <a href="index.html" class="logo">
               <img
-              src="{{ asset('img/logo1.png') }}" alt="Logo" width="150" height="50"
+              src="{{ asset('/img/kaiadmin/logo_light.svg') }}"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="20"
               />
             </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">
                 <i class="gg-menu-right"></i>
-              </button> 
+              </button>
               <button class="btn btn-toggle sidenav-toggler">
                 <i class="gg-menu-left"></i>
               </button>
@@ -66,26 +69,21 @@
                         <span class="sub-item">ADD </span>
                       </a>
                     </li>
+                    <!-- <li>
+                      <a href="{{ path('app_g_ressources') }}">
+                        <span class="sub-item">UPDATE </span>
+                      </a>
+                    </li>
+                    <li> 
+                      <a href="{{ path('app_g_ressources') }}">
+                        <span class="sub-item">DELETE </span>
+                      </a>
+                    </li> -->
                     <li>
                       <a href="{{ path('app_g_ressources') }}">
                         <span class="sub-item">SHOW</span>
                       </a>
                     </li>
-                     <li>
-                      <a href="{{ path('app_dashboard') }}">
-                        <span class="sub-item">DEMANDES </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ path('stat_ressource') }}">
-                        <span class="sub-item">STATS </span>
-                      </a>
-                    </li>
-                   <!-- <li> 
-                      <a href="{{ path('app_g_ressources') }}">
-                        <span class="sub-item">DELETE </span>
-                      </a>
-                    </li> -->
                   </ul>
                 </div>
               </li>
@@ -183,8 +181,8 @@
               </li>
               
 
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- End Sidebar -->
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End Sidebar -->

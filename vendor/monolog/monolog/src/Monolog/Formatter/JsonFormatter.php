@@ -216,7 +216,11 @@ class JsonFormatter extends NormalizerFormatter
      * Normalizes given exception with or without its own stack trace based on
      * `includeStacktraces` property.
      *
+<<<<<<< HEAD
      * @return array<array-key, string|int|array<string|int|array<string>>>
+=======
+     * @return array<string, string|int|array<string|int|array<string>>>|string
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
      */
     protected function normalizeException(Throwable $e, int $depth = 0): array
     {

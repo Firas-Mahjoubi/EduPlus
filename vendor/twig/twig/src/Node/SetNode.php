@@ -34,7 +34,11 @@ class SetNode extends Node implements NodeCaptureInterface
         if ($capture) {
             $safe = true;
             // Node::class === get_class($values) should be removed in Twig 4.0
+<<<<<<< HEAD
             if (($values instanceof Nodes || Node::class === \get_class($values)) && !\count($values)) {
+=======
+            if (($values instanceof Nodes || Node::class === get_class($values)) && !count($values)) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
                 $values = new ConstantExpression('', $values->getTemplateLine());
                 $capture = false;
             } elseif ($values instanceof TextNode) {

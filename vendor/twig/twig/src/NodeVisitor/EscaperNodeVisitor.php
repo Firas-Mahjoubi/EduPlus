@@ -17,9 +17,15 @@ use Twig\Node\AutoEscapeNode;
 use Twig\Node\BlockNode;
 use Twig\Node\BlockReferenceNode;
 use Twig\Node\Expression\AbstractExpression;
+<<<<<<< HEAD
 use Twig\Node\Expression\ConstantExpression;
 use Twig\Node\Expression\FilterExpression;
 use Twig\Node\Expression\OperatorEscapeInterface;
+=======
+use Twig\Node\Expression\ConditionalExpression;
+use Twig\Node\Expression\ConstantExpression;
+use Twig\Node\Expression\FilterExpression;
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
 use Twig\Node\ImportNode;
 use Twig\Node\ModuleNode;
 use Twig\Node\Node;
@@ -75,7 +81,11 @@ final class EscaperNodeVisitor implements NodeVisitorInterface
             return $this->preEscapeFilterNode($node, $env);
         } elseif ($node instanceof PrintNode && false !== $type = $this->needEscaping()) {
             $expression = $node->getNode('expr');
+<<<<<<< HEAD
             if ($expression instanceof OperatorEscapeInterface) {
+=======
+            if ($expression instanceof ConditionalExpression) {
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
                 $this->escapeConditional($expression, $env, $type);
             } else {
                 $node->setNode('expr', $this->escapeExpression($expression, $env, $type));
@@ -93,6 +103,7 @@ final class EscaperNodeVisitor implements NodeVisitorInterface
         return $node;
     }
 
+<<<<<<< HEAD
     /**
      * @param AbstractExpression&OperatorEscapeInterface $expression
      */
@@ -106,6 +117,24 @@ final class EscaperNodeVisitor implements NodeVisitorInterface
             } else {
                 $expression->setNode($name, $this->escapeExpression($operand, $env, $type));
             }
+=======
+    private function escapeConditional(ConditionalExpression $expression, Environment $env, string $type): void
+    {
+        /** @var AbstractExpression $expr2 */
+        $expr2 = $expression->getNode('expr2');
+        if ($expr2 instanceof ConditionalExpression) {
+            $this->escapeConditional($expr2, $env, $type);
+        } else {
+            $expression->setNode('expr2', $this->escapeExpression($expr2, $env, $type));
+        }
+
+        /** @var AbstractExpression $expr3 */
+        $expr3 = $expression->getNode('expr3');
+        if ($expr3 instanceof ConditionalExpression) {
+            $this->escapeConditional($expr3, $env, $type);
+        } else {
+            $expression->setNode('expr3', $this->escapeExpression($expr3, $env, $type));
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         }
     }
 

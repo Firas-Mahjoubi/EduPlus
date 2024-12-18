@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Add Event{% endblock %}
 
@@ -14,6 +14,18 @@
                     {{ form_label(form.titre, 'Event Title') }}
                     {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Enter event title'}}) }}
                     {{ form_errors(form.titre) }}
+                </div>
+
+                <div class="form-check mb-3">
+                    {{ form_widget(form.hasParticipantLimit, {'attr': {'class': 'form-check-input', 'id': 'has-limit-checkbox', 'onclick': 'ShowHideDiv(this)'}}) }}
+                    {{ form_label(form.hasParticipantLimit, 'Limit Number of Participants?', {'label_attr': {'class': 'form-check-label'}}) }}
+                    {{ form_errors(form.hasParticipantLimit) }}
+                </div>
+
+                <div class="mb-3" id="max-participants-container" style="display: none;">
+                    {{ form_label(form.maxParticipants, 'Maximum Participants', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.maxParticipants, {'attr': {'class': 'form-control', 'placeholder': 'Enter the maximum number of participants'}}) }}
+                    {{ form_errors(form.maxParticipants) }}
                 </div>
 
                 <div class="mb-3">
@@ -47,13 +59,6 @@
                 </div>
 
                 <div class="mb-3">
-                    {{ form_label(form.participants, 'Participants') }}
-                    {{ form_widget(form.participants, {'attr': {'class': 'select2-searchable form-control', 'multiple': true}}) }}
-                    {{ form_errors(form.participants) }}
-                </div>
-
-                <!-- Image upload field -->
-                <div class="mb-3">
                     {{ form_label(form.image, 'Event Image') }}
                     {{ form_widget(form.image, {'attr': {'class': 'form-control-file'}}) }}
                     {{ form_errors(form.image) }}
@@ -66,28 +71,11 @@
         </div>
     </div>
 
-{% endblock %}
-
-{% block javascripts %}
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Initialize Select2 with search functionality and multiple select enabled
-            $('.select2-searchable').select2({
-                placeholder: "Search participants...",
-                allowClear: true,
-                multiple: true, // Enable multiple selection
-                width: '100%'   // Make it full width for better UI
-            });
-
-            // Handle the removal of participants by clicking on the delete button
-            $('.remove-participant').on('click', function() {
-                var participantId = $(this).data('id');
-                var selectElement = $('select[name="event[participants]"]');
-                var optionToRemove = selectElement.find('option[value="' + participantId + '"]');
-                optionToRemove.remove();
-                $(this).parent().remove(); // Remove the participant from the UI
-            });
-        });
+    <script type="text/javascript">
+        // Function to show or hide the max participants input field
+        function ShowHideDiv(checkbox) {
+            var maxParticipantsContainer = document.getElementById("max-participants-container");
+            maxParticipantsContainer.style.display = checkbox.checked ? "block" : "none";
+        }
     </script>
 {% endblock %}

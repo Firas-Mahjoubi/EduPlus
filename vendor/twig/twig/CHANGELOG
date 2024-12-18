@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 3.17.1 (2024-XX-XX)
 
  * Fix the null coalescing operator when the test returns null
@@ -10,6 +11,9 @@
  * Deprecate `ConditionalExpression` and `NullCoalesceExpression` (use `ConditionalTernary` and `NullCoalesceBinary` instead)
 
 # 3.16.0 (2024-11-29)
+=======
+# 3.16.0 (2024-XX-XX)
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
 
  * Deprecate `InlinePrint`
  * Fix having macro variables starting with an underscore

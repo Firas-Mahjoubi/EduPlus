@@ -1,0 +1,45 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">User Dashboard</h1>
+
+        <!-- Table to display users -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Profile Picture</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in user %}
+                    <tr>
+                        <td>
+                            <img src="{{ user.profilePicture ? asset('uploads/profilePictures/' ~ user.profilePicture) : asset('uploads/profilePictures/default.png') }}" 
+                                 alt="Profile Picture" 
+                                 class="rounded-circle" 
+                                 width="40" 
+                                 height="40">
+                        </td>
+                        <td>{{ user.prenom }} {{ user.nom }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a href="" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center">No users found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

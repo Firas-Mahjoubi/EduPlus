@@ -15,8 +15,12 @@ use Twig\Error\RuntimeError;
 use Twig\Extension\ExtensionInterface;
 use Twig\Extension\GlobalsInterface;
 use Twig\Extension\StagingExtension;
+<<<<<<< HEAD
 use Twig\Node\Expression\Binary\AbstractBinary;
 use Twig\Node\Expression\Unary\AbstractUnary;
+=======
+use Twig\Node\Expression\AbstractExpression;
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
 use Twig\NodeVisitor\NodeVisitorInterface;
 use Twig\TokenParser\TokenParserInterface;
 

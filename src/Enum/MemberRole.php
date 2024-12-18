@@ -4,9 +4,12 @@ namespace App\Enum;
 
 enum MemberRole: string
 {
-case ADMIN = 'admin';
-case MANAGER = 'manager';
-case MEMBER = 'member';
-case MODERATOR = 'moderator';
-case PRESIDENT = 'president';
+
+    case responsable = 'responsable';
+    case MEMBER = 'member';
+
+    case PRESIDENT = 'president';
+    case VICE_PRESIDENT = 'vice_president';
+    case TREASURER = 'treasurer';
+    case ADMIN = 'admin';
 }

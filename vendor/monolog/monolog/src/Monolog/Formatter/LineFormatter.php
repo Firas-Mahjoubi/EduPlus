@@ -309,6 +309,10 @@ class LineFormatter extends NormalizerFormatter
 
     private function stacktracesParserCustom(string $trace): string
     {
+<<<<<<< HEAD
         return implode("\n", array_filter(array_map($this->stacktracesParser, explode("\n", $trace)), fn ($line) => is_string($line) && trim($line) !== ''));
+=======
+        return implode("\n", array_filter(array_map($this->stacktracesParser, explode("\n", $trace)), fn ($line) => $line !== false && $line !== ''));
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

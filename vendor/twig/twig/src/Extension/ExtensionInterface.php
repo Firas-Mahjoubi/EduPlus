@@ -69,8 +69,13 @@ interface ExtensionInterface
      * @return array<array> First array of unary operators, second array of binary operators
      *
      * @psalm-return array{
+<<<<<<< HEAD
      *     array<string, array{precedence: int, precedence_change?: OperatorPrecedenceChange, class: class-string<AbstractUnary>}>,
      *     array<string, array{precedence: int, precedence_change?: OperatorPrecedenceChange, class?: class-string<AbstractBinary>, associativity: ExpressionParser::OPERATOR_*}>
+=======
+     *     array<string, array{precedence: int, precedence_change?: OperatorPrecedenceChange, class: class-string<AbstractExpression>}>,
+     *     array<string, array{precedence: int, precedence_change?: OperatorPrecedenceChange, class?: class-string<AbstractExpression>, associativity: ExpressionParser::OPERATOR_*}>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
      * }
      */
     public function getOperators();
