@@ -4,46 +4,70 @@
 
 {% block body %}
     <div class="container">
-        <h1>Ajouter une ressource</h1>
+        <h1>ADD RESSOURCE</h1>
 
         {{ form_start(form) }}
         
         <div class="form-group">
             {{ form_label(form.nomRessource) }}
             {{ form_widget(form.nomRessource, { 'attr': {'class': 'form-control'} }) }}
-            {{ form_errors(form.nomRessource) }}
+            {% if form.nomRessource.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.nomRessource) }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="form-group">
             {{ form_label(form.type) }}
             {{ form_widget(form.type, { 'attr': {'class': 'form-control', 'id': 'type-select'} }) }}
-            {{ form_errors(form.type) }}
+            {% if form.type.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.type) }}
+                </div>
+            {% endif %}
         </div>
 
         <!-- Champ Quantité (initialement caché) -->
         <div class="form-group" id="quantite-field">
             {{ form_label(form.quantite) }}
             {{ form_widget(form.quantite, { 'attr': {'class': 'form-control'} }) }}
-            {{ form_errors(form.quantite) }}
+            {% if form.quantite.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.quantite) }}
+                </div>
+            {% endif %}
         </div>
 
         <!-- Champ Montant (initialement caché) -->
-        <div class="form-group" id="montant-field" ">
+        <div class="form-group" id="montant-field">
             {{ form_label(form.montant) }}
             {{ form_widget(form.montant, { 'attr': {'class': 'form-control'} }) }}
-            {{ form_errors(form.montant) }}
+            {% if form.montant.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.montant) }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="form-group">
             {{ form_label(form.descriptionRessource) }}
             {{ form_widget(form.descriptionRessource, { 'attr': {'class': 'form-control'} }) }}
-            {{ form_errors(form.descriptionRessource) }}
+            {% if form.descriptionRessource.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.descriptionRessource) }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="form-group">
             {{ form_label(form.image) }}
             {{ form_widget(form.image, { 'attr': {'class': 'form-control-file'} }) }}
-            {{ form_errors(form.image) }}
+            {% if form.image.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(form.image) }}
+                </div>
+            {% endif %}
         </div>
 
         <div class="form-group">
@@ -56,28 +80,28 @@
 
 {% block javascripts %}
     <script>
-        // Function to show/hide fields based on the selected type
+        // Fonction pour afficher ou masquer le champ Montant en fonction du type de ressource
         document.getElementById('type-select').addEventListener('change', function() {
             var type = this.value;
 
-            // Show "quantite" field if "materielle" is selected
+            // Si le type est "materielle", cacher le champ Montant et afficher Quantité
             if (type === 'materielle') {
                 document.getElementById('quantite-field').style.display = 'block';
                 document.getElementById('montant-field').style.display = 'none';
             }
-            // Show "montant" field if "financiere" is selected
+            // Si le type est "financiere", cacher le champ Quantité et afficher Montant
             else if (type === 'financiere') {
                 document.getElementById('quantite-field').style.display = 'none';
                 document.getElementById('montant-field').style.display = 'block';
             }
-            // Hide both fields if no type is selected
+            // Si aucun type n'est sélectionné, cacher les deux champs
             else {
                 document.getElementById('quantite-field').style.display = 'none';
                 document.getElementById('montant-field').style.display = 'none';
             }
         });
 
-        // Trigger the change event on page load to ensure the correct fields are shown initially
+        // Déclenche l'événement change au chargement de la page pour s'assurer que les bons champs sont affichés
         document.getElementById('type-select').dispatchEvent(new Event('change'));
     </script>
 {% endblock %}

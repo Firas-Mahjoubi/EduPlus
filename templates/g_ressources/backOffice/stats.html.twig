@@ -1,0 +1,65 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="mb-4">DASHBOARD</h1>
+
+    <div class="row">
+        <!-- Total resources -->
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Total Resources</h5>
+                    <p class="card-text display-4">{{ totalRessources }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request statuses -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Request Statuses
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for statut in statuts %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{ statut.statutDemande }}
+                                <span class="badge bg-primary rounded-pill">{{ statut.count }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Most used resources -->
+    <div class="mt-4">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                Most Used Resources
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Number of Uses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ressource in mostUsedRessources %}
+                            <tr>
+                                <td>{{ ressource.nomRessource }}</td>
+                                <td>{{ ressource.usage_count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

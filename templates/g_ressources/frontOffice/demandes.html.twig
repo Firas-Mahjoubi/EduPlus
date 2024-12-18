@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistiques des Ressources{% endblock %}
+
+{% block body %}
+<h1>Statistiques des Demandes de Ressources</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nom Ressource</th>
+            <th>Demandeur</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for demande in demandes %}
+        <tr>
+            <td>{{ demande.id }}</td>
+            <td>{{ demande.ressource.nom }}</td>
+            <td>{{ demande.demandeur.nom }}</td>
+            <td>{{ demande.dateDemande|date('d/m/Y') }}</td>
+            <td>{{ demande.status }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="5">Aucune demande trouvée.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

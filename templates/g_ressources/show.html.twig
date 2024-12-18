@@ -31,14 +31,14 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3 text-muted"><i class="far fa-user text-primary me-2"></i> {{ ressource.nomRessource }}</small>
+                                        <small class="me-3 text-muted"><i class="far fa-user text-primary me-2"></i>ESPRIT</small>
                                         <small class="text-muted"><i class="far fa-calendar-alt text-primary me-2"></i>{{ ressource.dateCreationRessource|date('d M, Y') }}</small>
                                     </div>
                                     <h4 class="mb-3">{{ ressource.nomRessource }}</h4>
                                     <p>{{ ressource.descriptionRessource }}</p>
                                     <form method="get" action="{{ path('demande_ressource', { 'ressourceId': ressource.id }) }}">
                                         <button type="submit" class="btn btn-primary text-uppercase">
-                                            faire une demande <i class="bi bi-arrow-right"></i>
+                                            Demande <i class="bi bi-arrow-right"></i>
                                         </button>
                                     </form>
                                     
@@ -49,31 +49,52 @@
                         <p>Aucune ressource trouvée.</p>
                     {% endfor %}
                 </div>
+                <br>
+                <br>
+                <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-lg m-4">
+                            {% if ressources.paginationData.previous is defined %}
+                                <li class="page-item">
+                                    <a class="page-link rounded-0" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'page': ressources.paginationData.previous})) }}" aria-label="Previous">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link rounded-0" href="#" aria-label="Previous">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                
+                            {% for page in ressources.paginationData.pagesInRange %}
+                                <li class="page-item {{ ressources.paginationData.current == page ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'page': page})) }}">{{ page }}</a>
+                                </li>
+                            {% endfor %}
+                
+                            {% if ressources.paginationData.next is defined %}
+                                <li class="page-item">
+                                    <a class="page-link rounded-0" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'page': ressources.paginationData.next})) }}" aria-label="Next">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link rounded-0" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <!-- Blog List End -->
-            <div class="col-12 wow slideInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
-                <nav aria-label="Page navigation">
-                  <ul class="pagination pagination-lg m-0">
-                    <li class="page-item disabled">
-                      <a class="page-link rounded-0" href="#" aria-label="Previous">
-                        <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
-                      </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link rounded-0" href="#" aria-label="Next">
-                        <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-            </div>
+
+
         </div>
-        
     </div>
-    
 </div>
 <!-- Blog End -->
 

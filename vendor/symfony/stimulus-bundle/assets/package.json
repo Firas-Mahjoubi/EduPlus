@@ -4,6 +4,13 @@
     "version": "1.0.0",
     "license": "MIT",
     "main": "dist/loader.js",
+    "scripts": {
+        "build": "node ../../../bin/build_package.js .",
+        "watch": "node ../../../bin/build_package.js . --watch",
+        "test": "../../../bin/test_package.sh .",
+        "check": "biome check",
+        "ci": "biome ci"
+    },
     "symfony": {
         "needsPackageAsADependency": false,
         "importmap": {

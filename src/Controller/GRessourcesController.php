@@ -1,12 +1,15 @@
 <?php
 namespace App\Controller;
 use App\Form\StatutDemandeType;
-
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use App\Entity\Ressource;
 use App\Entity\DemandeRessource;
 use App\Entity\Club;
+use App\Entity\User;
 use App\Entity\Notification;
 use App\Repository\NotificationRepository;
+use App\Repository\DemandeRessourceRepository;
 use App\Form\DemandeRessourceType;
 use App\Form\DemandeType;
 use App\Form\AdminDemandeStatusType;
@@ -20,19 +23,23 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\ORM\EntityManagerInterface; // Ajout de l'import pour l'EntityManagerInterface
 use Doctrine\Persistence\ManagerRegistry;  // For Doctrine
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+
 
 class GRessourcesController extends AbstractController
 {
     private $entityManager;
     private $doctrine;
     private NotificationRepository $notificationRepository;
+    private $demandeRessourceRepository;
 
-
-    public function __construct(EntityManagerInterface $entityManager, ManagerRegistry $doctrine,NotificationRepository $notificationRepository)
+    public function __construct(EntityManagerInterface $entityManager, ManagerRegistry $doctrine,NotificationRepository $notificationRepository, DemandeRessourceRepository $demandeRessourceRepository)
     {
         $this->entityManager = $entityManager;
         $this->doctrine = $doctrine;
         $this->notificationRepository = $notificationRepository;
+        $this->demandeRessourceRepository = $demandeRessourceRepository;
     }
     #[Route('/g/ressources', name: 'app_g_ressources')]
     public function indexx(): Response
@@ -41,27 +48,28 @@ class GRessourcesController extends AbstractController
             'controller_name' => 'GRessourcesController',
         ]);
     }
-    #[Route('/g/ressourcess', name: 'app_g_ressourcess')]
-    public function indexxx(RessourcesRepository $ressourceRepository): Response 
+    //pagination 
+    #[Route('/admin/ressources/p', name: 'ressources_list')]
+    public function list(RessourcesRepository $ressourceRepository, PaginatorInterface $paginator, Request $request)
     {
-        
-        $ressources = $ressourceRepository->findAll();
+        // Fetch the query for all resources
+        $query = $ressourceRepository->createQueryBuilder('r')
+            ->getQuery();
 
+        // Paginate the results of the query
+        $pagination = $paginator->paginate(
+            $query, // Query to paginate
+            $request->query->getInt('page', 1), // Current page number
+            2 // Items per page
+        );
+
+        // Pass pagination object to the view
         return $this->render('g_ressources/show.html.twig', [
-            'ressources' => $ressources,
-        ]);
-        
-        $search = $request->query->get('search');
-        if ($search) {
-            $ressources = $ressourceRepository->findBySearch($search);
-        } else {
-            $ressources = $ressourceRepository->findAll();
-        }
-    
-        return $this->render('g_ressources/show.html.twig', [
-            'ressources' => $ressources,
+            'ressources' => $pagination,
         ]);
     }
+
+   
   
 
 
@@ -308,7 +316,7 @@ public function markAsRead(int $id): Response
 
 
 #[Route('/admin/demande/{id}', name: 'admin_demande_detail')]
-public function detailDemande(int $id, EntityManagerInterface $entityManager, Request $request): Response
+public function detailDemande(int $id, EntityManagerInterface $entityManager, Request $request, MailerInterface $mailer): Response
 {
     $demande = $entityManager->getRepository(DemandeRessource::class)->find($id);
 
@@ -320,9 +328,34 @@ public function detailDemande(int $id, EntityManagerInterface $entityManager, Re
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
+        // Mise à jour du statut dans la base de données
         $entityManager->flush();
 
-        $this->addFlash('success', 'Le statut de la demande a été mis à jour.');
+        // Envoyer l'email après mise à jour du statut
+        $subject = 'Décision sur votre demande de ressource';
+        $message = ($demande->getStatutDemande() === 'Accepté') 
+            ? 'Votre demande de ressource a été acceptée.' 
+            : 'Votre demande de ressource a été rejetée.';
+        
+        // Créer et envoyer l'e-mail
+        $email = (new TemplatedEmail())
+            ->from('no-reply@yourdomain.com')
+            ->to('chahbani.ghassen1@gmail.com')  // Envoi vers un e-mail spécifique
+            ->subject($subject)
+            ->htmlTemplate('g_ressources/demande_ressource_decision.html.twig')  // Assurez-vous que le chemin est correct
+            ->context([
+                'demande' => $demande,
+                'message' => $message,
+            ]);
+
+        try {
+            $mailer->send($email); // Envoie de l'email
+            $this->addFlash('success', 'Le statut de la demande a été mis à jour et un email a été envoyé.');
+        } catch (\Exception $e) {
+            $this->addFlash('error', 'Erreur lors de l\'envoi de l\'email : ' . $e->getMessage());
+        }
+
+        // Message flash et redirection
         return $this->redirectToRoute('app_dashboard');
     }
 
@@ -331,6 +364,7 @@ public function detailDemande(int $id, EntityManagerInterface $entityManager, Re
         'form' => $form->createView(),
     ]);
 }
+
 
  #[Route('/admin/demande/{id}/edit-status', name: 'admin_demande_status')]
  public function editStatus(Request $request, DemandeRessource $demande): Response
@@ -420,4 +454,62 @@ public function detailDemande(int $id, EntityManagerInterface $entityManager, Re
         return $this->redirectToRoute('admin_dashboard');
     }
     
+
+    // statistique 
+    #[Route('/admin/dashboard/stats', name: 'stat_ressource')]
+public function statRessource(EntityManagerInterface $entityManager): Response
+{
+    // Statistiques de base
+    $totalRessources = $entityManager->getRepository(Ressource::class)->count([]);
+    $mostUsedRessources = $entityManager->getRepository(DemandeRessource::class)
+        ->createQueryBuilder('d')
+        ->select('r.nomRessource, COUNT(d.id) as usage_count')
+        ->join('d.ressource', 'r')
+        ->groupBy('r.id')
+        ->orderBy('usage_count', 'DESC')
+        ->setMaxResults(5)
+        ->getQuery()
+        ->getResult();
+
+    $statuts = $entityManager->getRepository(DemandeRessource::class)
+        ->createQueryBuilder('d')
+        ->select('d.statutDemande, COUNT(d.id) as count')
+        ->groupBy('d.statutDemande')
+        ->getQuery()
+        ->getResult();
+
+    $totalQuantite = $entityManager->getRepository(Ressource::class)
+        ->createQueryBuilder('r')
+        ->select('SUM(r.quantite) as total')
+        ->getQuery()
+        ->getSingleScalarResult();
+
+    return $this->render('g_ressources/backOffice/stats.html.twig', [
+        'totalRessources' => $totalRessources,
+        'mostUsedRessources' => $mostUsedRessources,
+        'statuts' => $statuts,
+        'totalQuantite' => $totalQuantite,
+    ]);
+}
+
+
+////demandes
+
+#[Route('/admin/dashboard/statss', name: 'stats_ressource')]
+public function showDemandes(): Response
+{
+    // Récupération des demandes
+    $demandes = $this->demandeRessourceRepository->findAll();
+
+    // Rendu de la vue
+    return $this->render('g_ressources/frontOffice/demandes.html.twig', [
+        'demandes' => $demandes,
+    ]);
+}
+
+
+
+///email 
+
+
 }

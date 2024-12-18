@@ -19,20 +19,38 @@
                 
                 <div class="form-group mb-3">
                     {{ form_label(form.ressource, 'Choisir une Ressource') }}
-                    {{ form_widget(form.ressource, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.ressource) }}
+                    {{ form_widget(form.ressource, {'attr': {'class': form.ressource.vars.errors|length > 0 ? 'form-control is-invalid' : 'form-control'}}) }}
+                    {% if form.ressource.vars.errors|length > 0 %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.ressource.vars.errors %}
+                                <p>{{ error.message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
                 
                 <div class="form-group mb-3">
                     {{ form_label(form.quantite, 'Quantité') }}
-                    {{ form_widget(form.quantite, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.quantite) }}
+                    {{ form_widget(form.quantite, {'attr': {'class': form.quantite.vars.errors|length > 0 ? 'form-control is-invalid' : 'form-control'}}) }}
+                    {% if form.quantite.vars.errors|length > 0 %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.quantite.vars.errors %}
+                                <p>{{ error.message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
 
                 <div class="form-group mb-3">
                     {{ form_label(form.event, 'Choisir un Événement') }}
                     {{ form_widget(form.event, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.event) }}
+                    {% if form.event.vars.errors|length > 0 %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.event.vars.errors %}
+                                <p>{{ error.message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
 
                 <button type="submit" class="btn btn-primary">Soumettre la Demande</button>

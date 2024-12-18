@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class DemandeRessourceType extends AbstractType
 {
@@ -20,41 +21,56 @@ class DemandeRessourceType extends AbstractType
         $builder
             ->add('ressource', EntityType::class, [
                 'class' => Ressource::class,
-                'choice_label' => 'nomRessource', // Modifier selon le nom de votre champ dans Ressource
-                'label' => 'Ressource'
+                'choice_label' => 'nomRessource',
+                'label' => 'Ressource',
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Veuillez sélectionner une ressource.',
+                    ]),
+                ],
             ])
             ->add('event', EntityType::class, [
                 'class' => Event::class,
                 'choice_label' => 'titre', 
-                'placeholder' => 'Choisir un événement',  // Vérifiez que le placeholder ne permet pas de soumettre NULL
+                'placeholder' => 'Choisir un événement',
                 'label' => 'Événement',
-                'required' => true,  // Assurez-vous que le champ est requis
+                'required' => true,
+                'constraints' => [
+                    new Assert\NotBlank([
+                        'message' => 'Veuillez sélectionner un événement.',
+                    ]),
+                ],
             ])
-           
-            
-            
             ->add('quantite', NumberType::class, [
                 'label' => 'Quantité',
-                'required' => false,
-            ]);
-            
-    
-            // Le champ 'dateDemande' ne doit pas être ajouté ici si vous l'avez déjà pré-rempli dans l'entité.
-            // Cependant, si vous devez afficher la date dans le formulaire pour modification ou pour toute autre raison, vous pouvez l'ajouter.
+                'required' => true,
+                'constraints' => [
+                    new Assert\PositiveOrZero([
+                        'message' => 'La quantité doit être un nombre positif.',
+                    ]),
+                    new Assert\Type([
+                        'type' => 'numeric',
+                        'message' => 'La quantité doit être un nombre.',
+                    ]),
+                ],
+            ])
+            // Si vous voulez ajouter une date de demande, décommentez la ligne suivante
             // ->add('dateDemande', DateType::class, [
             //     'widget' => 'single_text',
-            //     'disabled' => true, // Pour empêcher l'utilisateur de la modifier si c'est une date générée automatiquement
+            //     'disabled' => true,
             //     'label' => 'Date de la demande',
+            //     'constraints' => [
+            //         new Assert\Date([
+            //             'message' => 'La date doit être au format valide.',
+            //         ]),
+            //     ],
             // ])
-          
+            ;
     }
-  
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
             'data_class' => DemandeRessource::class,
         ]);
-    }
-    
-}
+    }}
