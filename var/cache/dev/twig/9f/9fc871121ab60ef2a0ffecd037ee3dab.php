@@ -315,6 +315,6 @@ class __TwigTemplate_148cad92b8c2b8c92866885a8f16f033 extends Template
         </table>
     </div>
 {% endblock %}
-", "g_events/dashboard.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_events\\dashboard.html.twig");
+", "g_events/dashboard.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\dashboard.html.twig");
     }
 }

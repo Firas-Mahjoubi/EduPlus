@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 
 
+
 #[Route('/events')]
 class GEventsController extends AbstractController
 {

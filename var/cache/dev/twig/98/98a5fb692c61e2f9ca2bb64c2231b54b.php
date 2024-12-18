@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* sidebar.html.twig */
+/* /sidebar.html.twig */
 class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
 {
     private Source $source;
@@ -39,10 +39,10 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "sidebar.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/sidebar.html.twig"));
 
         // line 1
         yield "<!-- Sidebar -->
@@ -217,40 +217,14 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
   </a>
   <div class=\"collapse\" id=\"charts\">
     <ul class=\"nav nav-collapse\">
-      <li>
-        <!-- Add Club -->
-        <a href=\"";
-        // line 145
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_new");
-        yield "\">
-          <span class=\"sub-item\">ADD</span>
-        </a>
-      </li>
-      <li>
-        <!-- Update Club -->
-        <a href=\"";
-        // line 151
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_manage");
-        yield "\">
-          <span class=\"sub-item\">UPDATE</span>
-        </a>
-      </li>
-      <li>
-        <!-- Delete Club -->
-        <a href=\"";
-        // line 157
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_manage");
-        yield "\">
-          <span class=\"sub-item\">DELETE</span>
-        </a>
-      </li>
+
       <li>
         <!-- Show Clubs -->
         <a href=\"";
-        // line 163
+        // line 146
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_list");
         yield "\">
-          <span class=\"sub-item\">SHOW</span>
+          <span class=\"sub-item\">Club Dashboard</span>
         </a>
       </li>
     </ul>
@@ -277,7 +251,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
      */
     public function getTemplateName(): string
     {
-        return "sidebar.html.twig";
+        return "/sidebar.html.twig";
     }
 
     /**
@@ -293,7 +267,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  251 => 163,  242 => 157,  233 => 151,  224 => 145,  199 => 123,  191 => 118,  183 => 113,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
+        return array (  225 => 146,  199 => 123,  191 => 118,  183 => 113,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -440,28 +414,11 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
   </a>
   <div class=\"collapse\" id=\"charts\">
     <ul class=\"nav nav-collapse\">
-      <li>
-        <!-- Add Club -->
-        <a href=\"{{ path('club_new') }}\">
-          <span class=\"sub-item\">ADD</span>
-        </a>
-      </li>
-      <li>
-        <!-- Update Club -->
-        <a href=\"{{ path('club_manage') }}\">
-          <span class=\"sub-item\">UPDATE</span>
-        </a>
-      </li>
-      <li>
-        <!-- Delete Club -->
-        <a href=\"{{ path('club_manage') }}\">
-          <span class=\"sub-item\">DELETE</span>
-        </a>
-      </li>
+
       <li>
         <!-- Show Clubs -->
         <a href=\"{{ path('club_list') }}\">
-          <span class=\"sub-item\">SHOW</span>
+          <span class=\"sub-item\">Club Dashboard</span>
         </a>
       </li>
     </ul>
@@ -473,6 +430,6 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
     </div>
   </div>
 </div>
-<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\sidebar.html.twig");
+<!-- End Sidebar -->", "/sidebar.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\sidebar.html.twig");
     }
 }

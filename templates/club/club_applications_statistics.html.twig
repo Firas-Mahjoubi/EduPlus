@@ -1,0 +1,58 @@
+{% extends 'base_backoffice.html.twig' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-5">Club Applications Statistics</h1>
+
+    <canvas id="applicationsChart" width="400" height="200"></canvas>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Use the chartData variable passed from the controller
+    const chartData = {{ chartData|json_encode|raw }};
+    
+    const ctx = document.getElementById('applicationsChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: chartData.months,
+            datasets: [
+                {
+                    label: 'Approved Applications',
+                    data: chartData.approved,
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                    fill: true,
+                },
+                {
+                    label: 'Rejected Applications',
+                    data: chartData.rejected,
+                    borderColor: 'red',
+                    backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                    fill: true,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                tooltip: { mode: 'index', intersect: false },
+            },
+            scales: {
+                x: {
+                    title: { display: true, text: 'Months' },
+                },
+                y: {
+                    title: { display: true, text: 'Number of Applications' },
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+</script>
+{% endblock %}

@@ -465,6 +465,10 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Repository\ApplicationClubRepository" class="App\Repository\ApplicationClubRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -543,7 +547,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.fi6sbNq"/>
+      <argument type="service" id=".service_locator.fvrAFxC"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3477,7 +3481,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.fi6sbNq"/>
+      <argument type="service" id=".service_locator.fvrAFxC"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -5226,7 +5230,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.VBPHw4y"/>
+      <argument type="service" id=".service_locator.ulsVA8G"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7526,6 +7530,8 @@
     <service id=".abstract.instanceof.App\Form\RessourceType" class="App\Form\RessourceType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ApplicationClubRepository" class="App\Repository\ApplicationClubRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ApplicationClubRepository" class="App\Repository\ApplicationClubRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BlocRepository" class="App\Repository\BlocRepository" autowire="true" abstract="true"/>
@@ -8020,10 +8026,11 @@
         <argument key="parameterBag" type="service_closure" id="parameter_bag"/>
       </argument>
     </service>
-    <service id=".service_locator.pnbisVO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Z_Q_cF0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="clubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
@@ -8041,19 +8048,22 @@
         <argument key="memberRepository" type="service_closure" id="App\Repository\MemberRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Rod0dp8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pX.iTSM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="clubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
         <argument key="memberRepository" type="service_closure" id="App\Repository\MemberRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Qclnwot" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.xRqqVGS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="applicationRepository" type="service_closure" id="App\Repository\ApplicationRepository"/>
-        <argument key="club" type="service_closure" id=".errored..service_locator.Qclnwot.App\Entity\Club"/>
+        <argument key="applicationClubRepository" type="service_closure" id="App\Repository\ApplicationClubRepository"/>
+        <argument key="club" type="service_closure" id=".errored..service_locator.xRqqVGS.App\Entity\Club"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
     <service id=".service_locator.eLmG6qh" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8061,6 +8071,13 @@
       <argument type="collection">
         <argument key="club" type="service_closure" id=".errored..service_locator.eLmG6qh.App\Entity\Club"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.raUDR8y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="applicationClubRepository" type="service_closure" id="App\Repository\ApplicationClubRepository"/>
+        <argument key="club" type="service_closure" id=".errored..service_locator.raUDR8y.App\Entity\Club"/>
       </argument>
     </service>
     <service id=".service_locator.6.pzLHU" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8171,7 +8188,7 @@
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
-    <service id=".service_locator.fi6sbNq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.fvrAFxC" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::add" type="service_closure" id=".service_locator.kPUOGb8"/>
@@ -8181,7 +8198,8 @@
         <argument key="App\Controller\AdminController::update" type="service_closure" id=".service_locator.UItqPak"/>
         <argument key="App\Controller\ApplicationController::submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\CommentaryController::addComment" type="service_closure" id=".service_locator.eOJlB0r"/>
-        <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
+        <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController::applicationsStatistics" type="service_closure" id=".service_locator.raUDR8y"/>
         <argument key="App\Controller\GClubsController::clubDetails" type="service_closure" id=".service_locator.oyNdjWp"/>
         <argument key="App\Controller\GClubsController::delete" type="service_closure" id=".service_locator.eLmG6qh"/>
         <argument key="App\Controller\GClubsController::edit" type="service_closure" id=".service_locator.eLmG6qh"/>
@@ -8190,9 +8208,10 @@
         <argument key="App\Controller\GClubsController::list" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::manageMembers" type="service_closure" id=".service_locator.yHlyP5W"/>
         <argument key="App\Controller\GClubsController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\GClubsController::rateClub" type="service_closure" id=".service_locator.pnbisVO"/>
-        <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
-        <argument key="App\Controller\GClubsController::removeMember" type="service_closure" id=".service_locator.Rod0dp8"/>
+        <argument key="App\Controller\GClubsController::pendingApplications" type="service_closure" id=".service_locator.raUDR8y"/>
+        <argument key="App\Controller\GClubsController::rateClub" type="service_closure" id=".service_locator.Z_Q_cF0"/>
+        <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController::removeMember" type="service_closure" id=".service_locator.pX.iTSM"/>
         <argument key="App\Controller\GClubsController::searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
         <argument key="App\Controller\GClubsController::showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
@@ -8235,7 +8254,8 @@
         <argument key="App\Controller\AdminController:update" type="service_closure" id=".service_locator.UItqPak"/>
         <argument key="App\Controller\ApplicationController:submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\CommentaryController:addComment" type="service_closure" id=".service_locator.eOJlB0r"/>
-        <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
+        <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController:applicationsStatistics" type="service_closure" id=".service_locator.raUDR8y"/>
         <argument key="App\Controller\GClubsController:clubDetails" type="service_closure" id=".service_locator.oyNdjWp"/>
         <argument key="App\Controller\GClubsController:delete" type="service_closure" id=".service_locator.eLmG6qh"/>
         <argument key="App\Controller\GClubsController:edit" type="service_closure" id=".service_locator.eLmG6qh"/>
@@ -8244,9 +8264,10 @@
         <argument key="App\Controller\GClubsController:list" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:manageMembers" type="service_closure" id=".service_locator.yHlyP5W"/>
         <argument key="App\Controller\GClubsController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\GClubsController:rateClub" type="service_closure" id=".service_locator.pnbisVO"/>
-        <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
-        <argument key="App\Controller\GClubsController:removeMember" type="service_closure" id=".service_locator.Rod0dp8"/>
+        <argument key="App\Controller\GClubsController:pendingApplications" type="service_closure" id=".service_locator.raUDR8y"/>
+        <argument key="App\Controller\GClubsController:rateClub" type="service_closure" id=".service_locator.Z_Q_cF0"/>
+        <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController:removeMember" type="service_closure" id=".service_locator.pX.iTSM"/>
         <argument key="App\Controller\GClubsController:searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
         <argument key="App\Controller\GClubsController:showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
@@ -8576,9 +8597,10 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.VBPHw4y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ulsVA8G" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ApplicationClubRepository" type="service_closure" id="App\Repository\ApplicationClubRepository"/>
         <argument key="App\Repository\ApplicationRepository" type="service_closure" id="App\Repository\ApplicationRepository"/>
         <argument key="App\Repository\BlocRepository" type="service_closure" id="App\Repository\BlocRepository"/>
         <argument key="App\Repository\ClubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
@@ -9410,11 +9432,14 @@
     <service id=".errored..service_locator.eAaJ0X7.App\Entity\Club" class="App\Entity\Club">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.eAaJ0X7&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
-    <service id=".errored..service_locator.Qclnwot.App\Entity\Club" class="App\Entity\Club">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Qclnwot&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    <service id=".errored..service_locator.xRqqVGS.App\Entity\Club" class="App\Entity\Club">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.xRqqVGS&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.eLmG6qh.App\Entity\Club" class="App\Entity\Club">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.eLmG6qh&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.raUDR8y.App\Entity\Club" class="App\Entity\Club">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.raUDR8y&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.Y2F5Zqo.App\Entity\Event" class="App\Entity\Event">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Y2F5Zqo&quot;: it needs an instance of &quot;App\Entity\Event&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10638,7 +10663,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.fi6sbNq"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.fvrAFxC"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10665,15 +10690,17 @@
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.bQQBOrY" alias=".service_locator.xHAhUTS"/>
     <service id=".service_locator.2Qq3vTm" alias=".service_locator.0LGZiN1"/>
-    <service id=".service_locator.OqBdeI3" alias=".service_locator.pnbisVO"/>
-    <service id=".service_locator.HGvx.ly" alias=".service_locator.Qclnwot"/>
+    <service id=".service_locator.SDpWPOV" alias=".service_locator.Z_Q_cF0"/>
+    <service id=".service_locator.oKqM_Kb" alias=".service_locator.pX.iTSM"/>
+    <service id=".service_locator.fttUT4H" alias=".service_locator.xRqqVGS"/>
+    <service id=".service_locator.4KVkCxx" alias=".service_locator.raUDR8y"/>
     <service id=".service_locator.uu1Sr_s" alias=".service_locator.6.pzLHU"/>
     <service id=".service_locator.Yzf6g69" alias=".service_locator.UItqPak"/>
     <service id=".service_locator.h77nnpz" alias=".service_locator.yxANsRR"/>
     <service id=".service_locator.uDZJQkm" alias=".service_locator.C98KNaG"/>
     <service id=".service_locator.PXGqqJu" alias=".service_locator.b22CltO"/>
     <service id=".service_locator._jt34Sv" alias=".service_locator.9raLMXz"/>
-    <service id=".service_locator.uJkiWGg" alias=".service_locator.fi6sbNq"/>
+    <service id=".service_locator.Ghf6Lb4" alias=".service_locator.fvrAFxC"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.q1xrRm3" alias=".service_locator.pSApZh5"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -10706,12 +10733,13 @@
     <service id=".service_locator.g_aAErc" alias=".service_locator.xLj1diB"/>
     <service id=".service_locator.zb_P8ny" alias=".service_locator.eOJlB0r"/>
     <service id=".service_locator.AgiCC5C" alias=".service_locator.0LGZiN1"/>
-    <service id=".service_locator.FstHLkj" alias=".service_locator.pnbisVO"/>
+    <service id=".service_locator.5V0i7bt" alias=".service_locator.Z_Q_cF0"/>
     <service id=".service_locator.3nC0eHK" alias=".service_locator.yHlyP5W"/>
     <service id=".service_locator.y.2nYau" alias=".service_locator.eAaJ0X7"/>
-    <service id=".service_locator.sKtui7T" alias=".service_locator.Rod0dp8"/>
-    <service id=".service_locator.a3SFFo0" alias=".service_locator.Qclnwot"/>
+    <service id=".service_locator.lL2d0Tr" alias=".service_locator.pX.iTSM"/>
+    <service id=".service_locator.gTtvV1p" alias=".service_locator.xRqqVGS"/>
     <service id=".service_locator.xJW9LrD" alias=".service_locator.eLmG6qh"/>
+    <service id=".service_locator.iflPPE3" alias=".service_locator.raUDR8y"/>
     <service id=".service_locator.wjQzAaJ" alias=".service_locator.6.pzLHU"/>
     <service id=".service_locator.hRfDTwr" alias=".service_locator.oyNdjWp"/>
     <service id=".service_locator..51nIrF" alias=".service_locator.UItqPak"/>

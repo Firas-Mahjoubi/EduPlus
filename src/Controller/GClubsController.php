@@ -32,6 +32,12 @@ use Symfony\Component\Filesystem\Filesystem;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Repository\ApplicationClubRepository;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 
 
@@ -48,9 +54,8 @@ class GClubsController extends AbstractController
         Request $request
     ): Response {
         $logosDirectory = $parameterBag->get('club_logos_directory');
-        $searchTerm = $request->query->get('search', ''); // Default to an empty string if no search term is provided
+        $searchTerm = $request->query->get('search', '');
 
-        // If a search term is provided, filter clubs by name ('nom')
         if ($searchTerm) {
             $clubs = $clubRepository->createQueryBuilder('c')
                 ->where('c.nom LIKE :searchTerm')
@@ -86,35 +91,48 @@ class GClubsController extends AbstractController
         Security $security,
         ClubRepository $clubRepository,
         RatingRepository $ratingRepository,
+        EntityManagerInterface $entityManager,  // Add EntityManagerInterface
         int $id
     ) {
+        // Find the club by ID
         $club = $clubRepository->find($id);
 
         if (!$club) {
             throw $this->createNotFoundException('Club not found');
         }
 
+        // Get the logged-in user
         $user = $security->getUser();
         if (!$user) {
             // Redirect to login page if the user is not logged in
             return $this->redirectToRoute('app_login');
         }
 
+        // Get the rating value from the request
         $ratingValue = $request->request->get('rating');
         if ($ratingValue >= 1 && $ratingValue <= 5) {
-            // Save the new rating
+            // Create a new Rating entity
             $rating = new Rating();
             $rating->setClub($club);
             $rating->setValue((float) $ratingValue);
+            $rating->setUser($user); // You can also associate the rating with the logged-in user if needed
 
-            $ratingRepository->save($rating); // Persist the rating
+            // Persist and flush the rating to the database
+            $entityManager->persist($rating);
+            $entityManager->flush();
 
+            // Add a success message
             $this->addFlash('success', 'Rating added successfully!');
         } else {
+            // Add an error message if the rating is invalid
             $this->addFlash('error', 'Invalid rating. Please provide a rating between 1 and 5.');
         }
 
-        return $this->redirectToRoute('club_details', ['id' => $id]);
+        // Render the current club details page with the updated rating
+        return $this->render('club/details.html.twig', [
+            'club' => $club,
+            'rating' => $ratingValue, // pass the new rating value if needed
+        ]);
     }
 
     public function getAverageRating(Club $club): float
@@ -204,23 +222,79 @@ class GClubsController extends AbstractController
         ]);
     }
 
-    
-    #[Route('/{clubId}/remove-member/{memberId}', name: 'remove_member', methods: ['POST'])]
-    public function removeMember(int $clubId, int $memberId, ClubRepository $clubRepository, MemberRepository $memberRepository): Response
-    {
-        $club = $clubRepository->find($clubId);
-        $member = $memberRepository->find($memberId);
 
-        if ($club && $member) {
-            $memberRepository->remove($member);  // Delete the member
-            $this->addFlash('success', 'Member removed successfully!');
-        } else {
-            $this->addFlash('error', 'Member not found.');
+    #[Route('/{clubId}/remove-member/{memberId}', name: 'remove_member', methods: ['POST'])]
+    public function removeMember(
+        int $clubId,
+        int $memberId,
+        ClubRepository $clubRepository,
+        MemberRepository $memberRepository,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ): Response {
+        // Fetch the club by ID
+        $club = $clubRepository->find($clubId);
+        if (!$club) {
+            throw $this->createNotFoundException('Club not found.');
         }
 
-        return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
+        // Fetch the member by ID
+        $member = $memberRepository->find($memberId);
+        if (!$member || $member->getClub() !== $club) {
+            throw $this->createNotFoundException('Member not found in this club.');
+        }
+
+        $user = $member->getUtilisateur(); // Assuming `Member` has a reference to a `Utilisateur` with an email field.
+        $email = $user->getEmail();
+        $name = $user->getNom();
+
+        // Remove the member from the club
+        $entityManager->remove($member);
+        $entityManager->flush();
+
+        // Generate the PDF
+        $pdfContent = $this->generateRemovalPdf($club, $name);
+
+        // Send the email with PDF attachment
+        $email = (new Email())
+            ->from(new Address('no-reply@yourdomain.com', $club->getNom()))
+            ->to($email)
+            ->subject('Membership Removal Notice')
+            ->text('Please find attached the details regarding your membership removal.')
+            ->html('<p>Dear ' . $name . ',</p><p>Please find attached a document regarding your removal from the club <strong>' . $club->getNom() . '</strong>.</p>')
+            ->attach($pdfContent, 'membership_removal.pdf', 'application/pdf');
+
+        $mailer->send($email);
+
+        // Add a flash message to notify the user
+        $this->addFlash('success', 'Member removed successfully, and email sent.');
+
+        // Redirect back to the club's members page
+        return $this->redirectToRoute('club_show', ['id' => $clubId]);
     }
 
+    /**
+     * Generates a PDF with the membership removal details.
+     */
+    private function generateRemovalPdf(Club $club, string $name): string
+    {
+        $dompdf = new Dompdf(new Options(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]));
+
+        $html = '
+        <h1>Membership Removal Notice</h1>
+        <p>Dear ' . htmlspecialchars($name) . ',</p>
+        <p>This is to inform you that you have been removed as a member of the club <strong>' . htmlspecialchars($club->getNom()) . '</strong>.</p>
+        <p>If you have any questions, please contact us.</p>
+        <p>Best regards,</p>
+        <p>The ' . htmlspecialchars($club->getNom()) . ' Team</p>
+    ';
+
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        return $dompdf->output();
+    }
 
     #[Route('/club/{id}/manage-members', name: 'club_manage_members')]
     public function manageMembers(Club $club)
@@ -246,47 +320,7 @@ class GClubsController extends AbstractController
     }
 
 
-    #[Route('/{id}/acceptApplication/{applicationId}', name: 'club_accept_application', methods: ['POST'])]
-    public function acceptApplication(
-        Club $club,
-        ApplicationRepository $applicationRepository,
-        int $applicationId,
-        EntityManagerInterface $entityManager,
-        Request $request
-    ): Response {
-        $application = $applicationRepository->find($applicationId);
 
-        if (!$application || $application->getClub() !== $club) {
-            throw $this->createNotFoundException('Application does not belong to this club.');
-        }
-
-        $candidate = $application->getCandidat();
-
-        $role = $request->get('role');
-
-        try {
-            $roleEnum = MemberRole::from($role);
-        } catch (\ValueError $e) {
-            $this->addFlash('error', 'Invalid role selected.');
-            return $this->redirectToRoute('club_applications', ['clubId' => $club->getId()]);
-        }
-
-        $member = new Member();
-        $member->setUtilisateur($candidate);
-        $member->setClub($club);
-
-        $member->setRole($roleEnum);
-
-        $application->setStatus('ACCEPTED');
-        $entityManager->flush();
-
-        $member->setDateAdhesion(new \DateTime());
-        $entityManager->persist($member);
-        $entityManager->flush();
-
-        $this->addFlash('success', 'Application accepted, and member added successfully!');
-        return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
-    }
     #[Route('/{id}/search', name: 'club_search_by_id', methods: ['GET'])]
     public function searchById(int $id, ClubRepository $clubRepository): Response
     {
@@ -301,28 +335,135 @@ class GClubsController extends AbstractController
             'club' => $club,
         ]);
     }
-
-
     #[Route('/{id}/rejectApplication/{applicationId}', name: 'club_reject_application', methods: ['POST'])]
-    public function rejectApplication(Club $club, ApplicationRepository $applicationRepository, int $applicationId, EntityManagerInterface $entityManager): Response
-    {
-        $application = $applicationRepository->find($applicationId);
+    public function rejectApplication(
+        Club $club,
+        ApplicationClubRepository $applicationClubRepository,
+        int $applicationId,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ): Response {
+        $application = $applicationClubRepository->find($applicationId);
 
         if (!$application || $application->getClub() !== $club) {
             throw $this->createNotFoundException('Application does not belong to this club.');
         }
 
+        // Check if the application has already been rejected
         if ($application->getStatus() === 'REJECTED') {
             $this->addFlash('warning', 'This application has already been rejected.');
             return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
         }
 
+        // Set the application status to 'REJECTED'
         $application->setStatus('REJECTED');
         $entityManager->flush();
 
-        $this->addFlash('success', 'Application rejected successfully!');
-        return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
+        // Get candidate details
+        $candidate = $application->getCandidat();
+        $email = $candidate->getEmail();
+        $name = $candidate->getNom();
+
+        // Generate the PDF
+        $pdfContent = $this->generateApplicationPdf($club, $name, 'REJECTED');
+
+        // Send email
+        $email = (new Email())
+            ->from(new Address('no-reply@yourdomain.com', $club->getNom()))
+            ->to($email)
+            ->subject('Application Rejection Notice')
+            ->text('Please find attached the details regarding your application rejection.')
+            ->html('<p>Dear ' . $name . ',</p><p>Your application to the club <strong>' . $club->getNom() . '</strong> has been rejected. Please find attached the official notice.</p>')
+            ->attach($pdfContent, 'application_rejection.pdf', 'application/pdf');
+
+        $mailer->send($email);
+
+        $this->addFlash('success', 'Application rejected successfully, and email sent.');
+        return $this->redirectToRoute('club_index');
     }
+
+    #[Route('/{id}/acceptApplication/{applicationId}', name: 'club_accept_application', methods: ['POST'])]
+    public function acceptApplication(
+        Club $club,
+        ApplicationClubRepository $applicationClubRepository,
+        int $applicationId,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ): Response {
+        $application = $applicationClubRepository->find($applicationId);
+
+        if (!$application || $application->getClub() !== $club) {
+            throw $this->createNotFoundException('Application does not belong to this club.');
+        }
+
+        // Check if the application has already been accepted
+        if ($application->getStatus() === 'ACCEPTED') {
+            $this->addFlash('warning', 'This application has already been accepted.');
+            return $this->redirectToRoute('club_show', ['id' => $club->getId()]);
+        }
+
+        // Create and add the member to the club
+        $candidate = $application->getCandidat();
+        $member = new Member();
+        $member->setUtilisateur($candidate);
+        $member->setClub($club);
+        $member->setRole(MemberRole::MEMBER);
+        $member->setDateAdhesion(new \DateTime());
+
+        // Update the application status to 'ACCEPTED'
+        $application->setStatus('ACCEPTED');
+        $entityManager->persist($member);
+        $entityManager->flush();
+
+        // Get candidate details
+        $email = $candidate->getEmail();
+        $name = $candidate->getNom();
+
+        // Generate the PDF
+        $pdfContent = $this->generateApplicationPdf($club, $name, 'ACCEPTED');
+
+        // Send email
+        $email = (new Email())
+            ->from(new Address(
+                'no-reply@yourdomain.com',
+
+                $club->getNom()
+            ))
+            ->to($email)
+            ->subject('Application Acceptance Notice')
+            ->text('Please find attached the details regarding your application acceptance.')
+            ->html('<p>Dear ' . $name . ',</p><p>Your application to the club <strong>' . $club->getNom() . '</strong> has been accepted. Please find attached the official notice.</p>')
+            ->attach($pdfContent, 'application_acceptance.pdf', 'application/pdf');
+
+        $mailer->send($email);
+
+        $this->addFlash('success', 'Application accepted, member added successfully, and email sent.');
+        return $this->redirectToRoute('club_index');
+    }
+
+    /**
+     * Generates a PDF for application acceptance or rejection.
+     */
+    private function generateApplicationPdf(Club $club, string $name, string $status): string
+    {
+        $dompdf = new Dompdf(new Options(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]));
+
+        $html = '
+        <h1>Application ' . htmlspecialchars($status) . ' Notice</h1>
+        <p>Dear ' . htmlspecialchars($name) . ',</p>
+        <p>Your application to the club <strong>' . htmlspecialchars($club->getNom()) . '</strong> has been ' . strtolower($status) . '.</p>
+        <p>If you have any questions, please contact us.</p>
+        <p>Best regards,</p>
+        <p>The ' . htmlspecialchars($club->getNom()) . ' Team</p>
+    ';
+
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        return $dompdf->output();
+    }
+
 
     #[Route('/{id}/edit', name: 'club_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Club $club, EntityManagerInterface $entityManager): Response
@@ -354,6 +495,74 @@ class GClubsController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+
+
+
+
+    #[Route('/{id}/pending-applications', name: 'club_pending_applications', methods: ['GET'])]
+    public function pendingApplications(Club $club, ApplicationClubRepository $applicationClubRepository): Response
+    {
+        // Retrieve all applications for the given club with status 'PENDING'
+        $applications = $applicationClubRepository->findBy(
+            ['club' => $club, 'status' => 'PENDING']
+        );
+
+        return $this->render('club/pending_members.html.twig', [
+            'club' => $club,
+            'applications' => $applications,  // Fetch only pending applications for the club
+        ]);
+    }
+
+
+    // src/Controller/ClubController.php
+
+
+    #[Route('/club/{id}/applications-statistics', name: 'club_applications_statistics')]
+    public function applicationsStatistics(Club $club, ApplicationClubRepository $applicationClubRepository): Response
+    {
+        $data = $applicationClubRepository->getApplicationsCountByMonthAndStatus($club);
+
+        // Process data into chart-friendly format
+        $chartData = [
+            'months' => [],
+            'approved' => [],
+            'rejected' => [],
+        ];
+
+        $monthlyData = [];
+        foreach ($data as $row) {
+            $month = $row['month'];
+            $status = $row['status'];
+            $count = $row['count'];
+
+            if (!isset($monthlyData[$month])) {
+                $monthlyData[$month] = ['approved' => 0, 'rejected' => 0];
+            }
+
+            if ($status === 'APPROVED') {
+                $monthlyData[$month]['approved'] = $count;
+            } elseif ($status === 'REJECTED') {
+                $monthlyData[$month]['rejected'] = $count;
+            }
+        }
+
+        // Sort by month and populate chart data
+        foreach ($monthlyData as $month => $counts) {
+            $chartData['months'][] = $month;
+            $chartData['approved'][] = $counts['approved'];
+            $chartData['rejected'][] = $counts['rejected'];
+        }
+
+        return $this->render('club/club_applications_statistics.html.twig', [
+            'club' => $club,
+            'chartData' => $chartData,
+        ]);
+    }
+
+
+
+
     #[Route('/{clubId}/applications', name: 'club_applications')]
     public function showClubApplications(
         int $clubId,
@@ -405,7 +614,6 @@ class GClubsController extends AbstractController
     {
         $this->doctrine = $doctrine;
     }
-
 
 
 

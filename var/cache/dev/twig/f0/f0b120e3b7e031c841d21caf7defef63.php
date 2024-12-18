@@ -37,7 +37,7 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
 
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
-        // line 3
+        // line 1
         return "base.html.twig";
     }
 
@@ -50,7 +50,7 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "club/pending_members.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "club/pending_members.html.twig", 3);
+        $this->parent = $this->loadTemplate("base.html.twig", "club/pending_members.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -60,7 +60,7 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
 
     }
 
-    // line 5
+    // line 3
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -73,7 +73,7 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Pending Members";
+        yield "Club Pending Applications";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +83,7 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
         yield from [];
     }
 
-    // line 7
+    // line 5
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,49 +96,67 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 8
-        yield "    <h1>Pending Members for Club: ";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
+        // line 6
+        yield "    <h1>Pending Applications for Club: ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 6, $this->source); })()), "nom", [], "any", false, false, false, 6), "html", null, true);
         yield "</h1>
 
     ";
-        // line 10
-        if ( !Twig\Extension\CoreExtension::testEmpty((isset($context["pendingMembers"]) || array_key_exists("pendingMembers", $context) ? $context["pendingMembers"] : (function () { throw new RuntimeError('Variable "pendingMembers" does not exist.', 10, $this->source); })()))) {
-            // line 11
-            yield "        <ul>
-            ";
-            // line 12
+        // line 8
+        if ( !Twig\Extension\CoreExtension::testEmpty((isset($context["applications"]) || array_key_exists("applications", $context) ? $context["applications"] : (function () { throw new RuntimeError('Variable "applications" does not exist.', 8, $this->source); })()))) {
+            // line 9
+            yield "        <table class=\"table table-striped\">
+            <thead>
+                <tr>
+                    <th scope=\"col\">Applicant Name</th>
+                    <th scope=\"col\">Status</th>
+                    <th scope=\"col\">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                ";
+            // line 18
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["pendingMembers"]) || array_key_exists("pendingMembers", $context) ? $context["pendingMembers"] : (function () { throw new RuntimeError('Variable "pendingMembers" does not exist.', 12, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["member"]) {
-                // line 13
-                yield "                <li>
-                    <strong>";
-                // line 14
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["member"], "name", [], "any", false, false, false, 14), "html", null, true);
-                yield "</strong>
-                    - Status: ";
-                // line 15
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["member"], "status", [], "any", false, false, false, 15), "html", null, true);
-                yield "
-                    <form method=\"post\" action=\"";
-                // line 16
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_approve_member", ["clubId" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "memberId" => CoreExtension::getAttribute($this->env, $this->source, $context["member"], "id", [], "any", false, false, false, 16)]), "html", null, true);
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["applications"]) || array_key_exists("applications", $context) ? $context["applications"] : (function () { throw new RuntimeError('Variable "applications" does not exist.', 18, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["application"]) {
+                // line 19
+                yield "                    <tr>
+                        <td>";
+                // line 20
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 20), "prenom", [], "any", false, false, false, 20), "html", null, true);
+                yield "</td>
+                        <td>";
+                // line 21
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["application"], "status", [], "any", false, false, false, 21), "html", null, true);
+                yield "</td>
+                        <td>
+                            <form method=\"post\" action=\"";
+                // line 23
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_accept_application", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23), "applicationId" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 23)]), "html", null, true);
                 yield "\" style=\"display:inline;\">
-                        <button type=\"submit\" class=\"btn btn-success\">Approve</button>
-                    </form>
-                </li>
-            ";
+                                <button type=\"submit\" class=\"btn btn-success\">Approve</button>
+                            </form>
+
+                            <form method=\"post\" action=\"";
+                // line 27
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_reject_application", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["club"]) || array_key_exists("club", $context) ? $context["club"] : (function () { throw new RuntimeError('Variable "club" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27), "applicationId" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+                yield "\" style=\"display:inline;\">
+                                <button type=\"submit\" class=\"btn btn-danger\">Reject</button>
+                            </form>
+                        </td>
+                    </tr>
+                ";
             }
             $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_key'], $context['member'], $context['_parent']);
+            unset($context['_seq'], $context['_key'], $context['application'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 21
-            yield "        </ul>
+            // line 33
+            yield "            </tbody>
+        </table>
     ";
         } else {
-            // line 23
-            yield "        <p>No pending members at the moment.</p>
+            // line 36
+            yield "        <p>No pending applications for this club.</p>
     ";
         }
         
@@ -171,36 +189,49 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  141 => 23,  137 => 21,  126 => 16,  122 => 15,  118 => 14,  115 => 13,  111 => 12,  108 => 11,  106 => 10,  100 => 8,  87 => 7,  64 => 5,  41 => 3,);
+        return array (  159 => 36,  154 => 33,  142 => 27,  135 => 23,  130 => 21,  126 => 20,  123 => 19,  119 => 18,  108 => 9,  106 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{# templates/club/pending_members.html.twig #}
+        return new Source("{% extends 'base.html.twig' %}
 
-{% extends 'base.html.twig' %}
-
-{% block title %}Pending Members{% endblock %}
+{% block title %}Club Pending Applications{% endblock %}
 
 {% block body %}
-    <h1>Pending Members for Club: {{ club.name }}</h1>
+    <h1>Pending Applications for Club: {{ club.nom }}</h1>
 
-    {% if pendingMembers is not empty %}
-        <ul>
-            {% for member in pendingMembers %}
-                <li>
-                    <strong>{{ member.name }}</strong>
-                    - Status: {{ member.status }}
-                    <form method=\"post\" action=\"{{ path('club_approve_member', { clubId: club.id, memberId: member.id }) }}\" style=\"display:inline;\">
-                        <button type=\"submit\" class=\"btn btn-success\">Approve</button>
-                    </form>
-                </li>
-            {% endfor %}
-        </ul>
+    {% if applications is not empty %}
+        <table class=\"table table-striped\">
+            <thead>
+                <tr>
+                    <th scope=\"col\">Applicant Name</th>
+                    <th scope=\"col\">Status</th>
+                    <th scope=\"col\">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in applications %}
+                    <tr>
+                        <td>{{ application.candidat.prenom }}</td>
+                        <td>{{ application.status }}</td>
+                        <td>
+                            <form method=\"post\" action=\"{{ path('club_accept_application', { id: club.id, applicationId: application.id }) }}\" style=\"display:inline;\">
+                                <button type=\"submit\" class=\"btn btn-success\">Approve</button>
+                            </form>
+
+                            <form method=\"post\" action=\"{{ path('club_reject_application', { id: club.id, applicationId: application.id }) }}\" style=\"display:inline;\">
+                                <button type=\"submit\" class=\"btn btn-danger\">Reject</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% else %}
-        <p>No pending members at the moment.</p>
+        <p>No pending applications for this club.</p>
     {% endif %}
 {% endblock %}
-", "club/pending_members.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\pending_members.html.twig");
+", "club/pending_members.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\pending_members.html.twig");
     }
 }

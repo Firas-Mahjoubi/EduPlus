@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Clubs{% endblock %}
-
 {% block body %}
 <div class="container mt-5">
     <h1 class="text-center text-primary mb-5">Clubs</h1>
@@ -55,9 +53,39 @@
                     </p>
                     <a href="{{ path('club_details', {'id': club.id}) }}" class="btn btn-primary">Join {{ club.nom }}</a>
 
+
                     <!-- Show 'Manage Club' Button Only for Presidents -->
                     {% if app.user and app.user.isPresidentOf(club) %}
-                        <a href="{{ path('club_show', {'id': club.id}) }}" class="btn btn-danger mt-3">Manage Club</a>
+                        <a href="{{ path('club_show', {'id': club.id}) }}" class="btn btn-danger mt-3">Manage Members</a>
+                        <a href="{{ path('club_pending_applications', {'id': club.id}) }}" class="btn btn-warning mt-3">Pending Applications</a>
+
+                    {% endif %}
+
+                    <!-- Rating Form -->
+                    {% if app.user %}
+                    <div class="rating-section">
+                        <h5 class="mb-3">Rate this Club:</h5>
+                        <form 
+                            action="{{ path('rate_club', {'id': club.id}) }}" 
+                            method="post" 
+                            class="d-flex flex-column align-items-center">
+                            <div class="rating-stars">
+                                {% for i in 1..5 %}
+                                    <label class="rating-star" data-index="{{ i }}">
+                                        <input 
+                                            type="radio" 
+                                            name="rating" 
+                                            value="{{ i }}" 
+                                            class="d-none" 
+                                            {% if i == 1 %} checked {% endif %} 
+                                            data-index="{{ i }}">
+                                        <i class="bi bi-star text-warning star-icon" data-rating="{{ i }}"></i>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                            <button type="submit" class="submit-rating-btn">Submit</button>
+                        </form>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -72,33 +100,69 @@
 </div>
 {% endblock %}
 
-{% block javascripts %}
-    {{ parent() }}
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const searchTerm = "{{ searchTerm|e('js') }}".toLowerCase();
-            let startPosition = 0;
+{% block stylesheets %}
+    <style>
+        .rating-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+        }
 
-            // Find first matching club
-            document.querySelectorAll('.testimonial-item').forEach((item, index) => {
-                const clubName = item.querySelector('h4').textContent.toLowerCase();
-                if (clubName.includes(searchTerm) && startPosition === 0) {
-                    startPosition = index;
-                }
-            });
+        .rating-stars {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
 
-            // Initialize Owl Carousel with dynamic start position
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                startPosition: startPosition,
-                responsive: {
-                    0: { items: 1 },
-                    600: { items: 2 },
-                    1000: { items: 3 }
-                }
-            });
-        });
-    </script>
+        .rating-star {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .rating-star input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .star-icon {
+            font-size: 2rem;
+            color: lightgray;
+        }
+
+        .rating-star:hover .star-icon,
+        .rating-star input:checked ~ .star-icon:hover {
+            color: #ffd700; /* Gold color on hover */
+        }
+
+        .rating-star input:checked ~ .star-icon {
+            color: #ffd700; /* Selected star color */
+        }
+
+        .submit-rating-btn {
+            margin-top: 15px;
+            width: 200px;
+            font-size: 1rem;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-rating-btn:hover {
+            background-color: #218838;
+        }
+    </style>
 {% endblock %}

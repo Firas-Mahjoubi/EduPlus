@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
+use App\Entity\ApplicationClub;
 
 class ApplicationController extends AbstractController
 {
@@ -20,22 +21,19 @@ class ApplicationController extends AbstractController
         ClubRepository $clubRepository,
         EntityManagerInterface $entityManager
     ): Response {
-        // Fetch the club by ID
         $club = $clubRepository->find($clubId);
 
         if (!$club) {
             return $this->json(['success' => false, 'message' => 'Club not found'], 404);
         }
 
-        // Get the currently logged-in user
-        $user = $this->getUser(); // Ensure your app uses authentication
+        $user = $this->getUser();
 
         if (!$user) {
             return $this->json(['success' => false, 'message' => 'User not logged in'], 401);
         }
 
-        // Create and persist the application
-        $application = new Application();
+        $application = new ApplicationClub();
         $application->setCandidat($user);
         $application->setClub($club);
 
@@ -44,5 +42,4 @@ class ApplicationController extends AbstractController
 
         return $this->json(['success' => true, 'message' => 'Application submitted successfully!']);
     }
-    
 }

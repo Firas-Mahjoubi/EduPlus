@@ -430,6 +430,6 @@ class __TwigTemplate_4ef75950dcbd364c85303c7f04285dfc extends Template
 </div>
 <!-- Latest Events Section End -->
 {% endblock %}
-", "g_events/show.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_events\\show.html.twig");
+", "g_events/show.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\show.html.twig");
     }
 }

@@ -290,6 +290,6 @@ class __TwigTemplate_b7aa1ad254f2ba83c96b0b8aaa759bdc extends Template
         </table>
     </div>
 {% endblock %}
-", "g_ressources/backOffice/index.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_ressources\\backOffice\\index.html.twig");
+", "g_ressources/backOffice/index.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\backOffice\\index.html.twig");
     }
 }

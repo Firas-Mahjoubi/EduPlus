@@ -291,6 +291,6 @@ class __TwigTemplate_d88464401dfa293be0e05c251dcb0ca1 extends Template
         <p style=\"margin-top: 20px; font-size: 16px; color: #555;\">No applications yet.</p>
     {% endif %}
 {% endblock %}
-", "application/club_applications.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\application\\club_applications.html.twig");
+", "application/club_applications.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\application\\club_applications.html.twig");
     }
 }
