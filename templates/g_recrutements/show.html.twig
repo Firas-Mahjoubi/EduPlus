@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Détails du Recrutement{% endblock %}
 
@@ -30,11 +30,9 @@
 
             <p><strong>Créé le :</strong> {{ recruitment.dateCreated|date('d/m/Y H:i') }}</p>
 
-            {% if recruitment.dateUpdated %}
-                <p><strong>Dernière mise à jour :</strong> {{ recruitment.dateUpdated|date('d/m/Y H:i') }}</p>
-            {% endif %}
+            
 
-            <p><strong>Club :</strong> Club ID #{{ recruitment.club.id }}</p>
+            <p><strong>Club :</strong> {{ recruitment.club.nom }}</p>
         </div>
     </div>
 

@@ -56,9 +56,9 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
                 <div class=\"col-lg-4 col-md-6 footer-about\">
                     <div class=\"d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4\">
                         <a href=\"index.html\" class=\"navbar-brand\">
-                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>Startup</h1>
+                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>EduPlus</h1>
                         </a>
-                        <p class=\"mt-3 mb-4\">Lorem diam sit erat dolor elitr et, diam lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd eos duo.</p>
+                        <p class=\"mt-3 mb-4\">EduPlus est une plateforme éducative dédiée à fournir des outils modernes pour le suivi et la gestion des recrutements, des formations, et bien plus encore.</p>
                         <form action=\"\">
                             <div class=\"input-group\">
                                 <input type=\"text\" class=\"form-control border-white p-3\" placeholder=\"Your Email\">
@@ -75,7 +75,7 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
                             </div>
                             <div class=\"d-flex mb-2\">
                                 <i class=\"bi bi-geo-alt text-primary me-2\"></i>
-                                <p class=\"mb-0\">123 Street, New York, USA</p>
+                                <p class=\"mb-0\">Ariana , Tunis</p>
                             </div>
                             <div class=\"d-flex mb-2\">
                                 <i class=\"bi bi-envelope-open text-primary me-2\"></i>
@@ -83,7 +83,7 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
                             </div>
                             <div class=\"d-flex mb-2\">
                                 <i class=\"bi bi-telephone text-primary me-2\"></i>
-                                <p class=\"mb-0\">+012 345 67890</p>
+                                <p class=\"mb-0\">+216 96824289</p>
                             </div>
                             <div class=\"d-flex mt-4\">
                                 <a class=\"btn btn-primary btn-square me-2\" href=\"#\"><i class=\"fab fa-twitter fw-normal\"></i></a>
@@ -201,9 +201,9 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
                 <div class=\"col-lg-4 col-md-6 footer-about\">
                     <div class=\"d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4\">
                         <a href=\"index.html\" class=\"navbar-brand\">
-                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>Startup</h1>
+                            <h1 class=\"m-0 text-white\"><i class=\"fa fa-user-tie me-2\"></i>EduPlus</h1>
                         </a>
-                        <p class=\"mt-3 mb-4\">Lorem diam sit erat dolor elitr et, diam lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd eos duo.</p>
+                        <p class=\"mt-3 mb-4\">EduPlus est une plateforme éducative dédiée à fournir des outils modernes pour le suivi et la gestion des recrutements, des formations, et bien plus encore.</p>
                         <form action=\"\">
                             <div class=\"input-group\">
                                 <input type=\"text\" class=\"form-control border-white p-3\" placeholder=\"Your Email\">
@@ -220,7 +220,7 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
                             </div>
                             <div class=\"d-flex mb-2\">
                                 <i class=\"bi bi-geo-alt text-primary me-2\"></i>
-                                <p class=\"mb-0\">123 Street, New York, USA</p>
+                                <p class=\"mb-0\">Ariana , Tunis</p>
                             </div>
                             <div class=\"d-flex mb-2\">
                                 <i class=\"bi bi-envelope-open text-primary me-2\"></i>
@@ -228,7 +228,7 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
                             </div>
                             <div class=\"d-flex mb-2\">
                                 <i class=\"bi bi-telephone text-primary me-2\"></i>
-                                <p class=\"mb-0\">+012 345 67890</p>
+                                <p class=\"mb-0\">+216 96824289</p>
                             </div>
                             <div class=\"d-flex mt-4\">
                                 <a class=\"btn btn-primary btn-square me-2\" href=\"#\"><i class=\"fab fa-twitter fw-normal\"></i></a>
@@ -300,6 +300,10 @@ class __TwigTemplate_51b4e4f4c03866ea9fe9b3465cf48aed extends Template
     </div>
 </footer>
 <!-- Footer End -->
+<<<<<<< HEAD
+", "footer.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\footer.html.twig");
+=======
 ", "footer.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\footer.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

@@ -237,6 +237,26 @@ class __TwigTemplate_2cf82f88fe573dec4cc1e1199fa35cf5 extends Template
     </div>
 </div>
 {% endblock %}
+<<<<<<< HEAD
+
+{% block javascripts %}
+<script>
+\$(document).ready(function () {
+    // Handle Apply Button
+    \$('#applyButton').on('click', function () {
+        \$('#loadingSpinner').show();
+        // Simulate apply action
+        setTimeout(function () {
+            \$('#loadingSpinner').hide();
+            alert('You have successfully applied for the club.');
+        }, 2000);
+    });
+});
+</script>
+{% endblock %}
+", "club/details.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\details.html.twig");
+=======
 ", "club/details.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\details.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

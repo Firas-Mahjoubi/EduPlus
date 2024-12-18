@@ -532,6 +532,10 @@ class __TwigTemplate_e469a4d9dee29ae79a766fb8439f8a95 extends Template
         {% endfor %}
     </table>
 {% endmacro %}
+<<<<<<< HEAD
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+=======
 ", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

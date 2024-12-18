@@ -2223,6 +2223,10 @@ class __TwigTemplate_dac4a54d01ebbbc9cddd037dcc065207 extends Template
         </tbody>
     </table>
 {% endmacro %}
+<<<<<<< HEAD
+", "@WebProfiler/Collector/form.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\form.html.twig");
+=======
 ", "@WebProfiler/Collector/form.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\form.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

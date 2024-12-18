@@ -395,6 +395,10 @@ class __TwigTemplate_f29cff189c4e22ea2dae8af24caa7487 extends Template
 </body>
 
 </html>
+<<<<<<< HEAD
+", "base.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\base.html.twig");
+=======
 ", "base.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\base.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

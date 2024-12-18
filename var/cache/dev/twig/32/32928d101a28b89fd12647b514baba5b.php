@@ -198,10 +198,18 @@ class __TwigTemplate_d77313330ac7af36427b1449c7344b17 extends Template
         </div>
     </div>
 {% endblock %}
+<<<<<<< HEAD
 <<<<<<<< HEAD:var/cache/dev/twig/20/7e9783a13fa0130ff9c3286ca3c74c9f.php
 ", "g_ressources/backOffice/confirm_delete.html.twig", "C:\\Users\\ghass\\Desktop\\Eduplus1\\EduPlus\\templates\\g_ressources\\backOffice\\confirm_delete.html.twig");
 ========
 ", "g_ressources/confirm_delete.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\confirm_delete.html.twig");
 >>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31:var/cache/dev/twig/32/32928d101a28b89fd12647b514baba5b.php
+=======
+<<<<<<< HEAD
+", "g_ressources/confirm_delete.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\confirm_delete.html.twig");
+=======
+", "g_ressources/confirm_delete.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\confirm_delete.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
+>>>>>>> 4477e60a08ed2839dfe87e35579db92c2eed4210
     }
 }

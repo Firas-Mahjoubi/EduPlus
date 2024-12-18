@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de recherche{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Résultats de recherche</h1>
+
+    <p>Recherche : <strong>{{ searchTerm }}</strong></p>
+
+    {% if results|length > 0 %}
+        <div class="row">
+            {% for recruitment in results %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        {% if recruitment.image %}
+                            <img src="{{ asset('uploads/images/' ~ recruitment.image) }}" class="card-img-top" alt="Image">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ recruitment.title }}</h5>
+                            <p class="card-text">{{ recruitment.description|slice(0, 100) }}...</p>
+                            <a href="{{ path('user_recruitment_details', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center">
+            Aucun résultat trouvé pour "{{ searchTerm }}".
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

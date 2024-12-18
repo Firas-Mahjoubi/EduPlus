@@ -735,6 +735,10 @@ class __TwigTemplate_dd8b4fb94db9b3eab5065ed910af52ce extends Template
     });
 })();
 </script>
+<<<<<<< HEAD
+", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
+=======
 ", "@WebProfiler/Profiler/settings.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\settings.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

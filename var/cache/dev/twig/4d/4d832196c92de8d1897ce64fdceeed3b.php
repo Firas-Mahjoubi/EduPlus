@@ -273,6 +273,10 @@ class __TwigTemplate_8be31b1a68cb4c896d44f620674770cd extends Template
         </div>
     </div>
 {% endblock %}
+<<<<<<< HEAD
+", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar_redirect.html.twig");
+=======
 ", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\toolbar_redirect.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

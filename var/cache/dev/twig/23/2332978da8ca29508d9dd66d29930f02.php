@@ -993,6 +993,10 @@ class __TwigTemplate_8829c56fe943c6a86c8d98e4157c358e extends Template
         </td>
     </tr>
 {% endmacro %}
+<<<<<<< HEAD
+", "@DoctrineMigrations/Collector/migrations.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\doctrine\\doctrine-migrations-bundle\\Resources\\views\\Collector\\migrations.html.twig");
+=======
 ", "@DoctrineMigrations/Collector/migrations.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\doctrine\\doctrine-migrations-bundle\\Resources\\views\\Collector\\migrations.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

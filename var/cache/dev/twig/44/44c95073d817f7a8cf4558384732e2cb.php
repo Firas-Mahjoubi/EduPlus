@@ -295,8 +295,14 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
                 {% endfor %}
             </tbody>
         </table>
+<<<<<<< HEAD
+
+    {% endblock %}
+", "club/adminclub.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\adminclub.html.twig");
+=======
     </div>
 {% endblock %}
 ", "club/adminclub.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\adminclub.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

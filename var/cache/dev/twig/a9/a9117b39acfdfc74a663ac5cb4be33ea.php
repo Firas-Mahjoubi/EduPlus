@@ -273,6 +273,10 @@ class __TwigTemplate_2d286d7c7ce9de8a509343f81df2393b extends Template
 
         {{ form_end(form) }}
     </div>
+<<<<<<< HEAD
+{% endblock %}", "g_ressources/_form.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\_form.html.twig");
+=======
 {% endblock %}", "g_ressources/_form.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\_form.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

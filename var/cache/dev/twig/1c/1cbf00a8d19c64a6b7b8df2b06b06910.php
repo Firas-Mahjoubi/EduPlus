@@ -568,6 +568,10 @@ class __TwigTemplate_f35de3bf957c903ae2ed75210e71bd26 extends Template
         }
     </style>
 {% endblock %}
+<<<<<<< HEAD
+", "club/index.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\index.html.twig");
+=======
 ", "club/index.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\index.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

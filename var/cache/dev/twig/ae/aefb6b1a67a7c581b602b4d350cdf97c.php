@@ -310,7 +310,14 @@ class __TwigTemplate_63369b1b7a3185ccfee8a6c052d97a49 extends Template
         document.getElementById('type-select').dispatchEvent(new Event('change'));
     </script>
 {% endblock %}
+<<<<<<< HEAD
+", "g_ressources/new.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\new.html.twig");
+=======
 ", "g_ressources/new.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\new.html.twig");
+<<<<<<< HEAD
 >>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31:var/cache/dev/twig/ae/aefb6b1a67a7c581b602b4d350cdf97c.php
+=======
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
+>>>>>>> 4477e60a08ed2839dfe87e35579db92c2eed4210
     }
 }

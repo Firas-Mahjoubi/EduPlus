@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statut de ma candidature{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Statut de ma candidature</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ recruitment.title }}</h2>
+            <p class="card-text"><strong>Description :</strong> {{ recruitment.description }}</p>
+            <p class="card-text"><strong>Date Limite :</strong> {{ recruitment.deadline|date('d/m/Y') }}</p>
+            <p class="card-text"><strong>Club :</strong> {{ recruitment.club.nom }}</p>
+
+            {% if application %}
+                <p class="text-success">Vous avez déjà postulé pour ce recrutement.</p>
+                <a href="{{ path('application_delete', { id: application.id }) }}" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre candidature ?');">Supprimer ma candidature</a>
+            {% else %}
+                <p class="text-warning">Vous n'avez pas encore postulé pour ce recrutement.</p>
+                <a href="{{ path('recruitment_apply', { id: recruitment.id }) }}" class="btn btn-success">Postuler</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <a href="{{ path('app_show_all_user') }}" class="btn btn-primary mt-3">Retour à la liste</a>
+</div>
+{% endblock %}

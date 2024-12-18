@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du Recrutement{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Détails du Recrutement</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ recruitment.title }}</h2>
+            <p class="card-text">
+                <strong>Description :</strong> {{ recruitment.description }}
+            </p>
+            <p class="card-text">
+                <strong>Statut :</strong>
+                <span class="badge {{ recruitment.status == 'open' ? 'bg-success' : 'bg-danger' }}">
+                    {{ recruitment.status | capitalize }}
+                </span>
+            </p>
+            <p class="card-text">
+                <strong>Date Limite :</strong> {{ recruitment.deadline|date('d/m/Y') }}
+            </p>
+            <p class="card-text">
+                <strong>Lieu :</strong> {{ recruitment.location }}
+            </p>
+            <p class="card-text"><strong>Club :</strong> {{ recruitment.club.nom }}</p>
+
+        </div>
+    </div>
+
+    <a href="{{ path('app_show_all_user') }}" class="btn btn-primary mt-3">Retour à la liste</a>
+</div>
+{% endblock %}

@@ -236,6 +236,10 @@ class __TwigTemplate_583ab594a50e2621d7cf71d2863d8ceb extends Template
         <p>No pending applications for this club.</p>
     {% endif %}
 {% endblock %}
+<<<<<<< HEAD
+", "club/pending_members.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\pending_members.html.twig");
+=======
 ", "club/pending_members.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\pending_members.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

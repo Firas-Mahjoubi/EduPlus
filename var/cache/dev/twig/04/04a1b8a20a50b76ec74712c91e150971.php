@@ -3934,6 +3934,10 @@ body.width-full .container {
     body.width-full .container { margin: 0 30px; }
 }
 
+<<<<<<< HEAD
+", "@WebProfiler/Profiler/profiler.css.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\profiler.css.twig");
+=======
 ", "@WebProfiler/Profiler/profiler.css.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\profiler.css.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

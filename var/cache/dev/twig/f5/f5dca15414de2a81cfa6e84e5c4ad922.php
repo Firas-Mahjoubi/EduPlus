@@ -278,10 +278,18 @@ class __TwigTemplate_c0c731018562ada7825cad0268c0d73c extends Template
 
         {{ form_end(form) }}
     </div>
+<<<<<<< HEAD
 <<<<<<<< HEAD:var/cache/dev/twig/3a/3ade1cc5543e8c442ed68c7d2ff96e40.php
 {% endblock %}", "g_ressources/backOffice/edit.html.twig", "C:\\Users\\ghass\\Desktop\\Eduplus1\\EduPlus\\templates\\g_ressources\\backOffice\\edit.html.twig");
 ========
 {% endblock %}", "g_ressources/edit.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\edit.html.twig");
 >>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31:var/cache/dev/twig/f5/f5dca15414de2a81cfa6e84e5c4ad922.php
+=======
+<<<<<<< HEAD
+{% endblock %}", "g_ressources/edit.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\edit.html.twig");
+=======
+{% endblock %}", "g_ressources/edit.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\edit.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
+>>>>>>> 4477e60a08ed2839dfe87e35579db92c2eed4210
     }
 }

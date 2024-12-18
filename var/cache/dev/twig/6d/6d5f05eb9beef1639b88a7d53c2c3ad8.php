@@ -56,7 +56,7 @@ class __TwigTemplate_a83bb59c4bca9481137d68ce050a2a15 extends Template
         // line 8
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["application"]) || array_key_exists("application", $context) ? $context["application"] : (function () { throw new RuntimeError('Variable "application" does not exist.', 8, $this->source); })()), "recruitment", [], "any", false, false, false, 8), "title", [], "any", false, false, false, 8), "html", null, true);
         yield "</p>
-    <p>Statut : ";
+    <p>";
         // line 9
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 9, $this->source); })()), "html", null, true);
         yield "</p>
@@ -106,9 +106,13 @@ class __TwigTemplate_a83bb59c4bca9481137d68ce050a2a15 extends Template
 <body>
     <h1>Bonjour,</h1>
     <p>Votre candidature pour : {{ application.recruitment.title }}</p>
-    <p>Statut : {{ message }}</p>
+    <p>{{ message }}</p>
 </body>
 </html>
+<<<<<<< HEAD
+", "emails/application_decision.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\emails\\application_decision.html.twig");
+=======
 ", "emails/application_decision.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\emails\\application_decision.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

@@ -4,10 +4,14 @@
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'reference' => '15326c467d1d6335117229a011b4bf0c5bc52581',
 =======
         'reference' => '9da0b99c51a83956b91be3d8658741920bfba028',
 >>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
+=======
+        'reference' => 'ad3edb06b9be5f0439d91fa5ab297e35ba310dd5',
+>>>>>>> 4477e60a08ed2839dfe87e35579db92c2eed4210
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -18,10 +22,14 @@
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
 <<<<<<< HEAD
+<<<<<<< HEAD
             'reference' => '15326c467d1d6335117229a011b4bf0c5bc52581',
 =======
             'reference' => '9da0b99c51a83956b91be3d8658741920bfba028',
 >>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
+=======
+            'reference' => 'ad3edb06b9be5f0439d91fa5ab297e35ba310dd5',
+>>>>>>> 4477e60a08ed2839dfe87e35579db92c2eed4210
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -648,6 +656,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'sensio/framework-extra-bundle' => array(
+            'pretty_version' => 'v6.2.10',
+            'version' => '6.2.10.0',
+            'reference' => '2f886f4b31f23c76496901acaedfedb6936ba61f',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../sensio/framework-extra-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/asset' => array(
             'pretty_version' => 'v6.4.13',
