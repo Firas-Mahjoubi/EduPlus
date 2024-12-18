@@ -68,6 +68,11 @@
                         {{ form_widget(form.club, { 'attr': { 'class': 'form-control' } }) }}
                         {{ form_errors(form.club) }}
                     </div>
+                    <div class="form-group mb-3">
+                        {{ form_label(form.image, 'Image', { 'label_attr': { 'class': 'form-label' } }) }}
+                        {{ form_widget(form.image, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form.image) }}
+                    </div>
 
                     <div class="text-center mt-4">
                         <button class="btn btn-primary" type="submit">Enregistrer les modifications</button>

@@ -180,29 +180,25 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
               <li>
                 <a href=\"";
         // line 113
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_add");
         yield "\">
                   <span class=\"sub-item\">ADD </span>
                 </a>
               </li>
-              <li>
-                <a href=\"";
-        // line 118
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        yield "\">
-                  <span class=\"sub-item\">UPDATE </span>
-                </a>
-              </li>
+             
               <li> 
                 <a href=\"";
-        // line 123
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        // line 119
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_dashboard");
         yield "\">
-                  <span class=\"sub-item\">DELETE </span>
+                  <span class=\"sub-item\">DASHBOARD </span>
                 </a>
               </li>
               <li>
-                <a href=\"components/avatars.html\">
+                <a href=\"";
+        // line 124
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_show_all");
+        yield "\">
                   <span class=\"sub-item\">SHOW</span>
                 </a>
               </li>
@@ -220,7 +216,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
       <li>
         <!-- Add Club -->
         <a href=\"";
-        // line 145
+        // line 141
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_new");
         yield "\">
           <span class=\"sub-item\">ADD</span>
@@ -229,7 +225,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
       <li>
         <!-- Update Club -->
         <a href=\"";
-        // line 151
+        // line 147
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_manage");
         yield "\">
           <span class=\"sub-item\">UPDATE</span>
@@ -238,7 +234,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
       <li>
         <!-- Delete Club -->
         <a href=\"";
-        // line 157
+        // line 153
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_manage");
         yield "\">
           <span class=\"sub-item\">DELETE</span>
@@ -247,7 +243,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
       <li>
         <!-- Show Clubs -->
         <a href=\"";
-        // line 163
+        // line 159
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_list");
         yield "\">
           <span class=\"sub-item\">SHOW</span>
@@ -293,7 +289,7 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  251 => 163,  242 => 157,  233 => 151,  224 => 145,  199 => 123,  191 => 118,  183 => 113,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
+        return array (  247 => 159,  238 => 153,  229 => 147,  220 => 141,  200 => 124,  192 => 119,  183 => 113,  165 => 98,  146 => 82,  138 => 77,  130 => 72,  122 => 67,  97 => 45,  57 => 8,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -410,22 +406,18 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
           <div class=\"collapse\" id=\"forms\">
             <ul class=\"nav nav-collapse\">
               <li>
-                <a href=\"{{ path('app_logout') }}\">
+                <a href=\"{{ path('recruitment_add') }}\">
                   <span class=\"sub-item\">ADD </span>
                 </a>
               </li>
-              <li>
-                <a href=\"{{ path('app_logout') }}\">
-                  <span class=\"sub-item\">UPDATE </span>
-                </a>
-              </li>
+             
               <li> 
-                <a href=\"{{ path('app_logout') }}\">
-                  <span class=\"sub-item\">DELETE </span>
+                <a href=\"{{ path('admin_dashboard') }}\">
+                  <span class=\"sub-item\">DASHBOARD </span>
                 </a>
               </li>
               <li>
-                <a href=\"components/avatars.html\">
+                <a href=\"{{ path('app_show_all') }}\">
                   <span class=\"sub-item\">SHOW</span>
                 </a>
               </li>
@@ -473,6 +465,6 @@ class __TwigTemplate_e949884f07727e3c1bc6ada0ca6fb9e5 extends Template
     </div>
   </div>
 </div>
-<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\sidebar.html.twig");
+<!-- End Sidebar -->", "sidebar.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\sidebar.html.twig");
     }
 }

@@ -8,10 +8,15 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Club;
 use App\Entity\User;
 use App\Entity\Recruitment;
+use Doctrine\ORM\Mapping\UniqueConstraint;
 use Doctrine\DBAL\Types\Types;
 
 
 #[ORM\Entity(repositoryClass: ApplicationRepository::class)]
+#[ORM\Table(name: 'application', uniqueConstraints: [
+    new ORM\UniqueConstraint(name: 'unique_candidat_recruitment', columns: ['candidat_id', 'recruitment_id'])
+])]
+
 class Application
 {
      // Définition des constantes pour les statuts
@@ -36,6 +41,8 @@ class Application
     #[ORM\ManyToOne(targetEntity: Club::class)]
     #[ORM\JoinColumn(nullable: false)]
     private ?Club $club = null;
+
+    
 
     #[ORM\Column(type: Types::STRING, length: 50)]
     private string $status = self::STATUS_PENDING;

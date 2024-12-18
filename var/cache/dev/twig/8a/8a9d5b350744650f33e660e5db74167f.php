@@ -536,6 +536,6 @@ $context["event"], "participants", [], "any", false, false, false, 56)) < CoreEx
 </script>
 
 {% endblock %}
-", "g_events/index.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_events\\index.html.twig");
+", "g_events/index.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_events\\index.html.twig");
     }
 }

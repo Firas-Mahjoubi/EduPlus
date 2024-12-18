@@ -44,6 +44,9 @@ class Recruitment
     #[ORM\JoinColumn(nullable: false)]
     private ?Club $club = null;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $image = null;
+
     #[ORM\OneToMany(targetEntity: Application::class, mappedBy: 'recruitment', cascade: ['persist', 'remove'])]
     private Collection $candidatures;
 
@@ -175,6 +178,17 @@ class Recruitment
 
         return $this;
     }
+
+    public function getImage(): ?string
+{
+    return $this->image;
+}
+
+public function setImage(?string $image): self
+{
+    $this->image = $image;
+    return $this;
+}
 
     /**
      * @return Collection<int, Application>

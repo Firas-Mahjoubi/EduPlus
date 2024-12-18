@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Candidatures pour {{ recruitment.title }}{% endblock %}
 
@@ -22,30 +22,24 @@
                 {% for application in applications %}
                     <tr>
                         <td>
-
-    {% if application.candidat %}
-                        {{ application.candidat.nom }} {{ application.candidat.prenom }}
-                    {% else %}
-                        Nom non disponible
-                    {% endif %}
-
-
+                            {% if application.candidat %}
+                                {{ application.candidat.nom }} {{ application.candidat.prenom }}
+                            {% else %}
+                                Nom non disponible
+                            {% endif %}
                         </td>
                         <td>{{ application.status }}</td>
                         <td>{{ application.dateSoumission|date('d/m/Y') }}</td>
                         <td>
-                            <a href="{{ path('application_details', { id: application.id }) }}" class="btn btn-primary btn-sm">Voir</a>
+                        <!-- Bouton Voir -->
+                        <a href="{{ path('application_details', { id: application.id }) }}" class="btn btn-info btn-sm">Voir</a>
 
+    <!-- Bouton Valider -->
+                        <a href="{{ path('application_decision', { id: application.id, decision: 'valider' }) }}" class="btn btn-success btn-sm">Valider</a>
+
+    <!-- Bouton Rejeter -->
+                        <a href="{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}" class="btn btn-danger btn-sm">Rejeter</a>
                             
-                            <a href="{{ path('application_decision', { id: application.id, decision: 'valider' }) }}" class="btn btn-success btn-sm">
-                            Valider
-                                    </a>
-                                <a href="{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}" class="btn btn-danger btn-sm">
-                            Rejeter
-                                </a>
-
-
-
                         </td>
                     </tr>
                 {% endfor %}

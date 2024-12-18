@@ -38,7 +38,7 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "base_backoffice.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "g_recrutements/applications.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "g_recrutements/applications.html.twig", 1);
+        $this->parent = $this->loadTemplate("base_backoffice.html.twig", "g_recrutements/applications.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -130,56 +130,50 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
                 // line 23
                 yield "                    <tr>
                         <td>
-
-    ";
-                // line 26
-                if (CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 26)) {
-                    // line 27
-                    yield "                        ";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 27), "nom", [], "any", false, false, false, 27), "html", null, true);
+                            ";
+                // line 25
+                if (CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 25)) {
+                    // line 26
+                    yield "                                ";
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 26), "nom", [], "any", false, false, false, 26), "html", null, true);
                     yield " ";
-                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 27), "prenom", [], "any", false, false, false, 27), "html", null, true);
+                    yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["application"], "candidat", [], "any", false, false, false, 26), "prenom", [], "any", false, false, false, 26), "html", null, true);
                     yield "
-                    ";
+                            ";
                 } else {
-                    // line 29
-                    yield "                        Nom non disponible
-                    ";
+                    // line 28
+                    yield "                                Nom non disponible
+                            ";
                 }
-                // line 31
-                yield "
-
-                        </td>
+                // line 30
+                yield "                        </td>
                         <td>";
-                // line 34
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["application"], "status", [], "any", false, false, false, 34), "html", null, true);
+                // line 31
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["application"], "status", [], "any", false, false, false, 31), "html", null, true);
                 yield "</td>
                         <td>";
-                // line 35
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["application"], "dateSoumission", [], "any", false, false, false, 35), "d/m/Y"), "html", null, true);
+                // line 32
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["application"], "dateSoumission", [], "any", false, false, false, 32), "d/m/Y"), "html", null, true);
                 yield "</td>
                         <td>
-                            <a href=\"";
-                // line 37
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 37)]), "html", null, true);
-                yield "\" class=\"btn btn-primary btn-sm\">Voir</a>
+                        <!-- Bouton Voir -->
+                        <a href=\"";
+                // line 35
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_details", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+                yield "\" class=\"btn btn-info btn-sm\">Voir</a>
 
+    <!-- Bouton Valider -->
+                        <a href=\"";
+                // line 38
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 38), "decision" => "valider"]), "html", null, true);
+                yield "\" class=\"btn btn-success btn-sm\">Valider</a>
+
+    <!-- Bouton Rejeter -->
+                        <a href=\"";
+                // line 41
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 41), "decision" => "rejeter"]), "html", null, true);
+                yield "\" class=\"btn btn-danger btn-sm\">Rejeter</a>
                             
-                            <a href=\"";
-                // line 40
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 40), "decision" => "valider"]), "html", null, true);
-                yield "\" class=\"btn btn-success btn-sm\">
-                            Valider
-                                    </a>
-                                <a href=\"";
-                // line 43
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("application_decision", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["application"], "id", [], "any", false, false, false, 43), "decision" => "rejeter"]), "html", null, true);
-                yield "\" class=\"btn btn-danger btn-sm\">
-                            Rejeter
-                                </a>
-
-
-
                         </td>
                     </tr>
                 ";
@@ -187,12 +181,12 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['application'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 52
+            // line 46
             yield "            </tbody>
         </table>
     ";
         }
-        // line 55
+        // line 49
         yield "</div>
 ";
         
@@ -225,12 +219,12 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  196 => 55,  191 => 52,  176 => 43,  170 => 40,  164 => 37,  159 => 35,  155 => 34,  150 => 31,  146 => 29,  138 => 27,  136 => 26,  131 => 23,  127 => 22,  115 => 12,  111 => 10,  109 => 9,  104 => 7,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
+        return array (  190 => 49,  185 => 46,  174 => 41,  168 => 38,  162 => 35,  156 => 32,  152 => 31,  149 => 30,  145 => 28,  137 => 26,  135 => 25,  131 => 23,  127 => 22,  115 => 12,  111 => 10,  109 => 9,  104 => 7,  101 => 6,  88 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Candidatures pour {{ recruitment.title }}{% endblock %}
 
@@ -254,30 +248,24 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
                 {% for application in applications %}
                     <tr>
                         <td>
-
-    {% if application.candidat %}
-                        {{ application.candidat.nom }} {{ application.candidat.prenom }}
-                    {% else %}
-                        Nom non disponible
-                    {% endif %}
-
-
+                            {% if application.candidat %}
+                                {{ application.candidat.nom }} {{ application.candidat.prenom }}
+                            {% else %}
+                                Nom non disponible
+                            {% endif %}
                         </td>
                         <td>{{ application.status }}</td>
                         <td>{{ application.dateSoumission|date('d/m/Y') }}</td>
                         <td>
-                            <a href=\"{{ path('application_details', { id: application.id }) }}\" class=\"btn btn-primary btn-sm\">Voir</a>
+                        <!-- Bouton Voir -->
+                        <a href=\"{{ path('application_details', { id: application.id }) }}\" class=\"btn btn-info btn-sm\">Voir</a>
 
+    <!-- Bouton Valider -->
+                        <a href=\"{{ path('application_decision', { id: application.id, decision: 'valider' }) }}\" class=\"btn btn-success btn-sm\">Valider</a>
+
+    <!-- Bouton Rejeter -->
+                        <a href=\"{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}\" class=\"btn btn-danger btn-sm\">Rejeter</a>
                             
-                            <a href=\"{{ path('application_decision', { id: application.id, decision: 'valider' }) }}\" class=\"btn btn-success btn-sm\">
-                            Valider
-                                    </a>
-                                <a href=\"{{ path('application_decision', { id: application.id, decision: 'rejeter' }) }}\" class=\"btn btn-danger btn-sm\">
-                            Rejeter
-                                </a>
-
-
-
                         </td>
                     </tr>
                 {% endfor %}
@@ -286,6 +274,6 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
     {% endif %}
 </div>
 {% endblock %}
-", "g_recrutements/applications.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_recrutements\\applications.html.twig");
+", "g_recrutements/applications.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_recrutements\\applications.html.twig");
     }
 }

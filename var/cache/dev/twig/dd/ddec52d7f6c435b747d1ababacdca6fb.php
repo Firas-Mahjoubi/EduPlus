@@ -38,7 +38,7 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "base_backoffice.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "g_recrutements/show.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "g_recrutements/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base_backoffice.html.twig", "g_recrutements/show.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -148,20 +148,11 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 31, $this->source); })()), "dateCreated", [], "any", false, false, false, 31), "d/m/Y H:i"), "html", null, true);
         yield "</p>
 
-            ";
-        // line 33
-        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 33, $this->source); })()), "dateUpdated", [], "any", false, false, false, 33)) {
-            // line 34
-            yield "                <p><strong>Dernière mise à jour :</strong> ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 34, $this->source); })()), "dateUpdated", [], "any", false, false, false, 34), "d/m/Y H:i"), "html", null, true);
-            yield "</p>
-            ";
-        }
-        // line 36
-        yield "
-            <p><strong>Club :</strong> Club ID #";
-        // line 37
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 37, $this->source); })()), "club", [], "any", false, false, false, 37), "id", [], "any", false, false, false, 37), "html", null, true);
+            
+
+            <p><strong>Club :</strong> ";
+        // line 35
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 35, $this->source); })()), "club", [], "any", false, false, false, 35), "nom", [], "any", false, false, false, 35), "html", null, true);
         yield "</p>
         </div>
     </div>
@@ -170,19 +161,19 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
     <div class=\"mt-4 d-flex justify-content-between\">
         
         ";
-        // line 44
+        // line 42
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 45
+            // line 43
             yield "            <a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 45, $this->source); })()), "id", [], "any", false, false, false, 45)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recruitment_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
             yield "\" class=\"btn btn-warning\">Modifier</a>
             <a href=\"";
-            // line 46
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Recruitment_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 46, $this->source); })()), "id", [], "any", false, false, false, 46)]), "html", null, true);
+            // line 44
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("Recruitment_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recruitment"]) || array_key_exists("recruitment", $context) ? $context["recruitment"] : (function () { throw new RuntimeError('Variable "recruitment" does not exist.', 44, $this->source); })()), "id", [], "any", false, false, false, 44)]), "html", null, true);
             yield "\" class=\"btn btn-danger\" onclick=\"return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');\">Supprimer</a>
         ";
         }
-        // line 48
+        // line 46
         yield "    </div>
 </div>
 ";
@@ -216,12 +207,12 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  186 => 48,  181 => 46,  176 => 45,  174 => 44,  164 => 37,  161 => 36,  155 => 34,  153 => 33,  148 => 31,  143 => 29,  138 => 27,  133 => 25,  125 => 20,  121 => 19,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  177 => 46,  172 => 44,  167 => 43,  165 => 42,  155 => 35,  148 => 31,  143 => 29,  138 => 27,  133 => 25,  125 => 20,  121 => 19,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Détails du Recrutement{% endblock %}
 
@@ -253,11 +244,9 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
 
             <p><strong>Créé le :</strong> {{ recruitment.dateCreated|date('d/m/Y H:i') }}</p>
 
-            {% if recruitment.dateUpdated %}
-                <p><strong>Dernière mise à jour :</strong> {{ recruitment.dateUpdated|date('d/m/Y H:i') }}</p>
-            {% endif %}
+            
 
-            <p><strong>Club :</strong> Club ID #{{ recruitment.club.id }}</p>
+            <p><strong>Club :</strong> {{ recruitment.club.nom }}</p>
         </div>
     </div>
 
@@ -271,6 +260,6 @@ class __TwigTemplate_333ce6ceb22b7965b0f0e849ba3cee90 extends Template
     </div>
 </div>
 {% endblock %}
-", "g_recrutements/show.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_recrutements\\show.html.twig");
+", "g_recrutements/show.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_recrutements\\show.html.twig");
     }
 }

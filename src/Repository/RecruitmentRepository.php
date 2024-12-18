@@ -40,4 +40,19 @@ class RecruitmentRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    // src/Repository/RecruitmentRepository.php
+
+public function searchRecruitments(string $searchTerm = null): array
+{
+    $qb = $this->createQueryBuilder('r');
+
+    if ($searchTerm) {
+        $qb->andWhere('r.title LIKE :searchTerm OR r.location LIKE :searchTerm OR r.status LIKE :searchTerm')
+            ->setParameter('searchTerm', '%' . $searchTerm . '%');
+    }
+
+    return $qb->getQuery()->getResult();
+}
+
 }

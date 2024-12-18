@@ -228,19 +228,20 @@ class __TwigTemplate_b3c0511c59cd72329a8179de6d60bb40 extends Template
                     ";
         }
         // line 60
-        yield "
+        yield "                    
+
                     <!-- Bouton de soumission -->
                     <div class=\"text-center mt-4\">
                         <button type=\"submit\" class=\"btn btn-success\">Postuler</button>
                         <a href=\"";
-        // line 64
+        // line 65
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_show_all_user");
         yield "\" class=\"btn btn-secondary\">Annuler</a>
                     </div>
 
                     ";
-        // line 67
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 67, $this->source); })()), 'form_end');
+        // line 68
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 68, $this->source); })()), 'form_end');
         yield "
                 </div>
             </div>
@@ -278,7 +279,7 @@ class __TwigTemplate_b3c0511c59cd72329a8179de6d60bb40 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  243 => 67,  237 => 64,  231 => 60,  225 => 57,  221 => 56,  217 => 55,  214 => 54,  212 => 53,  208 => 51,  202 => 48,  198 => 47,  194 => 46,  191 => 45,  189 => 44,  182 => 40,  178 => 39,  174 => 38,  166 => 33,  162 => 32,  158 => 31,  151 => 27,  142 => 20,  133 => 17,  130 => 16,  125 => 15,  116 => 12,  113 => 11,  109 => 10,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  244 => 68,  238 => 65,  231 => 60,  225 => 57,  221 => 56,  217 => 55,  214 => 54,  212 => 53,  208 => 51,  202 => 48,  198 => 47,  194 => 46,  191 => 45,  189 => 44,  182 => 40,  178 => 39,  174 => 38,  166 => 33,  162 => 32,  158 => 31,  151 => 27,  142 => 20,  133 => 17,  130 => 16,  125 => 15,  116 => 12,  113 => 11,  109 => 10,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -342,6 +343,7 @@ class __TwigTemplate_b3c0511c59cd72329a8179de6d60bb40 extends Template
                             {{ form_errors(form.club) }}
                         </div>
                     {% endif %}
+                    
 
                     <!-- Bouton de soumission -->
                     <div class=\"text-center mt-4\">
@@ -356,6 +358,6 @@ class __TwigTemplate_b3c0511c59cd72329a8179de6d60bb40 extends Template
     </div>
 </div>
 {% endblock %}
-", "g_recrutements/apply.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_recrutements\\apply.html.twig");
+", "g_recrutements/apply.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_recrutements\\apply.html.twig");
     }
 }

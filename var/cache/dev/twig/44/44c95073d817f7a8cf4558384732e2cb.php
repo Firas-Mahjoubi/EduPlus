@@ -276,6 +276,6 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
         </table>
 
     {% endblock %}
-", "club/adminclub.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\adminclub.html.twig");
+", "club/adminclub.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\adminclub.html.twig");
     }
 }

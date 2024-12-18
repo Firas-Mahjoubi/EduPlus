@@ -385,6 +385,6 @@ class __TwigTemplate_f35de3bf957c903ae2ed75210e71bd26 extends Template
         });
     </script>
 {% endblock %}
-", "club/index.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\club\\index.html.twig");
+", "club/index.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\index.html.twig");
     }
 }

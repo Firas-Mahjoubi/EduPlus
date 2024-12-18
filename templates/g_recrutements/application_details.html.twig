@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Détails de la candidature{% endblock %}
 
@@ -6,27 +6,39 @@
 <div class="container mt-5">
     <h1 class="text-center mb-4">Détails de la candidature</h1>
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h5 class="card-title">Informations sur le candidat</h5>
-            <p><strong>Nom :</strong> {{ candidat.nom }} {{ candidat.prenom }}</p>
-            <p><strong>Email :</strong> {{ candidat.email }}</p>
-            <p><strong>Photo de profil :</strong></p>
-            {% if candidat.profilePicture %}
-                <img src="{{ asset('uploads/profile_pictures/' ~ candidat.profilePicture) }}" alt="Photo de profil" class="img-thumbnail" width="150">
-            {% else %}
-                <p><em>Aucune photo disponible</em></p>
-            {% endif %}
+    <table class="table table-bordered">
+        <tr>
+            <th>Nom du candidat</th>
+            <td>{{ candidat.nom }} {{ candidat.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ candidat.email }}</td>
+        </tr>
+        <tr>
+            <th>Statut</th>
+            <td>{{ application.status }}</td>
+        </tr>
+        <tr>
+            <th>Date de soumission</th>
+            <td>{{ application.dateSoumission|date('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <th>Lettre de motivation</th>
+            <td>{{ application.motivationLetter }}</td>
+        </tr>
+        <tr>
+            <th>CV</th>
+            <td>
+                {% if application.cv %}
+                    <a href="{{ asset('uploads/cv/' ~ application.cv) }}" target="_blank">Télécharger</a>
+                {% else %}
+                    Non disponible
+                {% endif %}
+            </td>
+        </tr>
+    </table>
 
-            <h5 class="mt-4">Informations sur la candidature</h5>
-            <p><strong>Statut :</strong> {{ application.status }}</p>
-            <p><strong>Date de soumission :</strong> {{ application.dateSoumission|date('d/m/Y') }}</p>
-            <p><strong>Lettre de motivation :</strong></p>
-            <p>{{ application.motivationLetter }}</p>
-            <p><strong>CV :</strong> <a href="{{ asset('uploads/cv/' ~ application.cv) }}" download>Télécharger le CV</a></p>
-
-            <a href="{{ path('recruitment_applications', { id: application.recruitment.id }) }}" class="btn btn-secondary mt-3">Retour</a>
-        </div>
-    </div>
+    <a href="{{ path('recruitment_applications', { id: application.recruitment.id }) }}" class="btn btn-secondary">Retour</a>
 </div>
 {% endblock %}

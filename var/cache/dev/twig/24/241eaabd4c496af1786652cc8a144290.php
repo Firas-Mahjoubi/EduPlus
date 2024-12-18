@@ -143,6 +143,6 @@ class __TwigTemplate_f4907ee53311b60f41ffc609c450382b extends Template
     <h1>Bienvenue dans le Dashboard</h1>
     <p>Contenu de la page ici...</p>
 {% endblock %}
-", "g_ressources/dashboard.html.twig", "C:\\Users\\frsma\\OneDrive\\Desktop\\projetSymfony\\eduplis\\EduPlus\\templates\\g_ressources\\dashboard.html.twig");
+", "g_ressources/dashboard.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\dashboard.html.twig");
     }
 }

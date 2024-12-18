@@ -6,6 +6,12 @@
 <div class="container mt-5">
     <h1 class="mb-4 text-center">Nos recrutements</h1>
 
+    <!-- Barre de recherche -->
+    <form action="{{ path('recruitment_search') }}" method="get" class="d-flex mb-4">
+        <input type="text" name="q" class="form-control me-2" placeholder="Rechercher des recrutements..." value="{{ app.request.query.get('q', '') }}">
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+    </form>
+
     <!-- Messages Flash -->
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">
@@ -24,6 +30,9 @@
         {% for recruitment in liste_recruitement %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
+                    {% if recruitment.image %}
+                        <img src="{{ asset('uploads/images/' ~ recruitment.image) }}" class="card-img-top" alt="Image">
+                    {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ recruitment.title }}</h5>
                         <p class="card-text">
@@ -37,16 +46,32 @@
                         </p>
                         <p class="card-text"><strong>Date Limite :</strong> {{ recruitment.deadline|date('d/m/Y') }}</p>
                         <p class="card-text"><strong>Lieu :</strong> {{ recruitment.location }}</p>
-                        
-                        <!-- Bouton Postuler -->
-                        <a href="{{ path('recruitment_apply', { id: recruitment.id }) }}" class="btn btn-success btn-sm">Postuler</a>
-                        <!-- Bouton Voir les candidatures -->
-
-                        
-                        <a href="{{ path('recruitment_applications', { id: recruitment.id }) }}" class="btn btn-primary btn-sm"> 
-                            Voir les candidatures
-                        </a>
-
+                        {% if is_granted('ROLE_USER')%}
+                        <a href="{{ path('user_recruitment_details', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir</a>
+                            {% endif %}
+                        {% if is_granted('ROLE_USER') %}
+                            {% if recruitment.application is defined and recruitment.application %}
+                                <!-- Bouton pour supprimer la candidature -->
+                                <a href="{{ path('application_delete', { id: recruitment.application.id }) }}" 
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Voulez-vous supprimer votre candidature ?');">
+                                    Supprimer ma candidature
+                                </a>
+                            {% else %}
+                                <!-- Bouton pour postuler -->
+                                <a href="{{ path('recruitment_apply', { id: recruitment.id }) }}" class="btn btn-success btn-sm">Postuler</a>
+                            {% endif %}
+                        {% endif %}
+                             {% if is_granted('ROLE_USER')%}
+                        <a href="{{ path('check_application_status', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir mon statut</a>
+                                {% endif %}
+                        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_RESPONSABLE_CLUB') %}
+                            <!-- Bouton Voir les candidatures -->
+                            <a href="{{ path('recruitment_applications', { id: recruitment.id }) }}" class="btn btn-primary btn-sm"> 
+                                Voir les candidatures
+                            </a>
+                            
+                        {% endif %}
                     </div>
                 </div>
             </div>

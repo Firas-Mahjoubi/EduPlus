@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_backoffice.html.twig' %}
 
 {% block title %}Liste des Recrutements{% endblock %}
 
@@ -19,12 +19,7 @@
         </div>
     {% endfor %}
 
-    <!-- Bouton pour ajouter une annonce -->
-    {% if is_granted('ROLE_ADMIN') %}
-        <div class="mb-3 text-end">
-            <a href="{{ path('recruitment_create') }}" class="btn btn-primary">Créer une Nouvelle Annonce</a>
-        </div>
-    {% endif %}
+    
 
     <!-- Tableau des recrutements -->
     <div class="table-responsive">
@@ -46,16 +41,21 @@
                         <td>{{ recruitment.title }}</td>
                         <td>
                             <span class="badge {{ recruitment.status == 'open' ? 'bg-success' : 'bg-danger' }}">
-                                {{ recruitment.status | capitalize }}
+                             {{ recruitment.status | capitalize }}
                             </span>
+
                         </td>
                         <td>{{ recruitment.deadline|date('d/m/Y') }}</td>
                         <td>{{ recruitment.club.nom }}</td>
                         <td>
                             <!-- Bouton Voir -->
-                            <a href="{{ path('recruitement_details', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir</a>
+                            <a href="{{ path('recruitment_details', { id: recruitment.id }) }}" class="btn btn-info btn-sm">Voir</a>
 
-                           
+
+                           <!-- Bouton Voir les candidatures -->
+    <a href="{{ path('recruitment_applications', { id: recruitment.id }) }}" class="btn btn-primary btn-sm">
+        Voir les candidatures
+    </a>
                                 <!-- Bouton Modifier -->
                                 <a href="{{ path('recruitment_edit', { id: recruitment.id }) }}" class="btn btn-warning btn-sm">Modifier</a>
                                 <!-- Bouton Supprimer -->
