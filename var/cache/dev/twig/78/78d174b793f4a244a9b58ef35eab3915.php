@@ -170,6 +170,10 @@ class __TwigTemplate_c64dbe2634829bebf1d0d73e16a3311e extends Template
     </ul>
 </div>
 {% endblock %}
+<<<<<<< HEAD
 ", "g_ressources/index.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\index.html.twig");
+=======
+", "g_ressources/index.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\index.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

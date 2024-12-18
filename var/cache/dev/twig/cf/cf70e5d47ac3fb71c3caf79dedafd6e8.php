@@ -374,6 +374,10 @@ $context["event"], "participants", [], "any", false, false, false, 31)) < CoreEx
                 {% endfor %}
             </div>
         </div>
+<<<<<<< HEAD
     </div>", "g_events/list.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_events\\list.html.twig");
+=======
+    </div>", "g_events/list.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\list.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

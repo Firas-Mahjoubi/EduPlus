@@ -27,6 +27,21 @@ class ClubRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    // src/Repository/ApplicationClubRepository.php
+
+    public function getApplicationsCountByMonthAndStatus(Club $club): array
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->select("DATE_FORMAT(a.createdAt, '%Y-%m') as month, a.status, COUNT(a.id) as count")
+            ->where('a.club = :club')
+            ->setParameter('club', $club)
+            ->groupBy('month, a.status')
+            ->orderBy('month', 'ASC');
+
+        return $qb->getQuery()->getResult();
+    }
+
+
     //    /**
     //     * @return Club[] Returns an array of Club objects
     //     */

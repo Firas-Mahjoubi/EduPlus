@@ -174,6 +174,10 @@ class __TwigTemplate_53fb9c66c7f7cde9693c74c8a94600b4 extends Template
     <a href=\"{{ path('club_search') }}\" class=\"btn btn-primary mt-3\">Back to Search</a>
 </div>
 {% endblock %}
+<<<<<<< HEAD
 ", "club/search.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\search.html.twig");
+=======
+", "club/search.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\search.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

@@ -243,6 +243,10 @@ class __TwigTemplate_0ade56fb593949509c0b65078686b14b extends Template
         </table>
     </div>
 {% endblock %}
+<<<<<<< HEAD
 ", "admin/dashboard.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\admin\\dashboard.html.twig");
+=======
+", "admin/dashboard.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\admin\\dashboard.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

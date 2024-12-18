@@ -1319,6 +1319,10 @@ class __TwigTemplate_5651a65cec183931e0baa327c37bd394 extends Template
    });
  </script>
 </body>
+<<<<<<< HEAD
 </html>", "base_backoffice.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\base_backoffice.html.twig");
+=======
+</html>", "base_backoffice.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\base_backoffice.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

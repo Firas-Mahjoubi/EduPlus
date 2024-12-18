@@ -38,7 +38,7 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "base_backoffice.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "club/adminclub.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "club/adminclub.html.twig", 1);
+        $this->parent = $this->loadTemplate("base_backoffice.html.twig", "club/adminclub.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -73,7 +73,7 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Clubs List";
+        yield "Clubs Dashboard";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,27 +97,27 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "        <h1>Clubs List</h1>
-
-        <!-- Search Form -->
-        <div class=\"mb-3\">
-            <form action=\"";
-        // line 10
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_list");
-        yield "\" method=\"get\" class=\"form-inline\">
-                <input type=\"text\" name=\"search\" value=\"";
-        // line 11
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["searchTerm"]) || array_key_exists("searchTerm", $context) ? $context["searchTerm"] : (function () { throw new RuntimeError('Variable "searchTerm" does not exist.', 11, $this->source); })()), "html", null, true);
-        yield "\" class=\"form-control\" placeholder=\"Search by club name\">
-                <button type=\"submit\" class=\"btn btn-primary ml-2\">Search</button>
-            </form>
+        yield "    <div class=\"container py-5\">
+        <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
+            <h5 class=\"fw-bold text-primary text-uppercase\">Back Office - Clubs Dashboard</h5>
+            <h1 class=\"mb-0\">Manage Clubs</h1>
         </div>
 
-        <div>
+        <div class=\"d-flex justify-content-between mb-4\">
             <a href=\"";
-        // line 17
+        // line 13
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_new");
-        yield "\" class=\"btn btn-primary\">Add New Club</a>
+        yield "\" class=\"btn btn-success\">Create New Club</a>
+            <form method=\"get\" action=\"";
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("club_list");
+        yield "\" class=\"d-flex\">
+                <input type=\"text\" name=\"search\" class=\"form-control\" placeholder=\"Search by club name\" value=\"";
+        // line 15
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "request", [], "any", false, false, false, 15), "get", ["search"], "method", false, false, false, 15), "html", null, true);
+        yield "\">
+                <button type=\"submit\" class=\"btn btn-primary ms-2\">Search</button>
+            </form>
         </div>
 
         <table class=\"table table-striped\">
@@ -135,12 +135,25 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable((isset($context["clubs"]) || array_key_exists("clubs", $context) ? $context["clubs"] : (function () { throw new RuntimeError('Variable "clubs" does not exist.', 30, $this->source); })()));
         $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["club"]) {
             // line 31
             yield "                    <tr>
                         <td>";
             // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["club"], "id", [], "any", false, false, false, 32), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 32), "html", null, true);
             yield "</td>
                         <td>";
             // line 33
@@ -173,22 +186,30 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
                     </tr>
                 ";
             $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['revindex0'], $context['loop']['revindex'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         if (!$context['_iterated']) {
             // line 45
             yield "                    <tr>
-                        <td colspan=\"4\">No clubs found.</td>
+                        <td colspan=\"4\" class=\"text-center text-muted\">No clubs found.</td>
                     </tr>
                 ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_key'], $context['club'], $context['_parent'], $context['_iterated']);
+        unset($context['_seq'], $context['_key'], $context['club'], $context['_parent'], $context['_iterated'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 49
         yield "            </tbody>
         </table>
-
-    ";
+    </div>
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -219,28 +240,28 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  188 => 49,  179 => 45,  168 => 39,  164 => 38,  160 => 37,  156 => 36,  151 => 34,  147 => 33,  143 => 32,  140 => 31,  135 => 30,  119 => 17,  110 => 11,  106 => 10,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  209 => 49,  200 => 45,  181 => 39,  177 => 38,  173 => 37,  169 => 36,  164 => 34,  160 => 33,  156 => 32,  153 => 31,  135 => 30,  117 => 15,  113 => 14,  109 => 13,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("    {% extends 'base.html.twig' %}
+        return new Source("{% extends 'base_backoffice.html.twig' %}
+    
+{% block title %}Clubs Dashboard{% endblock %}
 
-    {% block title %}Clubs List{% endblock %}
-
-    {% block body %}
-        <h1>Clubs List</h1>
-
-        <!-- Search Form -->
-        <div class=\"mb-3\">
-            <form action=\"{{ path('club_list') }}\" method=\"get\" class=\"form-inline\">
-                <input type=\"text\" name=\"search\" value=\"{{ searchTerm }}\" class=\"form-control\" placeholder=\"Search by club name\">
-                <button type=\"submit\" class=\"btn btn-primary ml-2\">Search</button>
-            </form>
+{% block body %}
+    <div class=\"container py-5\">
+        <div class=\"section-title text-center position-relative pb-3 mb-5 mx-auto\" style=\"max-width: 600px;\">
+            <h5 class=\"fw-bold text-primary text-uppercase\">Back Office - Clubs Dashboard</h5>
+            <h1 class=\"mb-0\">Manage Clubs</h1>
         </div>
 
-        <div>
-            <a href=\"{{ path('club_new') }}\" class=\"btn btn-primary\">Add New Club</a>
+        <div class=\"d-flex justify-content-between mb-4\">
+            <a href=\"{{ path('club_new') }}\" class=\"btn btn-success\">Create New Club</a>
+            <form method=\"get\" action=\"{{ path('club_list') }}\" class=\"d-flex\">
+                <input type=\"text\" name=\"search\" class=\"form-control\" placeholder=\"Search by club name\" value=\"{{ app.request.get('search') }}\">
+                <button type=\"submit\" class=\"btn btn-primary ms-2\">Search</button>
+            </form>
         </div>
 
         <table class=\"table table-striped\">
@@ -255,7 +276,7 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
             <tbody>
                 {% for club in clubs %}
                     <tr>
-                        <td>{{ club.id }}</td>
+                        <td>{{ loop.index }}</td>
                         <td>{{ club.nom }}</td>
                         <td>{{ club.description }}</td>
                         <td>
@@ -269,13 +290,19 @@ class __TwigTemplate_42ac8c7a40b37c4f806961619cecc339 extends Template
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan=\"4\">No clubs found.</td>
+                        <td colspan=\"4\" class=\"text-center text-muted\">No clubs found.</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+<<<<<<< HEAD
 
     {% endblock %}
 ", "club/adminclub.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\adminclub.html.twig");
+=======
+    </div>
+{% endblock %}
+", "club/adminclub.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\adminclub.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

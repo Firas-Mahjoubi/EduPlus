@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\Collection;
+use App\enum\MemberRole;
 
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
@@ -39,6 +40,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: "string", enumType: UserRole::class)]
     private UserRole $role;
+
     #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Member::class, cascade: ['persist', 'remove'])]
     private Collection $memberships;
 
@@ -152,5 +154,38 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function eraseCredentials()
     {
         // Not necessary if you don't store sensitive data
+    }
+    public function isPresident(): bool
+    {
+        foreach ($this->memberships as $membership) {
+            // Make sure to use $membership->getRole() instead of trying to directly access role
+            if ($membership->getRole() === MemberRole::PRESIDENT) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function isPresidentOf(Club $club): bool
+    {
+        foreach ($this->memberships as $membership) {
+            // Ensure the role and club are compared properly
+            if ($membership->getClub() === $club && $membership->getRole() === MemberRole::PRESIDENT) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getMemberships(): Collection
+    {
+        return $this->memberships;
+    }
+
+
+    public function setMemberships(Collection $memberships): static
+    {
+        $this->memberships = $memberships;
+        return $this;
     }
 }

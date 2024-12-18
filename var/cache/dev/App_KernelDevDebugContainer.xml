@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
+<<<<<<< HEAD
     <parameter key="kernel.project_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</parameter>
+=======
+    <parameter key="kernel.project_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.runtime_mode">%env(query_string:default:container.runtime_mode:APP_RUNTIME_MODE)%</parameter>
@@ -9,9 +13,15 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
+<<<<<<< HEAD
     <parameter key="kernel.build_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev</parameter>
     <parameter key="kernel.cache_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\log</parameter>
+=======
+    <parameter key="kernel.build_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\log</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -30,6 +40,7 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
+<<<<<<< HEAD
         <parameter key="path">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
@@ -79,6 +90,57 @@
       </parameter>
       <parameter key="WebpackEncoreBundle" type="collection">
         <parameter key="path">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\webpack-encore-bundle\src</parameter>
+=======
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\framework-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
+      </parameter>
+      <parameter key="DoctrineMigrationsBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
+      </parameter>
+      <parameter key="DebugBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\debug-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
+      </parameter>
+      <parameter key="TwigBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
+      </parameter>
+      <parameter key="WebProfilerBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\web-profiler-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
+      </parameter>
+      <parameter key="StimulusBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\stimulus-bundle</parameter>
+        <parameter key="namespace">Symfony\UX\StimulusBundle</parameter>
+      </parameter>
+      <parameter key="TurboBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\ux-turbo</parameter>
+        <parameter key="namespace">Symfony\UX\Turbo</parameter>
+      </parameter>
+      <parameter key="TwigExtraBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\twig\extra-bundle</parameter>
+        <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
+      </parameter>
+      <parameter key="SecurityBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
+      </parameter>
+      <parameter key="MonologBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\monolog-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
+      </parameter>
+      <parameter key="MakerBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
+      </parameter>
+      <parameter key="WebpackEncoreBundle" type="collection">
+        <parameter key="path">C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\webpack-encore-bundle\src</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         <parameter key="namespace">Symfony\WebpackEncoreBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
@@ -129,18 +191,32 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
+<<<<<<< HEAD
     <parameter key="translator.default_path">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.container.dump">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+=======
+    <parameter key="translator.default_path">C:\Users\ASUS\Desktop\eduplus1\EduPlus/translations</parameter>
+    <parameter key="debug.error_handler.throw_at">-1</parameter>
+    <parameter key="debug.container.dump">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
+<<<<<<< HEAD
     <parameter key="router.cache_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.file">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus.App_KernelDevDebugContainer</parameter>
+=======
+    <parameter key="router.cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</parameter>
+    <parameter key="request_listener.http_port">80</parameter>
+    <parameter key="request_listener.https_port">443</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</parameter>
+    <parameter key="cache.prefix.seed">_C:\Users\ASUS\Desktop\eduplus1\EduPlus.App_KernelDevDebugContainer</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -153,11 +229,19 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
+<<<<<<< HEAD
     <parameter key="validator.mapping.cache.file">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
     <parameter key="profiler.storage.dsn">file:C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/profiler</parameter>
+=======
+    <parameter key="validator.mapping.cache.file">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.translation_domain">validators</parameter>
+    <parameter key="profiler_listener.only_exceptions">false</parameter>
+    <parameter key="profiler_listener.only_main_requests">false</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/profiler</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -223,7 +307,11 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
+<<<<<<< HEAD
     <parameter key="doctrine.orm.proxy_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/doctrine/orm/Proxies</parameter>
+=======
+    <parameter key="doctrine.orm.proxy_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/doctrine/orm/Proxies</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -231,7 +319,11 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
+<<<<<<< HEAD
     <parameter key="twig.default_path">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/templates</parameter>
+=======
+    <parameter key="twig.default_path">C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</parameter>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -471,6 +563,10 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Repository\ApplicationClubRepository" class="App\Repository\ApplicationClubRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -549,7 +645,11 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.yb9xeox"/>
+=======
+      <argument type="service" id=".service_locator.fvrAFxC"/>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -630,7 +730,11 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/http_cache</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/http_cache</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -640,7 +744,11 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -906,7 +1014,11 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -942,7 +1054,11 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -1134,7 +1250,11 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1366,6 +1486,7 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/translations</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/templates</argument>
       <argument type="collection">
@@ -1376,6 +1497,18 @@
       <argument type="collection">
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/translations</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</argument>
+      <argument type="collection">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations</argument>
+      </argument>
+      <argument type="collection">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1392,6 +1525,7 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/translations</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/templates</argument>
       <argument type="collection">
@@ -1402,6 +1536,18 @@
       <argument type="collection">
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/translations</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</argument>
+      <argument type="collection">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations</argument>
+      </argument>
+      <argument type="collection">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1653,7 +1799,11 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1672,7 +1822,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/app</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1839,7 +1993,11 @@
       <argument>false</argument>
     </service>
     <service id="assets._version__default" class="Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/public/build/manifest.json</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/public/build/manifest.json</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id=".debug.http_client" on-invalid="null"/>
       <argument>false</argument>
     </service>
@@ -1851,16 +2009,28 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/asset_mapper</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/asset_mapper</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\ux-turbo\src\DependencyInjection/../../assets/dist">@symfony/ux-turbo</argument>
         <argument key="C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\stimulus-bundle\src\DependencyInjection/../../assets/dist">@symfony/stimulus-bundle</argument>
         <argument key="assets/"></argument>
       </argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+        <argument key="C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\ux-turbo\src\DependencyInjection/../../assets/dist">@symfony/ux-turbo</argument>
+        <argument key="C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\stimulus-bundle\src\DependencyInjection/../../assets/dist">@symfony/stimulus-bundle</argument>
+        <argument key="assets/"></argument>
+      </argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="collection">
         <argument>#^(?=[^\.]).*\.d\.ts$#</argument>
         <argument>#^(?=[^\.]).*.*/(?=[^\.])controllers\.json$#</argument>
@@ -1872,10 +2042,17 @@
       <argument>/assets/</argument>
     </service>
     <service id="asset_mapper.local_public_assets_filesystem" class="Symfony\Component\AssetMapper\Path\LocalPublicAssetsFilesystem">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/public</argument>
     </service>
     <service id="asset_mapper.compiled_asset_mapper_config_reader" class="Symfony\Component\AssetMapper\CompiledAssetMapperConfigReader">
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/public/assets</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/public</argument>
+    </service>
+    <service id="asset_mapper.compiled_asset_mapper_config_reader" class="Symfony\Component\AssetMapper\CompiledAssetMapperConfigReader">
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/public/assets</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="asset_mapper.asset_package" class="Symfony\Component\AssetMapper\MapperAwareAssetPackage">
       <tag name="container.decorator" id="assets._default_package" inner="asset_mapper.asset_package.inner"/>
@@ -1899,7 +2076,11 @@
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="asset_mapper.importmap.generator"/>
       <argument type="service" id="asset_mapper.local_public_assets_filesystem"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>true</argument>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
       <call method="setName">
@@ -1914,7 +2095,11 @@
       <tag name="container.no_preload"/>
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="asset_mapper.repository"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <call method="setName">
         <argument>debug:asset-map</argument>
       </call>
@@ -1943,7 +2128,11 @@
       <argument type="service" id="monolog.logger.asset_mapper"/>
     </service>
     <service id="asset_mapper.importmap.config_reader" class="Symfony\Component\AssetMapper\ImportMap\ImportMapConfigReader">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/importmap.php</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/importmap.php</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="asset_mapper.importmap.remote_package_storage"/>
     </service>
     <service id="asset_mapper.importmap.manager" class="Symfony\Component\AssetMapper\ImportMap\ImportMapManager">
@@ -1958,7 +2147,11 @@
       <argument type="service" id="asset_mapper.importmap.config_reader"/>
     </service>
     <service id="asset_mapper.importmap.remote_package_storage" class="Symfony\Component\AssetMapper\ImportMap\RemotePackageStorage">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/assets/vendor</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/assets/vendor</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="asset_mapper.importmap.remote_package_downloader" class="Symfony\Component\AssetMapper\ImportMap\RemotePackageDownloader">
       <argument type="service" id="asset_mapper.importmap.remote_package_storage"/>
@@ -2029,7 +2222,11 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="asset_mapper.importmap.remote_package_downloader"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <call method="setName">
         <argument>importmap:install</argument>
       </call>
@@ -2219,6 +2416,7 @@
         </argument>
       </argument>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="cache_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
@@ -2548,6 +2746,335 @@
             <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\maker-bundle\src/translations</argument>
             <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\webpack-encore-bundle\src/translations</argument>
             <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\sensio\framework-extra-bundle\src/translations</argument>
+=======
+        <argument key="cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/translations</argument>
+        <argument key="debug">true</argument>
+        <argument key="resource_files" type="collection">
+          <argument key="af" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
+          </argument>
+          <argument key="ar" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+          </argument>
+          <argument key="az" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+          </argument>
+          <argument key="be" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+          </argument>
+          <argument key="bg" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+          </argument>
+          <argument key="bs" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
+          </argument>
+          <argument key="ca" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+          </argument>
+          <argument key="cs" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+          </argument>
+          <argument key="cy" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.cy.xlf</argument>
+          </argument>
+          <argument key="da" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+          </argument>
+          <argument key="de" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+          </argument>
+          <argument key="el" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+          </argument>
+          <argument key="en" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+          </argument>
+          <argument key="es" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+          </argument>
+          <argument key="et" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
+          </argument>
+          <argument key="eu" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+          </argument>
+          <argument key="fa" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+          </argument>
+          <argument key="fi" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+          </argument>
+          <argument key="fr" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+          </argument>
+          <argument key="gl" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+          </argument>
+          <argument key="he" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+          </argument>
+          <argument key="hr" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+          </argument>
+          <argument key="hu" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+          </argument>
+          <argument key="hy" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
+          </argument>
+          <argument key="id" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+          </argument>
+          <argument key="it" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+          </argument>
+          <argument key="ja" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+          </argument>
+          <argument key="lb" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+          </argument>
+          <argument key="lt" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+          </argument>
+          <argument key="lv" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+          </argument>
+          <argument key="mk" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.mk.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.mk.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.mk.xlf</argument>
+          </argument>
+          <argument key="mn" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+          </argument>
+          <argument key="my" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
+          </argument>
+          <argument key="nb" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+          </argument>
+          <argument key="nl" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+          </argument>
+          <argument key="nn" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+          </argument>
+          <argument key="no" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+          </argument>
+          <argument key="pl" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+          </argument>
+          <argument key="pt" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+          </argument>
+          <argument key="pt_BR" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+          </argument>
+          <argument key="ro" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+          </argument>
+          <argument key="ru" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+          </argument>
+          <argument key="sk" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+          </argument>
+          <argument key="sl" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+          </argument>
+          <argument key="sq" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
+          </argument>
+          <argument key="sr_Cyrl" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+          </argument>
+          <argument key="sr_Latn" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+          </argument>
+          <argument key="sv" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+          </argument>
+          <argument key="th" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+          </argument>
+          <argument key="tl" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+          </argument>
+          <argument key="tr" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+          </argument>
+          <argument key="ur" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
+          </argument>
+          <argument key="uz" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
+          </argument>
+          <argument key="vi" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+          </argument>
+          <argument key="zh_CN" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+          </argument>
+          <argument key="zh_TW" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+          </argument>
+        </argument>
+        <argument key="scanned_directories" type="collection">
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\framework-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\debug-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\web-profiler-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\stimulus-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\ux-turbo/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\monolog-bundle/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\webpack-encore-bundle\src/translations</argument>
+        </argument>
+        <argument key="cache_vary" type="collection">
+          <argument key="scanned_directories" type="collection">
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\validator/Resources/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\framework-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\debug-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\web-profiler-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\stimulus-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\ux-turbo/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\twig\extra-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\monolog-bundle/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\webpack-encore-bundle\src/translations</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
           </argument>
         </argument>
       </argument>
@@ -2878,7 +3405,11 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\ErrorHandler\ErrorRenderer\FileLinkFormatter">
       <argument>%env(default::SYMFONY_IDE)%</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service_closure" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch" public="true">
@@ -3549,7 +4080,11 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
+<<<<<<< HEAD
       <argument type="service" id=".service_locator.yb9xeox"/>
+=======
+      <argument type="service" id=".service_locator.fvrAFxC"/>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3653,7 +4188,11 @@
       <argument type="service" id=".service_locator.bN.V_Nq.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="cache_dir">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev</argument>
+=======
+        <argument key="cache_dir">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3702,7 +4241,11 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -3768,7 +4311,11 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString" constructor="fromCallable">
@@ -3776,7 +4323,11 @@
       <argument>base64:default::SYMFONY_DECRYPTION_SECRET</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/.env.dev.local</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/.env.dev.local</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="serializer.mapping.class_discriminator_resolver" class="Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata">
       <argument type="service" id="serializer.mapping.class_metadata_factory"/>
@@ -3870,10 +4421,17 @@
           </service>
         </argument>
       </argument>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/serialization.php</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</argument>
+    </service>
+    <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/serialization.php</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4009,7 +4567,11 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/sessions</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/sessions</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4189,7 +4751,11 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
+<<<<<<< HEAD
           <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\form/Resources/config/validation.xml</argument>
+=======
+          <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\form/Resources/config/validation.xml</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         </argument>
       </call>
       <call method="enableAttributeMapping">
@@ -4217,10 +4783,17 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/validation.php</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</argument>
+    </service>
+    <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/validation.php</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -4880,7 +5453,11 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
+<<<<<<< HEAD
       <argument>file:C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/profiler</argument>
+=======
+      <argument>file:C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/profiler</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4939,7 +5516,11 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/App_KernelDevDebugContainer</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/App_KernelDevDebugContainer</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -5321,7 +5902,11 @@
       <tag name="doctrine.event_listener" event="onSchemaCreateTable"/>
       <argument type="tagged_iterator" tag="messenger.receiver"/>
     </service>
+<<<<<<< HEAD
     <service id=".1_ServiceLocator~N8wZgVj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".1_ServiceLocator~r8MlY7k" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -5340,7 +5925,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.VBPHw4y"/>
+      <argument type="service" id=".service_locator.ulsVA8G"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5516,7 +6101,11 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
+<<<<<<< HEAD
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/doctrine/orm/Proxies</argument>
+=======
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/doctrine/orm/Proxies</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5557,7 +6146,11 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
+<<<<<<< HEAD
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\src\Entity</argument>
+=======
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\src\Entity</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       </argument>
       <argument>true</argument>
     </service>
@@ -5621,7 +6214,11 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
+<<<<<<< HEAD
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/migrations</argument>
+=======
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/migrations</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -5841,7 +6438,11 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
+<<<<<<< HEAD
             <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -5863,7 +6464,11 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
+<<<<<<< HEAD
             <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+            <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -5928,7 +6533,11 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
+<<<<<<< HEAD
         <argument key="cache">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/twig</argument>
+=======
+        <argument key="cache">C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/twig</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -6055,10 +6664,17 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
         <argument key="C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/templates</argument>
+=======
+        <argument key="C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
+        <argument key="C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
+      </argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="collection">
         <argument>*.twig</argument>
       </argument>
@@ -6072,6 +6688,7 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
       <call method="addPath">
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\doctrine\doctrine-bundle/templates</argument>
@@ -6134,6 +6751,70 @@
       </call>
       <call method="addPath">
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-bundle/templates</argument>
+        <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-bundle/templates</argument>
+        <argument>!Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>DoctrineMigrations</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>!DoctrineMigrations</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>!Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>!WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\ux-turbo/templates</argument>
+        <argument>Turbo</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\ux-turbo/templates</argument>
+        <argument>!Turbo</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>!Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>email</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>!email</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -6159,7 +6840,11 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -6252,9 +6937,15 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
       <argument>%kernel.bundles_metadata%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/templates</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+      <argument>%kernel.bundles_metadata%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -6299,7 +6990,11 @@
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -6358,7 +7053,11 @@
       <argument type="service" id="stimulus.helper"/>
     </service>
     <service id="stimulus.asset_mapper.ux_package_reader" class="Symfony\UX\StimulusBundle\Ux\UxPackageReader">
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="stimulus.ux_controllers_twig_extension" class="Symfony\UX\StimulusBundle\Twig\UxControllersTwigExtension">
       <tag name="twig.extension"/>
@@ -6368,15 +7067,25 @@
       <argument type="service" id="stimulus.asset_mapper.controllers_map_generator"/>
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="stimulus.asset_mapper.ux_package_reader"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="stimulus.asset_mapper.controllers_map_generator" class="Symfony\UX\StimulusBundle\AssetMapper\ControllersMapGenerator">
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="stimulus.asset_mapper.ux_package_reader"/>
       <argument type="collection">
+<<<<<<< HEAD
         <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/assets/controllers</argument>
       </argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/assets/controllers.json</argument>
+=======
+        <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/assets/controllers</argument>
+      </argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/assets/controllers.json</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="stimulus.asset_mapper.auto_import_locator" on-invalid="null"/>
     </service>
     <service id="stimulus.asset_mapper.auto_import_locator" class="Symfony\UX\StimulusBundle\AssetMapper\AutoImportLocator">
@@ -7298,7 +8007,11 @@
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\log/dev.log</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\log/dev.log</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>debug</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -7320,8 +8033,13 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/templates</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/templates</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -7498,7 +8216,11 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -7520,7 +8242,11 @@
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.generator"/>
     </service>
+<<<<<<< HEAD
     <service id=".1_ServiceLocator~fe0.KF." class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".1_ServiceLocator~vkBjJJN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="webpack_encore.entrypoint_lookup_collection" type="service_closure" id="webpack_encore.entrypoint_lookup_collection"/>
@@ -7544,11 +8270,16 @@
     </service>
     <service id="webpack_encore.twig_entry_files_extension" class="Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension">
       <tag name="twig.extension"/>
+<<<<<<< HEAD
       <argument type="service" id=".1_ServiceLocator~fe0.KF."/>
+=======
+      <argument type="service" id=".1_ServiceLocator~vkBjJJN"/>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="webpack_encore.entrypoint_lookup.cache_warmer" class="Symfony\WebpackEncoreBundle\CacheWarmer\EntrypointCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="collection">
+<<<<<<< HEAD
         <argument key="_default">C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/public/build/entrypoints.json</argument>
       </argument>
       <argument type="service" id=".debug.http_client" on-invalid="null"/>
@@ -7556,6 +8287,15 @@
     </service>
     <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/webpack_encore.cache.php</argument>
+=======
+        <argument key="_default">C:\Users\ASUS\Desktop\eduplus1\EduPlus/public/build/entrypoints.json</argument>
+      </argument>
+      <argument type="service" id=".debug.http_client" on-invalid="null"/>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/webpack_encore.cache.php</argument>
+    </service>
+    <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/webpack_encore.cache.php</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="cache.webpack_encore"/>
     </service>
     <service id="cache.webpack_encore" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
@@ -7580,7 +8320,11 @@
     </service>
     <service id="webpack_encore.entrypoint_lookup[_default]" class="Symfony\WebpackEncoreBundle\Asset\EntrypointLookup">
       <tag name="kernel.reset" method="reset"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/public/build/entrypoints.json</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/public/build/entrypoints.json</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument>null</argument>
       <argument>_default</argument>
       <argument>true</argument>
@@ -7710,6 +8454,8 @@
     <service id=".abstract.instanceof.App\Form\RessourceType" class="App\Form\RessourceType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ApplicationClubRepository" class="App\Repository\ApplicationClubRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ApplicationClubRepository" class="App\Repository\ApplicationClubRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ApplicationRepository" class="App\Repository\ApplicationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BlocRepository" class="App\Repository\BlocRepository" autowire="true" abstract="true"/>
@@ -8250,10 +8996,11 @@
         <argument key="parameterBag" type="service_closure" id="parameter_bag"/>
       </argument>
     </service>
-    <service id=".service_locator.pnbisVO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Z_Q_cF0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="clubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="ratingRepository" type="service_closure" id="App\Repository\RatingRepository"/>
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
@@ -8271,12 +9018,22 @@
         <argument key="memberRepository" type="service_closure" id="App\Repository\MemberRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.Qclnwot" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pX.iTSM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="applicationRepository" type="service_closure" id="App\Repository\ApplicationRepository"/>
-        <argument key="club" type="service_closure" id=".errored..service_locator.Qclnwot.App\Entity\Club"/>
+        <argument key="clubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
+        <argument key="memberRepository" type="service_closure" id="App\Repository\MemberRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.xRqqVGS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="applicationClubRepository" type="service_closure" id="App\Repository\ApplicationClubRepository"/>
+        <argument key="club" type="service_closure" id=".errored..service_locator.xRqqVGS.App\Entity\Club"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
       </argument>
     </service>
     <service id=".service_locator.eLmG6qh" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8284,6 +9041,13 @@
       <argument type="collection">
         <argument key="club" type="service_closure" id=".errored..service_locator.eLmG6qh.App\Entity\Club"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.raUDR8y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="applicationClubRepository" type="service_closure" id="App\Repository\ApplicationClubRepository"/>
+        <argument key="club" type="service_closure" id=".errored..service_locator.raUDR8y.App\Entity\Club"/>
       </argument>
     </service>
     <service id=".service_locator.6.pzLHU" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8367,7 +9131,11 @@
         <argument key="security" type="service_closure" id="security.helper"/>
       </argument>
     </service>
+<<<<<<< HEAD
     <service id=".service_locator.yb9xeox" class="Symfony\Component\DependencyInjection\ServiceLocator">
+=======
+    <service id=".service_locator.fvrAFxC" class="Symfony\Component\DependencyInjection\ServiceLocator">
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::add" type="service_closure" id=".service_locator.kPUOGb8"/>
@@ -8386,16 +9154,20 @@
         <argument key="App\Controller\AdminController::update" type="service_closure" id=".service_locator.UItqPak"/>
         <argument key="App\Controller\ApplicationController::submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\CommentaryController::addComment" type="service_closure" id=".service_locator.eOJlB0r"/>
-        <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
+        <argument key="App\Controller\GClubsController::acceptApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController::applicationsStatistics" type="service_closure" id=".service_locator.raUDR8y"/>
         <argument key="App\Controller\GClubsController::clubDetails" type="service_closure" id=".service_locator.oyNdjWp"/>
         <argument key="App\Controller\GClubsController::delete" type="service_closure" id=".service_locator.eLmG6qh"/>
         <argument key="App\Controller\GClubsController::edit" type="service_closure" id=".service_locator.eLmG6qh"/>
         <argument key="App\Controller\GClubsController::getAverageRating" type="service_closure" id=".service_locator.yHlyP5W"/>
         <argument key="App\Controller\GClubsController::index" type="service_closure" id=".service_locator.0LGZiN1"/>
         <argument key="App\Controller\GClubsController::list" type="service_closure" id=".service_locator.eOJlB0r"/>
+        <argument key="App\Controller\GClubsController::manageMembers" type="service_closure" id=".service_locator.yHlyP5W"/>
         <argument key="App\Controller\GClubsController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\GClubsController::rateClub" type="service_closure" id=".service_locator.pnbisVO"/>
-        <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
+        <argument key="App\Controller\GClubsController::pendingApplications" type="service_closure" id=".service_locator.raUDR8y"/>
+        <argument key="App\Controller\GClubsController::rateClub" type="service_closure" id=".service_locator.Z_Q_cF0"/>
+        <argument key="App\Controller\GClubsController::rejectApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController::removeMember" type="service_closure" id=".service_locator.pX.iTSM"/>
         <argument key="App\Controller\GClubsController::searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController::showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
         <argument key="App\Controller\GClubsController::showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
@@ -8443,16 +9215,20 @@
         <argument key="App\Controller\AdminController:update" type="service_closure" id=".service_locator.UItqPak"/>
         <argument key="App\Controller\ApplicationController:submitForClub" type="service_closure" id=".service_locator.xLj1diB"/>
         <argument key="App\Controller\CommentaryController:addComment" type="service_closure" id=".service_locator.eOJlB0r"/>
-        <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.Qclnwot"/>
+        <argument key="App\Controller\GClubsController:acceptApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController:applicationsStatistics" type="service_closure" id=".service_locator.raUDR8y"/>
         <argument key="App\Controller\GClubsController:clubDetails" type="service_closure" id=".service_locator.oyNdjWp"/>
         <argument key="App\Controller\GClubsController:delete" type="service_closure" id=".service_locator.eLmG6qh"/>
         <argument key="App\Controller\GClubsController:edit" type="service_closure" id=".service_locator.eLmG6qh"/>
         <argument key="App\Controller\GClubsController:getAverageRating" type="service_closure" id=".service_locator.yHlyP5W"/>
         <argument key="App\Controller\GClubsController:index" type="service_closure" id=".service_locator.0LGZiN1"/>
         <argument key="App\Controller\GClubsController:list" type="service_closure" id=".service_locator.eOJlB0r"/>
+        <argument key="App\Controller\GClubsController:manageMembers" type="service_closure" id=".service_locator.yHlyP5W"/>
         <argument key="App\Controller\GClubsController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\GClubsController:rateClub" type="service_closure" id=".service_locator.pnbisVO"/>
-        <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.Qclnwot"/>
+        <argument key="App\Controller\GClubsController:pendingApplications" type="service_closure" id=".service_locator.raUDR8y"/>
+        <argument key="App\Controller\GClubsController:rateClub" type="service_closure" id=".service_locator.Z_Q_cF0"/>
+        <argument key="App\Controller\GClubsController:rejectApplication" type="service_closure" id=".service_locator.xRqqVGS"/>
+        <argument key="App\Controller\GClubsController:removeMember" type="service_closure" id=".service_locator.pX.iTSM"/>
         <argument key="App\Controller\GClubsController:searchById" type="service_closure" id=".service_locator.eOJlB0r"/>
         <argument key="App\Controller\GClubsController:showClubApplications" type="service_closure" id=".service_locator.6.pzLHU"/>
         <argument key="App\Controller\GClubsController:showClubs" type="service_closure" id=".service_locator.eOJlB0r"/>
@@ -8778,9 +9554,10 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.VBPHw4y" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ulsVA8G" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ApplicationClubRepository" type="service_closure" id="App\Repository\ApplicationClubRepository"/>
         <argument key="App\Repository\ApplicationRepository" type="service_closure" id="App\Repository\ApplicationRepository"/>
         <argument key="App\Repository\BlocRepository" type="service_closure" id="App\Repository\BlocRepository"/>
         <argument key="App\Repository\ClubRepository" type="service_closure" id="App\Repository\ClubRepository"/>
@@ -9385,7 +10162,11 @@
     <service id="asset_mapper.cached_mapped_asset_factory.inner" class="Symfony\Component\AssetMapper\Factory\MappedAssetFactory">
       <argument type="service" id="asset_mapper.public_assets_path_resolver"/>
       <argument type="service" id="asset_mapper_compiler"/>
+<<<<<<< HEAD
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus/assets/vendor</argument>
+=======
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus/assets/vendor</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     </service>
     <service id="asset_mapper.asset_package.inner" class="Symfony\Component\Asset\PathPackage">
       <argument></argument>
@@ -9639,11 +10420,14 @@
     <service id=".errored..service_locator.eAaJ0X7.App\Entity\Club" class="App\Entity\Club">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.eAaJ0X7&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
-    <service id=".errored..service_locator.Qclnwot.App\Entity\Club" class="App\Entity\Club">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Qclnwot&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    <service id=".errored..service_locator.xRqqVGS.App\Entity\Club" class="App\Entity\Club">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.xRqqVGS&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.eLmG6qh.App\Entity\Club" class="App\Entity\Club">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.eLmG6qh&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.raUDR8y.App\Entity\Club" class="App\Entity\Club">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.raUDR8y&quot;: it needs an instance of &quot;App\Entity\Club&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.Y2F5Zqo.App\Entity\Event" class="App\Entity\Event">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Y2F5Zqo&quot;: it needs an instance of &quot;App\Entity\Event&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10570,110 +11354,199 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
+<<<<<<< HEAD
       <argument>zcPFJGB5vo</argument>
       <argument>0</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/app</argument>
+=======
+      <argument>DGtqfA0-SP</argument>
+      <argument>0</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>Zd+kC5IC38</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>rDXVATgV6y</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>uVJLkrLnpr</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>htqzUXI8YI</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>yaE609h0IK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>FPt2tm3MlN</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>vxCczTeftC</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>mBvn17UWcM</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>lZmPXWy7bX</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>M5jsGdxF0j</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.asset_mapper.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>GIuFdBxd1+</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>L4CooFEGD-</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
+<<<<<<< HEAD
       <argument>uWgT1OA5nd</argument>
       <argument>0</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/app</argument>
+=======
+      <argument>uLMYlMuvzv</argument>
+      <argument>0</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/app</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.validator_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>BlKr56SziN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>mzRb8KutJo</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>4E85XC5TOX</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>herFDobMyG</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_is_granted_attribute_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>1nI0DywnhE</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>ZKtk-1qaG2</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_token_verifier.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>oKhACxkDbX</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>pn3CsDtVel</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.webpack_encore.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+<<<<<<< HEAD
       <argument>UV9k-kO8WQ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
       <argument>C:\Users\maram\OneDrive\Bureau\Nouveau dossier\EduPlus\var\cache\dev/pools/system</argument>
+=======
+      <argument>DeXnlQ008i</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>C:\Users\ASUS\Desktop\eduplus1\EduPlus\var\cache\dev/pools/system</argument>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -10862,7 +11735,11 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
+<<<<<<< HEAD
     <service id="argument_resolver.controller_locator" alias=".service_locator.yb9xeox"/>
+=======
+    <service id="argument_resolver.controller_locator" alias=".service_locator.fvrAFxC"/>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10885,19 +11762,29 @@
     <service id="Psr\Log\LoggerInterface $deprecationLogger" alias="monolog.logger.deprecation"/>
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
+<<<<<<< HEAD
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~fe0.KF."/>
+=======
+    <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~vkBjJJN"/>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.bQQBOrY" alias=".service_locator.xHAhUTS"/>
     <service id=".service_locator.h77nnpz" alias=".service_locator.yxANsRR"/>
     <service id=".service_locator.uDZJQkm" alias=".service_locator.C98KNaG"/>
     <service id=".service_locator.PXGqqJu" alias=".service_locator.b22CltO"/>
     <service id=".service_locator.2Qq3vTm" alias=".service_locator.0LGZiN1"/>
-    <service id=".service_locator.OqBdeI3" alias=".service_locator.pnbisVO"/>
-    <service id=".service_locator.HGvx.ly" alias=".service_locator.Qclnwot"/>
+    <service id=".service_locator.SDpWPOV" alias=".service_locator.Z_Q_cF0"/>
+    <service id=".service_locator.oKqM_Kb" alias=".service_locator.pX.iTSM"/>
+    <service id=".service_locator.fttUT4H" alias=".service_locator.xRqqVGS"/>
+    <service id=".service_locator.4KVkCxx" alias=".service_locator.raUDR8y"/>
     <service id=".service_locator.uu1Sr_s" alias=".service_locator.6.pzLHU"/>
     <service id=".service_locator.Yzf6g69" alias=".service_locator.UItqPak"/>
     <service id=".service_locator._jt34Sv" alias=".service_locator.9raLMXz"/>
+<<<<<<< HEAD
     <service id=".service_locator.mTDkiKa" alias=".service_locator.yb9xeox"/>
+=======
+    <service id=".service_locator.Ghf6Lb4" alias=".service_locator.fvrAFxC"/>
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.q1xrRm3" alias=".service_locator.pSApZh5"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -10937,11 +11824,13 @@
     <service id=".service_locator.g_aAErc" alias=".service_locator.xLj1diB"/>
     <service id=".service_locator.zb_P8ny" alias=".service_locator.eOJlB0r"/>
     <service id=".service_locator.AgiCC5C" alias=".service_locator.0LGZiN1"/>
-    <service id=".service_locator.FstHLkj" alias=".service_locator.pnbisVO"/>
+    <service id=".service_locator.5V0i7bt" alias=".service_locator.Z_Q_cF0"/>
     <service id=".service_locator.3nC0eHK" alias=".service_locator.yHlyP5W"/>
     <service id=".service_locator.y.2nYau" alias=".service_locator.eAaJ0X7"/>
-    <service id=".service_locator.a3SFFo0" alias=".service_locator.Qclnwot"/>
+    <service id=".service_locator.lL2d0Tr" alias=".service_locator.pX.iTSM"/>
+    <service id=".service_locator.gTtvV1p" alias=".service_locator.xRqqVGS"/>
     <service id=".service_locator.xJW9LrD" alias=".service_locator.eLmG6qh"/>
+    <service id=".service_locator.iflPPE3" alias=".service_locator.raUDR8y"/>
     <service id=".service_locator.wjQzAaJ" alias=".service_locator.6.pzLHU"/>
     <service id=".service_locator.hRfDTwr" alias=".service_locator.oyNdjWp"/>
     <service id=".service_locator..51nIrF" alias=".service_locator.UItqPak"/>

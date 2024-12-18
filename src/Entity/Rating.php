@@ -1,51 +1,63 @@
 <?php
-
 namespace App\Entity;
-
 use App\Repository\RatingRepository;
+
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RatingRepository::class)]
 class Rating
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+#[ORM\Id]
+#[ORM\GeneratedValue]
+#[ORM\Column]
+private ?int $id = null;
 
-    #[ORM\Column(type: 'float')]
-    private ?float $value = null;
+#[ORM\Column(type: "float")]
+private $value;
 
-    #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'ratings')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Club $club = null;
+#[ORM\ManyToOne(targetEntity: User::class)]
+#[ORM\JoinColumn(nullable: false)] // The user cannot be null
+private User $user;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+#[ORM\ManyToOne(targetEntity: Club::class)]
+#[ORM\JoinColumn(nullable: false)] // The club cannot be null
+private Club $club;
 
-    public function getValue(): ?float
-    {
-        return $this->value;
-    }
+// Getter for User
+public function getUser(): User
+{
+return $this->user;
+}
 
-    public function setValue(float $value): static
-    {
-        $this->value = $value;
+// Setter for User
+public function setUser(User $user): self
+{
+$this->user = $user;
+return $this;
+}
 
-        return $this;
-    }
+// Getter for Club
+public function getClub(): Club
+{
+return $this->club;
+}
 
-    public function getClub(): ?Club
-    {
-        return $this->club;
-    }
+// Setter for Club
+public function setClub(Club $club): self
+{
+$this->club = $club;
+return $this;
+}
 
-    public function setClub(?Club $club): static
-    {
-        $this->club = $club;
+// Getter and Setter for Rating Value
+public function getValue(): float
+{
+return $this->value;
+}
 
-        return $this;
-    }
+public function setValue(float $value): self
+{
+$this->value = $value;
+return $this;
+}
 }

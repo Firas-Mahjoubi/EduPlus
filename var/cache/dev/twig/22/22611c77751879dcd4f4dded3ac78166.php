@@ -409,6 +409,10 @@ class __TwigTemplate_b6fd7b3525d2c20a1dedef751d74fc97 extends Template
             }
         </script>
     {% endblock %}
+<<<<<<< HEAD
     ", "g_events/update.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_events\\update.html.twig");
+=======
+    ", "g_events/update.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_events\\update.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

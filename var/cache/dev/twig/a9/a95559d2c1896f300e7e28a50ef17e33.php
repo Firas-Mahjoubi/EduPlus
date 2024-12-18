@@ -222,6 +222,10 @@ class __TwigTemplate_c9a28f3fc6e930a86c625c2ad2c7a96d extends Template
     </div>
 </body>
 </html>
+<<<<<<< HEAD
 ", "emails/event_pdf.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\emails\\event_pdf.html.twig");
+=======
+", "emails/event_pdf.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\emails\\event_pdf.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

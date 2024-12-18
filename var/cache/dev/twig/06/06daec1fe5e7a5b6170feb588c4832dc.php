@@ -193,6 +193,10 @@ class __TwigTemplate_54127a77481a64aec13dd767edcb2cd3 extends Template
         </div>
     </div>
 {% endblock %}
+<<<<<<< HEAD
 ", "g_ressources/backOffice/confirm_delete.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\backOffice\\confirm_delete.html.twig");
+=======
+", "g_ressources/backOffice/confirm_delete.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\backOffice\\confirm_delete.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

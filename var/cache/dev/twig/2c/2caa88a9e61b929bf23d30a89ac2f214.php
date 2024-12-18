@@ -107,6 +107,10 @@ class __TwigTemplate_3a6ae811ac1202440f03d30fee4abc83 extends Template
     <p>Statut : {{ message }}</p>
 </body>
 </html>
+<<<<<<< HEAD
 ", "g_recrutements/email/application_decision.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_recrutements\\email\\application_decision.html.twig");
+=======
+", "g_recrutements/email/application_decision.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_recrutements\\email\\application_decision.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

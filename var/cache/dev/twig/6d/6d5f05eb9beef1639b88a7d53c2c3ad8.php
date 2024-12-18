@@ -109,6 +109,10 @@ class __TwigTemplate_a83bb59c4bca9481137d68ce050a2a15 extends Template
     <p>{{ message }}</p>
 </body>
 </html>
+<<<<<<< HEAD
 ", "emails/application_decision.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\emails\\application_decision.html.twig");
+=======
+", "emails/application_decision.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\emails\\application_decision.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

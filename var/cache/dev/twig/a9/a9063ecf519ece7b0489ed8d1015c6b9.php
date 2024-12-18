@@ -375,6 +375,10 @@ class __TwigTemplate_346b6688a5f6e3dafb97e40dc0a10a65 extends Template
         document.getElementById('type-select').dispatchEvent(new Event('change'));
     </script>
 {% endblock %}
+<<<<<<< HEAD
 ", "g_ressources/backOffice/new.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\backOffice\\new.html.twig");
+=======
+", "g_ressources/backOffice/new.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\backOffice\\new.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

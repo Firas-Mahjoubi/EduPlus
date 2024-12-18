@@ -213,6 +213,10 @@ class __TwigTemplate_37c64363ff5459fd7f462eeb92f69679 extends Template
         <button class=\"btn btn-primary\" type=\"submit\">Apply</button>
     {{ form_end(form) }}
 {% endblock %}
+<<<<<<< HEAD
 ", "club/apply_to_club.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\club\\apply_to_club.html.twig");
+=======
+", "club/apply_to_club.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\club\\apply_to_club.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

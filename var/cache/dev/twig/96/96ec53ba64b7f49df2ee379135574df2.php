@@ -471,6 +471,10 @@ class __TwigTemplate_862034d92e68ecffd28d7fb2a1cb25e5 extends Template
         </div>
     {% endfor %}
 {% endblock %}
+<<<<<<< HEAD
 ", "@Debug/Profiler/dump.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
+=======
+", "@Debug/Profiler/dump.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

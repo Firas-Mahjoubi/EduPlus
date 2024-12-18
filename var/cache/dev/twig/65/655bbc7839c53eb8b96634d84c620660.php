@@ -231,6 +231,10 @@ class __TwigTemplate_2cba6586a472358eb26f711e4e4d4001 extends Template
     word-wrap: break-word;
     word-break: break-all;
 }
+<<<<<<< HEAD
 ", "@WebProfiler/Profiler/open.css.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\open.css.twig");
+=======
+", "@WebProfiler/Profiler/open.css.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\open.css.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

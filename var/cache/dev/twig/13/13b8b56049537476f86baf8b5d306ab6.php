@@ -274,6 +274,10 @@ class __TwigTemplate_f001100ea339332084dec35524dd1674 extends Template
     {% endif %}
 </div>
 {% endblock %}
+<<<<<<< HEAD
 ", "g_recrutements/applications.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_recrutements\\applications.html.twig");
+=======
+", "g_recrutements/applications.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_recrutements\\applications.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

@@ -1014,6 +1014,10 @@ $context["call"], "return", [], "any", false, false, false, 295) === false)) {
         </menu>
     </dialog>
 {% endblock %}
+<<<<<<< HEAD
 ", "@WebProfiler/Collector/workflow.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\workflow.html.twig");
+=======
+", "@WebProfiler/Collector/workflow.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\workflow.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

@@ -186,6 +186,10 @@ class __TwigTemplate_c8e44df06952f1ad0fa4e463c83ba9dd extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
+<<<<<<< HEAD
 ", "@Doctrine/Collector/explain.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\explain.html.twig");
+=======
+", "@Doctrine/Collector/explain.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\explain.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

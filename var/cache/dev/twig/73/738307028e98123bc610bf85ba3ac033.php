@@ -3339,6 +3339,10 @@ class __TwigTemplate_ad5a88dd3203831e47e4111938c10283 extends Template
     </script>
   </body>
 </html>
+<<<<<<< HEAD
 ", "g_users/admin.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_users\\admin.html.twig");
+=======
+", "g_users/admin.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_users\\admin.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

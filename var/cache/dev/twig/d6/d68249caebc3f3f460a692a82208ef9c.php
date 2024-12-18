@@ -299,6 +299,10 @@ class __TwigTemplate_0f09f3ed861658ae929bffc621d8a856 extends Template
 </div>
 <!-- Blog End -->
 {% endblock %}
+<<<<<<< HEAD
 ", "g_ressources/show.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\g_ressources\\show.html.twig");
+=======
+", "g_ressources/show.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\g_ressources\\show.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

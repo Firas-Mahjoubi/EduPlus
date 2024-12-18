@@ -836,6 +836,10 @@ class __TwigTemplate_df53b9390d9c3cb8cab2d91cbdc22ee5 extends Template
         {% endif %}
     </div>
 {% endblock %}
+<<<<<<< HEAD
 ", "@WebProfiler/Collector/command.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\command.html.twig");
+=======
+", "@WebProfiler/Collector/command.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\command.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

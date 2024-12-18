@@ -352,6 +352,10 @@ class __TwigTemplate_9ade03dba376ee879b834da98efd8f72 extends Template
 <!-- Full Screen Search End -->
 
 {% block body %}{% endblock %}
+<<<<<<< HEAD
 ", "header.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\header.html.twig");
+=======
+", "header.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\header.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

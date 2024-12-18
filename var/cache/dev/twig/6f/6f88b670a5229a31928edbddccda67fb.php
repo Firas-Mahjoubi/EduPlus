@@ -126,6 +126,10 @@ class __TwigTemplate_8017cd795de63ed23af146a001516807 extends Template
         <p>Click <a href=\"{{ path('app_g_events_show', {id: event.id}) }}\">here</a> for more details and to participate!</p>
     </body>
 </html>
+<<<<<<< HEAD
 ", "emails/new_event.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\templates\\emails\\new_event.html.twig");
+=======
+", "emails/new_event.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\templates\\emails\\new_event.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

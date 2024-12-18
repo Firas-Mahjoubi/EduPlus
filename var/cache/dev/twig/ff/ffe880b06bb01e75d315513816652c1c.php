@@ -327,6 +327,10 @@ class __TwigTemplate_a57e866b5ab8b4b16c34f5c84da25853 extends Template
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
+<<<<<<< HEAD
 ", "form_table_layout.html.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\form_table_layout.html.twig");
+=======
+", "form_table_layout.html.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\twig-bridge\\Resources\\views\\Form\\form_table_layout.html.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }

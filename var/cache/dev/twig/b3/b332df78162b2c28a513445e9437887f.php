@@ -227,6 +227,10 @@ Exception stack trace attached.
 {{ exception }}
 {% endif %}
 {% endblock %}
+<<<<<<< HEAD
 ", "@email/zurb_2/notification/body.txt.twig", "C:\\Users\\maram\\OneDrive\\Bureau\\Nouveau dossier\\EduPlus\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\zurb_2\\notification\\body.txt.twig");
+=======
+", "@email/zurb_2/notification/body.txt.twig", "C:\\Users\\ASUS\\Desktop\\eduplus1\\EduPlus\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\zurb_2\\notification\\body.txt.twig");
+>>>>>>> 32b1d21577280cb80c1c507b541be4dee7c0bc31
     }
 }
